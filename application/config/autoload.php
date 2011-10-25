@@ -54,7 +54,10 @@ $autoload['packages'] = array(
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('PHPActiveRecord');
+$autoload['libraries'] = array(
+    'PHPActiveRecord',
+    'session',
+);
 
 
 /*
