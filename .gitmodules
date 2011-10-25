@@ -1,3 +1,6 @@
 [submodule "application/third_party/php-activerecord"]
 	path = application/third_party/php-activerecord
 	url = git://github.com/topicdesign/php-activerecord-spark.git
+[submodule "application/third_party/authority"]
+	path = application/third_party/authority
+	url = git://github.com/topicdesign/codeigniter-authority-authorization.git
