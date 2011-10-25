@@ -37,7 +37,9 @@
 |
 */
 
-$autoload['packages'] = array();
+$autoload['packages'] = array(
+    APPPATH.'third_party/php-activerecord'
+);
 
 
 /*
@@ -52,7 +54,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array();
+$autoload['libraries'] = array('PHPActiveRecord');
 
 
 /*
