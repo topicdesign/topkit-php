@@ -4,3 +4,6 @@
 [submodule "application/third_party/authority"]
 	path = application/third_party/authority
 	url = git://github.com/topicdesign/codeigniter-authority-authorization.git
+[submodule "application/third_party/authentic"]
+	path = application/third_party/authentic
+	url = git://github.com/topicdesign/codeigniter-authentic-authentication.git
