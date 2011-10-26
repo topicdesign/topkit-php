@@ -56,6 +56,7 @@ $autoload['packages'] = array(
 */
 
 $autoload['libraries'] = array(
+    'authentic',
     'PHPActiveRecord',
     'session',
 );
