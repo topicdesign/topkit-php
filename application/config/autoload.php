@@ -38,7 +38,8 @@
 */
 
 $autoload['packages'] = array(
-    APPPATH.'third_party/php-activerecord'
+    APPPATH.'third_party/php-activerecord',
+    APPPATH.'third_party/authentic',
 );
 
 
