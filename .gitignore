@@ -12,3 +12,6 @@ application/config/database.php
 application/config/local/database.php
 application/config/development/database.php
 application/config/site.php
+
+assets/cache/*
+!assets/cache/.folder

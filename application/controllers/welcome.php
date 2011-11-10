@@ -18,8 +18,11 @@ class Welcome extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-		$this->template->build('welcome_message');
+    {
+        $this->assets->css('jquery-ui-1.8.16.css');
+        $this->assets->js('app.js');
+
+        $this->template->build('welcome_message');
 	}
 }
 
