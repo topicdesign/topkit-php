@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,6 +21,26 @@ class Welcome extends CI_Controller {
 	{
 		$this->template->build('welcome_message');
 	}
+
+    public function foo()
+    {
+        //$r = new Authority\Role();
+        //$r->title = 'admin';
+        //$p = array(
+            //'article' => array(
+                //'read' => TRUE
+            //)
+        //);
+        //$r->permissions = json_encode($p);
+        //$r->save();
+        //$this->load->helper('authentic');
+        $this->authentic->login('seth','password');
+        if (can('foo', 'bar')) {
+            echo 'can';
+        } else {
+            echo 'cannot';
+        }
+    }
 }
 
 /* End of file welcome.php */
