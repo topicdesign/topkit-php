@@ -38,6 +38,7 @@
 */
 
 $autoload['packages'] = array(
+    APPPATH.'third_party/assets',
     APPPATH.'third_party/php-activerecord',
     APPPATH.'third_party/authentic',
     APPPATH.'third_party/authority',
@@ -76,8 +77,9 @@ $autoload['libraries'] = array(
 */
 
 $autoload['helper'] = array(
-    'authority',
     'url',
+    'authority',
+    'assets',
 );
 
 
