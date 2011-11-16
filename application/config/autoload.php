@@ -41,7 +41,7 @@ $autoload['packages'] = array(
     APPPATH.'third_party/assets',
     APPPATH.'third_party/php-activerecord',
     APPPATH.'third_party/authentic',
-    APPPATH.'third_party/authority',
+    //APPPATH.'third_party/authority',
     APPPATH.'third_party/template',
 );
 
@@ -62,7 +62,7 @@ $autoload['libraries'] = array(
     'session',
     'PHPActiveRecord',
     'authentic',
-    'authority',
+    //'authority',
     'template',
 );
 
@@ -78,7 +78,8 @@ $autoload['libraries'] = array(
 
 $autoload['helper'] = array(
     'url',
-    'authority',
+    'user',
+    //'authority',
     'assets',
 );
 
