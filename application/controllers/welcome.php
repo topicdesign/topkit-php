@@ -27,41 +27,6 @@ class Welcome extends Public_Controller {
      **/
     public function index()
     {
-        //$user = User::find(array('conditions'=>array('username = ?', 'test')));
-        //$this->authority->grant_role('blog_admin');
-        //$this->authority->remove_role('blog_admin');
-        //$this->authentic->login('test','password');
-        //get_user()->to_json();
-        //exit;
-        echo (can('create','user')) ? 'WIN' : 'FAIL';
-        exit;
-        $user = get_user();
-
-        echo '<pre>' .print_r($user->permissions, TRUE);
-        
-        exit;
-        //echo (get_user())
-            //? get_class(get_user()) . get_user()->foo()
-            //: 'no user';
-        //exit;
-        //$r = new Authority\Role();
-        //$r->title = 'admin';
-        //$p = array(
-            //'article' => array(
-                //'read' => TRUE
-            //)
-        //);
-        //$r->permissions = json_encode($p);
-        //$r->save();
-        //$this->load->helper('authentic');
-
-        //$this->authentic->login('seth','password');
-        //if (can('foo', 'bar')) {
-            //echo 'can';
-        //} else {
-            //echo 'cannot';
-        //}
-
 		$this->template->build('welcome_message');
     }
 

@@ -39,7 +39,7 @@ class Pages extends Public_Controller {
             show_404();
         }
         // get (published) page record 
-        if (FALSE) // FPO can('manage', 'page')
+        if (can('manage', 'page'))
         {
             $page = Page::find($uri);
         }
