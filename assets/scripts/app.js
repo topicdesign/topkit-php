@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    $('a').button();
+    // jquery is ready
 });

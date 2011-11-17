@@ -20,8 +20,9 @@
 		maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
 	-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php echo $this->assets->display('css'); ?>
-	
+
+    <?php echo get_styles() . get_scripts('header'); ?>
+
 </head>
 <body>
 
@@ -39,9 +40,8 @@
     </div>
     <!--/container-->
 
-    <?php echo $this->assets->display('jqueryui'); ?>
-    <?php echo $this->assets->display('js'); ?>
+    <?php echo get_scripts('jquery', array('combine'=>FALSE)) . get_scripts(); ?>
 
 </body>
 </html>
-<? //$this->output->enable_profiler(TRUE); ?>
+<?php $this->output->enable_profiler(TRUE); ?>
