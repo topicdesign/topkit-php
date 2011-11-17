@@ -63,6 +63,7 @@ $autoload['libraries'] = array(
     'PHPActiveRecord',
     'authentic',
     'authority',
+    'assets',
     'template',
 );
 

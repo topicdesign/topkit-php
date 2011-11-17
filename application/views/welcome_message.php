@@ -5,3 +5,6 @@
 
 <p>The corresponding controller for this page is found at:</p>
 <code>application/controllers/welcome.php</code>
+
+<p><a id="reload" href="<?php echo site_url(); ?>">Refresh</a></p>
+
