@@ -38,6 +38,10 @@ class Error extends MY_Controller {
         $this->output->set_status_header($err['status']);
         $this->load->vars(array('error'=>$err));
 
+        if (isset($err['heading']))
+        {
+            $this->template->title($err['heading']);
+        }
         switch($err['template'])
         {
             case 'error_general':
