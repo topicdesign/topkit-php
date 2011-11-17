@@ -19,8 +19,10 @@
 		initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
 		maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
 	-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <?php echo get_styles() . get_scripts('header'); ?>
+
 </head>
 <body>
 
@@ -38,7 +40,8 @@
     </div>
     <!--/container-->
 
+    <?php echo get_scripts('jquery', array('combine'=>FALSE)) . get_scripts(); ?>
 
 </body>
 </html>
-<? //$this->output->enable_profiler(TRUE); ?>
+<?php $this->output->enable_profiler(TRUE); ?>
