@@ -27,6 +27,20 @@ class Welcome extends Public_Controller {
      **/
     public function index()
     {
+        //$this->authentic->login('test','password');
+        //get_user()->to_json();
+        //exit;
+        echo (can('create','group')) ? 'WIN' : 'FAIL';
+        exit;
+        $user = get_user();
+
+        echo '<pre>' .print_r($user->permissions, TRUE);
+        
+        exit;
+        //echo (get_user())
+            //? get_class(get_user()) . get_user()->foo()
+            //: 'no user';
+        //exit;
         //$r = new Authority\Role();
         //$r->title = 'admin';
         //$p = array(

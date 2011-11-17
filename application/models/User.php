@@ -29,7 +29,9 @@ class User extends \Authentic\User {
     // --------------------------------------------------------------------
 
     static $has_many = array(
-        array('nonces', 'class_name' => 'Authentic\Nonce')
+        array('nonces', 'class_name' => 'Authentic\Nonce'),
+        array('roles', 'class_name' => 'Authority\Role'),
+        array('permissions' , 'class_name' => 'Authority\Permission', 'through' => 'roles')
     );
 
     // --------------------------------------------------------------------
