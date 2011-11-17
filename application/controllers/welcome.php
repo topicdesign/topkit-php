@@ -27,13 +27,13 @@ class Welcome extends Public_Controller {
      **/
     public function index()
     {
-        echo '<pre>';
-        $user = User::find(array('conditions'=>array('username = ?', 'test')));
-        $this->authority->grant_role('admin', $user);
+        //$user = User::find(array('conditions'=>array('username = ?', 'test')));
+        //$this->authority->grant_role('blog_admin');
+        //$this->authority->remove_role('blog_admin');
         //$this->authentic->login('test','password');
         //get_user()->to_json();
-        exit;
-        echo (can('create','group')) ? 'WIN' : 'FAIL';
+        //exit;
+        echo (can('create','user')) ? 'WIN' : 'FAIL';
         exit;
         $user = get_user();
 
