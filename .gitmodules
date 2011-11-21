@@ -12,4 +12,4 @@
 	url = git://github.com/topicdesign/codeigniter-template.git
 [submodule "application/third_party/assets"]
 	path = application/third_party/assets
-	url = git://github.com/topicdesign/codeigniter-assets.git
+	url = git://github.com/topicdesign/CodeIgniter-Assets.git
