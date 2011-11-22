@@ -45,6 +45,7 @@
     <!--/container-->
 
     <?php echo get_scripts('jquery', array('combine'=>FALSE)) . get_scripts(); ?>
+    <?php if (isset($template['partials']['analytics'])) echo $template['partials']['analytics']; ?>
 
 </body>
 </html>
