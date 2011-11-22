@@ -11,8 +11,8 @@
 	<!-- www.phpied.com/conditional-comments-block-downloads/ -->
 	<!--[if IE]><![endif]-->
 	
-    <base href="<?php echo site_url() ?>" />
-	<title><?php echo $template['title'] ?></title>
+    <base href="<?php echo site_url(); ?>" />
+	<title><?php echo $template['title']; ?></title>
 
 	<!--  Mobile Viewport Fix j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
 		device-width : Occupy full width of the screen in its current orientation
@@ -29,13 +29,17 @@
     <!--container-->
     <div id="container">
 
+        <?php echo $template['partials']['header']; ?>
+
         <!--content-->
         <div id="content">
 
-            <?php echo $template['body'] ?>
+            <?php echo $template['body']; ?>
 
         </div>
         <!--/content-->
+
+        <?php echo $template['partials']['footer']; ?>
 
     </div>
     <!--/container-->

@@ -37,9 +37,15 @@ class MY_Controller extends CI_Controller
 	protected function init_template()
 	{
 		$this->template
-			//->title(config_item('site_title'))
+            ->title(config_item('site_title'))
 		    ->set_layout('default')
-		    ;
+            ;
+        // should we output analytics data
+        $env = ( ! defined('ENVIRONMENT') || (defined('ENVIRONMENT') && ENVIRONMENT == 'production'));
+        if (config_item('google_analytics_id') && $env)
+        {
+            $this->template->set_partial('analytics', '_partials/analytics');
+        }
     }
 
     // --------------------------------------------------------------------
@@ -93,6 +99,25 @@ class Public_Controller extends MY_Controller
     public function __construct()
     {
         parent::__construct();
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+	 * initialize template settings
+	 *
+	 * @access	protected 
+     * @param	void
+     *
+	 * @return	void
+	 **/
+	protected function init_template()
+    {
+        parent::init_template();
+		$this->template
+		    ->set_partial('header', '_partials/header')
+		    ->set_partial('footer', '_partials/footer')
+		    ;
     }
 
     // --------------------------------------------------------------------
