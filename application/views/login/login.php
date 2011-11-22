@@ -11,8 +11,8 @@
     <form action="<?php echo site_url('login'); ?>" method="POST">
 
         <fieldset>
-            <label for="username">Username/Email</label>
-                <input type="text" id="username" name="username" />
+            <label for="identity">Username/Email</label>
+                <input type="text" id="identity" name="identity" />
                 <br />
             <label for="password">Password</label>
                 <input type="password" id="password" name="password" />
