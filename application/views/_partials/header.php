@@ -7,5 +7,9 @@
             <li class="selected"><a href="<?php echo site_url(); ?>">Home</a></li>
         </ul>
     </nav>
+    
+    <?php if (logged_in()): ?>
+    <p><a href="<?php echo site_url('logout'); ?>">Log out</a></p>
+    <?php endif; ?>
 
 </header>
