@@ -82,6 +82,7 @@ $autoload['helper'] = array(
     'user',
     'authority',
     'assets',
+    'string'
 );
 
 

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class News extends Public_Controller {
+class Articles extends Public_Controller {
 
     /**
      * Constructor
@@ -30,11 +30,11 @@ class News extends Public_Controller {
         $data = array(
             'articles' => Article::recent_published(3)
         );
-		$this->template->build('news/index.php', $data);
+		$this->template->build('articles/articles_index.php', $data);
     }
 
     // --------------------------------------------------------------------
 
 }
-/* End of file news.php */
-/* Location: ./application/controllers/news.php */
+/* End of file articles.php */
+/* Location: ./application/controllers/articles.php */
