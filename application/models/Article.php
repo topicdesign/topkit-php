@@ -237,6 +237,21 @@ class Article extends ActiveRecord\Model {
 
     // --------------------------------------------------------------------
 }
+/**
+ * SQL for table
+
+CREATE TABLE `articles` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(120) DEFAULT NULL,
+  `slug` varchar(120) DEFAULT NULL,
+  `content` text,
+  `published_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+**/
 
 /* End of file Article.php */
 /* Location: ./application/models/Article.php */
