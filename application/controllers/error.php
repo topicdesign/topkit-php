@@ -40,7 +40,7 @@ class Error extends Public_Controller {
 
         if (isset($err['heading']))
         {
-            $this->template->title($err['heading']);
+            $this->template->title($err['heading'], config_item('site_title'));
         }
         switch($err['template'])
         {
