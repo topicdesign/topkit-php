@@ -90,22 +90,24 @@ class Article extends ActiveRecord\Model {
     // --------------------------------------------------------------------
 
     /**
-     * find article with specified pubdate/slug
+     * find article with specified params
      *
      * @access  public
-     * @param   object  $date   DateTime object article.published_at
-     * @param   string  $slug   article.slug
+     * @param   array   $config     params to parse
      *
      * @return  object
      **/
-    public static function find_pubdate_slug($date, $slug)
+    public static function find_article($config)
     {
-        $date->setTimezone(new DateTimeZone('GMT'));
+        // support sending different params
+        // only uses ($pubdate, $slug) for now
+        extract($config);
+        $pubdate->setTimezone(new DateTimeZone('GMT'));
         $cond = array(
             'slug = ? AND published_at >= ? AND published_at <= ?',
             $slug,
-            $date->format('Y-m-d H:i:s'),
-            $date->modify('+1 day')->format('Y-m-d H:i:s')
+            $pubdate->format('Y-m-d H:i:s'),
+            $pubdate->modify('+1 day')->format('Y-m-d H:i:s')
         );
         return static::first(array('conditions'=>$cond));
     }
@@ -133,7 +135,7 @@ class Article extends ActiveRecord\Model {
             if ($published)
             {
                 $cond[0] .= 'published_at < ?';
-                $cond[] = date_create()->format( 'Y-m-d H:i:s' );
+                $cond[] = date_create()->format('Y-m-d H:i:s');
             }
         }
         // limit to timespan
@@ -148,8 +150,8 @@ class Article extends ActiveRecord\Model {
             $end->setTimezone(new DateTimeZone('GMT'));
             // append condition
             $cond[0] .= 'published_at > ? AND published_at < ?';
-            $cond[] = $start->format( 'Y-m-d H:i:s' );
-            $cond[] = $end->format( 'Y-m-d H:i:s' );
+            $cond[] = $start->format('Y-m-d H:i:s');
+            $cond[] = $end->format('Y-m-d H:i:s');
         }
         // setup finder options
         $options = array(

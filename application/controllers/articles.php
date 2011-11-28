@@ -87,7 +87,11 @@ class Articles extends Public_Controller {
             show_404();
         }
         // get the article
-        if ( ! $article = Article::find_pubdate_slug($date, $slug))
+        $params = array(
+            'pubdate'   => $date,
+            'slug'      => $slug
+        );
+        if ( ! $article = Article::find_article($params))
         {
             show_404();
         }
