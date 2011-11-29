@@ -1,6 +1,6 @@
 <article id="event-<?php echo $event->id; ?>" class="event preview">
     <header>
-        <h1><?php echo $event->title;//anchor(event_url($event), $event->title); ?></h1>
+        <h1><?php echo anchor(event_url($event), $event->title); ?></h1>
         <h2><?php echo $event->local_datetime('start'); ?>&ndash;<?php echo $event->local_datetime('end'); ?></h2> 
     </header>
     <div class="event-content">

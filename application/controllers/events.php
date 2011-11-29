@@ -13,47 +13,9 @@ class Events extends Public_Controller {
     public function __construct()
     {
         parent::__construct();
-        //$this->load->helper('event');
+        $this->load->helper('event');
     }
 
-    // --------------------------------------------------------------------
-
-    //public function index()
-    //{
-        //$TZ = new DateTimeZone(config_item('site_timezone'));
-        //$start = date_create('2011-11-21', $TZ);
-        //$end = date_create('2011-11-23', $TZ);
-
-        ////$events = Event::all();
-        ////$events = Event::within_date_range($start, $end);
-        //$events = Event::day($start);
-
-        //if (empty($events))
-        //{
-            //echo 'no events';
-            //exit;
-        //}
-
-        //foreach ($events as $e) {
-            //echo $e->title . ': '
-                //. $e->local_datetime('start')
-                //. ' - '
-                //. $e->local_datetime('end')
-                //;
-        //}
-        //exit;
-
-        //$this->load->library('calendar');
-
-
-        //$data = array(
-            //3  => '<ul><li>http://example.com/news/article/2006/03/</li></ul>',
-            //7  => '<ul><li>http://example.com/news/article/2006/07</li></ul>',
-            //13 => '<ul><li>http://example.com/news/article/2006/13/</li></ul>',
-            //26 => '<ul><li>http://example.com/news/article/2006/26/</li></ul>'
-        //);
-        //echo $this->calendar->generate(NULL, NULL, $data);
-    //}
     // --------------------------------------------------------------------
 
     /**
@@ -228,6 +190,49 @@ class Events extends Public_Controller {
 
     // --------------------------------------------------------------------
 
+    /**
+     * undocumented function
+     *
+     * @return void
+     * @author Jack Boberg
+     **/
+    public function calendar($year = NULL, $month = NULL)
+    {
+        $TZ = new DateTimeZone(config_item('site_timezone'));
+        // assume current month, or Jan if both NULL
+        if (is_null($month))
+        {
+            $month = is_null($year) ? date_create(NULL, $TZ)->format('n') : 1;
+        }
+        // assume current year
+        $year = $year ?: date_create(NULL, $TZ)->format('Y');
+
+        // get (published) events for specified month
+        $month = date_create($year . '-' . $month . '-1', $TZ);
+        $events = Event::month($month, cannot('manage', 'event'));
+
+        // setup array of day-events
+        $days = array();
+        foreach ($events as $e)
+        {
+            $days[$e->local_datetime('start','j')][] = $e;
+        }
+
+        // init calendar
+        $this->load->library('calendar');
+        $cal_data = array();
+        foreach ($days as $day => $events)
+        {
+            $cal_data[$day] = $this->load->view('events/calendar_day', array('events'=>$events), TRUE);
+        }
+        $data = array(
+            'cal_data'  => $cal_data,
+            'date'      => $month
+        );
+        $this->template
+            ->title($month->format('F, Y'), 'Events', config_item('site_title'))
+            ->build('events/calendar', $data);
+    }
 }
 /* End of file events.php */
 /* Location: ./application/controllers/events.php */
