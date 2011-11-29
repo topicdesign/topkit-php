@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Articles extends Public_Controller {
+class Events extends Public_Controller {
 
     /**
      * Constructor
@@ -13,7 +13,7 @@ class Articles extends Public_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->helper('article');
+        $this->load->helper('event');
     }
 
     // --------------------------------------------------------------------
@@ -68,7 +68,7 @@ class Articles extends Public_Controller {
     // --------------------------------------------------------------------
 
     /**
-     * display an specifc article
+     * display an specifc event
      *
      * @access  private
      * @param   array       $params     passed params
@@ -81,30 +81,27 @@ class Articles extends Public_Controller {
         $slug = array_pop($params);
         $TZ = new DateTimeZone(config_item('site_timezone'));
         $date = date_create(implode('-', $params), $TZ);
-        // allow unpublished article?
-        if (cannot('manage', 'article') && date_create(NULL, $TZ) < $date)
-        {
-            show_404();
-        }
         // get the article
         $params = array(
-            'pubdate'   => $date,
-            'slug'      => $slug
+            'date'      => $date,
+            'slug'      => $slug,
+            'published' => cannot('manage', 'event')
         );
-        if ( ! $article = Article::find_article($params))
+        if ( ! $event = Event::find_event($params))
         {
             show_404();
         }
-        $data['article'] = $article;
+        $data['event'] = $event;
+
         $this->template
-            ->title($article->title, 'Articles', config_item('site_title')) 
-            ->build('articles/article_view.php', $data);
+            ->title($event->title, 'Events', config_item('site_title')) 
+            ->build('events/event_view.php', $data);
     }
 
     // --------------------------------------------------------------------
 
     /**
-     * get an page of articles to display as an index
+     * get an page of events to display as an index
      *
      * @access  private
      * @param   string      $page       page number
@@ -116,7 +113,7 @@ class Articles extends Public_Controller {
     {
         $TZ = new DateTimeZone(config_item('site_timezone'));
         // set date limits based on params
-        $title_segments = array('Articles', config_item('site_title')); 
+        $title_segments = array('Events', config_item('site_title')); 
         switch (count($params))
         {
             case 1:
@@ -156,12 +153,12 @@ class Articles extends Public_Controller {
         $config = array(
             'start' => $start,
             'end'   => $end,
-            'published' => cannot('manage', 'article'),
+            'published' => cannot('manage', 'event'),
             'per_page'  => $per_page,
             'page'      => $page
         );
-        $result = Article::paginated($config);
-        if ( ! $result->articles)
+        $result = Event::paginated($config);
+        if ( ! $result->events)
         {
             show_404();
         }
@@ -182,17 +179,60 @@ class Articles extends Public_Controller {
         $this->pagify->initialize($config);
         // output the index
         $data = array(
-            'articles' => $result->articles
+            'events' => $result->events
         );
         // set title from prepared segments
         call_user_func_array(array($this->template, 'title'), $title_segments);
         $this->template
             //->title($title_segments)
-            ->build('articles/articles_index.php', $data);
+            ->build('events/events_index.php', $data);
     }
 
     // --------------------------------------------------------------------
 
+    /**
+     * undocumented function
+     *
+     * @return void
+     * @author Jack Boberg
+     **/
+    public function calendar($year = NULL, $month = NULL)
+    {
+        $TZ = new DateTimeZone(config_item('site_timezone'));
+        // assume current month, or Jan if both NULL
+        if (is_null($month))
+        {
+            $month = is_null($year) ? date_create(NULL, $TZ)->format('n') : 1;
+        }
+        // assume current year
+        $year = $year ?: date_create(NULL, $TZ)->format('Y');
+
+        // get (published) events for specified month
+        $month = date_create($year . '-' . $month . '-1', $TZ);
+        $events = Event::month($month, cannot('manage', 'event'));
+
+        // setup array of day-events
+        $days = array();
+        foreach ($events as $e)
+        {
+            $days[$e->local_datetime('start','j')][] = $e;
+        }
+
+        // init calendar
+        $this->load->library('calendar');
+        $cal_data = array();
+        foreach ($days as $day => $events)
+        {
+            $cal_data[$day] = $this->load->view('events/calendar_day', array('events'=>$events), TRUE);
+        }
+        $data = array(
+            'cal_data'  => $cal_data,
+            'date'      => $month
+        );
+        $this->template
+            ->title($month->format('F, Y'), 'Events', config_item('site_title'))
+            ->build('events/calendar', $data);
+    }
 }
-/* End of file articles.php */
-/* Location: ./application/controllers/articles.php */
+/* End of file events.php */
+/* Location: ./application/controllers/events.php */
