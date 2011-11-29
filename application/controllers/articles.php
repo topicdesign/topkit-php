@@ -82,7 +82,7 @@ class Articles extends Public_Controller {
         $TZ = new DateTimeZone(config_item('site_timezone'));
         $date = date_create(implode('-', $params), $TZ);
         // allow unpublished article?
-        if ( ! can('manage', 'article') && date_create(NULL, $TZ) < $date)
+        if (cannot('manage', 'article') && date_create(NULL, $TZ) < $date)
         {
             show_404();
         }
