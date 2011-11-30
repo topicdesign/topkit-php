@@ -152,7 +152,6 @@ class Event extends ActiveRecord\Model {
             $cond[0] .= ' AND published_at < ?';
             $cond[] = date_create()->format('Y-m-d H:i:s');
         }
-
         return static::all(array('conditions'=>$cond));
     }
 
@@ -238,7 +237,7 @@ class Event extends ActiveRecord\Model {
         }
         // setup finder options
         $options = array(
-            'order'     => 'start desc',
+            'order'     => 'start',
             'limit'     => $per_page,
             'offset'    => ($per_page * $page) - $per_page,
             'conditions'=> $cond
