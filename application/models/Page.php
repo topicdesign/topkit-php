@@ -37,10 +37,11 @@ class Page extends ActiveRecord\Model {
     public static function published($uri)
     {
         $conditions = array(
-            'published_at < ?',
+            'uri = ? AND published_at < ?',
+            $uri,
             date_create()
         );
-        return static::find($uri, array('conditions'=>$conditions));  
+        return static::first(array('conditions'=>$conditions));  
     }
 
     // --------------------------------------------------------------------
