@@ -1,10 +1,9 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * Application Hooks
+ * Application Helpers
  *
- * @package		CodeIgniter
- * @subpackage	Hooks
- * @category	Application
+ * @package		Application
+ * @subpackage	Helpers
  * @author		Topic Design
  */
 
@@ -32,5 +31,5 @@ if ( ! function_exists('get_app'))
 
 // ------------------------------------------------------------------------
 
-/* End of file authentic_helper.php */
-/* Location: ./helpers/authentic_helper.php */
+/* End of file app_helper.php */
+/* Location: ./helpers/app_helper.php */
