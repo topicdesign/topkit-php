@@ -65,6 +65,7 @@ $autoload['libraries'] = array(
     'authority',
     'assets',
     'template',
+    'status',
 );
 
 
@@ -83,7 +84,8 @@ $autoload['helper'] = array(
     'user',
     'authority',
     'assets',
-    'string'
+    'string',
+    'status',
 );
 
 

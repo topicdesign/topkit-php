@@ -71,7 +71,16 @@ class MY_Controller extends CI_Controller
         );
         add_assets($header_scripts, 'header');
 
-        add_assets('app.js');
+        $scripts = array(
+            'app.js',
+            'jquery.jnotify.js',
+        );
+        add_assets($scripts);
+
+        $styles = array(
+            'jquery.jnotify.css',
+        );
+        add_assets($styles);
     }
 
     // --------------------------------------------------------------------

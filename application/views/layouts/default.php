@@ -34,6 +34,8 @@
         <!--content-->
         <div id="content">
 
+            <?php echo display_status(); ?>
+
             <?php echo $template['body']; ?>
 
         </div>
