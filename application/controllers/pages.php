@@ -36,7 +36,16 @@ class Pages extends Public_Controller {
         // ensure this method is not being access directly
         if ($uri == $this->uri->ruri_string() OR ! Page::exists($uri))
         {
-            show_404();
+            // check for redirect
+            try 
+            {
+                $redirect = Redirect::find($uri);
+                redirect($redirect->target, 'location', $redirect->status_code);
+            } 
+            catch (ActiveRecord\RecordNotFound $ex)
+            {
+                show_404();
+            }
         }
         // get (published) page record 
         if (can('manage', 'page'))
