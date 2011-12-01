@@ -27,7 +27,6 @@ class Welcome extends Public_Controller {
      **/
     public function index()
     {
-        set_status('info','info!');
 		$this->template->build('welcome_message');
     }
 
