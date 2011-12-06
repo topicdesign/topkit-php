@@ -90,6 +90,10 @@ class Twitter {
 	 */
 	function initialize($config = array())
 	{
+       // Load the Rest library (dependant)
+       $CI =& get_instance();
+       $CI->load->library('Rest');
+
 		foreach ($config as $key => $val) {
 		    if (method_exists($this, 'set_'.$key)) {
 		        $this->{'set_'.$key}($val);
@@ -150,14 +154,15 @@ class Twitter {
                 }
             }
         }
-		
+		echo '<pre>';
 		// get tweet objects
         $tweets = array();
-		if ( ! empty($this->result)) {
-    		foreach ($this->result as $tweet) {
+		if ( ! empty($this->result) && ! empty($this->result['results'])) {
+    		foreach ($this->result['results'] as $tweet) {
     			$tweets[] = new TwitterTweet($tweet);
     		}
 		}
+        
 		return $tweets;
 	}
 	
@@ -214,7 +219,7 @@ class Twitter {
     // --------------------------------------------------------------------
 	
 	/**
-	 * convert result array into FlickrPhoto objects
+	 * convert result array into TwitterTweet objects
 	 *
 	 * @access	public 
 	 * @param	void
