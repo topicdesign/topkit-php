@@ -66,7 +66,7 @@ DirectoryIndex index.php
   # actual URL path not including the domain.com (or localhost).
   # This includes using a subdirectory on localhost, like
   # http://localhost/path/to/CI_Application/
-  RewriteBase /top/topkit/
+  RewriteBase /topkit/
 
   # If your application is at http://domain.com/ (or is http://localhost/)
   # then uncomment the following line.
