@@ -79,6 +79,10 @@ class Flickr {
 	 **/
 	public function __construct($config = array())
 	{
+		// Make sure the Rest library is loaded (dependant)
+		$CI =& get_instance();
+		$CI->load->library('Rest');
+		
 		$this->initialize($config);
 		
 		// load default params
