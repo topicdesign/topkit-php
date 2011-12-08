@@ -1,5 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
 /**
  * User
  *
@@ -8,8 +7,8 @@
  * @category    Authentication
  * @author      Topic Deisgn
  * @link        https://github.com/topicdesign/codeigniter-authentic-authentication
+ * @license     http://creativecommons.org/licenses/BSD/
  */
-
 class User extends \Authentic\User {
 
     # explicit table name  
@@ -46,10 +45,6 @@ class User extends \Authentic\User {
     // Public Methods
     // --------------------------------------------------------------------
 
-    public function foo()
-    {
-        return 'bar';
-    }
     // --------------------------------------------------------------------
     // Private/Protected Methods
     // --------------------------------------------------------------------

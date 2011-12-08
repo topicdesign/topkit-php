@@ -191,10 +191,13 @@ class Events extends Public_Controller {
     // --------------------------------------------------------------------
 
     /**
-     * undocumented function
+     * render events as a calendar view
      *
-     * @return void
-     * @author Jack Boberg
+     * @access  public
+     * @param   string  $year
+     * @param   string  $month
+     *
+     * @return  void
      **/
     public function calendar($year = NULL, $month = NULL)
     {
@@ -233,6 +236,9 @@ class Events extends Public_Controller {
             ->title($month->format('F, Y'), 'Events', config_item('site_title'))
             ->build('events/calendar', $data);
     }
+
+    // --------------------------------------------------------------------
+
 }
 /* End of file events.php */
 /* Location: ./application/controllers/events.php */

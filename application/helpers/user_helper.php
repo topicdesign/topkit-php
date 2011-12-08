@@ -7,6 +7,7 @@
  * @category	Authentication
  * @author		Topic Design
  * @link		https://github.com/topicdesign/codeigniter-authentic-authentication
+ * @license		http://creativecommons.org/licenses/BSD/
  */
 
 // ------------------------------------------------------------------------

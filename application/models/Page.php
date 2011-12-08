@@ -1,5 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+/**
+ * Page
+ *
+ * @package     CodeIgniter
+ * @subpackage  Models
+ * @author      Topic Deisgn
+ * @license     http://creativecommons.org/licenses/BSD/
+ */
 class Page extends ActiveRecord\Model {
 
     # explicit table name  

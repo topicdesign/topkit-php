@@ -5,6 +5,7 @@
  * @package		Application
  * @subpackage	Helpers
  * @author		Topic Design
+ * @license		http://creativecommons.org/licenses/BSD/
  */
 
 // ------------------------------------------------------------------------
