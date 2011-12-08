@@ -13,5 +13,8 @@ application/config/local/database.php
 application/config/development/database.php
 application/config/site.php
 
+*.min.*
 assets/cache/*
 !assets/cache/.folder
+
+application/config/flickr.php
