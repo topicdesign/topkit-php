@@ -27,12 +27,7 @@ class Pages extends Public_Controller {
      **/
     public function route()
     {
-        // prepend URI with a '/'
-        $uri = $this->uri->uri_string();
-        if (substr($uri, 0, 1) !== '/')
-        {
-            $uri = '/' . $uri;
-        }
+        $uri = uri_string();
         // ensure this method is not being access directly
         if ($uri == $this->uri->ruri_string() OR ! get_page())
         {
@@ -50,7 +45,6 @@ class Pages extends Public_Controller {
         $page = get_page();
         // output page template
         $this->template
-            //->title($page->title)
             ->build('pages/' . $page->view, array('page'=>$page));
     }
 

@@ -23,7 +23,6 @@ if ( ! function_exists('get_page'))
 {
 	function get_page()
     {
-        $CI = get_instance();
         if (function_exists('get_app'))
         {
             $obj = get_app();
@@ -35,14 +34,9 @@ if ( ! function_exists('get_page'))
         
         if ( ! isset($obj->page))
         {
-            $obj->page = FALSE;
-            // prepend URI with a '/'
-            $uri = $CI->uri->uri_string();
-            if (substr($uri, 0, 1) !== '/')
-            {
-                $uri = '/' . $uri;
-            }
-            if (Page::exists($uri))
+            $uri = uri_string();
+            // try to get the page
+            try
             {
                 // get (published) page record 
                 if (can('manage', 'page'))
@@ -53,6 +47,10 @@ if ( ! function_exists('get_page'))
                 {
                     $obj->page = Page::published($uri);    
                 }
+            }
+            catch (ActiveRecord\RecordNotFound $ex)
+            {
+                $obj->page = FALSE;
             }
         }
         return $obj->page;
