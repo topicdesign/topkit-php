@@ -18,3 +18,4 @@ assets/cache/*
 !assets/cache/.folder
 
 application/config/flickr.php
+application/config/twitter.php
