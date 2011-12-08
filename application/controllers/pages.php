@@ -27,14 +27,9 @@ class Pages extends Public_Controller {
      **/
     public function route()
     {
-        // prepend URI with a '/'
-        $uri = $this->uri->uri_string();
-        if (substr($uri, 0, 1) !== '/')
-        {
-            $uri = '/' . $uri;
-        }
+        $uri = uri_string();
         // ensure this method is not being access directly
-        if ($uri == $this->uri->ruri_string() OR ! Page::exists($uri))
+        if ($uri == $this->uri->ruri_string() OR ! get_page())
         {
             // check for redirect
             try 
@@ -47,22 +42,9 @@ class Pages extends Public_Controller {
                 show_404();
             }
         }
-        // get (published) page record 
-        if (can('manage', 'page'))
-        {
-            $page = Page::find($uri);
-        }
-        else
-        {
-            $page = Page::published($uri);    
-        }
-        if ( ! $page)
-        {
-            show_404();
-        }
+        $page = get_page();
         // output page template
         $this->template
-            ->title($page->title)
             ->build('pages/' . $page->view, array('page'=>$page));
     }
 

@@ -35,11 +35,16 @@ class MY_Controller extends CI_Controller
 	 * @return	void
 	 **/
 	protected function init_template()
-	{
-		$this->template
-            ->title(config_item('site_title'))
-		    ->set_layout('default')
-            ;
+    {
+		$this->template->set_layout('default');
+        if ($page = get_page())
+        {
+            $this->template->title($page->title, config_item('site_title'));
+        }
+        else
+        {
+            $this->template->title(config_item('site_title'));
+        }
         // should we output analytics data
         $env = ( ! defined('ENVIRONMENT') || (defined('ENVIRONMENT') && ENVIRONMENT == 'production'));
         if (config_item('google_analytics_id') && $env)

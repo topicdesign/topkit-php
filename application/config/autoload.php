@@ -80,6 +80,7 @@ $autoload['libraries'] = array(
 
 $autoload['helper'] = array(
     'app',
+    'page',
     'url',
     'user',
     'authority',
