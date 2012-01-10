@@ -62,7 +62,6 @@ $autoload['libraries'] = array(
     'session',
     'PHPActiveRecord',
     'authentic',
-    'authority',
     'assets',
     'template',
     'status',
