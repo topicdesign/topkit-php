@@ -21,8 +21,6 @@
 	-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <?php echo get_styles() . get_scripts('header'); ?>
-
 </head>
 <body>
 
@@ -46,7 +44,6 @@
     </div>
     <!--/container-->
 
-    <?php echo get_scripts('jquery', array('combine'=>FALSE)) . get_scripts(); ?>
     <?php if (isset($template['partials']['analytics'])) echo $template['partials']['analytics']; ?>
 
 </body>

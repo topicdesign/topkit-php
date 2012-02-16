@@ -21,7 +21,6 @@ class MY_Controller extends CI_Controller
         parent::__construct();
 
         $this->init_template();
-        $this->init_assets();
     }
 
     // --------------------------------------------------------------------
@@ -51,41 +50,6 @@ class MY_Controller extends CI_Controller
         {
             $this->template->set_partial('analytics', '_partials/analytics');
         }
-    }
-
-    // --------------------------------------------------------------------
-
-    /**
-     * build global asset groups
-     *
-     * @access  protected
-     * @param   void
-     *
-     * @return  void
-     **/
-    protected function init_assets()
-    {
-        $jquery = array(
-            'http://code.jquery.com/jquery-1.7.js' => 'http://code.jquery.com/jquery-1.7.min.js',
-            'http://code.jquery.com/ui/1.8.16/jquery-ui.js' => 'http://code.jquery.com/ui/1.8.16/jquery-ui.min.js'
-        );
-        add_assets($jquery, 'jquery');
-
-        $header_scripts = array(
-           'http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js' => 'modernizr.min.js'
-        );
-        add_assets($header_scripts, 'header');
-
-        $scripts = array(
-            'app.js',
-            'jquery.jnotify.js',
-        );
-        add_assets($scripts);
-
-        $styles = array(
-            'jquery.jnotify.css',
-        );
-        add_assets($styles);
     }
 
     // --------------------------------------------------------------------
@@ -133,25 +97,6 @@ class Public_Controller extends MY_Controller
 		    ->set_partial('footer', '_partials/footer')
 		    ;
     }
-
-    // --------------------------------------------------------------------
-
-    /**
-     * build public asset groups
-     *
-     * @access  protected
-     * @param   void
-     *
-     * @return  void
-     **/
-    protected function init_assets()
-    {
-        parent::init_assets();
-
-        add_assets('jquery-ui-1.8.16.css');
-    }
-
-    // --------------------------------------------------------------------
 
 } // END class Public_Controller extends MY_Controller
 
