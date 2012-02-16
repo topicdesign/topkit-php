@@ -83,6 +83,7 @@ $autoload['helper'] = array(
     'authority',
     'string',
     'status',
+    'assets',
 );
 
 
