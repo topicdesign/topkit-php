@@ -1,6 +1,3 @@
-Action php5-script /gs-bin/php5-latest
-AddHandler php5-script .php
-
 #-------------------------------------------------------------------------------
 #       CodeIgniter .htaccess file for the main index.php directory
 #-------------------------------------------------------------------------------

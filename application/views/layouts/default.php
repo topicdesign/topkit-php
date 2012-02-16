@@ -21,6 +21,12 @@
 	-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="<?php echo site_url('assets/styles/screen.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="<?php echo site_url('assets/styles/print.css'); ?>" media="print" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 8]>
+        <link href="<?php echo site_url('assets/styles/ie.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
 </head>
 <body>
 

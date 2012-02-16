@@ -11,3 +11,5 @@ application/logs/*
 *.min.*
 assets/cache/*
 !assets/cache/.folder
+
+assets/styles/.sass-cache/*
