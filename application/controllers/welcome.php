@@ -32,11 +32,6 @@ class Welcome extends Public_Controller {
 
     // --------------------------------------------------------------------
 
-    public function foo()
-    {
-        $this->load->helper('assets');
-        echo get_asset('assets/scripts/app.js');
-    }
 }
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
