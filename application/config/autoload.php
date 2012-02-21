@@ -39,6 +39,7 @@
 
 $autoload['packages'] = array(
     APPPATH.'third_party/php-activerecord',
+    APPPATH.'third_party/articles',
     APPPATH.'third_party/authentic',
     APPPATH.'third_party/authority',
     APPPATH.'third_party/template',
