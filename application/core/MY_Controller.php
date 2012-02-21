@@ -123,6 +123,8 @@ class Admin_Controller extends MY_Controller
         parent::__construct();
 
         $this->require_login();
+        $this->load->helper('admin');
+        $this->lang->load('admin');
     }
 
     // --------------------------------------------------------------------
@@ -141,6 +143,27 @@ class Admin_Controller extends MY_Controller
         {
             redirect('login');
         }
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+	 * initialize admin template settings
+	 *
+	 * @access	protected 
+     * @param	void
+     *
+	 * @return	void
+	 **/
+	protected function init_template()
+    {
+        $this->template
+            ->title('Admin', config_item('site_title'))
+            ->set_layout('admin')
+		    ->set_partial('header', '_partials/admin_header')
+		    ->set_partial('footer', '_partials/admin_footer')
+		    ->set_partial('sidebar', '_partials/admin_sidebar')
+            ;
     }
 
 } // END class Admin_Controller extends MY_Controller

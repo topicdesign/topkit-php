@@ -30,6 +30,33 @@ if ( ! function_exists('get_app'))
 	}
 }
 
+// --------------------------------------------------------------------
+
+/**
+ * generate a string for the site copyright year(s)
+ *
+ * @access	public
+ * @param	void
+ *
+ * @return	string
+ **/
+if ( ! function_exists('copy_year'))
+{
+    function copy_year()
+    {
+        $this_year = date('Y');
+        $copy_year = config_item('site_copy_year') ?
+            config_item('site_copy_year') :
+            $this_year;
+
+        if ($this_year != $copy_year) {
+            $copy_year .= '&ndash;' . $this_year;
+        }
+
+        return $copy_year;
+    }
+}
+
 // ------------------------------------------------------------------------
 
 /* End of file app_helper.php */
