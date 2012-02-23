@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------
 
 /**
- * return cachebusted url for asset
+ * return cache-busted url for asset
  *
  * @access  public
  * @param   string  $file      path to asset
@@ -22,15 +22,15 @@ if ( ! function_exists('get_asset'))
 {
 	function get_asset($file)
     {
-        $CI = get_instance();
-        $CI->load->helper('file');
-        $info = get_file_info($file);
-        if ( ! $info) 
+        if ( ! is_file(FCPATH . $file))
         {
             return FALSE;
         }
-        $dot = strrpos($file, '.');
-        return substr($file, 0, $dot+1) . $info['date'] . substr($file, $dot);
+        $dot_pos = strrpos($file, '.');
+        $base = substr($file, 0, $dot_pos);
+        $ext = substr($file, $dot_pos+1);
+
+        return sprintf('%s.%s.%s', $base, filemtime(FCPATH.$file), $ext);
 	}
 }
 

@@ -27,6 +27,9 @@
         <link href="<?php echo get_asset('assets/styles/ie.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
 
+    <script src="<?php echo site_url('assets/scripts/libs/modernizr.min.js'); ?>"></script>
+    <script src="<?php echo site_url('assets/scripts/libs/respond.min.js'); ?>"></script>
+
 </head>
 <body>
 
@@ -49,6 +52,10 @@
 
     </div>
     <!--/container-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="<?php echo site_url('assets/scripts/libs/jquery.min.js'); ?>"><\/script>')</script>
+    <script src="<?php echo get_asset('assets/scripts/public.min.js'); ?>"></script>
 
     <?php if (isset($template['partials']['analytics'])) echo $template['partials']['analytics']; ?>
 
