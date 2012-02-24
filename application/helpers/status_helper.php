@@ -49,5 +49,5 @@ function display_status($type = NULL)
 }
 
 // ------------------------------------------------------------------------
-
-// end file ./helpers/status_helper.php
+/* End of file status_helper.php */
+/* Location: ./helpers/status_helper.php */

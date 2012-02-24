@@ -35,6 +35,5 @@ if ( ! function_exists('get_asset'))
 }
 
 // ------------------------------------------------------------------------
-
 /* End of file assets_helper.php */
 /* Location: ./helpers/assets_helper.php */
