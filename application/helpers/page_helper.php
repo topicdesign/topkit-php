@@ -10,28 +10,26 @@
 // ------------------------------------------------------------------------
 
 /**
- * get an instance of the current page object
+ * get an instance of the current (published) page object
  * attempt to instantiate one if needed
  *
  * @access	public
- * @param	void
+ * @param	bool    $pub    allow unpublished page
  *
  * @return	mixed   object  ActiveRecord Page object
  *                  bool
  */
 if ( ! function_exists('get_page'))
 {
-	function get_page()
+	function get_page($pub = FALSE)
     {
         $app = get_app();
         if ( ! isset($app->page))
         {
             $uri = uri_string();
-            // try to get the page
             try
             {
-                // get (published) page record 
-                if (can('manage', 'page'))
+                if (can('manage', 'page') OR $pub === TRUE)
                 {
                     $app->page = Page::find($uri);
                 }
@@ -40,7 +38,7 @@ if ( ! function_exists('get_page'))
                     $app->page = Page::published($uri);    
                 }
             }
-            catch (ActiveRecord\RecordNotFound $ex)
+            catch (ActiveRecord\RecordNotFound $e)
             {
                 $app->page = FALSE;
             }
@@ -104,7 +102,7 @@ if ( ! function_exists('page_description'))
 {
     function page_description()
     {
-        // todo: recursively check 'parent' URIs
+        // TODO: recursively check 'parent' URIs?
         // use the site default
         if (get_page() && get_page()->description)
         {
@@ -132,6 +130,7 @@ if ( ! function_exists('page_keywords'))
 {
     function page_keywords()
     {
+        // TODO: recursively check 'parent' URIs?
         // use the site default
         if (get_page() && get_page()->keywords)
         {
@@ -148,7 +147,7 @@ if ( ! function_exists('page_keywords'))
 // --------------------------------------------------------------------
 
 /**
- * generate a class based current URI
+ * generate a class based on current URI
  *
  * @access  public
  * @param   void
