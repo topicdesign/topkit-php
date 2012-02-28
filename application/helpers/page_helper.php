@@ -186,6 +186,28 @@ if ( ! function_exists('page_class'))
     }
 }
 
+// --------------------------------------------------------------------
+
+/**
+ * get view file for static page
+ *
+ * @access  public 
+ * @param   string  $uri
+ *
+ * @return  string
+ **/
+if ( ! function_exists('static_page'))
+{
+    function static_page($uri)
+    {
+        if ( ! is_file(APPPATH . 'views/' . config_item('static_page_dir') . $uri . '.php'))
+        {
+            return FALSE;
+        }
+        return $dir . $uri;
+    }
+}
+
 // ------------------------------------------------------------------------
 /* End of file page_helper.php */
 /* Location: ./helpers/page_helper.php */
