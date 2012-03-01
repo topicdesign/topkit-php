@@ -27,20 +27,30 @@ if ( ! function_exists('get_page'))
         if ( ! isset($app->page))
         {
             $uri = uri_string();
-            try
+            if ($view = static_page($uri))
             {
-                if (can('manage', 'page') OR $pub === TRUE)
-                {
-                    $app->page = Page::find($uri);
-                }
-                else
-                {
-                    $app->page = Page::published($uri);    
-                }
+                $app->page = new Page();
+                $app->page->view = 'default';
+                $ci = get_instance();
+                $app->page->content = $ci->load->view($view, FALSE, TRUE);
             }
-            catch (ActiveRecord\RecordNotFound $e)
+            else 
             {
-                $app->page = FALSE;
+                try
+                {
+                    if (can('manage', 'page') OR $pub === TRUE)
+                    {
+                        $app->page = Page::find($uri);
+                    }
+                    else
+                    {
+                        $app->page = Page::published($uri);    
+                    }
+                }
+                catch (ActiveRecord\RecordNotFound $e)
+                {
+                    $app->page = FALSE;
+                }
             }
         }
         return $app->page;
@@ -200,7 +210,12 @@ if ( ! function_exists('static_page'))
 {
     function static_page($uri)
     {
-        if ( ! is_file(APPPATH . 'views/' . config_item('static_page_dir') . $uri . '.php'))
+        if (substr($uri,0,1) === '/')
+        {
+            $uri = substr($uri, 1);
+        }
+        $dir = config_item('static_page_dir');
+        if ( ! is_file(APPPATH . 'views/' . $dir . $uri . '.php'))
         {
             return FALSE;
         }

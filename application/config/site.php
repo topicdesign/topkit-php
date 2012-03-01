@@ -38,7 +38,7 @@ $config['developer_email'] = '';
  *
  * @var string
  **/
-$config['static_page_dir'] = 'pages/static/';
+$config['static_page_dir'] = 'static/';
 
 // --------------------------------------------------------------------
 // Do not edit below this line, managed by CMS
