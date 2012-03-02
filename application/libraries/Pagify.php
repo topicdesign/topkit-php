@@ -147,7 +147,7 @@ class Pagify
     public function get_links()
     {
         // only one page, don't output anything
-        if ($this->last_page_number == 1)
+        if ($this->last_page_number <= 1)
         {
             return '';
         }
