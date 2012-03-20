@@ -10,3 +10,6 @@
 [submodule "application/third_party/template"]
 	path = application/third_party/template
 	url = git://github.com/topicdesign/codeigniter-template.git
+[submodule "application/third_party/page"]
+	path = application/third_party/page
+	url = git://github.com/topicdesign/topkit-page.git
