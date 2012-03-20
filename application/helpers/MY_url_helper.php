@@ -10,19 +10,20 @@
  */
 
 // ------------------------------------------------------------------------
+
 /**
- * URL String
- *
- * Returns the URI segments.
+ * Returns the URI segments, ensure leading /
  *
  * @access	public
+ * @param   void
+ *
  * @return	string
  */
 if ( ! function_exists('uri_string'))
 {
 	function uri_string()
 	{
-		$CI =& get_instance();
+		$CI = get_instance();
         // prepend URI with a '/'
         $uri = $CI->uri->uri_string();
         if (substr($uri, 0, 1) !== '/')
@@ -32,6 +33,7 @@ if ( ! function_exists('uri_string'))
 		return $uri;
 	}
 }
+
 // --------------------------------------------------------------------
 /* End of file MY_url_helper.php */
 /* Location: ./helpers/MY_url_helper.php */

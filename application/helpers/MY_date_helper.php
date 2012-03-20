@@ -36,6 +36,5 @@ if ( ! function_exists('local_datetime'))
 }
 
 // --------------------------------------------------------------------
-
 /* End of file MY_date_helper.php */
 /* Location: ./helpers/MY_date_helper.php */

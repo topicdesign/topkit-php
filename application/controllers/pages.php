@@ -29,7 +29,7 @@ class Pages extends Public_Controller {
     {
         $uri = uri_string();
         // ensure this method is not being access directly
-        if ($uri == $this->uri->ruri_string() OR ! get_page())
+        if ($uri == $this->uri->ruri_string() OR ! $this->page->exists)
         {
             // check for redirect
             try 
@@ -42,10 +42,9 @@ class Pages extends Public_Controller {
                 show_404();
             }
         }
-        $page = get_page();
         // output page template
-        $this->template
-            ->build('pages/' . $page->view, array('page'=>$page));
+        $this->page
+            ->build('pages/' . $this->page->view, array('page'=>$this->page));
     }
 
     // --------------------------------------------------------------------

@@ -13,6 +13,15 @@
 /**
  * return cache-busted url for asset
  *
+ *   /path/foo.min.css => /path/foo.min.123456.css
+ *
+ *   .htaccess:
+ *   <IfModule mod_rewrite.c>
+ *     RewriteCond %{REQUEST_FILENAME} !-f
+ *     RewriteCond %{REQUEST_FILENAME} !-d
+ *     RewriteRule ^(.+)\.(\d+)\.(js|css|png|jpg|gif)$ $1.$3 [L]
+ *   </IfModule>
+ *
  * @access  public
  * @param   string  $file      path to asset
  *
@@ -35,6 +44,5 @@ if ( ! function_exists('get_asset'))
 }
 
 // ------------------------------------------------------------------------
-
 /* End of file assets_helper.php */
 /* Location: ./helpers/assets_helper.php */

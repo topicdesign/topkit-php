@@ -6,7 +6,7 @@ class Migration_Top_init extends CI_Migration {
     {        
         $this->add_redirects();
         $this->add_nonces();
-        $this->add_pages();
+        $this->add_documents();
         $this->add_permissions();
         $this->add_roles();
         $this->add_sessions();
@@ -285,13 +285,13 @@ class Migration_Top_init extends CI_Migration {
     // --------------------------------------------------------------------
 
     /**
-     * add pages table
+     * add documents table
      *
      * @param void
      *
      * @return void
      **/
-    private function add_pages()
+    private function add_documents()
     {
         $this->dbforge->add_field(array(
             'uri'   => array(
@@ -306,12 +306,19 @@ class Migration_Top_init extends CI_Migration {
                 'type'          => 'VARCHAR',
                 'constraint'    => '120'
             ),
-            'content'   => array(
+            'description'   => array(
+                'type'          => 'TEXT'
+            ),
+            'keywords'   => array(
+                'type'          => 'TEXT'
+            ),
+            'body'   => array(
                 'type'          => 'TEXT'
             ),
             'view'   => array(
                 'type'          => 'VARCHAR',
-                'constraint'    => '60'
+                'constraint'    => '60',
+                'default'       => 'default'
             ),
             'published_at' => array(
                 'type'          => 'DATETIME',
@@ -327,7 +334,7 @@ class Migration_Top_init extends CI_Migration {
             ),
         ));
         $this->dbforge->add_key('uri', TRUE);
-        $this->dbforge->create_table('pages');
+        $this->dbforge->create_table('documents');
     }
 
     // --------------------------------------------------------------------

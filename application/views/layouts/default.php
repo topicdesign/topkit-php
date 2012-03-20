@@ -12,7 +12,7 @@
 	<!--[if IE]><![endif]-->
 	
     <base href="<?php echo site_url(); ?>" />
-	<title><?php echo $template['title']; ?></title>
+	<title><?php echo page_title(); ?></title>
 
 	<!--  Mobile Viewport Fix j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
 		device-width : Occupy full width of the screen in its current orientation
@@ -36,19 +36,19 @@
     <!--container-->
     <div id="container">
 
-        <?php echo $template['partials']['header']; ?>
+        <?php echo page_partial('header'); ?>
 
         <!--content-->
         <div id="content">
 
             <?php echo display_status(); ?>
 
-            <?php echo $template['body']; ?>
+            <?php echo page_content(); ?>
 
         </div>
         <!--/content-->
 
-        <?php echo $template['partials']['footer']; ?>
+        <?php echo page_partial('footer'); ?>
 
     </div>
     <!--/container-->
@@ -57,7 +57,7 @@
     <script>window.jQuery || document.write('<script src="<?php echo site_url('assets/scripts/libs/jquery.min.js'); ?>"><\/script>')</script>
     <script src="<?php echo get_asset('assets/scripts/public.min.js'); ?>"></script>
 
-    <?php if (isset($template['partials']['analytics'])) echo $template['partials']['analytics']; ?>
+    <?php echo page_partial('analytics'); ?>
 
 </body>
 </html>
