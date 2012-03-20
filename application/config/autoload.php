@@ -42,7 +42,7 @@ $autoload['packages'] = array(
     APPPATH.'third_party/articles',
     APPPATH.'third_party/authentic',
     APPPATH.'third_party/authority',
-    APPPATH.'third_party/template',
+    APPPATH.'third_party/page',
     APPPATH.'third_party/events',
 );
 
@@ -63,8 +63,8 @@ $autoload['libraries'] = array(
     'session',
     'PHPActiveRecord',
     'authentic',
-    'template',
     'status',
+    'page',
 );
 
 

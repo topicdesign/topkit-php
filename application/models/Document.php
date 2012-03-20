@@ -1,16 +1,18 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 /**
- * Page
+ * Document
  *
  * @package     CodeIgniter
  * @subpackage  Models
  * @author      Topic Deisgn
  * @license     http://creativecommons.org/licenses/BSD/
  */
-class Page extends ActiveRecord\Model {
+
+class Document extends ActiveRecord\Model {
 
     # explicit table name  
-    //static $table_name = '';
+    static $table_name = 'documents';
 
     # explicit pk 
     static $primary_key = 'uri';
@@ -56,12 +58,14 @@ class Page extends ActiveRecord\Model {
 /**
  * SQL for table
 
-CREATE TABLE `pages` (
-  `uri` varchar(120) NOT NULL DEFAULT '',
-  `title` varchar(120) DEFAULT NULL,
-  `slug` varchar(120) DEFAULT NULL,
-  `content` text,
-  `view` varchar(60) DEFAULT NULL,
+CREATE TABLE `documents` (
+  `uri` varchar(120) NOT NULL,
+  `title` varchar(120) NOT NULL,
+  `slug` varchar(120) NOT NULL,
+  `description` text,
+  `keywords` text,
+  `body` text NOT NULL,
+  `view` varchar(60) NOT NULL DEFAULT 'default',
   `published_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -69,5 +73,5 @@ CREATE TABLE `pages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 **/
-/* End of file Page.php */
-/* Location: ./application/models/Page.php */
+/* End of file Document.php */
+/* Location: ./application/models/Document.php */

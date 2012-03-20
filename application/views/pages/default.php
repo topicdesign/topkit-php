@@ -1,6 +1,8 @@
 <section class="page">
     <header>
-        <h1><?php echo $page->title; ?></h1>
+        <h1><?php echo $page->header; ?></h1>
     </header> 
-    <article><?php echo $page->content; ?></article>
+    <article class="section-content">
+        <?php echo $page->body; ?>
+    </article>
 </section>

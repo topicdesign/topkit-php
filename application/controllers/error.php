@@ -40,7 +40,7 @@ class Error extends Public_Controller {
 
         if (isset($err['heading']))
         {
-            $this->template->title($err['heading'], config_item('site_title'));
+            $this->page->title($err['heading'], config_item('site_title'));
         }
         switch($err['template'])
         {
@@ -65,7 +65,7 @@ class Error extends Public_Controller {
      */
     private function error_general()
     {
-        $this->template
+        $this->page
             ->build('error/general');
     }
 
@@ -81,7 +81,7 @@ class Error extends Public_Controller {
      */
     private function error_404()
     {
-        $this->template
+        $this->page
             ->build('error/404');
     }
 
