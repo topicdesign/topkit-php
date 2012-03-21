@@ -89,6 +89,7 @@ class MY_Controller extends CI_Controller
         $this->page
             ->partial('header', '_partials/header')
             ->partial('footer', '_partials/footer')
+            ->title(config_item('site_title'))
             ;
         // should we output analytics data
         $env = ( ! defined('ENVIRONMENT') || (defined('ENVIRONMENT') && ENVIRONMENT == 'production'));

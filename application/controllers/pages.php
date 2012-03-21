@@ -74,10 +74,7 @@ class Pages extends Public_Controller {
         ));
         if (isset($err['heading']))
         {
-            $this->page->title(array(
-                config_item('site_title'),
-                $err['heading'],
-            ));
+            $this->page->title($err['heading']);
         }
         $this->page->build('pages/'. $err['template'], array('page'=>$this->page));
     }
