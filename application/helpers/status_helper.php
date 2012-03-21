@@ -4,11 +4,11 @@
  *
  * Contains shortcuts to well used Status library commands
  *
- * @package			BackendPro
- * @subpackage		Helpers
- * @author			Adam Price
- * @copyright		Copyright (c) 2007
- * @license			http://www.gnu.org/licenses/lgpl.html
+ * @package     BackendPro
+ * @subpackage  Helpers
+ * @author      Adam Price
+ * @copyright   Copyright (c) 2007
+ * @license     http://www.gnu.org/licenses/lgpl.html
  */
 
 // ------------------------------------------------------------------------
@@ -18,15 +18,17 @@
  *
  * Set a new flash message for the system
  *
- * @param string	$type		message type (info, success, error, warning)
- * @param string	$message	message
- * @return bool
+ * @param   string    $type     message type (info, success, error, warning)
+ * @param   string    $message  message
+ * @return  bool
  */
-function set_status($type=NULL, $message=NULL)
+if ( ! function_exists('set_status'))
 {
-	// get local instance of CodeIgniter
-	$CI =& get_instance();
-	return $CI->status->set($type, $message);
+    function set_status($type = NULL, $message = NULL)
+    {
+        $CI = get_instance();
+        return $CI->status->set($type, $message);
+    }
 }
 
 // ------------------------------------------------------------------------
@@ -38,14 +40,17 @@ function set_status($type=NULL, $message=NULL)
  * otherwise it will only show and remove that certain type of
  * message
  *
- * @access public
- * @param string $type Error type to display
- * @return string
+ * @access  public
+ * @param   string      $type   Error type to display
+ * @return  string
  */
-function display_status($type = NULL)
+if ( ! function_exists('display_status'))
 {
-	$obj = &get_instance();
-	return $obj->status->display($type);
+    function display_status($type = NULL)
+    {
+        $CI = get_instance();
+        return $CI->status->display($type);
+    }
 }
 
 // ------------------------------------------------------------------------

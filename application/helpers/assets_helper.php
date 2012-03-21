@@ -2,10 +2,10 @@
 /**
  * Assets Helpers
  *
- * @package		Assets
- * @subpackage	Helpers
- * @category	Asset Management
- * @license		http://creativecommons.org/licenses/BSD/
+ * @package     Assets
+ * @subpackage  Helpers
+ * @category    Asset Management
+ * @license     http://creativecommons.org/licenses/BSD/
  */
 
 // ------------------------------------------------------------------------
@@ -29,7 +29,7 @@
  */
 if ( ! function_exists('get_asset'))
 {
-	function get_asset($file)
+    function get_asset($file)
     {
         if ( ! is_file(FCPATH . $file))
         {
@@ -38,9 +38,8 @@ if ( ! function_exists('get_asset'))
         $dot_pos = strrpos($file, '.');
         $base = substr($file, 0, $dot_pos);
         $ext = substr($file, $dot_pos+1);
-
         return sprintf('%s.%s.%s', $base, filemtime(FCPATH.$file), $ext);
-	}
+    }
 }
 
 // --------------------------------------------------------------------

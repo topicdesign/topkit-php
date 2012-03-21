@@ -2,10 +2,10 @@
 /**
  * Date Helpers
  *
- * @package		Date
- * @subpackage	Helpers
- * @author		Jack Boberg
- * @license		http://creativecommons.org/licenses/BSD/
+ * @package     Date
+ * @subpackage  Helpers
+ * @author      Jack Boberg
+ * @license     http://creativecommons.org/licenses/BSD/
  */
 
 // --------------------------------------------------------------------
@@ -19,7 +19,7 @@
  *
  * @return  string
  **/
-if ( ! function_exists('local_datetime'))
+if ( ! function_exists('local_date_format'))
 {
     function local_date_format($date, $format=NULL)
     {
@@ -30,7 +30,6 @@ if ( ! function_exists('local_datetime'))
         $format = $format ?: config_item('site_date_format');
         // convert to local timezone
         $date->setTimezone(new DateTimeZone(config_item('site_timezone')));
-
         return $date->format($format);
     }
 }

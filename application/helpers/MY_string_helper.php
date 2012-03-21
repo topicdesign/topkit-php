@@ -2,13 +2,13 @@
 /**
  * String Helper
  *
- * @package		CodeIgniter
- * @subpackage	Helpers
- * @category	Helpers
+ * @package     CodeIgniter
+ * @subpackage  Helpers
+ * @category    Helpers
  *
- * @author		Jack Boberg
- * @copyright	( coded by hand ) 2010-02
- * @license		http://creativecommons.org/licenses/BSD/
+ * @author      Jack Boberg
+ * @copyright   ( coded by hand ) 2010-02
+ * @license     http://creativecommons.org/licenses/BSD/
  */
 
 // ------------------------------------------------------------------------
@@ -25,18 +25,18 @@
  **/
 if ( ! function_exists('html_word_limiter'))
 {
-	function html_word_limiter($string, $limit = FALSE)
-	{
-		if ($limit)
-		{
-			// limit output to specified word count
-			$CI = get_instance();
-			$CI->load->helper('text');
-			// close any tags left open
-			$string = closetags(word_limiter($string, $limit));	
-		}
-		return $string;
-	}
+    function html_word_limiter($string, $limit = FALSE)
+    {
+        if ($limit)
+        {
+            // limit output to specified word count
+            $CI = get_instance();
+            $CI->load->helper('text');
+            // close any tags left open
+            $string = closetags(word_limiter($string, $limit)); 
+        }
+        return $string;
+    }
 }
 
 // ------------------------------------------------------------------------
@@ -44,8 +44,8 @@ if ( ! function_exists('html_word_limiter'))
 /**
  * close all open xhtml tags at the end of the string
  *
- * 	suppose you have some html-formatted text of which you would like to show the first 45 characters.
- *	This function closes any tags that are not-closed because of cutting the first 45 characters.
+ *  suppose you have some html-formatted text of which you would like to show the first 45 characters.
+ *  This function closes any tags that are not-closed because of cutting the first 45 characters.
  *
  * @return string
  * @author pitje

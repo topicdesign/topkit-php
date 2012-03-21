@@ -2,11 +2,11 @@
 /**
  * URL Helpers
  *
- * @package		CodeIgniter
- * @subpackage	Helpers
- * @category	Helpers
+ * @package     CodeIgniter
+ * @subpackage  Helpers
+ * @category    Helpers
  * @author      Topic Design
- * @license		http://creativecommons.org/licenses/BSD/
+ * @license     http://creativecommons.org/licenses/BSD/
  */
 
 // ------------------------------------------------------------------------
@@ -14,24 +14,24 @@
 /**
  * Returns the URI segments, ensure leading /
  *
- * @access	public
+ * @access  public
  * @param   void
  *
- * @return	string
+ * @return  string
  */
 if ( ! function_exists('uri_string'))
 {
-	function uri_string()
-	{
-		$CI = get_instance();
+    function uri_string()
+    {
+        $CI = get_instance();
         // prepend URI with a '/'
         $uri = $CI->uri->uri_string();
         if (substr($uri, 0, 1) !== '/')
         {
             $uri = '/' . $uri;
         }
-		return $uri;
-	}
+        return $uri;
+    }
 }
 
 // --------------------------------------------------------------------

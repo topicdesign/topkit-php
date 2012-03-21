@@ -2,12 +2,12 @@
 /**
  * Authentic Helpers
  *
- * @package		Authentic
- * @subpackage	Helpers
- * @category	Authentication
- * @author		Topic Design
- * @link		https://github.com/topicdesign/codeigniter-authentic-authentication
- * @license		http://creativecommons.org/licenses/BSD/
+ * @package     Authentic
+ * @subpackage  Helpers
+ * @category    Authentication
+ * @author      Topic Design
+ * @link        https://github.com/topicdesign/codeigniter-authentic-authentication
+ * @license     http://creativecommons.org/licenses/BSD/
  */
 
 // ------------------------------------------------------------------------
@@ -16,14 +16,14 @@
  * get an instance of the current user object
  * attempt to instantiate one if needed
  *
- * @access	public
- * @param	void
+ * @access  public
+ * @param   void
  *
- * @return	mixed   object  ActiveRecord user object
+ * @return  mixed   object  ActiveRecord user object
  */
 if ( ! function_exists('get_user'))
 {
-	function get_user()
+    function get_user()
     {
         $app = get_app();
         if ( ! isset($app->user))
@@ -38,7 +38,7 @@ if ( ! function_exists('get_user'))
             }
         }
         return $app->user;
-	}
+    }
 }
 
 // ------------------------------------------------------------------------
