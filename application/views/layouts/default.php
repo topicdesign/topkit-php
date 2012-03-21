@@ -30,6 +30,8 @@
     <script src="<?php echo site_url('assets/scripts/libs/modernizr.min.js'); ?>"></script>
     <script src="<?php echo site_url('assets/scripts/libs/respond.min.js'); ?>"></script>
 
+    <?php echo page_metadata(); ?>
+
 </head>
 <body>
 
@@ -57,6 +59,7 @@
     <script>window.jQuery || document.write('<script src="<?php echo site_url('assets/scripts/libs/jquery.min.js'); ?>"><\/script>')</script>
     <script src="<?php echo get_asset('assets/scripts/public.min.js'); ?>"></script>
 
+    <?php echo page_partial('footer_scripts'); ?>
     <?php echo page_partial('analytics'); ?>
 
 </body>

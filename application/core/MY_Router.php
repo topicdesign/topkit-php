@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class MY_Router extends CI_Router {
-    
+
     /**
      * Constructor
      *
@@ -28,19 +28,13 @@ class MY_Router extends CI_Router {
      */
     function _validate_request($segments)
     {
-
         // Check for error flag
-       if (isset ($_SESSION['error']) )
+        if (isset ($_SESSION['error']) )
         {
-            // Uncomment if you need a sub-directory
-            //$this->set_directory('error');
-
-            // Error controller uses _remap so it's not callable by itself
-            // Supply bogus function to keep ci happy
-            $segments = array('error', 'placebo');
-            
+            // pass control to Pages controller 
+            $segments = array('pages', 'error');
             return $segments;
         }
-         return parent::_validate_request($segments);
+        return parent::_validate_request($segments);
     }
-} 
+}

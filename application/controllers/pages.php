@@ -49,6 +49,41 @@ class Pages extends Public_Controller {
 
     // --------------------------------------------------------------------
 
+    /**
+     * Shows error pages depending on the type of error
+     *
+     * @access  public
+     * @param   void
+     *
+     * @return  void
+     */
+    public function error()
+    {
+        if ( ! isset($_SESSION['error']))
+        {
+            show_404();
+        }
+        // capture/clear the error
+        $err = $_SESSION['error'];
+        unset($_SESSION['error']);
+        // build output
+        $this->output->set_status_header($err['status']);
+        $this->page->data(array(
+            'header'    => $err['heading'],
+            'body'      => "<p>{$err['message']}</p>"
+        ));
+        if (isset($err['heading']))
+        {
+            $this->page->title(array(
+                config_item('site_title'),
+                $err['heading'],
+            ));
+        }
+        $this->page->build('pages/'. $err['template'], array('page'=>$this->page));
+    }
+
+    // --------------------------------------------------------------------
+
 }
 /* End of file pages.php */
 /* Location: ./application/controllers/pages.php */

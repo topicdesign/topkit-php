@@ -43,6 +43,27 @@ if ( ! function_exists('get_asset'))
 	}
 }
 
+// --------------------------------------------------------------------
+
+/**
+ * add script to footer scripts partial
+ *
+ * @access  public 
+ * @param   string      $file   path to script 
+ * @return  void
+ **/
+if ( ! function_exists('add_script'))
+{
+    function add_script($file)
+    {
+        $CI = get_instance();
+        $page = $CI->page;
+        $scripts = $page->partial('footer_scripts');
+        $scripts .= sprintf('<script src="%s"></script>', get_asset($file));
+        $page->partial('footer_scripts', $scripts); 
+    }
+}
+
 // ------------------------------------------------------------------------
 /* End of file assets_helper.php */
 /* Location: ./helpers/assets_helper.php */

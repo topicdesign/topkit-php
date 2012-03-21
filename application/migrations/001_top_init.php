@@ -116,7 +116,7 @@ class Migration_Top_init extends CI_Migration {
     }
 
     // --------------------------------------------------------------------
-    
+
     /**
      * add sessions table
      *
@@ -252,7 +252,7 @@ class Migration_Top_init extends CI_Migration {
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->create_table('roles');
     }
-      
+
     // --------------------------------------------------------------------
 
     /**
@@ -281,7 +281,7 @@ class Migration_Top_init extends CI_Migration {
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->create_table('permissions');
     }
-    
+
     // --------------------------------------------------------------------
 
     /**
@@ -310,7 +310,8 @@ class Migration_Top_init extends CI_Migration {
                 'type'          => 'TEXT'
             ),
             'keywords'   => array(
-                'type'          => 'TEXT'
+                'type'          => 'TEXT',
+                'null'          => TRUE
             ),
             'body'   => array(
                 'type'          => 'TEXT'
@@ -335,6 +336,14 @@ class Migration_Top_init extends CI_Migration {
         ));
         $this->dbforge->add_key('uri', TRUE);
         $this->dbforge->create_table('documents');
+        // create root document
+        $doc = new Document();
+        $doc->uri = '/';
+        $doc->title = 'Welcome to Topkit';
+        $doc->slug = 'home';
+        $doc->body = "<p>The page you are looking at is being generated dynamically by CodeIgniter, using the <strong>topkit</strong> framework.</p><p>This page is beign rendered from the database by the <code>pages</code> Controller. It uses the default layout and the <code>views/pages/default.php</code> view.</p>";
+        $doc->published_at = date_create();
+        $doc->save();
     }
 
     // --------------------------------------------------------------------
@@ -372,7 +381,7 @@ class Migration_Top_init extends CI_Migration {
     }
 
     // --------------------------------------------------------------------
-    
+
     /**
      * create redirects table
      *
