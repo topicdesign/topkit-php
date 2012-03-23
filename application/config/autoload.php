@@ -79,6 +79,7 @@ $autoload['libraries'] = array(
 
 $autoload['helper'] = array(
     'app',
+    'date',
     'page',
     'url',
     'user',
