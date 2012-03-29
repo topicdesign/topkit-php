@@ -12,7 +12,7 @@
 	<!--[if IE]><![endif]-->
 	
     <base href="<?php echo site_url(); ?>" />
-	<title><?php echo $template['title']; ?></title>
+	<title><?php echo page_title(); ?></title>
 
 	<!--  Mobile Viewport Fix j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
 		device-width : Occupy full width of the screen in its current orientation
@@ -23,6 +23,8 @@
 
     <link href="<?php echo get_asset('assets/styles/screen.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="<?php echo get_asset('assets/styles/print.css'); ?>" media="print" rel="stylesheet" type="text/css" />
+    <link href="<?php echo get_asset('assets/styles/admin.css'); ?>" media="print" rel="stylesheet" type="text/css" />
+    <link href="<?php echo get_asset('assets/styles/admin-responsive.css'); ?>" media="print" rel="stylesheet" type="text/css" />
     <!--[if lt IE 8]>
         <link href="<?php echo get_asset('assets/styles/ie.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
@@ -33,19 +35,19 @@
     <!--container-->
     <div id="container" class="binding">
 
-        <?php echo $template['partials']['header']; ?>
+        <?php echo page_partial('header'); ?>
 
         <!--content-->
         <div id="content">
 
             <?php echo display_status(); ?>
 
-            <?php echo $template['partials']['sidebar']; ?>
+            <?php echo page_partial('sidebar'); ?>
 
             <!--main-->
             <div id="main" class="inline_grid last">
 
-                <?php echo $template['body']; ?>
+                <?php echo page_content(); ?>
 
             </div>
             <!--/main-->
@@ -55,10 +57,15 @@
         </div>
         <!--/content-->
 
-        <?php echo $template['partials']['footer']; ?>
+        <?php echo page_partial('footer'); ?>
 
     </div>
     <!--/container-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="<?php echo site_url('assets/scripts/libs/jquery.min.js'); ?>"><\/script>')</script>
+
+    <?php echo page_partial('admin_scripts'); ?>
 
 </body>
 </html>

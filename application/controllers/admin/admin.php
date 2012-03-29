@@ -13,6 +13,7 @@ class Admin extends Admin_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->page->layout = 'admin';
     }
 
     // --------------------------------------------------------------------
@@ -27,7 +28,7 @@ class Admin extends Admin_Controller {
      **/
     public function index()
     {
-        $this->template->build('admin/admin_dashboard.php');
+        $this->page->build('admin/admin_dashboard.php');
     }
 
     // --------------------------------------------------------------------
@@ -67,7 +68,7 @@ class Admin extends Admin_Controller {
                 set_status('error', $e);
             }
             $data['user'] = get_user();
-            $this->template->build('admin/account.php', $data);
+            $this->page->build('admin/account.php', $data);
         }
         else
         {
