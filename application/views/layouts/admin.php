@@ -21,10 +21,8 @@
 	-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="<?php echo get_asset('assets/styles/screen.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
-    <link href="<?php echo get_asset('assets/styles/print.css'); ?>" media="print" rel="stylesheet" type="text/css" />
-    <link href="<?php echo get_asset('assets/styles/admin.css'); ?>" media="print" rel="stylesheet" type="text/css" />
-    <link href="<?php echo get_asset('assets/styles/admin-responsive.css'); ?>" media="print" rel="stylesheet" type="text/css" />
+    <link href="<?php echo get_asset('assets/styles/admin.css'); ?>" media="screen" rel="stylesheet" type="text/css" />
+    <link href="<?php echo get_asset('assets/styles/admin-responsive.css'); ?>" media="screen" rel="stylesheet" type="text/css" />
     <!--[if lt IE 8]>
         <link href="<?php echo get_asset('assets/styles/ie.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
@@ -33,26 +31,24 @@
 <body class="admin">
 
     <!--container-->
-    <div id="container" class="binding">
+    <div id="container" class="binding container-fluid">
 
         <?php echo page_partial('header'); ?>
 
         <!--content-->
-        <div id="content">
+        <div id="content" class="row-fluid">
 
             <?php echo display_status(); ?>
 
             <?php echo page_partial('sidebar'); ?>
 
             <!--main-->
-            <div id="main" class="inline_grid last">
+            <div id="main" class="inline_grid last span10">
 
                 <?php echo page_content(); ?>
 
             </div>
             <!--/main-->
-
-            <div class="clear">&nbsp;</div>
 
         </div>
         <!--/content-->

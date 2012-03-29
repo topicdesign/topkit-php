@@ -3,7 +3,7 @@
         <h1>Dashboard</h1>
     </header>
     <div class="section-content">
-        <ul>
+        <ul class="unstyled">
             <li id="dashboard-analytics">
                 <a href="http://www.google.com/analytics/" data-role="button" rel="external"><?php echo lang('dashboard_analytics') ?></a>
             </li>

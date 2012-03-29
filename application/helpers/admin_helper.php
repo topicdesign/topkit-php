@@ -56,7 +56,7 @@ function get_module_menu($links) {
             }
         }
         // add link
-        $menu[] = anchor($l['url'], $l['label'], $attributes);
+        $menu[] = '<li>'.anchor($l['url'], $l['label'], $attributes).'</li>';
     }
     return implode("\n", $menu);
 }
