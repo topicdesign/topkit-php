@@ -19,36 +19,83 @@ class MY_Controller extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
-        $this->init_template();
+        $this->init_page();
+        $this->init_partials();
     }
 
     // --------------------------------------------------------------------
 
     /**
-	 * initialize template settings
+     * initialize page properties
+     *
+     * @access  public 
+     * @param   void 
+     * @return  void
+     **/
+    public function init_page()
+    {
+        // find all documents in this URL path
+        // TODO: move this to model method, support 'published'/can('manage','page')
+        $paths = array();
+        $uri = uri_string();
+        while (strlen($uri) > 1)
+        {
+            $paths[] = $uri;
+            $uri = substr($uri, 0, strrpos($uri, '/'));
+        }
+        $paths[] = '/';
+        $opts = array(
+            'conditions' => array('uri IN (?)',$paths),
+            'order' => 'CHAR_LENGTH(uri) DESC'
+        );
+        $docs = Document::all($opts);
+        // does the requested URI exist?
+        if ($this->page->exists = ($docs[0]->uri == uri_string()))
+        {
+            $this->page->view = $docs[0]->view;
+        }
+        // set params from nearest document
+        $params = array(
+            'header' => 'title',
+            'body',
+            'keywords',
+            'description'
+        );
+        foreach ($params as $key => $value)
+        {
+            foreach ($docs as $d)
+            {
+                if ( ! empty($d->$value))
+                {
+                    $pkey = is_string($key) ? $key : $value;
+                    $this->page->$pkey = $d->$value;
+                    break;
+                }
+            }
+        }
+    }
+    // --------------------------------------------------------------------
+
+    /**
+	 * initialize global partials
 	 *
 	 * @access	protected 
      * @param	void
      *
 	 * @return	void
 	 **/
-	protected function init_template()
+	protected function init_partials()
     {
-		$this->template->set_layout('default');
-        if ($page = get_page())
-        {
-            $this->template->title($page->title, config_item('site_title'));
-        }
-        else
-        {
-            $this->template->title(config_item('site_title'));
-        }
+        $this->page
+            ->partial('header', '_partials/header')
+            ->partial('footer', '_partials/footer')
+            ->title(config_item('site_title'))
+            ;
         // should we output analytics data
         $env = ( ! defined('ENVIRONMENT') || (defined('ENVIRONMENT') && ENVIRONMENT == 'production'));
         if (config_item('google_analytics_id') && $env)
         {
-            $this->template->set_partial('analytics', '_partials/analytics');
+            $this->page->partial('analytics', '_partials/analytics');
         }
     }
 

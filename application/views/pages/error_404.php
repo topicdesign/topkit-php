@@ -1,7 +1,7 @@
-<section class="page">
+<section id="error_404" class="page error">
     <header>
         <h1><?php echo $page->header; ?></h1>
-    </header> 
+    </header>
     <article class="section-content">
         <?php echo $page->body; ?>
     </article>
