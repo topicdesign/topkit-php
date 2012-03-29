@@ -1,4 +1,4 @@
-<aside id="sidebar" class="inline_grid first span2">
+<aside id="sidebar" class="span2">
 	<ul id="modules" type="toolbar" class="nav nav-tabs nav-stacked">
 	    <li><a href="<?php echo site_url('admin'); ?>" data-role="button">Dashboard</a></li>
         <?php

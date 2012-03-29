@@ -31,7 +31,7 @@
 <body class="admin">
 
     <!--container-->
-    <div id="container" class="binding container-fluid">
+    <div id="container" class="container-fluid">
 
         <?php echo page_partial('header'); ?>
 
@@ -43,7 +43,7 @@
             <?php echo page_partial('sidebar'); ?>
 
             <!--main-->
-            <div id="main" class="inline_grid last span10">
+            <div id="main" class="span10">
 
                 <?php echo page_content(); ?>
 
