@@ -43,7 +43,7 @@ $config['static_page_dir'] = 'pages/static/';
 // --------------------------------------------------------------------
 // Do not edit below this line, managed by CMS
 // --------------------------------------------------------------------
-$config['site_title'] = 'Topkit';
+$config['site_title'] = 'Leddfoot';
 $config['site_description'] = '';
 $config['site_owner_title'] = '';
 $config['site_owner_url'] = '';
