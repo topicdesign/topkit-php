@@ -210,8 +210,9 @@ class Admin_Controller extends MY_Controller
 		    ->partial('header', '_partials/admin_header')
 		    ->partial('footer', '_partials/admin_footer')
 		    ->partial('sidebar', '_partials/admin_sidebar')
-            ->partial('admin_scripts', '_partials/admin_scripts')
+            //->partial('admin_scripts', '_partials/admin_scripts')
             ;
+        add_script('admin.min.js');
     }
 
 } // END class Admin_Controller extends MY_Controller

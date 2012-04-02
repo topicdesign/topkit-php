@@ -41,6 +41,8 @@
 $route['default_controller'] = "pages/route";
 $route['404_override'] = 'pages/route';
 
+$route['admin'] = 'admin/admin/index';
+
 $route['logout'] = 'login/logout';
 
 $route['articles(.*)'] = "articles$1";

@@ -1,0 +1,17 @@
+#!import libs/bootstrap/bootstrap-alert.min.js
+#!import libs/bootstrap/bootstrap-button.min.js
+#!import libs/bootstrap/bootstrap-carousel.min.js
+#!import libs/bootstrap/bootstrap-collapse.min.js
+#!import libs/bootstrap/bootstrap-dropdown.min.js
+#!import libs/bootstrap/bootstrap-modal.min.js
+#!import libs/bootstrap/bootstrap-tooltip.min.js
+#!import libs/bootstrap/bootstrap-popover.min.js
+#!import libs/bootstrap/bootstrap-scrollspy.min.js
+#!import libs/bootstrap/bootstrap-tab.min.js
+#!import libs/bootstrap/bootstrap-transition.min.js
+#!import libs/bootstrap/bootstrap-typeahead.min.js
+
+$(document).ready(function(){
+    // jquery is ready
+    console.log('admin loaded.');
+});

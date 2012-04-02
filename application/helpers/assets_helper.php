@@ -58,6 +58,7 @@ if ( ! function_exists('add_script'))
         $CI = get_instance();
         $page = $CI->page;
         $scripts = $page->partial('footer_scripts');
+        $file = 'assets/scripts/' . $file;
         $scripts .= sprintf('<script src="%s"></script>', get_asset($file));
         $page->partial('footer_scripts', $scripts); 
     }
