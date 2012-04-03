@@ -245,7 +245,7 @@ class Migration_Top_init extends CI_Migration {
                 'constraint'    => '11',
                 'unsigned'      => TRUE
             ),
-            'created_ad'    => array(
+            'created_at'    => array(
                 'type'          => 'DATETIME'
             )
         ));

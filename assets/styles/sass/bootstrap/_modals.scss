@@ -22,9 +22,8 @@
   &.fade { opacity: 0; }
 }
 
-.modal-backdrop,
-.modal-backdrop.fade.in {
-  @include opacity(80);
+.modal-backdrop, .modal-backdrop.fade.in {
+  @include opacity(0.8);
 }
 
 // Base modal
@@ -57,14 +56,14 @@
   .close { margin-top: 2px; }
 }
 
-// Body (where all modal content resises)
+// Body (where all modal content resides)
 .modal-body {
   overflow-y: auto;
   max-height: 400px;
   padding: 15px;
 }
 // Remove bottom margin if need be
-.modal-body .modal-form {
+.modal-form {
   margin-bottom: 0;
 }
 

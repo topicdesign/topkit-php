@@ -6,7 +6,7 @@
 // -------------
 
 .navbar {
-  // Fix for IE7's bad z-indexing so dropdowns don't appear below content that follows the navbar
+  // Fix for IE7's bad indexing so dropdowns don't appear below content that follows the navbar
   *position: relative;
   *z-index: 2;
 
@@ -16,7 +16,7 @@
 
 // Gradient is applied to it's own element because overflow visible is not honored by IE when filter is present
 .navbar-inner {
-  padding-left:  20px;
+  padding-left: 20px;
   padding-right: 20px;
   @include gradient-vertical($navbarBackgroundHighlight, $navbarBackground);
   @include border-radius(4px);
@@ -82,8 +82,7 @@
     line-height: $navbarHeight;
   }
   // Buttons in navbar
-  .btn,
-  .btn-group {
+  .btn, .btn-group {
     @include navbarVerticalAlign(30px); // Vertically center in navbar
   }
   .btn-group .btn {
@@ -95,28 +94,21 @@
 .navbar-form {
   margin-bottom: 0; // remove default bottom margin
   @include clearfix();
-  input,
-  select,
-  .radio,
-  .checkbox {
+  input, select, .radio, .checkbox {
     @include navbarVerticalAlign(30px); // Vertically center in navbar
   }
-  input,
-  select {
+  input, select {
     display: inline-block;
     margin-bottom: 0;
   }
-  input[type="image"],
-  input[type="checkbox"],
-  input[type="radio"] {
+  input[type="image"], input[type="checkbox"], input[type="radio"] {
     margin-top: 3px;
   }
-  .input-append,
-  .input-prepend {
+  .input-append, .input-prepend {
     margin-top: 6px;
-    white-space: nowrap; // preven two  items from separating within a .navbar-form that has .pull-left
+    white-space: nowrap; // prevents two items from separating within a .navbar-form that has .pull-left
     input {
-      margin-top: 0; // remove the margin on top since it's on the parent
+      margin-top: 0; //remove the margin on top since it's on parent
     }
   }
 }
@@ -146,8 +138,7 @@
     }
 
     // Focus states (we use .focused since IE7-8 and down doesn't support :focus)
-    &:focus,
-    &.focused {
+    &:focus, &.focused {
       padding: 5px 10px;
       color: $grayDark;
       text-shadow: 0 1px 0 $white;
@@ -160,41 +151,30 @@
 }
 
 
-
 // FIXED NAVBAR
 // ------------
 
 // Shared (top/bottom) styles
-.navbar-fixed-top,
-.navbar-fixed-bottom {
+.navbar-fixed-top, .navbar-fixed-bottom {
   position: fixed;
   right: 0;
   left: 0;
   z-index: $zindexFixedNavbar;
-  margin-bottom: 0; // remove 18px margin for static navbar
+  margin-bottom: 0; // remove 18px margin for static navbars
 }
-.navbar-fixed-top .navbar-inner,
-.navbar-fixed-bottom .navbar-inner {
-  padding-left:  0;
+.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+  padding-left: 0;
   padding-right: 0;
   @include border-radius(0);
 }
 
-.navbar-fixed-top .container,
-.navbar-fixed-bottom .container {
-  @include grid-core-span($gridColumns);
+.navbar-fixed-top .container, .navbar-fixed-bottom .container {
+  @include gridCoreSpan($gridColumns, $gridColumnWidth, $gridGutterWidth);
 }
 
 // Fixed to top
-.navbar-fixed-top {
-  top: 0;
-}
-
-// Fixed to bottom
-.navbar-fixed-bottom {
-  bottom: 0;
-}
-
+.navbar-fixed-top { top: 0; }
+.navbar-fixed-bottom { bottom: 0; }
 
 
 // NAVIGATION
@@ -226,14 +206,13 @@
 }
 // Hover
 .navbar .nav > li > a:hover {
-  background-color: $navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from .active
+  background-color: $navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from :active
   color: $navbarLinkColorHover;
   text-decoration: none;
 }
 
 // Active nav items
-.navbar .nav .active > a,
-.navbar .nav .active > a:hover {
+.navbar .nav .active > a, .navbar .nav .active > a:hover {
   color: $navbarLinkColorActive;
   text-decoration: none;
   background-color: $navbarLinkBackgroundActive;
@@ -270,7 +249,7 @@
     border-left:   7px solid transparent;
     border-right:  7px solid transparent;
     border-bottom: 7px solid #ccc;
-    border-bottom-color: $dropdownBorder;
+    border-bottom-color: $dropdownBackground;
     position: absolute;
     top: -7px;
     left: 9px;
@@ -280,12 +259,13 @@
     display: inline-block;
     border-left:   6px solid transparent;
     border-right:  6px solid transparent;
-    border-bottom: 6px solid $dropdownBackground;
+    border-bottom: 6px solid $white;
     position: absolute;
     top: -6px;
     left: 10px;
   }
 }
+
 // Menu position and menu caret support for dropups via extra dropup class
 .navbar-fixed-bottom .dropdown-menu {
   &:before {
@@ -302,20 +282,18 @@
     top: auto;
   }
 }
+
 // Dropdown toggle caret
-.navbar .nav .dropdown-toggle .caret,
-.navbar .nav .open.dropdown .caret {
+.navbar .nav .dropdown-toggle .caret, .navbar .nav .open.dropdown .caret {
   border-top-color: $white;
   border-bottom-color: $white;
 }
 .navbar .nav .active .caret {
-  @include opacity(100);
+  @include opacity(1);
 }
 
 // Remove background color from open dropdown
-.navbar .nav .open > .dropdown-toggle,
-.navbar .nav .active > .dropdown-toggle,
-.navbar .nav .open.active > .dropdown-toggle {
+.navbar .nav .open > .dropdown-toggle, .navbar .nav .active > .dropdown-toggle, .navbar .nav .open.active > .dropdown-toggle {
   background-color: transparent;
 }
 
@@ -326,8 +304,7 @@
 
 // Right aligned menus need alt position
 // TODO: rejigger this at some point to simplify the selectors
-.navbar .nav.pull-right .dropdown-menu,
-.navbar .nav .dropdown-menu.pull-right {
+.navbar .nav.pull-right .dropdown-menu, .navbar .nav .dropdown-menu.pull-right {
   left: auto;
   right: 0;
   &:before {

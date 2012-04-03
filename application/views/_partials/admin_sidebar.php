@@ -1,6 +1,9 @@
 <aside id="sidebar" class="span2">
+<?php if ( ! logged_in()): ?>
+    <p>Authenticate to access the administration tools.</p>
+<?php else: ?>
 	<ul id="modules" type="toolbar" class="nav nav-tabs nav-stacked">
-	    <li><a href="<?php echo site_url('admin'); ?>" data-role="button">Dashboard</a></li>
+	    <li><a href="<?php echo site_url('admin'); ?>"><i class="icon-home"></i>Dashboard</a></li>
         <?php
         $links = array(
             array(
@@ -24,7 +27,7 @@
                 )
             ),
             array(
-                'label'         => 'Pages',
+                'label'         => '<i class="icon-file"></i>Pages',
                 'url'           => site_url('admin/pages'),
                 'require'       => array(
                     'page'      => 'update'
@@ -51,5 +54,5 @@
         echo get_module_menu($links);
         ?>
 	</ul>
-
+<?php endif; ?>
 </aside>

@@ -74,32 +74,9 @@ class MY_Controller extends CI_Controller
             }
         }
     }
-    // --------------------------------------------------------------------
-
-    /**
-	 * initialize global partials
-	 *
-	 * @access	protected 
-     * @param	void
-     *
-	 * @return	void
-	 **/
-	protected function init_partials()
-    {
-        $this->page
-            ->partial('header', '_partials/header')
-            ->partial('footer', '_partials/footer')
-            ->title(config_item('site_title'))
-            ;
-        // should we output analytics data
-        $env = ( ! defined('ENVIRONMENT') || (defined('ENVIRONMENT') && ENVIRONMENT == 'production'));
-        if (config_item('google_analytics_id') && $env)
-        {
-            $this->page->partial('analytics', '_partials/analytics');
-        }
-    }
 
     // --------------------------------------------------------------------
+
 
 } // END class MY_Controller extends MX_Controller
 
@@ -129,21 +106,29 @@ class Public_Controller extends MY_Controller
     // --------------------------------------------------------------------
 
     /**
-	 * initialize template settings
+	 * initialize public partials
 	 *
 	 * @access	protected 
      * @param	void
      *
 	 * @return	void
 	 **/
-	protected function init_template()
+	protected function init_partials()
     {
-        parent::init_template();
-		$this->template
-		    ->set_partial('header', '_partials/header')
-		    ->set_partial('footer', '_partials/footer')
-		    ;
+        $this->page
+            ->partial('header', '_partials/header')
+            ->partial('footer', '_partials/footer')
+            ->title(config_item('site_title'))
+            ;
+        // should we output analytics data
+        $env = ( ! defined('ENVIRONMENT') || (defined('ENVIRONMENT') && ENVIRONMENT == 'production'));
+        if (config_item('google_analytics_id') && $env)
+        {
+            $this->page->partial('analytics', '_partials/analytics');
+        }
     }
+
+    // --------------------------------------------------------------------
 
 } // END class Public_Controller extends MY_Controller
 
@@ -172,8 +157,7 @@ class Admin_Controller extends MY_Controller
         $this->require_login();
         $this->load->helper('admin');
         $this->lang->load('admin');
-
-        $this->init_template();
+        $this->page->layout = 'admin';
     }
 
     // --------------------------------------------------------------------
@@ -188,7 +172,7 @@ class Admin_Controller extends MY_Controller
      **/
     protected function require_login()
     {
-        if ( ! get_user())
+        if ($this->uri->rsegment(1) !== 'login' && ! logged_in())
         {
             redirect('login');
         }
@@ -204,16 +188,17 @@ class Admin_Controller extends MY_Controller
      *
 	 * @return	void
 	 **/
-	protected function init_template()
+	protected function init_partials()
     {
         $this->page
 		    ->partial('header', '_partials/admin_header')
 		    ->partial('footer', '_partials/admin_footer')
 		    ->partial('sidebar', '_partials/admin_sidebar')
-            //->partial('admin_scripts', '_partials/admin_scripts')
             ;
         add_script('admin.min.js');
     }
+
+    // --------------------------------------------------------------------
 
 } // END class Admin_Controller extends MY_Controller
 

@@ -1,4 +1,4 @@
-// Variables.scss
+// Variables.less
 // Variables to customize the look and feel of Bootstrap
 // -----------------------------------------------------
 
@@ -6,7 +6,6 @@
 
 // GLOBAL VALUES
 // --------------------------------------------------
-
 
 // Grays
 // -------------------------
@@ -20,7 +19,7 @@ $white:                 #fff !default;
 
 
 // Accent colors
-// -------------------------
+// ----------------------------
 $blue:                  #049cdb !default;
 $blueDark:              #0064cd !default;
 $green:                 #46a546 !default;
@@ -30,18 +29,15 @@ $orange:                #f89406 !default;
 $pink:                  #c3325f !default;
 $purple:                #7a43b6 !default;
 
-
 // Scaffolding
 // -------------------------
 $bodyBackground:        $white !default;
 $textColor:             $grayDark !default;
 
-
 // Links
 // -------------------------
 $linkColor:             #08c !default;
-$linkColorHover:        darken($linkColor, 15) !default;
-
+$linkColorHover:        darken($linkColor, 15%) !default;
 
 // Typography
 // -------------------------
@@ -54,14 +50,12 @@ $headingsFontFamily:    inherit !default; // empty to use BS default, @baseFontF
 $headingsFontWeight:    bold !default;    // instead of browser default, bold
 $headingsColor:         inherit !default; // empty to use BS default, @textColor
 
-
 // Tables
 // -------------------------
 $tableBackground:                   transparent !default; // overall background-color
 $tableBackgroundAccent:             #f9f9f9 !default; // for striping
 $tableBackgroundHover:              #f5f5f5 !default; // for hover
 $tableBorder:                       #ddd !default; // table and cell border
-
 
 // Buttons
 // -------------------------
@@ -70,7 +64,7 @@ $btnBackgroundHighlight:            darken($white, 10%) !default;
 $btnBorder:                         darken($white, 20%) !default;
 
 $btnPrimaryBackground:              $linkColor !default;
-$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 15) !default;
+$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 15%) !default;
 
 $btnInfoBackground:                 #5bc0de !default;
 $btnInfoBackgroundHighlight:        #2f96b4 !default;
@@ -86,7 +80,6 @@ $btnDangerBackgroundHighlight:      #bd362f !default;
 
 $btnInverseBackground:              $gray !default;
 $btnInverseBackgroundHighlight:     $grayDarker !default;
-
 
 // Forms
 // -------------------------
@@ -104,8 +97,6 @@ $dropdownLinkColorHover:        $white !default;
 $dropdownLinkBackgroundHover:   $linkColor !default;
 
 
-
-
 // COMPONENT VARIABLES
 // --------------------------------------------------
 
@@ -113,18 +104,18 @@ $dropdownLinkBackgroundHover:   $linkColor !default;
 // -------------------------
 // Used for a bird's eye view of components dependent on the z-axis
 // Try to avoid customizing these :)
-$zindexDropdown:          1000 !default;
-$zindexPopover:           1010 !default;
-$zindexTooltip:           1020 !default;
-$zindexFixedNavbar:       1030 !default;
-$zindexModalBackdrop:     1040 !default;
-$zindexModal:             1050 !default;
+$zindexDropdown:          1000;
+$zindexPopover:           1010;
+$zindexTooltip:           1020;
+$zindexFixedNavbar:       1030;
+$zindexModalBackdrop:     1040;
+$zindexModal:             1050;
 
 
 // Sprite icons path
 // -------------------------
-$iconSpritePath:          "../images/bootstrap/glyphicons-halflings.png";
-$iconWhiteSpritePath:     "../images/bootstrap/glyphicons-halflings-white.png";
+$iconSpritePath:          asset-url("glyphicons-halflings.png", image) !default;
+$iconWhiteSpritePath:     asset-url("glyphicons-halflings-white.png", image) !default;
 
 
 // Input placeholder text color
@@ -180,7 +171,6 @@ $successBorder:           darken(adjust-hue($successBackground, -10), 5%) !defau
 $infoText:                #3a87ad !default;
 $infoBackground:          #d9edf7 !default;
 $infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
-
 
 
 

@@ -9,8 +9,7 @@
   // The caret makes the toggle a bit too tall in IE7
   *margin-bottom: -3px;
 }
-.dropdown-toggle:active,
-.open .dropdown-toggle {
+.dropdown-toggle:active, .open .dropdown-toggle {
   outline: 0;
 }
 
@@ -24,7 +23,7 @@
   border-left:  4px solid transparent;
   border-right: 4px solid transparent;
   border-top:   4px solid $black;
-  @include opacity(30);
+  @include opacity(0.3);
   content: "";
 }
 
@@ -33,9 +32,8 @@
   margin-top: 8px;
   margin-left: 2px;
 }
-.dropdown:hover .caret,
-.open.dropdown .caret {
-  @include opacity(100);
+.dropdown:hover .caret, .open.dropdown .caret {
+  @include opacity(1);
 }
 
 // The dropdown menu (ul)
@@ -89,9 +87,7 @@
 
 // Hover state
 // -----------
-.dropdown-menu li > a:hover,
-.dropdown-menu .active > a,
-.dropdown-menu .active > a:hover {
+.dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover {
   color: $dropdownLinkColorHover;
   text-decoration: none;
   background-color: $dropdownLinkBackgroundHover;
@@ -124,8 +120,7 @@
 // ------------------------------------------------------
 // Just add .dropup after the standard .dropdown class and you're set, bro.
 // TODO: abstract this so that the navbar fixed styles are not placed here?
-.dropup,
-.navbar-fixed-bottom .dropdown {
+.dropup, .navbar-fixed-bottom .dropdown {
   // Reverse the caret
   .caret {
     border-top: 0;

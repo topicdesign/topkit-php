@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Admin extends Admin_Controller {
+class Pages extends Admin_Controller {
 
     /**
      * Constructor
@@ -27,7 +27,8 @@ class Admin extends Admin_Controller {
      **/
     public function index()
     {
-        $this->page->build('admin/admin_dashboard.php');
+        $data['pages'] = Document::all();
+        $this->page->build('pages/admin/pages_index', $data);
     }
 
     // --------------------------------------------------------------------
