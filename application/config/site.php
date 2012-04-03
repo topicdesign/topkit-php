@@ -33,6 +33,13 @@ $config['site_timezone'] = 'America/New_York';
  **/
 $config['developer_email'] = '';
 
+/**
+ * Directory containing static pages
+ *
+ * @var string
+ **/
+$config['static_page_dir'] = 'pages/static/';
+
 // --------------------------------------------------------------------
 // Do not edit below this line, managed by CMS
 // --------------------------------------------------------------------

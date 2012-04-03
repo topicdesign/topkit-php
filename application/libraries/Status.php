@@ -4,11 +4,11 @@
 *
 * A website backend system for developers for PHP 4.3.2 or newer
 *
-* @package		BackendPro
-* @author		Adam Price
-* @copyright	Copyright (c) 2008
-* @license		http://www.gnu.org/licenses/lgpl.html
-* @tutorial		BackendPro.pkg
+* @package      BackendPro
+* @author       Adam Price
+* @copyright    Copyright (c) 2008
+* @license      http://www.gnu.org/licenses/lgpl.html
+* @tutorial     BackendPro.pkg
 */
 
 // ---------------------------------------------------------------------------
@@ -18,16 +18,16 @@
 *
 * Handles the Status messages displayed to a user
 *
-* @package		BackendPro
-* @subpackage	Library
-* @tutorial		Status.cls
+* @package      BackendPro
+* @subpackage   Library
+* @tutorial     Status.cls
 */
 
 class Status {
 
-	var $flash_var = "status";
-	var $types = array('info','warning','error','success');
-	var $view_file = "status/default";
+    var $flash_var = "status";
+    var $types = array('info','warning','error','success');
+    var $view_file = "status/default";
 
 /**
  * Constructor
@@ -48,10 +48,10 @@ function Status() {
  *
  * The message will be live untill $this->display() is called
  *
- * @acces public
- * @param string $type Type of message to set
- * @param string $message Message to display
- * @return boolean
+ * @acces   public
+ * @param   string      $type       Type of message to set
+ * @param   string      $message    Message to display
+ * @return  boolean
  */
 function set($type = NULL, $message = NULL) {
     if ( $type == NULL OR $message == NULL) {
@@ -87,23 +87,23 @@ function set($type = NULL, $message = NULL) {
  * @return string
  */
 function display($type = NULL) {
-	if (! $msgdata = $this->_fetch()) // no messages found
-	{
-		return FALSE;
-	}
+    if (! $msgdata = $this->_fetch()) // no messages found
+    {
+        return FALSE;
+    }
 
     // Output variable
     $output = "";
 
     if ( $type == NULL )
-	{
-		$data['alerts'] = $msgdata;
+    {
+        $data['alerts'] = $msgdata;
     }
     else // Only display messages of $type
-	{
-		$data['alerts'][$type] = $msgdata[$type];
+    {
+        $data['alerts'][$type] = $msgdata[$type];
     }
-	$output .= $this->CI->load->view($this->view_file, $data, TRUE);
+    $output .= $this->CI->load->view($this->view_file, $data, TRUE);
     // Remove messages
     $this->_remove($type);
 
@@ -145,7 +145,7 @@ function _remove($type = null) {
  * @return array containing the flash data
  */
 function _fetch() {
-	$data = $this->CI->session->userdata($this->flash_var);
+    $data = $this->CI->session->userdata($this->flash_var);
     if ( empty( $data ) ) {
         return array();
     }

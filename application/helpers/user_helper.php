@@ -2,12 +2,12 @@
 /**
  * Authentic Helpers
  *
- * @package		Authentic
- * @subpackage	Helpers
- * @category	Authentication
- * @author		Topic Design
- * @link		https://github.com/topicdesign/codeigniter-authentic-authentication
- * @license		http://creativecommons.org/licenses/BSD/
+ * @package     Authentic
+ * @subpackage  Helpers
+ * @category    Authentication
+ * @author      Topic Design
+ * @link        https://github.com/topicdesign/codeigniter-authentic-authentication
+ * @license     http://creativecommons.org/licenses/BSD/
  */
 
 // ------------------------------------------------------------------------
@@ -16,41 +16,31 @@
  * get an instance of the current user object
  * attempt to instantiate one if needed
  *
- * @access	public
- * @param	void
+ * @access  public
+ * @param   void
  *
- * @return	mixed   object  ActiveRecord user object
- *                  bool
+ * @return  mixed   object  ActiveRecord user object
  */
 if ( ! function_exists('get_user'))
 {
-	function get_user()
+    function get_user()
     {
-        $CI = get_instance();
-        if (function_exists('get_app'))
+        $app = get_app();
+        if ( ! isset($app->user))
         {
-            $obj = get_app();
-        }
-        else
-        {
-            $obj = get_instance();
-        }
-        
-        if ( ! isset($obj->user))
-        {
-            $obj->user = new User();
+            $app->user = new User();
+            $CI = get_instance();
             $CI->load->library('authentic');
             $auth_user = $CI->authentic->current_user();
             if ($auth_user)
             {
-                $obj->user = User::find($auth_user->id, array('include' => array('roles', 'permissions')));
+                $app->user = User::find($auth_user->id, array('include' => array('roles', 'permissions')));
             }
         }
-        return $obj->user;
-	}
+        return $app->user;
+    }
 }
 
 // ------------------------------------------------------------------------
-
-/* End of file authentic_helper.php */
-/* Location: ./helpers/authentic_helper.php */
+/* End of file user_helper.php */
+/* Location: ./helpers/user_helper.php */

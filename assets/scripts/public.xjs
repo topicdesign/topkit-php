@@ -1,2 +1,2 @@
-@import jquery.jnotify.js
+@import plugins/jquery.jnotify.js
 @import app.js
