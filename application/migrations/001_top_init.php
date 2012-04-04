@@ -3,116 +3,14 @@
 class Migration_Top_init extends CI_Migration {
 
     public function up()
-    {        
-        $this->add_redirects();
-        $this->add_nonces();
-        $this->add_documents();
-        $this->add_permissions();
-        $this->add_roles();
+    {
         $this->add_sessions();
+        $this->add_documents();
+        $this->add_redirects();
         $this->add_users();
-        $this->add_articles();
-        $this->add_events();
-    }
-
-    // --------------------------------------------------------------------
-
-    /**
-     * add articles table
-     *
-     * @param void
-     *
-     * @return void
-     **/
-    private function add_articles()
-    {
-        $this->dbforge->add_field(array(
-            'id'    => array(
-                'type'          => 'INT',
-                'constraint'    => '11',
-                'unsigned'      => TRUE,
-                'auto_increment'    => TRUE
-            ),
-            'title' => array(
-                'type'          => 'VARCHAR',
-                'constraint'    => '120',
-            ),
-            'slug' => array(
-                'type'          => 'VARCHAR',
-                'constraint'    => '120',
-            ),
-            'content'   => array(
-                'type'          => 'TEXT',
-            ),
-            'published_at'  => array(
-                'type'          => 'DATETIME',
-                'null'          => TRUE
-            ),
-            'created_at'  => array(
-                'type'          => 'DATETIME',
-                'null'          => TRUE
-            ),
-            'updated_at'  => array(
-                'type'          => 'DATETIME',
-                'null'          => TRUE
-            ),
-        ));
-        $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('articles');
-    }
-
-    // --------------------------------------------------------------------
-
-    /**
-     * add events table
-     *
-     * @param void
-     *
-     * @return void
-     **/
-    private function add_events()
-    {
-        $this->dbforge->add_field(array(
-            'id'    => array(
-                'type'          => 'INT',
-                'constraint'    => '11',
-                'unsigned'      => TRUE,
-                'auto_increment'    => TRUE
-            ),
-            'title' => array(
-                'type'          => 'VARCHAR',
-                'constraint'    => '120',
-            ),
-            'slug' => array(
-                'type'          => 'VARCHAR',
-                'constraint'    => '120',
-            ),
-            'content'   => array(
-                'type'          => 'TEXT',
-            ),
-            'start'  => array(
-                'type'          => 'DATETIME',
-                'null'          => TRUE
-            ),
-            'end'  => array(
-                'type'          => 'DATETIME',
-                'null'          => TRUE
-            ),
-            'published_at'  => array(
-                'type'          => 'DATETIME',
-                'null'          => TRUE
-            ),
-            'created_at'  => array(
-                'type'          => 'DATETIME',
-                'null'          => TRUE
-            ),
-            'updated_at'  => array(
-                'type'          => 'DATETIME',
-                'null'          => TRUE
-            ),
-        ));
-        $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('events');
+        $this->add_roles();
+        $this->add_permissions();
+        $this->add_nonces();
     }
 
     // --------------------------------------------------------------------
@@ -245,7 +143,7 @@ class Migration_Top_init extends CI_Migration {
                 'constraint'    => '11',
                 'unsigned'      => TRUE
             ),
-            'created_ad'    => array(
+            'created_at'    => array(
                 'type'          => 'DATETIME'
             )
         ));
