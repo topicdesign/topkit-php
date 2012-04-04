@@ -63,6 +63,7 @@ $autoload['libraries'] = array(
     'authentic',
     'status',
     'page',
+    'history',
 );
 
 
