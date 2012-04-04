@@ -87,6 +87,7 @@ $autoload['helper'] = array(
     'status',
     'assets',
     'language',
+    'navigation',
 );
 
 
