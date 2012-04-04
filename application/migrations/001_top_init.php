@@ -11,6 +11,7 @@ class Migration_Top_init extends CI_Migration {
         $this->add_roles();
         $this->add_permissions();
         $this->add_nonces();
+        $this->add_default_user();
     }
 
     // --------------------------------------------------------------------
@@ -307,6 +308,34 @@ class Migration_Top_init extends CI_Migration {
         ));
         $this->dbforge->add_key('request', TRUE);
         $this->dbforge->create_table('redirects');
+    }
+    
+    // --------------------------------------------------------------------
+
+    /**
+     * add_default_user
+     *
+     * @access  public 
+     * 
+     * @return void
+     **/
+    public function add_default_user()
+    {   
+        $user = User::create(array(
+            'email' => config_item('developer_email'),
+            'username' => 'root',
+            'password' => 'password',
+        ));
+        $permission = Authority\Permission::create(array(
+            'data' => json_encode(array(
+                'all' => array('manage' => TRUE)
+            )),
+        ));
+        Authority\Role::create(array(
+            'title' => 'root',
+            'user_id' => $user->id,
+            'permission_id' => $permission->id,
+        ));
     }
 
 }
