@@ -184,8 +184,9 @@ class Admin_Controller extends MY_Controller
      **/
     protected function require_login()
     {
-        if ( ! get_user())
+        if ( ! logged_in())
         {
+            set_status('warning', lang('not_authorized'));
             redirect('login');
         }
     }
