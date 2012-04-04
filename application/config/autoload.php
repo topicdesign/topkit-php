@@ -39,11 +39,9 @@
 
 $autoload['packages'] = array(
     APPPATH.'third_party/php-activerecord',
-    APPPATH.'third_party/articles',
     APPPATH.'third_party/authentic',
     APPPATH.'third_party/authority',
     APPPATH.'third_party/page',
-    APPPATH.'third_party/events',
 );
 
 
@@ -56,7 +54,7 @@ $autoload['packages'] = array(
 |
 | Prototype:
 |
-|	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
+|   $autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
 $autoload['libraries'] = array(
@@ -74,7 +72,7 @@ $autoload['libraries'] = array(
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['helper'] = array('url', 'file');
+|   $autoload['helper'] = array('url', 'file');
 */
 
 $autoload['helper'] = array(
@@ -97,7 +95,7 @@ $autoload['helper'] = array(
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['config'] = array('config1', 'config2');
+|   $autoload['config'] = array('config1', 'config2');
 |
 | NOTE: This item is intended for use ONLY if you have created custom
 | config files.  Otherwise, leave it blank.
@@ -105,7 +103,7 @@ $autoload['helper'] = array(
 */
 
 $autoload['config'] = array(
-    'site'
+    'site',
 );
 
 
@@ -115,7 +113,7 @@ $autoload['config'] = array(
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['language'] = array('lang1', 'lang2');
+|   $autoload['language'] = array('lang1', 'lang2');
 |
 | NOTE: Do not include the "_lang" part of your file.  For example
 | "codeigniter_lang.php" would be referenced as array('codeigniter');
@@ -133,7 +131,7 @@ $autoload['language'] = array(
 | -------------------------------------------------------------------
 | Prototype:
 |
-|	$autoload['model'] = array('model1', 'model2');
+|   $autoload['model'] = array('model1', 'model2');
 |
 */
 
