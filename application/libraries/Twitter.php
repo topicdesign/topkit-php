@@ -90,9 +90,10 @@ class Twitter {
 	 */
 	function initialize($config = array())
 	{
-       // Load the Rest library (dependant)
+       // Load the dependencies
        $CI =& get_instance();
        $CI->load->library('Rest');
+       $CI->load->helper('file');
 
 		foreach ($config as $key => $val) {
 		    if (method_exists($this, 'set_'.$key)) {
@@ -154,15 +155,15 @@ class Twitter {
                 }
             }
         }
-		echo '<pre>';
 		// get tweet objects
         $tweets = array();
-		if ( ! empty($this->result) && ! empty($this->result['results'])) {
-    		foreach ($this->result['results'] as $tweet) {
+        if ( ! empty($this->result) && ! empty($this->result['results']))
+        {
+            foreach ($this->result['results'] as $tweet)
+            {
     			$tweets[] = new TwitterTweet($tweet);
     		}
 		}
-        
 		return $tweets;
 	}
 	
