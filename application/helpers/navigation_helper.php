@@ -34,6 +34,29 @@ if ( ! function_exists('get_nav'))
         {
             return FALSE;
         }
+        foreach ($anchors as $key => &$anchor) 
+        {
+            if (isset($anchor['permissions']))
+            {
+                foreach ($anchor['permissions'] as $resource => $permission) 
+                {
+                    if ($resource)
+                    {
+                        if (cannot($resource, $permission))
+                        {
+                            unset($anchors[$key]);
+                        }
+                    }
+                    else 
+                    {
+                        if ( ! $permission())
+                        {
+                            unset($anchors[$key]);
+                        }
+                    }
+                }
+            }
+        }
         $data = array(
             'nested'    => $nested,
             'anchors'   => $anchors
