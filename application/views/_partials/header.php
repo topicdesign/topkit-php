@@ -1,6 +1,6 @@
 <header id="header">
     <h1>
-        <a href="<?php echo site_url(); ?>"><?php echo config_item('site_title'); ?></a>
+        <a href="<?php echo site_url(); ?>"><?php echo htmlentities(config_item('site_title')); ?></a>
     </h1>
     <nav>
         <ul>
