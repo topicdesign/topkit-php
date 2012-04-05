@@ -34,6 +34,59 @@ class MY_Controller extends CI_Controller
      **/
     public function init_page()
     {
+    }
+    // --------------------------------------------------------------------
+
+    /**
+	 * initialize global partials
+	 *
+	 * @access	protected 
+     * @param	void
+     *
+	 * @return	void
+	 **/
+	protected function init_partials()
+    {
+    }
+
+    // --------------------------------------------------------------------
+
+} // END class MY_Controller extends MX_Controller
+
+// --------------------------------------------------------------------
+
+/**
+ * Public Controller
+ *
+ * @packaged CodeIgniter
+ **/
+class Public_Controller extends MY_Controller
+{
+
+    /**
+     * constructor
+     *
+     * @access  public
+     * @param   void
+     *
+     * @return  void
+     **/
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * initialize page properties
+     *
+     * @access  public 
+     * @param   void 
+     * @return  void
+     **/
+    public function init_page()
+    {
         // find all documents in this URL path
         // TODO: move this to model method, support 'published'/can('manage','page')
         $paths = array();
@@ -74,6 +127,7 @@ class MY_Controller extends CI_Controller
             }
         }
     }
+
     // --------------------------------------------------------------------
 
     /**
@@ -97,33 +151,6 @@ class MY_Controller extends CI_Controller
         {
             $this->page->partial('analytics', '_partials/analytics');
         }
-    }
-
-    // --------------------------------------------------------------------
-
-} // END class MY_Controller extends MX_Controller
-
-// --------------------------------------------------------------------
-
-/**
- * Public Controller
- *
- * @packaged CodeIgniter
- **/
-class Public_Controller extends MY_Controller
-{
-
-    /**
-     * constructor
-     *
-     * @access  public
-     * @param   void
-     *
-     * @return  void
-     **/
-    public function __construct()
-    {
-        parent::__construct();
     }
 
     // --------------------------------------------------------------------
