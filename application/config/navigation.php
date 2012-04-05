@@ -24,7 +24,7 @@ $config['anchors']['main'] = array(
             ),
         )
     ),
-
+);
  */
 
 $config['anchors']['main'] = array(
