@@ -32,9 +32,8 @@ class MY_Controller extends CI_Controller
      * @param   void 
      * @return  void
      **/
-    public function init_page()
-    {
-    }
+    public function init_page(){}
+
     // --------------------------------------------------------------------
 
     /**
@@ -45,9 +44,7 @@ class MY_Controller extends CI_Controller
      *
 	 * @return	void
 	 **/
-	protected function init_partials()
-    {
-    }
+	protected function init_partials(){}
 
     // --------------------------------------------------------------------
 
@@ -155,23 +152,6 @@ class Public_Controller extends MY_Controller
 
     // --------------------------------------------------------------------
 
-    /**
-	 * initialize template settings
-	 *
-	 * @access	protected 
-     * @param	void
-     *
-	 * @return	void
-	 **/
-	protected function init_template()
-    {
-        parent::init_template();
-		$this->template
-		    ->set_partial('header', '_partials/header')
-		    ->set_partial('footer', '_partials/footer')
-		    ;
-    }
-
 } // END class Public_Controller extends MY_Controller
 
 // --------------------------------------------------------------------
@@ -217,6 +197,39 @@ class Admin_Controller extends MY_Controller
             redirect('login');
         }
     }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * initialize page properties
+     *
+     * @access  public 
+     * @param   void 
+     * @return  void
+     **/
+    public function init_page(){}
+
+    // --------------------------------------------------------------------
+
+    /**
+	 * initialize global partials
+	 *
+	 * @access	protected 
+     * @param	void
+     *
+	 * @return	void
+	 **/
+	protected function init_partials()
+    {
+        $this->page->layout('admin');
+        $this->page
+            ->partial('header', '_partials/admin_header')
+            ->partial('footer', '_partials/admin_footer')
+            ->title(config_item('site_title'))
+            ;
+    }
+
+    // --------------------------------------------------------------------
 
 } // END class Admin_Controller extends MY_Controller
 
