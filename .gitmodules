@@ -3,10 +3,10 @@
 	url = git://github.com/topicdesign/php-activerecord-spark.git
 [submodule "application/third_party/authority"]
 	path = application/third_party/authority
-	url = git://github.com/topicdesign/codeigniter-authority-authorization.git
+	url = git://github.com/topicdesign/topkit-authority.git
 [submodule "application/third_party/authentic"]
 	path = application/third_party/authentic
-	url = git://github.com/topicdesign/codeigniter-authentic-authentication.git
+	url = git://github.com/topicdesign/topkit-authentic.git
 [submodule "application/third_party/page"]
 	path = application/third_party/page
 	url = git://github.com/topicdesign/topkit-page.git
