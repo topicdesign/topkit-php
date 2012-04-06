@@ -44,7 +44,7 @@ class Login extends Public_Controller {
             }
             $data['errors'] = $this->authentic->get_errors();
         }
-        $this->page->build('login/login', $data);
+        $this->document->build('login/login', $data);
     }
 
     // --------------------------------------------------------------------
@@ -85,7 +85,7 @@ class Login extends Public_Controller {
                 // email code to user?
             }
         }
-        $this->page->build('login/forgot_password');
+        $this->document->build('login/forgot_password');
     }
 
     // --------------------------------------------------------------------
