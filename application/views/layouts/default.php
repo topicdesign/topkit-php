@@ -12,9 +12,7 @@
 	<!--[if IE]><![endif]-->
 	
     <base href="<?php echo site_url(); ?>" />
-	<title><?php echo document_title(); ?></title>
-    <meta name="description" content="<?php echo document_data('description'); ?>">
-    <meta name="keywords" content="<?php echo document_data('keywords'); ?>">
+	<title><?php echo htmlentities(document_title()); ?></title>
 
 	<!--  Mobile Viewport Fix j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
 		device-width : Occupy full width of the screen in its current orientation

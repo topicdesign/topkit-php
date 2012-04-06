@@ -83,8 +83,8 @@ class Public_Controller extends MY_Controller
         // set document properties from nearest page
         $properties = array(
             'title',
+            'description',
             'keywords',
-            'description'
         );
         foreach ($properties as $prop)
         {
@@ -98,7 +98,11 @@ class Public_Controller extends MY_Controller
                     }
                     else
                     {
-                        $this->document->$prop = $page->$prop; 
+                        $this->document->metadata(sprintf(
+                            '<meta name="%s" content="%s" />',
+                            $prop,
+                            $page->$prop
+                        ));
                     }
                     break;
                 }
