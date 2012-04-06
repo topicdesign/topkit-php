@@ -7,6 +7,6 @@
 [submodule "application/third_party/authentic"]
 	path = application/third_party/authentic
 	url = git://github.com/topicdesign/codeigniter-authentic-authentication.git
-[submodule "application/third_party/page"]
-	path = application/third_party/page
-	url = git://github.com/topicdesign/topkit-page.git
+[submodule "application/third_party/document"]
+	path = application/third_party/document
+	url = git://github.com/topicdesign/topkit-document.git
