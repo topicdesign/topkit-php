@@ -13,9 +13,9 @@ class Migration_Top_init extends CI_Migration {
     {
         $this->add_sessions();
 
-        $this->add_documents();
+        $this->add_pages();
         $this->add_redirects();
-        $this->add_default_docs();
+        $this->add_default_pages();
 
         $this->add_users();
         $this->add_roles();
@@ -37,7 +37,7 @@ class Migration_Top_init extends CI_Migration {
     {
         $tables = array(
             'sessions',
-            'documents',
+            'pages',
             'redirects',
             'users',
             'roles',
@@ -220,15 +220,21 @@ class Migration_Top_init extends CI_Migration {
     // --------------------------------------------------------------------
 
     /**
-     * add documents table
+     * add pages table
      *
      * @access  public 
      * @param   void
      * @return  void
      **/
-    private function add_documents()
+    private function add_pages()
     {
         $this->dbforge->add_field(array(
+            'id'            => array(
+                'type'              => 'INT',
+                'constraint'        => '11',
+                'unsigned'          => TRUE,
+                'auto_increment'    => TRUE
+            ),
             'uri'           => array(
                 'type'              => 'VARCHAR',
                 'constraint'        => '120'
@@ -242,14 +248,16 @@ class Migration_Top_init extends CI_Migration {
                 'constraint'        => '120'
             ),
             'description'   => array(
-                'type'              => 'TEXT'
+                'type'              => 'TEXT',
+                'null'              => TRUE
             ),
             'keywords'      => array(
                 'type'              => 'TEXT',
                 'null'              => TRUE
             ),
             'body'          => array(
-                'type'              => 'TEXT'
+                'type'              => 'TEXT',
+                'null'              => TRUE
             ),
             'view'          => array(
                 'type'              => 'VARCHAR',
@@ -270,42 +278,42 @@ class Migration_Top_init extends CI_Migration {
             ),
         ));
         $this->dbforge->add_key('uri', TRUE);
-        $this->dbforge->create_table('documents');
+        $this->dbforge->create_table('pages');
     }
 
     // --------------------------------------------------------------------
 
     /**
-     * add default doc(s)
+     * add default page(s)
      *
      * @access  public 
      * @param   void 
      * @return  void
      **/
-    public function add_default_docs()
+    public function add_default_pages()
     {
-        // create root document
-        $doc = new Document();
-        $doc->uri = '/';
-        $doc->title = 'Welcome to Topkit';
-        $doc->slug = 'home';
-        $doc->body = "<p>The page you are looking at is being generated
+        // create root page
+        $page = new Page();
+        $page->uri = '/';
+        $page->title = 'Welcome to Topkit';
+        $page->slug = 'home';
+        $page->body = "<p>The page you are looking at is being generated
         dynamically by CodeIgniter, using the <strong>topkit</strong>
         framework.</p><p>This page is being rendered from the database
         by the <code>pages</code> Controller. It uses the default layout
         and the <code>views/pages/default.php</code> view.</p>";
-        $doc->published_at = date_create();
-        $doc->save();
+        $page->published_at = date_create();
+        $page->save();
         // create markup test page
-        $doc = new Document();
-        $doc->uri = '/html';
-        $doc->title = 'HTML Markup Test';
-        $doc->slug = 'html';
-        $doc->view = 'example/html';
-        $doc->body = "<p>This document is for testing <abbr title=\"Hyper
+        $page = new Page();
+        $page->uri = '/html';
+        $page->title = 'HTML Markup Test';
+        $page->slug = 'html';
+        $page->view = 'example/html';
+        $page->body = "<p>This document is for testing <abbr title=\"Hyper
         Text Markup Language\">HTML</abbr> markup and styles!</p>";
-        $doc->published_at = date_create();
-        $doc->save();
+        $page->published_at = date_create();
+        $page->save();
     }
 
     // --------------------------------------------------------------------

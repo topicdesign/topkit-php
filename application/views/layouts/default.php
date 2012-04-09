@@ -12,7 +12,7 @@
 	<!--[if IE]><![endif]-->
 	
     <base href="<?php echo site_url(); ?>" />
-	<title><?php echo page_title(); ?></title>
+	<title><?php echo htmlentities(document_title()); ?></title>
 
 	<!--  Mobile Viewport Fix j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
 		device-width : Occupy full width of the screen in its current orientation
@@ -30,7 +30,7 @@
     <script src="<?php echo site_url('assets/scripts/libs/modernizr.min.js'); ?>"></script>
     <script src="<?php echo site_url('assets/scripts/libs/respond.min.js'); ?>"></script>
 
-    <?php echo page_metadata(); ?>
+    <?php echo document_metadata(); ?>
 
 </head>
 <body>
@@ -38,19 +38,19 @@
     <!--container-->
     <div id="container">
 
-        <?php echo page_partial('header'); ?>
+        <?php echo document_partial('header'); ?>
 
         <!--content-->
         <div id="content">
 
             <?php echo display_status(); ?>
 
-            <?php echo page_content(); ?>
+            <?php echo document_content(); ?>
 
         </div>
         <!--/content-->
 
-        <?php echo page_partial('footer'); ?>
+        <?php echo document_partial('footer'); ?>
 
     </div>
     <!--/container-->
@@ -59,8 +59,8 @@
     <script>window.jQuery || document.write('<script src="<?php echo site_url('assets/scripts/libs/jquery.min.js'); ?>"><\/script>')</script>
     <script src="<?php echo get_asset('assets/scripts/public.min.js'); ?>"></script>
 
-    <?php echo page_partial('footer_scripts'); ?>
-    <?php echo page_partial('analytics'); ?>
+    <?php echo document_partial('footer_scripts'); ?>
+    <?php echo document_partial('analytics'); ?>
 
 </body>
 </html>
