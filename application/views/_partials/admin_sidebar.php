@@ -24,7 +24,7 @@
                 ),
                 'data'          => array(
                     'inactive'      => TRUE
-                )
+                ),
             ),
             array(
                 'label'         => '<i class="icon-file"></i>Pages',

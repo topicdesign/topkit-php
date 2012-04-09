@@ -204,8 +204,10 @@ class Admin_Controller extends MY_Controller
         $this->document
             ->partial('header', '_partials/admin_header')
             ->partial('footer', '_partials/admin_footer')
+            ->partial('sidebar', '_partials/admin_sidebar')
             ->title(config_item('site_title'))
             ;
+        add_script('admin.min.js');
     }
 
     // --------------------------------------------------------------------

@@ -40,7 +40,7 @@ class Login extends Admin_Controller {
             $remember = (bool) $this->input->post('remember');
             if ($this->authentic->login($identity, $password, $remember)) 
             {
-                redirect();
+                redirect('admin');
             }
             $data['errors'] = $this->authentic->get_errors();
         }

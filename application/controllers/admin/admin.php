@@ -27,7 +27,7 @@ class Admin extends Admin_Controller {
      **/
     public function index()
     {
-        $this->page->build('admin/admin_dashboard.php');
+        $this->document->build('admin/admin_dashboard.php');
     }
 
     // --------------------------------------------------------------------
@@ -67,7 +67,7 @@ class Admin extends Admin_Controller {
                 set_status('error', $e);
             }
             $data['user'] = get_user();
-            $this->page->build('admin/account.php', $data);
+            $this->document->build('admin/account.php', $data);
         }
         else
         {
