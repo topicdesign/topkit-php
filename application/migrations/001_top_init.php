@@ -229,6 +229,12 @@ class Migration_Top_init extends CI_Migration {
     private function add_pages()
     {
         $this->dbforge->add_field(array(
+            'id'            => array(
+                'type'              => 'INT',
+                'constraint'        => '11',
+                'unsigned'          => TRUE,
+                'auto_increment'    => TRUE
+            ),
             'uri'           => array(
                 'type'              => 'VARCHAR',
                 'constraint'        => '120'
