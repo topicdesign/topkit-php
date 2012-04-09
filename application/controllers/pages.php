@@ -29,7 +29,7 @@ class Pages extends Public_Controller {
     {
         $uri = uri_string();
         // ensure this method is not being access directly
-        if ($uri == $this->uri->ruri_string() OR ! $this->page->exists)
+        if ($uri == $this->uri->ruri_string() OR ! $this->document->page)
         {
             // check for redirect
             try 
@@ -42,9 +42,10 @@ class Pages extends Public_Controller {
                 show_404();
             }
         }
+        $page = $this->document->page;
         // output page template
-        $this->page
-            ->build('pages/' . $this->page->view, array('page'=>$this->page));
+        $this->document
+            ->build('pages/' . $page->view, array('page'=>$page));
     }
 
     // --------------------------------------------------------------------
@@ -68,15 +69,11 @@ class Pages extends Public_Controller {
         unset($_SESSION['error']);
         // build output
         $this->output->set_status_header($err['status']);
-        $this->page->data(array(
-            'header'    => $err['heading'],
-            'body'      => "<p>{$err['message']}</p>"
-        ));
         if (isset($err['heading']))
         {
-            $this->page->title($err['heading']);
+            $this->document->title($err['heading']);
         }
-        $this->page->build('pages/'. $err['template'], array('page'=>$this->page));
+        $this->document->build('pages/'. $err['template'], $err);
     }
 
     // --------------------------------------------------------------------

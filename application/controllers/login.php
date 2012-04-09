@@ -29,6 +29,7 @@ class Login extends Public_Controller {
     {
         if (logged_in()) 
         {
+            set_status('info', lang('logged_in'));
             redirect();
         }
         $data = array();
@@ -43,7 +44,7 @@ class Login extends Public_Controller {
             }
             $data['errors'] = $this->authentic->get_errors();
         }
-        $this->template->build('login/login', $data);
+        $this->document->build('login/login', $data);
     }
 
     // --------------------------------------------------------------------
@@ -84,7 +85,7 @@ class Login extends Public_Controller {
                 // email code to user?
             }
         }
-        $this->template->build('login/forgot_password');
+        $this->document->build('login/forgot_password');
     }
 
     // --------------------------------------------------------------------
