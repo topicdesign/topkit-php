@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Document
+ * Page
  *
  * @package     CodeIgniter
  * @subpackage  Models
@@ -9,10 +9,10 @@
  * @license     http://creativecommons.org/licenses/BSD/
  */
 
-class Document extends ActiveRecord\Model {
+class Page extends ActiveRecord\Model {
 
     # explicit table name  
-    static $table_name = 'documents';
+    static $table_name = 'pages';
 
     # explicit pk 
     static $primary_key = 'uri';
@@ -33,6 +33,33 @@ class Document extends ActiveRecord\Model {
     
     // --------------------------------------------------------------------
     // Public Methods
+    // --------------------------------------------------------------------
+
+    /**
+     * get all pages that live in the current URI path
+     * TODO: support '(un)published'
+     *
+     * @access  public 
+     * @param   void
+     * @return  array
+     **/
+    public static function all_in_current_uri()
+    {
+        $paths = array();
+        $uri = uri_string();
+        while (strlen($uri) > 1)
+        {
+            $paths[] = $uri;
+            $uri = substr($uri, 0, strrpos($uri, '/'));
+        }
+        $paths[] = '/';
+        $opts = array(
+            'conditions' => array('uri IN (?)', $paths),
+            'order' => 'CHAR_LENGTH(uri) DESC'
+        );
+        return self::all($opts);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -58,7 +85,7 @@ class Document extends ActiveRecord\Model {
 /**
  * SQL for table
 
-CREATE TABLE `documents` (
+CREATE TABLE `pages` (
   `uri` varchar(120) NOT NULL,
   `title` varchar(120) NOT NULL,
   `slug` varchar(120) NOT NULL,
@@ -73,5 +100,5 @@ CREATE TABLE `documents` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 **/
-/* End of file Document.php */
-/* Location: ./application/models/Document.php */
+/* End of file Page.php */
+/* Location: ./application/models/Page.php */

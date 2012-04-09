@@ -19,61 +19,19 @@ class MY_Controller extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->init_page();
-        $this->init_partials();
     }
 
     // --------------------------------------------------------------------
 
     /**
-     * initialize page properties
+	 * initialize global partials
+	 *
+	 * @access	protected 
+     * @param	void
      *
-     * @access  public 
-     * @param   void 
-     * @return  void
-     **/
-    public function init_page()
-    {
-        // find all documents in this URL path
-        // TODO: move this to model method, support 'published'/can('manage','page')
-        $paths = array();
-        $uri = uri_string();
-        while (strlen($uri) > 1)
-        {
-            $paths[] = $uri;
-            $uri = substr($uri, 0, strrpos($uri, '/'));
-        }
-        $paths[] = '/';
-        $opts = array(
-            'conditions' => array('uri IN (?)',$paths),
-            'order' => 'CHAR_LENGTH(uri) DESC'
-        );
-        $docs = Document::all($opts);
-        // does the requested URI exist?
-        if ($this->page->exists = ($docs[0]->uri == uri_string()))
-        {
-            $this->page->view = $docs[0]->view;
-        }
-        // set params from nearest document
-        $params = array(
-            'header' => 'title',
-            'body',
-            'keywords',
-            'description'
-        );
-        foreach ($params as $key => $value)
-        {
-            foreach ($docs as $d)
-            {
-                if ( ! empty($d->$value))
-                {
-                    $pkey = is_string($key) ? $key : $value;
-                    $this->page->$pkey = $d->$value;
-                    break;
-                }
-            }
-        }
-    }
+	 * @return	void
+	 **/
+	protected function init_partials(){}
 
     // --------------------------------------------------------------------
 
@@ -101,6 +59,56 @@ class Public_Controller extends MY_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->init_partials();
+        $this->init_document();
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * initialize document properties
+     *
+     * @access  public 
+     * @param   void 
+     * @return  void
+     **/
+    public function init_document()
+    {
+        // find all pages in this URL path
+        $pages = Page::all_in_current_uri();
+        // does the requested URI exist?
+        if ($pages[0]->uri == uri_string())
+        {
+            $this->document->page = $pages[0];
+        }
+        // set document properties from nearest page
+        $properties = array(
+            'title',
+            'description',
+            'keywords',
+        );
+        foreach ($properties as $prop)
+        {
+            foreach ($pages as $page)
+            {
+                if ( ! empty($page->$prop))
+                {
+                    if ($prop == 'title')
+                    {
+                        $this->document->title($page->title);
+                    }
+                    else
+                    {
+                        $this->document->metadata(sprintf(
+                            '<meta name="%s" content="%s" />',
+                            $prop,
+                            $page->$prop
+                        ));
+                    }
+                    break;
+                }
+            }
+        }
     }
 
     // --------------------------------------------------------------------
@@ -115,7 +123,8 @@ class Public_Controller extends MY_Controller
 	 **/
 	protected function init_partials()
     {
-        $this->page
+        parent::init_partials();
+        $this->document
             ->partial('header', '_partials/header')
             ->partial('footer', '_partials/footer')
             ->title(config_item('site_title'))
@@ -124,7 +133,7 @@ class Public_Controller extends MY_Controller
         $env = ( ! defined('ENVIRONMENT') || (defined('ENVIRONMENT') && ENVIRONMENT == 'production'));
         if (config_item('google_analytics_id') && $env)
         {
-            $this->page->partial('analytics', '_partials/analytics');
+            $this->document->partial('analytics', '_partials/analytics');
         }
     }
 
@@ -153,11 +162,10 @@ class Admin_Controller extends MY_Controller
     public function __construct()
     {
         parent::__construct();
-
         $this->require_login();
         $this->load->helper('admin');
         $this->lang->load('admin');
-        $this->page->layout = 'admin';
+        $this->init_partials();
     }
 
     // --------------------------------------------------------------------
@@ -174,6 +182,7 @@ class Admin_Controller extends MY_Controller
     {
         if ($this->uri->rsegment(1) !== 'login' && ! logged_in())
         {
+            set_status('warning', lang('not_authorized'));
             redirect('login');
         }
     }
@@ -190,12 +199,13 @@ class Admin_Controller extends MY_Controller
 	 **/
 	protected function init_partials()
     {
-        $this->page
-		    ->partial('header', '_partials/admin_header')
-		    ->partial('footer', '_partials/admin_footer')
-		    ->partial('sidebar', '_partials/admin_sidebar')
+        parent::init_partials();
+        $this->document->layout = 'admin';
+        $this->document
+            ->partial('header', '_partials/admin_header')
+            ->partial('footer', '_partials/admin_footer')
+            ->title(config_item('site_title'))
             ;
-        add_script('admin.min.js');
     }
 
     // --------------------------------------------------------------------

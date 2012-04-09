@@ -38,7 +38,7 @@ if ( ! function_exists('get_asset'))
         $dot_pos = strrpos($file, '.');
         $base = substr($file, 0, $dot_pos);
         $ext = substr($file, $dot_pos+1);
-        return sprintf('%s.%s.%s', $base, filemtime(FCPATH.$file), $ext);
+        return site_url(sprintf('%s.%s.%s', $base, filemtime(FCPATH.$file), $ext));
     }
 }
 

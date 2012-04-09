@@ -12,7 +12,7 @@
 	<!--[if IE]><![endif]-->
 	
     <base href="<?php echo site_url(); ?>" />
-	<title><?php echo page_title(); ?></title>
+	<title><?php echo document_title(); ?></title>
 
 	<!--  Mobile Viewport Fix j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
 		device-width : Occupy full width of the screen in its current orientation
@@ -33,19 +33,19 @@
     <!--container-->
     <div id="container" class="container-fluid">
 
-        <?php echo page_partial('header'); ?>
+        <?php echo document_partial('header'); ?>
 
         <!--content-->
         <div id="content" class="row-fluid">
 
             <?php echo display_status(); ?>
 
-            <?php echo page_partial('sidebar'); ?>
+            <?php echo document_partial('sidebar'); ?>
 
             <!--main-->
             <div id="main" class="span10">
 
-                <?php echo page_content(); ?>
+                <?php echo document_content(); ?>
 
             </div>
             <!--/main-->
@@ -53,7 +53,7 @@
         </div>
         <!--/content-->
 
-        <?php echo page_partial('footer'); ?>
+        <?php echo document_partial('footer'); ?>
 
     </div>
     <!--/container-->
@@ -61,7 +61,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="<?php echo site_url('assets/scripts/libs/jquery.min.js'); ?>"><\/script>')</script>
 
-    <?php echo page_partial('footer_scripts'); ?>
+    <?php echo document_partial('footer_scripts'); ?>
 
 </body>
 </html>
