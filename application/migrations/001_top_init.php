@@ -278,6 +278,7 @@ class Migration_Top_init extends CI_Migration {
             ),
         ));
         $this->dbforge->add_key('uri', TRUE);
+        $this->dbforge->add_key('id');
         $this->dbforge->create_table('pages');
     }
 
