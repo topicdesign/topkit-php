@@ -31,7 +31,7 @@ $config['site_timezone'] = 'America/New_York';
  *
  * @var string
  **/
-$config['developer_email'] = '';
+$config['developer_email'] = 'developer@topicdesign.com';
 
 /**
  * Directory containing static pages
