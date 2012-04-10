@@ -5,6 +5,15 @@
 | -------------------------------------------------------------------------
 */
 
+$config['nav_template'] = array(
+    'open_tag' => '<nav>',
+    'close_tag' => '</nav>',
+    'open_list' => '<ul>',
+    'close_list' => '</ul>',
+    'open_list_item' => '<li>',
+    'close_list_item' => '</li>',
+);
+
 /* EXAMPLE
 $config['anchors']['main'] = array(
     array(

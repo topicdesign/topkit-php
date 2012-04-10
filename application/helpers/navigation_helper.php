@@ -20,16 +20,23 @@
  */
 if ( ! function_exists('get_nav'))
 {
-	function get_nav($menu = 'main', $nested = TRUE)
+	function get_nav($menu = 'main', $nested = TRUE, $custom_template = FALSE)
     {
         $CI = get_instance();
         $CI->config->load('navigation', TRUE, TRUE);
-        $config = $CI->config->item('anchors', 'navigation');
-        if ( ! isset($config[$menu]))
+        if (is_string($menu))
         {
-            return FALSE;
+            $config = $CI->config->item('anchors', 'navigation');
+            if ( ! isset($config[$menu]))
+            {
+                return FALSE;
+            }
+            $anchors = $config[$menu];
         }
-        $anchors = $config[$menu];
+        else
+        {
+            $anchors = $menu;
+        }
         if (empty($anchors))
         {
             return FALSE;
@@ -57,13 +64,19 @@ if ( ! function_exists('get_nav'))
                 }
             }
         }
+        $template = $CI->config->item('nav_template', 'navigation');
+        if (is_array($custom_template))
+        {
+            $template = array_merge($custom_template, $template);
+        }
         $data = array(
             'nested'    => $nested,
-            'anchors'   => $anchors
+            'anchors'   => $anchors,
+            'template'  => $template,
         );
-        return '<nav>'
+        return $template['open_tag']
             . $CI->load->view('navigation/ul', $data, TRUE)
-            . '</nav>';
+            . $template['close_tag'];
 	}
 }
 
