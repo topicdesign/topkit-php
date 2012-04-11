@@ -1,6 +1,6 @@
 <? foreach ($alerts as $type => $messages): ?>
 
-<div data-type="<?= $type ?>" class="status" title="<?= ucfirst($type) ?>">
+<div data-type="<?= $type ?>" class="alert <?= 'alert-' . $type ?>" title="<?= ucfirst($type) ?>">
 	
 	<h6><?=ucfirst($type)?></h6>
 	
