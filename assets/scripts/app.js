@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // jquery is ready
-	$('div.status').each( function() {
+	$('div.alert').each( function() {
 		var type = $(this).data('type');
 		var sticky = false;
 		if (type == 'error' || type == 'warning') {
@@ -9,5 +9,6 @@ $(document).ready(function(){
 		$(this).find('ul li').each( function() {
 			$.jnotify($(this).text(), type, sticky);
 		});
+        $(this).hide();
 	});
 });

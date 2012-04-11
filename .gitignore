@@ -12,4 +12,4 @@ application/logs/*
 assets/cache/*
 !assets/cache/.folder
 
-assets/styles/.sass-cache/*
+*.sass-cache
