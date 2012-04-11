@@ -12,8 +12,15 @@
 #!import libs/bootstrap/bootstrap-typeahead.min.js
 
 #!import plugins/jquery.jnotify.js
+#!import plugins/bootstrap-datepicker.js
 
-$(document).ready(function(){
+$(document).ready(function() {
+    //datetimepickers();
+    status_messages();
+});
+// --------------------------------------------------------------------
+// --------------------------------------------------------------------
+function status_messages(){
     $('div.status').each( function() {
 		var type = $(this).data('type');
 		var sticky = false;
@@ -24,4 +31,5 @@ $(document).ready(function(){
 			$.jnotify($(this).text(), type, sticky);
 		});
 	});
-});
+}
+// --------------------------------------------------------------------

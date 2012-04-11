@@ -20,7 +20,7 @@
                 <input type="checkbox" id="remember" name="remember" value="TRUE" />Remember this device
             </label>
         </fieldset>
-        <fieldset class="buttons">
+        <fieldset class="form-actions">
             <input type="submit" value="Login" class="submit btn btn-primary" />
         </fieldset>
     </form>

@@ -22,7 +22,7 @@
                     <td><?php echo local_pubdate($p->updated_at, 'Y-m-d'); ?></td>
                     <td>
                         <div class="btn-group pull-right">
-                            <a href="#" class="btn"><i class="icon-edit"></i>Edit</a>
+                            <a href="<?php echo site_url('admin/pages/edit/'.$p->id); ?>" class="btn"><i class="icon-edit"></i>Edit</a>
                             <button class="btn dropdown-toggle" data-toggle="dropdown">
                                 <span class="caret"></span>
                             </button>
