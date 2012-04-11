@@ -27,7 +27,7 @@
         <div class="control-group">
             <label for="page-form-publish" class="text">Publish Date</label>
             <div class="controls">
-                <input type="text" name="publish" value="<?php echo set_value('publish',local_date_format($page->published_at, 'Y-m-d')); ?>" id="page-form-publish" class="text" data-datepicker="datepicker">
+                <input type="text" name="publish" value="<?php echo set_value('publish',local_date_format($page->published_at, 'Y-m-d')); ?>" id="page-form-publish" class="text" data-role="datepicker">
             </div>
         </div>
         <div class="control-group">

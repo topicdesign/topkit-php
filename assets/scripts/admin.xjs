@@ -15,10 +15,33 @@
 #!import plugins/bootstrap-datepicker.js
 
 $(document).ready(function() {
-    //datetimepickers();
+    datetimepickers();
     status_messages();
 });
 // --------------------------------------------------------------------
+function datetimepickers(){
+  var selector = 'input[data-role="datepicker"]'
+    , opts = {
+        format: 'yyyy/m/d'
+      , weekStart: 0
+      , startDate: -Infinity
+      , endDate: Infinity
+      , autoclose: true
+      , startView: 'month'
+      , language: 'en'
+    }
+    ;
+  $(selector).each(function(){
+    var el = $(this)
+      , data = el.data()
+      ;
+    for (var i in opts){
+      var d = 'date'+i.charAt(0).toUpperCase()+i.slice(1)
+      opts[i] = data[d] || opts[i];
+    }
+    el.datepicker(opts);
+  });
+}
 // --------------------------------------------------------------------
 function status_messages(){
     $('div.status').each( function() {
