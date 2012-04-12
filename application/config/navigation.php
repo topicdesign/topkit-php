@@ -6,12 +6,24 @@
 */
 
 $config['nav_template'] = array(
-    'open_tag' => '<nav>',
-    'close_tag' => '</nav>',
-    'open_list' => '<ul>',
-    'close_list' => '</ul>',
-    'open_list_item' => '<li>',
-    'close_list_item' => '</li>',
+    'wrapper'   => array(
+        'tag'           => 'nav',
+        'class'         => '',
+        'attributes'    => array(
+        ),
+    ),
+    'list'      => array(
+        'tag'           => 'ul',
+        'class'         => '',
+        'attributes'    => array(
+        ),
+    ),
+    'list_item' => array(
+        'tag'           => 'li',
+        'class'         => '',
+        'attributes'    => array(
+        ),
+    ),
 );
 
 /* EXAMPLE
@@ -43,6 +55,8 @@ $config['anchors']['main'] = array(
         'attr'  => array(
             'title' => "Home",
         ),
+        'prepend' => '',
+        'append'  => '',
     ),
     array(
         'href'  => '/html',
@@ -50,6 +64,8 @@ $config['anchors']['main'] = array(
         'attr'  => array(
             'title' =>  "HTML Markup Test Page",
         ),
+        'prepend' => '',
+        'append'  => '',
     ),
 );
 $config['anchors']['footer'] = array(
@@ -59,6 +75,8 @@ $config['anchors']['footer'] = array(
         'attr'  => array(
             'title' =>  "Home",
         ),
+        'prepend' => '',
+        'append'  => '',
     ),
     array(
         'href'  => '/html',
@@ -66,6 +84,8 @@ $config['anchors']['footer'] = array(
         'attr'  => array(
             'title' =>  "HTML Markup Test Page",
         ),
+        'prepend' => '',
+        'append'  => '',
     ),
     array(
         'href'  => '#container',
@@ -73,6 +93,8 @@ $config['anchors']['footer'] = array(
         'attr'  => array(
             'title' =>  "Scroll to Top of Page",
         ),
+        'prepend' => '',
+        'append'  => '',
     ),
 );
 

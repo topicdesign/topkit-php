@@ -74,9 +74,18 @@ if ( ! function_exists('get_nav'))
             'anchors'   => $anchors,
             'template'  => $template,
         );
-        return $template['open_tag']
-            . $CI->load->view('navigation/ul', $data, TRUE)
-            . $template['close_tag'];
+        
+        $output =  '<' . $template['wrapper']['tag'] .' '
+            . ' class="' . $template['wrapper']['class'] . '"';
+        foreach ($template['wrapper']['attributes'] as $attr => $val) 
+        {
+            $output .= $attr . '="' . $val . '"';
+        }
+        $output .= '>';
+        $output .= $CI->load->view('navigation/list', $data, TRUE);
+        $output .= '</' . $template['wrapper']['tag'] . '>';
+
+        return $output;
 	}
 }
 
