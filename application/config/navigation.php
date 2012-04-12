@@ -77,8 +77,6 @@ $config['anchors']['main'] = array(
         'attr'  => array(
             'title' => "Home",
         ),
-        'prepend' => '',
-        'append'  => '',
     ),
     array(
         'href'  => '/html',
@@ -86,8 +84,6 @@ $config['anchors']['main'] = array(
         'attr'  => array(
             'title' =>  "HTML Markup Test Page",
         ),
-        'prepend' => '',
-        'append'  => '',
     ),
 );
 $config['anchors']['footer'] = array(
@@ -97,8 +93,6 @@ $config['anchors']['footer'] = array(
         'attr'  => array(
             'title' =>  "Home",
         ),
-        'prepend' => '',
-        'append'  => '',
     ),
     array(
         'href'  => '/html',
@@ -106,8 +100,6 @@ $config['anchors']['footer'] = array(
         'attr'  => array(
             'title' =>  "HTML Markup Test Page",
         ),
-        'prepend' => '',
-        'append'  => '',
     ),
     array(
         'href'  => '#container',
@@ -115,8 +107,6 @@ $config['anchors']['footer'] = array(
         'attr'  => array(
             'title' =>  "Scroll to Top of Page",
         ),
-        'prepend' => '',
-        'append'  => '',
     ),
 );
 $config['anchors']['admin_sidebar'] = array(
