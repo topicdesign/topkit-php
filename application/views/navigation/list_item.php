@@ -11,7 +11,7 @@ foreach ($template['list_item']['attributes'] as $attr => $val)
 echo '>';
 
 // anchor
-if ($anchor['prepend']) echo $anchor['prepend'];
+if (isset($anchor['prepend'])) echo $anchor['prepend'];
 if ( ! $anchor['href']) 
 {
     echo $anchor['label'];
@@ -20,7 +20,7 @@ else
 {
     echo anchor($anchor['href'], $anchor['label'], $anchor['attr']);
 }
-if ($anchor['append']) echo $anchor['append'];
+if (isset($anchor['append'])) echo $anchor['append'];
 if ($nested && isset($anchor['children']) && ! empty($anchor['children']))
 {
     $this->load->view('navigation/list', array('anchors'=>$anchor['children'], 'template'=>$template));
