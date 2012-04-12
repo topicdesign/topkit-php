@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login extends Public_Controller {
+class Login extends Admin_Controller {
 
     /**
      * Constructor
@@ -40,7 +40,7 @@ class Login extends Public_Controller {
             $remember = (bool) $this->input->post('remember');
             if ($this->authentic->login($identity, $password, $remember)) 
             {
-                redirect();
+                redirect('admin');
             }
             $data['errors'] = $this->authentic->get_errors();
         }

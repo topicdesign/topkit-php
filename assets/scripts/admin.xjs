@@ -1,0 +1,58 @@
+#!import libs/bootstrap/bootstrap-alert.min.js
+#!import libs/bootstrap/bootstrap-button.min.js
+#!import libs/bootstrap/bootstrap-carousel.min.js
+#!import libs/bootstrap/bootstrap-collapse.min.js
+#!import libs/bootstrap/bootstrap-dropdown.min.js
+#!import libs/bootstrap/bootstrap-modal.min.js
+#!import libs/bootstrap/bootstrap-tooltip.min.js
+#!import libs/bootstrap/bootstrap-popover.min.js
+#!import libs/bootstrap/bootstrap-scrollspy.min.js
+#!import libs/bootstrap/bootstrap-tab.min.js
+#!import libs/bootstrap/bootstrap-transition.min.js
+#!import libs/bootstrap/bootstrap-typeahead.min.js
+
+#!import plugins/jquery.jnotify.js
+#!import plugins/bootstrap-datepicker.js
+
+$(document).ready(function() {
+    datetimepickers();
+    status_messages();
+});
+// --------------------------------------------------------------------
+function datetimepickers(){
+  var selector = 'input[data-role="datepicker"]'
+    , opts = {
+        format: 'yyyy/m/d'
+      , weekStart: 0
+      , startDate: -Infinity
+      , endDate: Infinity
+      , autoclose: true
+      , startView: 'month'
+      , language: 'en'
+    }
+    ;
+  $(selector).each(function(){
+    var el = $(this)
+      , data = el.data()
+      ;
+    for (var i in opts){
+      var d = 'date'+i.charAt(0).toUpperCase()+i.slice(1)
+      opts[i] = data[d] || opts[i];
+    }
+    el.datepicker(opts);
+  });
+}
+// --------------------------------------------------------------------
+function status_messages(){
+    $('div.status').each( function() {
+		var type = $(this).data('type');
+		var sticky = false;
+		if (type == 'error' || type == 'warning') {
+			sticky = true;
+		}
+		$(this).find('ul li').each( function() {
+			$.jnotify($(this).text(), type, sticky);
+		});
+	});
+}
+// --------------------------------------------------------------------
