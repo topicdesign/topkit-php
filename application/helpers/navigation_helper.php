@@ -64,10 +64,18 @@ if ( ! function_exists('get_nav'))
                 }
             }
         }
-        $template = $CI->config->item('nav_template', 'navigation');
+        $templates = $CI->config->item('nav_template', 'navigation');
         if (is_array($custom_template))
         {
-            $template = array_merge($custom_template, $template);
+            $template = array_merge($custom_template, $templates['default']);
+        }
+        else if (is_string($custom_template))
+        {
+            $template = $templates[$custom_template];
+        }
+        else 
+        {
+            $template = $templates['default'];
         }
         $data = array(
             'nested'    => $nested,

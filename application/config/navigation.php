@@ -5,7 +5,7 @@
 | -------------------------------------------------------------------------
 */
 
-$config['nav_template'] = array(
+$config['nav_template']['default'] = array(
     'wrapper'   => array(
         'tag'           => 'nav',
         'class'         => '',
