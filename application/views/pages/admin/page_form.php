@@ -1,4 +1,4 @@
-<form action="<?php echo current_url(); ?>" method="post" accept-charset="utf-8">
+<form action="<?php echo current_url(); ?>" method="post" accept-charset="utf-8" class="row-fluid form-inline">
     <fieldset class="span6">
         <div class="control-group">
             <label for="page-form-title" class="control-label text">Title</label>
@@ -23,7 +23,7 @@
             </div>
         </div>
     </fieldset>
-    <fieldset class="well span3">
+    <fieldset class="well span4">
         <div class="control-group">
             <label for="page-form-publish" class="text">Publish Date</label>
             <div class="controls">
