@@ -12,7 +12,8 @@
 #!import libs/bootstrap/bootstrap-typeahead.min.js
 
 #!import plugins/jquery.jnotify.js
-#!import plugins/bootstrap-datepicker.js
+#!import plugins/bootstrap/bootstrap-datepicker.js
+#!import plugins/bootstrap/bootstrap-timepicker.js
 
 $(document).ready(function() {
     datetimepickers();
@@ -22,7 +23,7 @@ $(document).ready(function() {
 function datetimepickers(){
   var selector = 'input[data-role="datepicker"]'
     , opts = {
-        format: 'yyyy/m/d'
+        format: 'yyyy/mm/dd'
       , weekStart: 0
       , startDate: -Infinity
       , endDate: Infinity
@@ -41,6 +42,8 @@ function datetimepickers(){
     }
     el.datepicker(opts);
   });
+
+  $('input[data-role="timepicker"]').timepicker();
 }
 // --------------------------------------------------------------------
 function status_messages(){
