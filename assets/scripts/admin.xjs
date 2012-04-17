@@ -14,10 +14,13 @@
 #!import plugins/jquery.jnotify.js
 #!import plugins/bootstrap/bootstrap-datepicker.js
 #!import plugins/bootstrap/bootstrap-timepicker.js
+#!import plugins/wysihtml5-0.3.0_rc2.js
+#!import plugins/bootstrap/bootstrap-wysihtml5.js
 
 $(document).ready(function() {
     datetimepickers();
     status_messages();
+    wysihtml5_editors();
 });
 // --------------------------------------------------------------------
 function datetimepickers(){
@@ -57,5 +60,10 @@ function status_messages(){
 			$.jnotify($(this).text(), type, sticky);
 		});
 	});
+}
+
+// --------------------------------------------------------------------
+function wysihtml5_editors(){
+  $('textarea[data-role="editor"]').wrap($('<div class="well"/>')).wysihtml5();
 }
 // --------------------------------------------------------------------
