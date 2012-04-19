@@ -44,7 +44,6 @@ class Pages extends Public_Controller {
         }
         $page = $this->document->page;
         // output page template
-        set_status('error', 'hithere');
         $this->document
             ->build('pages/' . $page->view, array('page'=>$page));
     }

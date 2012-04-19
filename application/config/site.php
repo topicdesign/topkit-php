@@ -43,9 +43,9 @@ $config['static_page_dir'] = 'pages/static/';
 // --------------------------------------------------------------------
 // Do not edit below this line, managed by CMS
 // --------------------------------------------------------------------
-$config['site_title'] = 'Leddfoot';
+$config['site_title'] = 'topkit';
 $config['site_description'] = '';
-$config['site_owner_title'] = 'Topic Design Group';
+$config['site_owner_title'] = 'Topic Design';
 $config['site_owner_url'] = 'http://topicdesign.com';
 $config['site_email'] = 'info@topicdesign.com';
 $config['site_copy_year'] = '2012';
