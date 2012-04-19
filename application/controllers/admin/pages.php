@@ -75,12 +75,12 @@ class Pages extends Admin_Controller {
         $rules = array(
             array(
                  'field'   => 'title', 
-                 'label'   => 'lang:page_field_title', 
+                 'label'   => 'lang:page-field-title', 
                  'rules'   => 'required'
             ),
             array(
                  'field'   => 'uri', 
-                 'label'   => 'lang:page_field_uri', 
+                 'label'   => 'lang:page-field-uri', 
                  'rules'   => "callback_check_uri[{$page->uri}]"
             ),
         );

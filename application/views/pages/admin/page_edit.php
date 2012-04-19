@@ -2,7 +2,7 @@
     <header>
         <ul class="breadcrumb">
             <li>
-                <a href="<?php echo site_url('admin/pages'); ?>"><?php echo lang('page_edit_title'); ?></a>
+                <a href="<?php echo site_url('admin/pages'); ?>"><?php echo lang('page-edit-title'); ?></a>
             </li>
         <?php if ($page->id): ?>
             <li class="active"><span class="divider">/</span><?php echo $page->title; ?></li>
