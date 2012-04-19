@@ -317,7 +317,7 @@
 
 
 
-;(function($){
+;(function($, wysi){
   var btn_templates = {
     'format':
         '<li class="dropdown format">'
@@ -391,120 +391,99 @@
           + '</div>'
         + '</li>'
   };
+  var wysihtml5_defaults = {
+    // Give the editor a name, the name will also be set as class name on the iframe and on the iframe's body
+      name:                 null
+    // Whether the editor should look like the textarea (by adopting styles)
+    , style:                true
+    // Id of the toolbar element, pass falsey value if you don't want any toolbar logic
+    , toolbar:              null
+    // Whether urls, entered by the user should automatically become clickable-links
+    , autoLink:             true
+    // Object which includes parser rules (set this to examples/rules/spec.json or your own spec, otherwise only span tags are allowed!)
+    , parserRules:          null
+    // Parser method to use when the user inserts content via copy & paste
+    , parser:               wysihtml5.dom.parse || Prototype.K
+    // Class name which should be set on the contentEditable element in the created sandbox iframe, can be styled via the 'stylesheets' option
+    , composerClassName:    "wysihtml5-editor"
+    // Class name to add to the body when the wysihtml5 editor is supported
+    , bodyClassName:        "wysihtml5-supported"
+    // Array (or single string) of stylesheet urls to be loaded in the editor's iframe
+    , stylesheets:          []
+    // Placeholder text to use, defaults to the placeholder attribute on the textarea element
+    , placeholderText:      null
+    // Whether the composer should allow the user to manually resize images, tables etc.
+    , allowObjectResizing:  true
+    // Whether the rich text editor should be rendered on touch devices (wysihtml5 >= 0.3.0 comes with basic support for iOS 5)
+    , supportTouchDevices:  true
+  };
   var methods = {
     // --------------------------------------------------------------------
     // init properties
     init: function(opts){
-      var opts = $.extend({
-          '24hr': false
-        , steps : 15
-      }, opts);
-      return this.each(function() {
+      var opts = $.extend(true, {
+            btn_templates: btn_templates
+          , toolbar_btns: ['format','emphasis','lists','link','image']
+        }, wysihtml5_defaults, opts)
+        ;
+      return this.each(function(){
         var $this = $(this)
-          , data = $this.data('timepicker')
+          , data = $this.data('editor')
         ;
         if ( ! data) {
-          // setup auto-complete time options
-          var time_opts = []
-            , num_hours = (opts['24hr'] && 23) || 12
-          ;
-          for (var i=0, j = num_hours*60; i < j; i+=opts.steps){
-            var h = (Math.floor(i/60) + 1)%(num_hours+1)
-              , m = i%60
-            ;
-          if (m.toString().length == 1) m += '0';
-            time_opts.push(h+':'+m);
-          };
           // init data object
-          $this.data('timepicker', {
-            opts: opts
-          });
-          // inject buttons for AM/PM toggle
-          if ( ! opts['24hr']) methods.inject_AMPM_input.apply(this);
-          // autocomplete ignoring ':'
-          $this.typeahead({
-              source: time_opts
-            , matcher: function(item){
-              var i = item.replace(':', '')
-                , q = this.query.replace(':', '')
-                ;
-              return ~i.toLowerCase().indexOf(q.toLowerCase())
-            }
-          });
-          // maintain string formatting
-          $this.on('blur', methods.format_time);
+          $this.data('editor', {});
+          // convert wysihtml5 opts
+          var wysi_opts = {};
+          for (i in wysihtml5_defaults) {
+            wysi_opts[i] = opts[i];
+          };
+          methods.init_toolbar.apply(this, [
+              opts.toolbar_btns
+            , opts.btn_templates
+          ]);
+          methods.init_editor.apply(this, [wysi_opts]);
         };
       });
     }
     // --------------------------------------------------------------------
-    // reformat time to 00:00
-    , format_time: function(e){
+    // initialize toolbar markup
+    , init_toolbar: function(btns, tmpls){
       var $this = $(this)
-        , str = $this.val().replace(':', '')
-        ;
-      str = str.substr(0,str.length-2) + ':' + str.substr(-2);
-      $this.val(str);
+        , data = $this.data('editor')
+        , toolbar_wrapper = $("<ul/>", {
+          'id'    : $this.attr('id') + "-wysihtml5-toolbar"
+        , 'class' : "wysihtml5-toolbar"
+        //, 'style' : "display:none"
+      });
+      for (var i=0, j=btns.length; i < j; i++) {
+        var btn_tmpl = tmpls[btns[i]];
+        toolbar_wrapper.append(btn_tmpl);
+      };
+      $this.before(toolbar_wrapper);
+      data.toolbar = toolbar_wrapper;
     }
     // --------------------------------------------------------------------
-    // add markup/UI for AM/PM toggle and hidden input
-    , inject_AMPM_input: function(e){
+    , init_editor: function(opts){
       var $this = $(this)
-        , data = $this.data('timepicker')
-        , wrapper = $('<div/>', {
-          class: 'input-append'
-        })
-        , input = $('<input type="hidden"/>')
-          .attr('name',$this.attr('name')+'-ampm')
-        , btns = ['AM','PM']
-        , val_bits = $this.val().split(' ')
-        , ampm = 'PM'
+        , data = $this.data('editor')
         ;
-      if (val_bits.length > 1) {
-        $this.val(val_bits[0]);
-        ampm = val_bits[1];
-      };
-      wrapper = $this.wrap(wrapper).parent();
-      wrapper.append(input);
-      $this.data('timepicker', $.extend(data,{'ampm_input':input}));
-      for (var i=0,j=btns.length; i<j; i++){
-        var btn = $('<button/>', {
-              text: btns[i]
-            , class: 'btn ' + btns[i]
-          })
-            .on('click', {obj:this,val:btns[i]}, methods.set_ampm)
-          ;
-        btn.appendTo(wrapper);
-        if (btns[i] == ampm) btn.click();
-      };
-    }
-    // --------------------------------------------------------------------
-    // set hidden input value and toggle active button
-    , set_ampm: function(e){
-      var $this = $(e.data.obj)
-        , data = $this.data('timepicker')
-        , input = data.ampm_input
-        ;
-      e.preventDefault();
-      input.val(e.data.val);
-      $(this)
-        .addClass('active')
-        .siblings()
-        .removeClass('active')
-        ;
-    }
+      opts.toolbar = data.toolbar.attr('id');
+      data.editor = new wysi.Editor($this.attr('id'), opts);
+    } 
     // --------------------------------------------------------------------
   }; 
   // --------------------------------------------------------------------
-  // init jQuery.timepicker plugin
-  $.fn.editor = function( method ) {
-    if ( methods[method] ) {
-      return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
-    } else if ( typeof method === 'object' || ! method ) {
-      return methods.init.apply( this, arguments );
+  // init jQuery.editor plugin
+  $.fn.editor = function(method) {
+    if (methods[method]) {
+      return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+    } else if (typeof method === 'object' || ! method) {
+      return methods.init.apply(this, arguments);
     } else {
-      $.error( 'Method ' +  method + ' does not exist on jQuery.timepicker' );
+      $.error('Method ' +  method + ' does not exist on jQuery.editor');
     }
   };
   // --------------------------------------------------------------------
-})(jQuery);
+})(jQuery, wysihtml5);
 

@@ -76,11 +76,12 @@ function wysihtml5_editors(){
   }
   $('textarea[data-role="editor"]')
     .wrap($('<div class="well"/>'))
-    .wysihtml5({
-      events: {
-        'focus:composer': on_focus 
-      } 
-    })
+    //.wysihtml5({
+      //events: {
+        //'focus:composer': on_focus 
+      //} 
+    //})
+    .editor()
     ;
 }
 // --------------------------------------------------------------------
