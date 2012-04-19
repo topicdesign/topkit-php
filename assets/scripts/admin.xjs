@@ -64,6 +64,23 @@ function status_messages(){
 
 // --------------------------------------------------------------------
 function wysihtml5_editors(){
-  $('textarea[data-role="editor"]').wrap($('<div class="well"/>')).wysihtml5();
+  var on_focus = function(){
+    // ensure starting <p> if empty
+    if(this.textareaElement.value === '') {
+      var self = this;
+      setTimeout(function() {
+        self.composer.selection.surround(document.createElement('p'));
+        self.stopObserving('focus:composer', on_focus);
+      }, 10);
+    }
+  }
+  $('textarea[data-role="editor"]')
+    .wrap($('<div class="well"/>'))
+    .wysihtml5({
+      events: {
+        'focus:composer': on_focus 
+      } 
+    })
+    ;
 }
 // --------------------------------------------------------------------
