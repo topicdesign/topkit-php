@@ -1,0 +1,229 @@
+#-------------------------------------------------------------------------------
+#       CodeIgniter .htaccess file for the main index.php directory
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+# If you must have your CI "system" directory at http://domain.com/system/,
+# Then I advise you to place a .htaccess file in that directory
+# with "deny from all" in it.
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+# Be sure to replace "domain.com" with your actual domain and tld anywhere this
+# appears in this file.
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+# Restore "allow from all" / I use a "deny from all" in some directory
+# structures, especially where I am hosting multiple sub-domains that point to
+# subdirectories of the main domain, this restores it.
+#-------------------------------------------------------------------------------
+#allow from all
+
+#-------------------------------------------------------------------------------
+# Turn off directory listings for increased security
+#-------------------------------------------------------------------------------
+Options -Indexes
+
+#-------------------------------------------------------------------------------
+# Turn on following symbolic links.
+#-------------------------------------------------------------------------------
+Options +FollowSymLinks
+
+#-------------------------------------------------------------------------------
+# Some web servers require this for index.php to be removed properly.  You may
+# try your .htaccess with or without the following line.
+# Most work fine with it.
+#-------------------------------------------------------------------------------
+Options -MultiViews
+
+#-------------------------------------------------------------------------------
+# Make index.php the directory index page
+#-------------------------------------------------------------------------------
+DirectoryIndex index.php
+
+#-------------------------------------------------------------------------------
+# Always make sure mod_rewrite is installed before using.
+# If you are on a Linux server, uncomment the line with mod_rewrite.c
+# If on a Windows server using XAMPP, uncomment the line with mod_rewrite.so
+#-------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+#<IfModule mod_rewrite.so>
+
+  #-----------------------------------------------------------------------------
+  # Turn on the RewriteEngine
+  #-----------------------------------------------------------------------------
+  RewriteEngine on
+
+  #-----------------------------------------------------------------------------
+  # Set the base directory where the application root is located.
+  #-----------------------------------------------------------------------------
+  # If your application is at http://domain.com/path/to/CI_Application/
+  # then uncomment the following line. Change /path/to/CI_Application/ to the
+  # actual URL path not including the domain.com (or localhost).
+  # This includes using a subdirectory on localhost, like
+  # http://localhost/path/to/CI_Application/
+  RewriteBase /top/topkit/
+
+  # If your application is at http://domain.com/ (or is http://localhost/)
+  # then uncomment the following line.
+  #RewriteBase /
+
+  #-----------------------------------------------------------------------------
+  # The following 2 lines will force a www.prefix.  If you want to make sure
+  # your site always displays the www subdomain, then uncomment the following
+  # 2 lines.
+  #-----------------------------------------------------------------------------
+  #RewriteCond %{HTTP_HOST} !^www\.domain\.com$ [NC]
+  #RewriteRule ^(.*)$ http://domain.com/$1 [R=301,L]
+
+  #-----------------------------------------------------------------------------
+  # The following 2 lines will remove a www prefix.  If you wish to remove the
+  # www and always have http://domain.com instead of http://domain.com
+  # then uncomment the following 2 lines.
+  #-----------------------------------------------------------------------------
+  #RewriteCond %{HTTP_HOST} ^www\.domain\.com$ [NC]
+  #RewriteRule ^(.*)$ http://domain.com/$1 [L,R=301]
+
+  #-----------------------------------------------------------------------------
+  # If a controller can't be found - then issue a 404 error from PHP
+  # Error messages (via the "error" plugin)
+  #-----------------------------------------------------------------------------
+  ErrorDocument 403 /index.php/403/
+  ErrorDocument 404 /index.php/404/
+  ErrorDocument 500 /index.php/500/
+
+  #-----------------------------------------------------------------------------
+  # Deny any people (or bots) from the following sites: (to stop spam comments)
+  #-----------------------------------------------------------------------------
+  #RewriteCond %{HTTP_REFERER} nienschanz\.ru [NC,OR]
+  #RewriteCond %{HTTP_REFERER} porn\.com
+  #RewriteRule .* - [F]
+  # NOTE: If you are having trouble from a certain URL just
+  # add it above to forbid all visitors from that site.
+
+  #-----------------------------------------------------------------------------
+  # You can also uncomment this if you know the IP:
+  # Just place the IP address you wish to deny here.
+  # You may use multiple IP addresses separated by a space.
+  # You may also use a domain, tld, or a part thereof.
+  # Deny from 192.168.1.1 127.0.0.1
+  # Deny from .net example.com
+  # The above will deny from example.com and from all .net locations.
+  #-----------------------------------------------------------------------------
+  #Deny from 192.168.1.1
+
+  #-----------------------------------------------------------------------------
+  # METHOD #1 of HIDING PHP FILES. (There is an alternate method further down.)
+  # If the file is NOT the index.php file then
+  # Hide all PHP files so none can be accessed by HTTP.
+  # This may not be desirable in all cases.
+  #-----------------------------------------------------------------------------
+  RewriteCond %{REQUEST_FILENAME} !index.php
+  RewriteCond $1 !^(robots\.txt|humans\.txt|sitemap\.xml|favicon\.ico|assets)
+  #RewriteRule (.*)\.php$ index.php/$1
+
+  #-----------------------------------------------------------------------------
+  # The following lines begin the conditional setup for removing index.php
+  # Use either METHOD #1 or METHOD #2, but not both.
+  #-----------------------------------------------------------------------------
+  # METHOD #1
+  # If you want to redirect all files and directories that do not exist (404)
+  # then use the following 2 statements.  This is how
+  # http://domain.com/controller/ is redirected to http://domain.com/index.php
+  # because /controller/ doesn't really exist, so now CI can use the URL to
+  # call the correct controller.  This is the standard and default method.
+  #RewriteCond %{REQUEST_FILENAME} !-f
+  #RewriteCond %{REQUEST_FILENAME} !-d
+
+  # METHOD #2
+  # If you want to redirect all files/directories that are not a request
+  # for the following:
+  # index.php, robots.txt, favicon.ico, /public/, /img/, /css/, /js/
+  # then use the following statement.
+  # If you have other applications that are non-CI integrated into your site,
+  # Like a third-party forum or blog, then this will disable it.  Do not
+  # use if you need to call third-party PHP files.
+  #RewriteCond $1 !^(index\.php|public|img|css|js|robots\.txt|favicon\.ico)
+
+  # ADDITIONAL REWRITE CONDITION: This may be used in addition to one of the
+  # above METHODs.
+  # METHOD #2 of HIDING PHP FILES: This is to be used exclusively of the
+  # method #1 of hiding PHP files listed above.  Do not use both methods.
+  # Explanation: If you would like to hide all  PHP files so none can be
+  # accessed by HTTP, then use the following line.
+  # NOTE: If you have other applications that are non-CI integrated into your
+  # site, like a third-party forum or blog, then this will disable it.  Do not
+  # use if you need to call third-party PHP files.
+  # If you need heightened security against use of PHP files, see my tutorial
+  # on how to properly protect your directories.
+  # NOTE: I have not personally tested this condition yet.  If you have tested
+  # it and verified it works or does not work, please contact me and tell me
+  # about it. http://www.danielwmoore.com/contact.
+  #RewriteCond %{REQUEST_FILENAME}\.php -f [NC]
+
+  #-----------------------------------------------------------------------------
+  # use the following line if CI is in the root of the URL.
+  # You may need to use index.php/$1 or index.php?/$1
+  # Try it with or without the ? after index.php to see which works for you.
+  # GoDaddy accounts require the ?
+  # My localhost with XAMPP on Windows also requires the ?
+  # Most hosts work correctly without the ?, so try it without first unless
+  # you know your host requires it.  It is placed here so you will know where
+  # it goes in case you need it.
+  # [NC] = no case - case insensitive
+  # [L] = Last rule, last rewrite for this set of conditions
+  # [QSA] = Query String Append, should be used to prevent all redirects from
+  # going to your default controller, which happens on some server
+  # configurations.
+  #-----------------------------------------------------------------------------
+  #RewriteRule ^(.*)$ index.php?/$1 [NC,L,QSA]
+  RewriteRule ^(.*)$ index.php/$1 [NC,L,QSA]
+
+  #-----------------------------------------------------------------------------
+  # use the following if CI is in a sub-directory, and place this
+  # file IN that subdirectory.
+  # If your CI Application is at http://domain.com/CI_Application/
+  # Replace 'CI_Application' with the name of the sub-directory.
+  # Try it with or without the ? after index.php to see which works for you.
+  # See above for the reasons for the '?'.
+  # Be sure that this matches the RewriteBase above.
+  # [NC] = no case - case insensitive
+  # [L] = Last rule, last rewrite for this set of conditions
+  # [QSA] = Query String Append, should be used to prevent all redirects from
+  # going to your default controller, which happens on some server
+  # configurations.
+  #-----------------------------------------------------------------------------
+  #RewriteRule ^(.*)$ CI_Application/index.php?/$1 [NC,L,QSA]
+  #RewriteRule ^(.*)$ CI_Application/index.php/$1 [NC,L,QSA]
+
+#-------------------------------------------------------------------------------
+# Don't forget to end the IfModule check for the rewrite engine.
+#-------------------------------------------------------------------------------
+</IfModule>
+
+#-------------------------------------------------------------------------------
+# If Mod_rewrite is NOT installed go to index.php
+# Remember to use mod_rewrite.c for Linux and mod_rewrite.so for Windows.
+#-------------------------------------------------------------------------------
+<IfModule !mod_rewrite.c>
+#<IfModule !mod_rewrite.so>
+  ErrorDocument 404 index.php
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Built-in filename-based cache busting
+# ----------------------------------------------------------------------
+
+# If you're not using the build script to manage your filename version revving,
+# you might want to consider enabling this, which will route requests for
+# /css/style.20110203.css to /css/style.css
+
+# To understand why this is important and a better idea than all.css?v1231,
+# read: github.com/h5bp/html5-boilerplate/wiki/Version-Control-with-Cachebusting
+
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)\.(\d+)\.(js|css|png|jpg|gif)$ $1.$3 [L]
+</IfModule>
