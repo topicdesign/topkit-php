@@ -45,10 +45,10 @@ $config['static_page_dir'] = 'pages/static/';
 // --------------------------------------------------------------------
 $config['site_title'] = 'Leddfoot';
 $config['site_description'] = '';
-$config['site_owner_title'] = '';
-$config['site_owner_url'] = '';
-$config['site_email'] = '';
-$config['site_copy_year'] = '';
+$config['site_owner_title'] = 'Topic Design Group';
+$config['site_owner_url'] = 'http://topicdesign.com';
+$config['site_email'] = 'info@topicdesign.com';
+$config['site_copy_year'] = '2012';
 
 /* End of file site.php */
 /* Location: ./config/site.php */

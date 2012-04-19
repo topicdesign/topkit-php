@@ -35,6 +35,7 @@ class MY_Controller extends CI_Controller
 
     // --------------------------------------------------------------------
 
+
 } // END class MY_Controller extends MX_Controller
 
 // --------------------------------------------------------------------
@@ -162,6 +163,8 @@ class Admin_Controller extends MY_Controller
     {
         parent::__construct();
         $this->require_login();
+        $this->load->helper('admin');
+        $this->lang->load('admin');
         $this->init_partials();
     }
 
@@ -177,7 +180,7 @@ class Admin_Controller extends MY_Controller
      **/
     protected function require_login()
     {
-        if ( ! logged_in())
+        if ($this->uri->rsegment(1) !== 'login' && ! logged_in())
         {
             set_status('warning', lang('not_authorized'));
             redirect('login');
@@ -187,7 +190,7 @@ class Admin_Controller extends MY_Controller
     // --------------------------------------------------------------------
 
     /**
-	 * initialize global partials
+	 * initialize admin template settings
 	 *
 	 * @access	protected 
      * @param	void
@@ -197,12 +200,14 @@ class Admin_Controller extends MY_Controller
 	protected function init_partials()
     {
         parent::init_partials();
-        $this->document->layout('admin');
+        $this->document->layout = 'admin';
         $this->document
             ->partial('header', '_partials/admin_header')
             ->partial('footer', '_partials/admin_footer')
+            ->partial('sidebar', '_partials/admin_sidebar')
             ->title(config_item('site_title'))
             ;
+        add_script('admin.min.js');
     }
 
     // --------------------------------------------------------------------
