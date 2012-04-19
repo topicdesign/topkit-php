@@ -10,6 +10,9 @@ $lang['logged_in'] = 'You have been authenticated.';
 
 $lang['not_found'] = 'The requested %s could not be found';
 
+$lang['form-btn-save'] = 'Save Changes';
+$lang['form-btn-reset'] = 'Reset';
+
 
 /* End of file common_lang.php */
 /* Location: ./language/english/common_lang.php */
