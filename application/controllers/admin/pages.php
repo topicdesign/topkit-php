@@ -37,50 +37,27 @@ class Pages extends Admin_Controller {
     /**
      * allow user to create/edit page record
      *
-     * @access  public 
+     * @access  public
      * @param   integer     $id     Page.id
      * @return  void
      **/
     public function edit($id = NULL)
     {
-        // TODO: this block could probably be a helper $page = admin_edit_object('page', $id);
-        if ( ! is_null($id) && cannot('create', 'page'))
-        {
-            set_status('error', lang('not_authorized'));
-            $this->history->back();
-        }
-        if ( ! is_null($id))
-        {
-            if ( ! $page = Page::find_by_id($id))
-            {
-                set_status('error', sprintf(lang('not_found'), 'Page'));
-                $this->history->back();
-            }
-            // FIXME cannot('update', $page) throws error?
-            if (cannot('update', 'page'))
-            {
-                set_status('error', lang('not_authorized'));
-                $this->history->back();
-            }
-        }
-        else
-        {
-            $page = new Page();
-        }
-        // TODO: end block
+        $page = admin_edit_object('page', $id);
+
         $this->load->library('form_validation');
         $this->load->helper('form');
         $this->form_validation->set_error_delimiters('', '');
 
         $rules = array(
             array(
-                 'field'   => 'title', 
-                 'label'   => 'lang:page-field-title', 
+                 'field'   => 'title',
+                 'label'   => 'lang:page-field-title',
                  'rules'   => 'required'
             ),
             array(
-                 'field'   => 'uri', 
-                 'label'   => 'lang:page-field-uri', 
+                 'field'   => 'uri',
+                 'label'   => 'lang:page-field-uri',
                  'rules'   => "callback_check_uri[{$page->uri}]"
             ),
         );
@@ -97,18 +74,21 @@ class Pages extends Admin_Controller {
         }
         else
         {
-            echo '<pre>';
-            print_r($this->input->post());
-            echo '<hr>';
-            print_r($page->to_array());
-            exit;
+            $page->title = $this->input->post('title');
+            $page->uri = $this->input->post('uri');
+            $page->slug = url_title($page->title, 'underscore', TRUE);
+            $page->description = $this->input->post('description');
+            $page->body = $this->input->post('body');
+            $page->keywords = $this->input->post('keywords');
+            $page->published_at = date_create(
+                $this->input->post('publish-date') . ' ' .
+                $this->input->post('publish-time') . ' ' .
+                $this->input->post('publish-time-ampm'),
+                new DateTimeZone(config_item('site_timezone'))
+            );
+            $page->published_at->setTimezone(new DateTimeZone('GMT'));
 
-            $user->email = $this->input->post('email');
-            if ($password = $this->input->post('password'))
-            {
-                $user->password = $password;
-            }
-            if ( ! $user->save())
+            if ( ! $page->save())
             {
                 foreach ($user->errors->full_messages() as $e)
                 {
@@ -116,8 +96,8 @@ class Pages extends Admin_Controller {
                 }
                 redirect(uri_string());
             }
-            set_status('success', 'Account Updated.');
-            redirect('admin');
+            set_status('success', 'Page Updated');
+            redirect('admin/pages');
         }
     }
 
@@ -126,21 +106,26 @@ class Pages extends Admin_Controller {
     /**
      * valid_url
      *
-     * @access  public 
-     * @param   
+     * @access  public
+     * @param
      * @return  void
      **/
     public function check_uri($str, $orig)
     {
-        if ( ! preg_match("/^([\w\-\_\/])+$/i", $str) )
+        // if /, ensure it's the homepage
+        if ($str == '/' && $str !== $orig)
+        {
+            $this->form_validation->set_message('check_uri', 'Cannot set to home page, choose new URI');
+            return FALSE;
+        }
+        if ( ! empty($str) && ! preg_match("/^([\w\-\_\/])+$/i", $str) )
         {
             $this->form_validation->set_message('check_uri', 'URI contains invalid characters');
             return FALSE;
         }
-        // if blank or /, ensure it's the homepage
-        if ((empty($str) || $str = '/') && $str !== $orig)
+        if (empty($str))
         {
-            return NULL;
+            $str = url_title($this->input->post('title'), 'underscore', TRUE);
         }
         // ensure leading slash
         if (substr($str, 0, 1) !== '/')
@@ -149,7 +134,6 @@ class Pages extends Admin_Controller {
         }
         return $str;
     }
-    
 
 }
 /* End of file admin.php */

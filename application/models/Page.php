@@ -15,7 +15,7 @@ class Page extends ActiveRecord\Model {
     static $table_name = 'pages';
 
     # explicit pk 
-    static $primary_key = 'uri';
+    static $primary_key = 'id';
 
     # explicit connection name 
     //static $connection = '';
