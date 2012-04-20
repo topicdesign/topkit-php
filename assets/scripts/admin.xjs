@@ -16,11 +16,13 @@
 #!import plugins/bootstrap/bootstrap-timepicker.js
 #!import plugins/wysihtml5-0.3.0_rc2.js
 #!import plugins/bootstrap/bootstrap-wysihtml5.js
+#!import plugins/bootstrap/bootstrap-tagcomplete.js
 
 $(document).ready(function() {
     datetimepickers();
     status_messages();
     wysihtml5_editors();
+    tag_complete();
 });
 // --------------------------------------------------------------------
 function datetimepickers(){
@@ -82,5 +84,10 @@ function wysihtml5_editors(){
       } 
     })
     ;
+}
+function tag_complete(){
+    $('input[data-role="tagcomplete"]').tagcomplete({
+      source: ['one','two','three','test','other tag']
+    });
 }
 // --------------------------------------------------------------------

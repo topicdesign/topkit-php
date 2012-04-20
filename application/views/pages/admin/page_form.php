@@ -55,6 +55,7 @@
                             >
                     </div>
                 </div>
+                <hr/>
                 <div class="control-group">
                     <label for="page-form-keywords" class="text"><?php echo lang('page-field-keywords'); ?></label>
                     <div class="controls">
@@ -62,13 +63,12 @@
                             type="text"
                             value="<?php echo set_value('keywords',$page->keywords); ?>"
                             class="text"
-                            data-items="10" 
-                            data-mode="multiple" 
-                            data-provide="typeahead" 
-                            data-source="[&quot;Catsd&quot;,&quot;Dogs&quot;,&quot;Mass Hysteria&quot;]"
+                            data-role="tagcomplete" 
+                            data-source="[&quot;Cats&quot;,&quot;Dogs&quot;,&quot;Mass Hysteria&quot;]"
                             >
                     </div>
                 </div>
+                <hr/>
                 <div class="control-group">
                     <label for="page-form-description" class="textarea"><?php echo lang('page-field-description'); ?></label>
                     <div class="controls">
