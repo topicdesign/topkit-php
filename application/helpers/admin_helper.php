@@ -63,4 +63,46 @@ function get_module_menu($links) {
 
 // ------------------------------------------------------------------------
 
+/**
+ * return instance of object
+ *
+ * @access  public
+ * @param   string $class
+ * @param   mixed  $id
+ *
+ * @return  object
+ */
+if ( ! function_exists('admin_edit_object'))
+{
+    function admin_edit_object($class, $id)
+    {
+        if ( ! is_null($id) && cannot('create', $class))
+        {
+            set_status('error', lang('not_authorized'));
+            $this->history->back();
+        }
+        if ( ! is_null($id))
+        {
+            if ( ! $object = $class::find_by_id($id))
+            {
+                set_status('error', sprintf(lang('not_found'), $class));
+                $this->history->back();
+            }
+            // FIXME cannot('update', object) throws error?
+            if (cannot('update', $class))
+            {
+                set_status('error', lang('not_authorized'));
+                $this->history->back();
+            }
+        }
+        else
+        {
+            $object = new $class();
+        }
+        return $object;
+    }
+}
+
+// ------------------------------------------------------------------------
+
 /* Location: ./applications/helpers/admin_helper.php */
