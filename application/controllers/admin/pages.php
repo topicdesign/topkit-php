@@ -51,14 +51,24 @@ class Pages extends Admin_Controller {
 
         $rules = array(
             array(
-                 'field'   => 'title',
-                 'label'   => 'lang:page-field-title',
-                 'rules'   => 'required'
+                'field' => 'title',
+                'label' => 'lang:page-field-title',
+                'rules' => 'required'
             ),
             array(
-                 'field'   => 'uri',
-                 'label'   => 'lang:page-field-uri',
-                 'rules'   => "callback_check_uri[{$page->uri}]"
+                'field' => 'uri',
+                'label' => 'lang:page-field-uri',
+                'rules' => "callback_check_uri[{$page->uri}]"
+            ),
+            array(
+                'field' => 'publish-time',
+                'label' => 'lang:page-field-publish_time',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'publish-date',
+                'label' => 'lang:page-field-published_at',
+                'rules' => 'required'
             ),
         );
         $this->form_validation->set_rules($rules);
@@ -90,7 +100,7 @@ class Pages extends Admin_Controller {
 
             if ( ! $page->save())
             {
-                foreach ($user->errors->full_messages() as $e)
+                foreach ($page->errors->full_messages() as $e)
                 {
                     set_status('error', $e);
                 }

@@ -18,6 +18,7 @@ $lang['page-field-view']            = 'Layout';
 $lang['page-field-published_at']    = 'Published Date';
 $lang['page-field-created_at']      = 'Created Date';
 $lang['page-field-updated_at']      = 'Edited Date';
+$lang['page-field-publish_time']    = 'Published Time';
 
 // ------------------------------------------------------------------------
 
