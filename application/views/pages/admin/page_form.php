@@ -40,6 +40,7 @@
             <fieldset class="well">
                 <div class="control-group btn-toolbar">
                     <label for="page-form-publish" class="text"><?php echo lang('page-field-published_at'); ?></label>
+                    <?php if ( ! $page->published_at || $page->published_at > date_create()): ?>
                     <div class="controls">
                         <input id="page-form-publish" name="publish-date"
                             type="text"
@@ -54,6 +55,9 @@
                             data-role="timepicker"
                             >
                     </div>
+                    <?php else: ?>
+                    <p>Published on <?php echo local_date_format($page->published_at, 'Y/m/d g:i A'); ?></p>
+                    <?php endif; ?>
                 </div>
                 <hr/>
                 <div class="control-group">

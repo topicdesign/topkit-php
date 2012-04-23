@@ -60,17 +60,20 @@ class Pages extends Admin_Controller {
                 'label' => 'lang:page-field-uri',
                 'rules' => "callback_check_uri[{$page->uri}]"
             ),
-            array(
+        );
+        if ( ! $page->published_at || $page->published_at > date_create())
+        {
+            $rules[] = array(
                 'field' => 'publish-time',
                 'label' => 'lang:page-field-publish_time',
                 'rules' => 'required'
-            ),
-            array(
+            );
+            $rules[] = array(
                 'field' => 'publish-date',
                 'label' => 'lang:page-field-published_at',
                 'rules' => 'required'
-            ),
-        );
+            );
+        }
         $this->form_validation->set_rules($rules);
         if ($this->form_validation->run() == FALSE)
         {
