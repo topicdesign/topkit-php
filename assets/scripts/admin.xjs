@@ -1,3 +1,5 @@
+#!import common.js
+
 #!import libs/bootstrap/bootstrap-alert.min.js
 #!import libs/bootstrap/bootstrap-button.min.js
 #!import libs/bootstrap/bootstrap-carousel.min.js
@@ -17,7 +19,7 @@
 #!import plugins/wysihtml5-0.3.0_rc2.js
 #!import plugins/bootstrap/bootstrap-wysihtml5.js
 #!import plugins/bootstrap/bootstrap-tagcomplete.js
-
+// --------------------------------------------------------------------
 $(document).ready(function() {
     datetimepickers();
     status_messages();
