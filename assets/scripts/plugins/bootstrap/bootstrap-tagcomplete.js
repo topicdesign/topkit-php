@@ -155,7 +155,6 @@
       data.tag_wrapper = wrapper;
       if (tags.length) {
         tags = tags.split(data.seperator);
-        console.log(tags);
         for (var i=0, j=tags.length; i < j; i++) {
           methods.add_tag.apply($this, [tags[i]]);
         };

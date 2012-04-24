@@ -88,8 +88,6 @@ function wysihtml5_editors(){
     ;
 }
 function tag_complete(){
-    $('input[data-role="tagcomplete"]').tagcomplete({
-      source: ['one','two','three','test','other tag']
-    });
+    $('input[data-role="tagcomplete"]').tagcomplete();
 }
 // --------------------------------------------------------------------
