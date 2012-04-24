@@ -40,6 +40,7 @@
             <fieldset class="well">
                 <div class="control-group btn-toolbar">
                     <label for="page-form-publish" class="text"><?php echo lang('page-field-published_at'); ?></label>
+                    <?php if ( ! $page->published_at || $page->published_at > date_create()): ?>
                     <div class="controls">
                         <input id="page-form-publish" name="publish-date"
                             type="text"
@@ -54,7 +55,11 @@
                             data-role="timepicker"
                             >
                     </div>
+                    <?php else: ?>
+                    <p>Published on <?php echo local_date_format($page->published_at, 'Y/m/d g:i A'); ?></p>
+                    <?php endif; ?>
                 </div>
+                <hr/>
                 <div class="control-group">
                     <label for="page-form-keywords" class="text"><?php echo lang('page-field-keywords'); ?></label>
                     <div class="controls">
@@ -62,13 +67,12 @@
                             type="text"
                             value="<?php echo set_value('keywords',$page->keywords); ?>"
                             class="text"
-                            data-items="10" 
-                            data-mode="multiple" 
-                            data-provide="typeahead" 
-                            data-source="[&quot;Catsd&quot;,&quot;Dogs&quot;,&quot;Mass Hysteria&quot;]"
+                            data-role="tagcomplete" 
+                            data-source="[&quot;Cats&quot;,&quot;Dogs&quot;,&quot;Mass Hysteria&quot;]"
                             >
                     </div>
                 </div>
+                <hr/>
                 <div class="control-group">
                     <label for="page-form-description" class="textarea"><?php echo lang('page-field-description'); ?></label>
                     <div class="controls">

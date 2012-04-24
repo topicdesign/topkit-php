@@ -1,3 +1,5 @@
+#!import common.js
+
 #!import libs/bootstrap/bootstrap-alert.min.js
 #!import libs/bootstrap/bootstrap-button.min.js
 #!import libs/bootstrap/bootstrap-carousel.min.js
@@ -16,11 +18,13 @@
 #!import plugins/bootstrap/bootstrap-timepicker.js
 #!import plugins/wysihtml5-0.3.0_rc2.js
 #!import plugins/bootstrap/bootstrap-wysihtml5.js
-
+#!import plugins/bootstrap/bootstrap-tagcomplete.js
+// --------------------------------------------------------------------
 $(document).ready(function() {
     datetimepickers();
     status_messages();
     wysihtml5_editors();
+    tag_complete();
 });
 // --------------------------------------------------------------------
 function datetimepickers(){
@@ -51,15 +55,15 @@ function datetimepickers(){
 // --------------------------------------------------------------------
 function status_messages(){
     $('div.status').each( function() {
-		var type = $(this).data('type');
-		var sticky = false;
-		if (type == 'error' || type == 'warning') {
-			sticky = true;
-		}
-		$(this).find('ul li').each( function() {
-			$.jnotify($(this).text(), type, sticky);
-		});
-	});
+    var type = $(this).data('type');
+    var sticky = false;
+    if (type == 'error' || type == 'warning') {
+      sticky = true;
+    }
+    $(this).find('ul li').each( function() {
+      $.jnotify($(this).text(), type, sticky);
+    });
+  });
 }
 
 // --------------------------------------------------------------------
@@ -83,5 +87,10 @@ function wysihtml5_editors(){
     //})
     .editor()
     ;
+}
+function tag_complete(){
+    $('input[data-role="tagcomplete"]').tagcomplete({
+      source: ['one','two','three','test','other tag']
+    });
 }
 // --------------------------------------------------------------------
