@@ -555,26 +555,31 @@
         , data = $this.data('editor')
         , insertLinkModal = el.find('.bootstrap-wysihtml5-insert-link-modal')
         , urlInput = insertLinkModal.find('.bootstrap-wysihtml5-insert-link-url')
+        , textInput = insertLinkModal.find('.bootstrap-wysihtml5-insert-link-text')
         , insertButton = insertLinkModal.find('a.btn-primary')
         , initialValue = urlInput.val()
         , insertLink = function(){
-          var url = urlInput.val();
-          urlInput.val(initialValue);
-          data.editor.composer.commands.exec("createLink", {
-            href: url,
-            target: "_blank",
-            rel: "nofollow"
-          });
-        }
+            var url = urlInput.val();
+            var text = textInput.val();
+            urlInput.val(initialValue);
+            data.editor.composer.commands.exec("createLink", {
+              href: url,
+              target: "_blank",
+              rel: "nofollow",
+              text: text
+            });
+          }
+        , onEnter = function(e){
+            if(e.which == 13) {
+              insertLink();
+              insertLinkModal.modal('hide');
+              e.preventDefault();
+            }
+          }
         ;
 
-      urlInput.keypress(function(e) {
-        if(e.which == 13) {
-          insertLink();
-          insertLinkModal.modal('hide');
-        }
-      });
-
+      urlInput.keypress(onEnter);
+      textInput.keypress(onEnter);
       insertButton.click(insertLink);
 
       insertLinkModal.on({
@@ -586,8 +591,9 @@
         }
       });
 
-      el.find('a[data-wysihtml5-command=createLink]')
+      el.find('.createLink')
         .click(function() {
+          data.editor.currentView.element.focus();
           insertLinkModal.modal('show');
         })
         ;

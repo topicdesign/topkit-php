@@ -34,14 +34,18 @@
         <h3>Insert Link</h3>
       </div>
       <div class="modal-body">
-        <input value="http://" class="bootstrap-wysihtml5-insert-link-url input-xlarge">
+        <label for="insert-link-url">URL:</label>
+        <input id="insert-link-url" value="http://" class="bootstrap-wysihtml5-insert-link-url input-xlarge">
+        <br />
+        <label for="insert-link-text">Link text:</label>
+        <input id="insert-link-text" value="" class="bootstrap-wysihtml5-insert-link-text input-xlarge">
       </div>
       <div class="modal-footer">
         <a class="btn" data-dismiss="modal">Cancel</a>
         <a class="btn btn-primary" data-dismiss="modal">Insert link</a>
       </div>
     </div>
-    <a class="btn" data-wysihtml5-command="createLink" title="Link"><i class="icon-share"></i></a>
+    <a class="btn createLink" title="Link"><i class="icon-share"></i></a>
   </li>
   <li data-wysihtml5-tool="image">
     <div class="bootstrap-wysihtml5-insert-image-modal modal hide fade">
