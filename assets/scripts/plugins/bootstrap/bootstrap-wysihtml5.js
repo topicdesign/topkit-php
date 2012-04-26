@@ -599,6 +599,28 @@
         ;
     }
     // --------------------------------------------------------------------
+    , insert_html: function(el){
+      var $this = $(this)
+        , data = $this.data('editor')
+        , insertHtmlModal = el.find('.bootstrap-wysihtml5-insert-html-modal')
+        , htmlInput = insertHtmlModal.find('.wysihtml5-insert-html-text')
+        , insertButton = insertHtmlModal.find('a.btn-primary')
+        , insertHtml = function(){
+            var text = htmlInput.val();
+            htmlInput.val('');
+            data.editor.composer.commands.exec('insertHtml', text);
+          }
+        ;
+
+      insertButton.click(insertHtml);
+
+      el.find('.insertHtml')
+        .click(function() {
+          insertHtmlModal.modal('show')
+        })
+        ;
+    }
+    // --------------------------------------------------------------------
   }; // end tool_init
   // --------------------------------------------------------------------
   var methods = {

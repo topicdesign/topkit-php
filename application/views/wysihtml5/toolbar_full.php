@@ -29,10 +29,10 @@
   </li>
   <li data-wysihtml5-tool="link">
     <div class="bootstrap-wysihtml5-insert-link-modal modal hide fade">
-    <div class="modal-header">
-      <a class="close" data-dismiss="modal">×</a>
-        <h3>Insert Link</h3>
-      </div>
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+          <h3>Insert Link</h3>
+        </div>
       <div class="modal-body">
         <label for="insert-link-url">URL:</label>
         <input id="insert-link-url" value="http://" class="bootstrap-wysihtml5-insert-link-url input-xlarge">
@@ -62,6 +62,22 @@
       </div>
     </div>
     <a class="btn" data-wysihtml5-command="insertImage" title="Insert image"><i class="icon-picture"></i></a>
+  </li>
+  <li data-wysihtml5-tool="insert_html" class="pull-right">
+    <div class="bootstrap-wysihtml5-insert-html-modal modal hide fade">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+          <h3>Insert embed code</h3>
+        </div>
+      <div class="modal-body">
+        <textarea class="wysihtml5-insert-html-text"></textarea>
+      </div>
+      <div class="modal-footer">
+        <a class="btn" data-dismiss="modal">Cancel</a>
+        <a class="btn btn-primary" data-dismiss="modal">Insert</a>
+      </div>
+    </div>
+    <a class="btn insertHtml" title="Insert HTML"><i class="icon-film"></i></a>
   </li>
   <li data-wysihtml5-tool="html" class="pull-right">
     <div class="btn-group">
