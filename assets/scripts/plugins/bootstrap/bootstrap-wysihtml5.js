@@ -461,8 +461,8 @@
     }
     // --------------------------------------------------------------------
     , html: function(el){
-      var $this = $(this)
-        , data = $this.data('editor')
+      var $this    = $(this)
+        , data     = $this.data('editor')
         , selector = "a[data-wysihtml5-action='change_view']"
         ;
       // toggle active state of all buttons when viewing source
@@ -476,48 +476,18 @@
     }
     // --------------------------------------------------------------------
     , image: function(el) {
-      var $this = $(this)
-        , data = $this.data('editor')
-        , modal = el.find('.wysihtml5-insert-image-modal')
-        , upload_btn = modal.find('.wysihtml5-upload-file')
-        , inputs = modal.find('input')
-        , url_input = modal.find('#wysihtml5-insert-image-url')
-        , alt_input = modal.find('#wysihtml5-insert-image-alt')
-        , width_input = modal.find('#wysihtml5-insert-image-width')
+      var $this        = $(this)
+        , data         = $this.data('editor')
+        , modal        = el.find('.wysihtml5-insert-image-modal')
+        , upload_btn   = modal.find('.wysihtml5-upload-file')
+        , inputs       = modal.find('input')
+        , url_input    = modal.find('#wysihtml5-insert-image-url')
+        , alt_input    = modal.find('#wysihtml5-insert-image-alt')
+        , width_input  = modal.find('#wysihtml5-insert-image-width')
         , height_input = modal.find('#wysihtml5-insert-image-height')
-        , submit_btn = modal.find('div.modal-footer a.btn-primary')
-        , cancel_btns = modal.find('a[data-dismiss="modal"]')
+        , submit_btn   = modal.find('div.modal-footer a.btn-primary')
+        , cancel_btns  = modal.find('a[data-dismiss="modal"]')
         ;
-      inputs.each(function(){
-        $(this).data('init_val', $(this).val());
-      });
-      var reset_inputs = function(){
-        inputs.each(function(){
-          $(this).val($(this).data('init_val'));
-        });
-      }
-      var insert_image = function(){
-        data.editor.composer.commands.exec("insertImage", {
-            src: url_input.val()
-          , alt: alt_input.val()
-          , width: width_input.val()
-          , height: height_input.val()
-        });
-        reset_inputs();
-      };
-      var fill_modal = function(file){
-        url_input.val(file.url);
-        alt_input.val(file.client_name);
-        width_input.val(file.image_width);
-        height_input.val(file.image_height);
-        modal.modal('show');
-      };
-      $('input', modal).keypress(function(e){
-        if(e.which == 13) { // enter
-          insert_image();
-          modal.modal('hide');
-        }
-      });
       modal.on({
         'shown': function(){
           url_input.focus();
@@ -527,7 +497,39 @@
           reset_inputs();
         }
       });
-      // bind the toolbar button
+      var insert_image = function(){
+        data.editor.composer.commands.exec("insertImage", {
+            src    : 'http://' + url_input.val()
+          , alt    : alt_input.val()
+          , width  : width_input.val()
+          , height : height_input.val()
+        });
+        reset_inputs();
+      };
+      // set data for restoring input vals
+      inputs.each(function(){
+        $(this).data('init_val', $(this).val());
+        $(this).keypress(function(e){
+          if(e.which == 13) { // enter
+            insert_image();
+            modal.modal('hide');
+          }
+        });
+      });
+      var reset_inputs = function(){
+        inputs.each(function(){
+          $(this).val($(this).data('init_val'));
+        });
+      }
+      // populate modal with object
+      var fill_modal = function(file){
+        url_input.val(file.url.replace('http://', ''));
+        alt_input.val(file.client_name);
+        width_input.val(file.image_width);
+        height_input.val(file.image_height);
+        modal.modal('show');
+      };
+      // bind buttons
       el.find('a.wysihtml5-insertImage')
         .click(function() {
           data.editor.currentView.element.focus();
@@ -542,10 +544,10 @@
       upload_btn.click(function(e){
         e.preventDefault();
         helpers.upload_file.apply($this,['image', {
-            data: {}
-          , events:{
-              upload: fill_modal
-            , cancel: function(){
+            data   : {}
+          , events : {
+              upload : fill_modal
+            , cancel : function(){
               reset_inputs();
               modal.modal('show');
             }
@@ -555,61 +557,88 @@
     }
     // --------------------------------------------------------------------
     , link: function(el){
-      var $this = $(this)
-        , data = $this.data('editor')
-        , insertLinkModal = el.find('.bootstrap-wysihtml5-insert-link-modal')
-        , urlInput = insertLinkModal.find('.bootstrap-wysihtml5-insert-link-url')
-        , textInput = insertLinkModal.find('.bootstrap-wysihtml5-insert-link-text')
-        , insertButton = insertLinkModal.find('a.btn-primary')
-        , initialValue = urlInput.val()
-        , insertLink = function(){
-            var url = urlInput.val();
-            var text = textInput.val();
-            urlInput.val(initialValue);
-            data.editor.composer.commands.exec("createLink", {
-              href: url,
-              target: "_blank",
-              rel: "nofollow",
-              text: text
-            });
-          }
-        , onEnter = function(e){
-            if(e.which == 13) {
-              insertLink();
-              insertLinkModal.modal('hide');
-              e.preventDefault();
-            }
-          }
+      var $this       = $(this)
+        , data        = $this.data('editor')
+        , modal       = el.find('.bootstrap-wysihtml5-insert-link-modal')
+        , upload_btn  = modal.find('.wysihtml5-upload-file')
+        , inputs      = modal.find('input')
+        , url_input   = modal.find('#wysihtml5-insert-link-url')
+        , text_input  = modal.find('#wysihtml5-insert-link-text')
+        , submit_btn  = modal.find('a.btn-primary')
+        , cancel_btns = modal.find('a[data-dismiss="modal"]')
         ;
-
-      urlInput.keypress(onEnter);
-      textInput.keypress(onEnter);
-      insertButton.click(insertLink);
-
-      insertLinkModal.on({
+      modal.on({
         'shown': function() {
-          urlInput.focus();
+          url_input.focus();
         }
         , 'hide': function(){
           data.editor.currentView.element.focus();
         }
       });
-
+      var insert_link = function(){
+        data.editor.composer.commands.exec("createLink", {
+            href   : 'http://' + url_input.val()
+          , target : "_blank"
+          , rel    : "nofollow"
+          , text   : text_input.val()
+        });
+        reset_inputs();
+      };
+      // set data for restoring input vals
+      inputs.each(function(){
+        $(this).data('init_val', $(this).val());
+        $(this).keypress(function(e){
+          if(e.which == 13) { // enter
+            insert_link();
+            modal.modal('hide');
+          }
+        });
+      });
+      var reset_inputs = function(){
+        inputs.each(function(){
+          $(this).val($(this).data('init_val'));
+        });
+      }
+      // populate modal with object
+      var fill_modal = function(file){
+        url_input.val(file.url.replace('http://', ''));
+        text_input.val(file.client_name);
+        modal.modal('show');
+      };
+      // bind buttons
+      submit_btn.click(insert_link);
+      cancel_btns.click(function(){
+        reset_inputs();
+      });
       el.find('.createLink')
         .click(function() {
           data.editor.currentView.element.focus();
-          insertLinkModal.modal('show');
+          modal.modal('show');
         })
         ;
+      // allow for upload/callback
+      upload_btn.click(function(e){
+        e.preventDefault();
+        helpers.upload_file.apply($this,['any', {
+            datai  : {}
+          , events : {
+              upload : fill_modal
+            , cancel : function(){
+              reset_inputs();
+              modal.modal('show');
+            }
+          }
+        }]);
+      });
     }
     // --------------------------------------------------------------------
     , insert_html: function(el){
-      var $this = $(this)
-        , data = $this.data('editor')
+      var $this           = $(this)
+        , data            = $this.data('editor')
         , insertHtmlModal = el.find('.bootstrap-wysihtml5-insert-html-modal')
-        , htmlInput = insertHtmlModal.find('.wysihtml5-insert-html-text')
-        , insertButton = insertHtmlModal.find('a.btn-primary')
-        , insertHtml = function(){
+        , htmlInput       = insertHtmlModal.find('.wysihtml5-insert-html-text')
+        , insertButton    = insertHtmlModal.find('a.btn-primary')
+        , insertHtml      = function(){
             var text = htmlInput.val();
             htmlInput.val('');
             data.editor.composer.commands.exec('insertHtml', text);
@@ -659,10 +688,10 @@
     // --------------------------------------------------------------------
     // initialize toolbar markup
     , init_toolbar: function(btns, tmpls){
-      var $this = $(this)
-        , data = $this.data('editor')
+      var $this      = $(this)
+        , data       = $this.data('editor')
         , toolbar_id = "wysihtml5-toolbar-" + $this.attr('id')
-        , toolbar = $this.siblings('.wysihtml5-toolbar:first')
+        , toolbar    = $this.siblings('.wysihtml5-toolbar:first')
         ;
       toolbar.attr('id', toolbar_id);
       data.toolbar = toolbar;
@@ -670,7 +699,7 @@
     // --------------------------------------------------------------------
     , init_editor: function(opts){
       var $this = $(this)
-        , data = $this.data('editor')
+        , data  = $this.data('editor')
         ;
       opts.toolbar = data.toolbar.attr('id');
       data.editor = new wysi.Editor($this.attr('id'), opts);
@@ -683,8 +712,8 @@
     // --------------------------------------------------------------------
     , init_tools: function(){
       var $this = $(this)
-        , data = $this.data('editor')
-        , els = data.toolbar.children('li')
+        , data  = $this.data('editor')
+        , els   = data.toolbar.children('li')
         ;
       els.each(function(){
         var method = $(this).data('wysihtml5Tool');
@@ -699,16 +728,16 @@
   var helpers = {
     // --------------------------------------------------------------------
     upload_file: function(type, opts){
-      var $this = $(this)
-        , data = $this.data('editor')
-        , form = $this.parents('form')
-        , modal = $('div.wysihtml5-upload-file-modal')
-        , input = modal.find('input[name="userfile"]')
-        , init_val = input.val()
-        , submit_btn = modal.find('div.modal-footer a.btn-primary')
+      var $this       = $(this)
+        , data        = $this.data('editor')
+        , form        = $this.parents('form')
+        , modal       = $('div.wysihtml5-upload-file-modal')
+        , input       = modal.find('input[name="userfile"]')
+        , init_val    = input.val()
+        , submit_btn  = modal.find('div.modal-footer a.btn-primary')
         , cancel_btns = modal.find('a[data-dismiss="modal"]')
-        , upload_url = input.data('wysihtml5Target')
-        , events = $.extend(true, {
+        , upload_url  = input.data('wysihtml5Target')
+        , events      = $.extend(true, {
             upload: null
           , cancel: null
         },opts.events)
@@ -735,12 +764,12 @@
       var submit = function(){
         $('div.alert', modal).alert('close');
         form.ajaxSubmit({
-            url: upload_url + '/' + type
-          , dataType: 'json'
-          , data: opts.data
-          , success: upload_success
-          , error: upload_error
-          , complete: upload_complete
+            url      : upload_url + '/' + type
+          , dataType : 'json'
+          , data     : opts.data
+          , success  : upload_success
+          , error    : upload_error
+          , complete : upload_complete
         });
       };
       submit_btn.click(submit);

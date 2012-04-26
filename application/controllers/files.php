@@ -36,12 +36,16 @@ class Files extends Admin_Controller {
             case 'image':
                 $config = array(
                     'allowed_types' => 'gif|jpg|png',
-                    'max_size'      => '100',
+                    'max_size'      => '1000',
                     'max_width'     => '1024',
                     'max_height'    => '768',
                 );
                 break;
             case 'any':
+                $config = array(
+                    'allowed_types' => '*',
+                    'max_size'      => '1000',
+                );
                 break;
             default:
                 break;
