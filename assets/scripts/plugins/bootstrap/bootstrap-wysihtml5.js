@@ -518,36 +518,80 @@
     , image: function(el) {
       var $this = $(this)
         , data = $this.data('editor')
-        , insertImageModal = el.find('.bootstrap-wysihtml5-insert-image-modal')
-        , urlInput = insertImageModal.find('.bootstrap-wysihtml5-insert-image-url')
-        , insertButton = insertImageModal.find('a.btn-primary')
-        , initialValue = urlInput.val()
-        , insertImage = function(){
-          var url = urlInput.val();
-          urlInput.val(initialValue);
-          data.editor.composer.commands.exec("insertImage", url);
-        }
+        , modal = el.find('.wysihtml5-insert-image-modal')
+        , upload_btn = modal.find('.wysihtml5-upload-file')
+        , inputs = modal.find('input')
+        , url_input = modal.find('#wysihtml5-insert-image-url')
+        , alt_input = modal.find('#wysihtml5-insert-image-alt')
+        , width_input = modal.find('#wysihtml5-insert-image-width')
+        , height_input = modal.find('#wysihtml5-insert-image-height')
+        , submit_btn = modal.find('div.modal-footer a.btn-primary')
+        , cancel_btns = modal.find('a[data-dismiss="modal"]')
         ;
-      urlInput.keypress(function(e){
-        if(e.which == 13) {
-          insertImage();
-          insertImageModal.modal('hide');
+      inputs.each(function(){
+        $(this).data('init_val', $(this).val());
+      });
+      var reset_inputs = function(){
+        inputs.each(function(){
+          $(this).val($(this).data('init_val'));
+        });
+      }
+      var insert_image = function(){
+        data.editor.composer.commands.exec("insertImage", {
+            src: url_input.val()
+          , alt: alt_input.val()
+          , width: width_input.val()
+          , height: height_input.val()
+        });
+        reset_inputs();
+      };
+      var fill_modal = function(file){
+        url_input.val(file.url);
+        alt_input.val(file.client_name);
+        width_input.val(file.image_width);
+        height_input.val(file.image_height);
+        modal.modal('show');
+      };
+      $('input', modal).keypress(function(e){
+        if(e.which == 13) { // enter
+          insert_image();
+          modal.modal('hide');
         }
       });
-      insertButton.click(insertImage);
-      insertImageModal.on({
+      modal.on({
         'shown': function(){
-          urlInput.focus();
+          url_input.focus();
         }
         , 'hide': function(){
           data.editor.currentView.element.focus();
+          reset_inputs();
         }
       });
-      el.find('a[data-wysihtml5-command=insertImage]')
+      // bind the toolbar button
+      el.find('a.wysihtml5-insertImage')
         .click(function() {
-          insertImageModal.modal('show');
+          data.editor.currentView.element.focus();
+          modal.modal('show');
         })
         ;
+      submit_btn.click(insert_image);
+      cancel_btns.click(function(){
+        reset_inputs();
+      });
+      // allow for upload/callback
+      upload_btn.click(function(e){
+        e.preventDefault();
+        helpers.upload_file.apply($this,['image', {
+            data: {}
+          , events:{
+              upload: fill_modal
+            , cancel: function(){
+              reset_inputs();
+              modal.modal('show');
+            }
+          }
+        }]);
+      });
     }
     // --------------------------------------------------------------------
     , link: function(el){
@@ -602,8 +646,6 @@
       var opts = $.extend(true, {
           parserRules: parserRules
         , events: events
-          //   btn_templates: btn_templates
-          // , toolbar_btns: ['format','emphasis','lists','link','image']
         }, wysihtml5_defaults, opts)
         ;
       return this.each(function(){
@@ -665,6 +707,64 @@
     }
     // --------------------------------------------------------------------
   };
+  // --------------------------------------------------------------------
+  var helpers = {
+    // --------------------------------------------------------------------
+    upload_file: function(type, opts){
+      var $this = $(this)
+        , data = $this.data('editor')
+        , form = $this.parents('form')
+        , modal = $('div.wysihtml5-upload-file-modal')
+        , input = modal.find('input[name="userfile"]')
+        , init_val = input.val()
+        , submit_btn = modal.find('div.modal-footer a.btn-primary')
+        , cancel_btns = modal.find('a[data-dismiss="modal"]')
+        , upload_url = input.data('wysihtml5Target')
+        , events = $.extend(true, {
+            upload: null
+          , cancel: null
+        },opts.events)
+        ;
+      modal.modal('show');
+      var upload_success = function(data, textStatus, jqXHR){
+        modal.modal('hide');
+        if (typeof events.upload === 'function'){
+          events.upload(data);
+        }
+      };
+      var upload_complete = function(jqXHR, textStatus){
+        input.val(init_val);
+      };
+      var upload_error = function(jqXHR, textStatus, errorThrown){
+        var error = $('<div/>', {
+            'class': 'alert alert-error'
+          , html: '<a class="close" data-dismiss="alert" href="#">×</a>'
+            + '<h4 class="alert-heading">'+errorThrown+'</h4>'
+            + jqXHR.responseText
+        });
+        $('div.modal-body', modal).prepend(error);
+      };
+      var submit = function(){
+        $('div.alert', modal).alert('close');
+        form.ajaxSubmit({
+            url: upload_url + '/' + type
+          , dataType: 'json'
+          , data: opts.data
+          , success: upload_success
+          , error: upload_error
+          , complete: upload_complete
+        });
+      };
+      submit_btn.click(submit);
+      cancel_btns.click(function(){
+        input.val(init_val);
+        if (typeof events.cancel === 'function'){
+          events.cancel();
+        }
+      });
+    }
+    // --------------------------------------------------------------------
+  }; // end helpers
   // --------------------------------------------------------------------
   // init jQuery.editor plugin
   $.fn.editor = function(method) {

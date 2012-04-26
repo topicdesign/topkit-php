@@ -6,5 +6,6 @@ $(document).ready(function() {
       , nope : 'assets/scripts/libs/json2.min.js'
     }
   ]);
+  $('[rel="tooltip"]').tooltip();
 });
 

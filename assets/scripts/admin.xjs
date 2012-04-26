@@ -17,6 +17,7 @@
 // import "plugins/wysihtml5-0.3.0_rc2.js"
 // import "plugins/bootstrap/bootstrap-wysihtml5.js"
 // import "plugins/bootstrap/bootstrap-tagcomplete.js"
+// import "plugins/jquery.form.js"
 // --------------------------------------------------------------------
 $(document).ready(function() {
     datetimepickers();
