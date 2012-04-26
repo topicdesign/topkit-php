@@ -6887,6 +6887,7 @@ wysihtml5.Commands = Base.extend(
         elementToSetCaretAfter,
         textContent,
         whiteSpace,
+        text = attributes && attributes.text ? attributes.text : false,
         j;
     wysihtml5.commands.formatInline.exec(composer, undef, NODE_NAME, tempClass, tempClassRegExp);
     anchors = doc.querySelectorAll(NODE_NAME + "." + tempClass);
@@ -6905,7 +6906,7 @@ wysihtml5.Commands = Base.extend(
       hasElementChild = !!anchor.querySelector("*");
       isEmpty = textContent === "" || textContent === wysihtml5.INVISIBLE_SPACE;
       if (!hasElementChild && isEmpty) {
-        dom.setTextContent(anchor, anchor.href);
+        dom.setTextContent(anchor, text || anchor.href);
         whiteSpace = doc.createTextNode(" ");
         composer.selection.setAfter(anchor);
         composer.selection.insertNode(whiteSpace);
