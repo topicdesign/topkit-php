@@ -8,7 +8,6 @@
         }
       },
       "strike": {
-        "remove": 1
       },
       "form": {
         "rename_tag": "div"
@@ -35,7 +34,6 @@
       },
       "em": {},
       "title": {
-        "remove": 1
       },
       "multicol": {
         "rename_tag": "div"
@@ -51,7 +49,6 @@
         "set_class": "wysiwyg-font-size-smaller"
       },
       "area": {
-        "remove": 1
       },
       "time": {
         "rename_tag": "span"
@@ -63,7 +60,6 @@
         "rename_tag": "span"
       },
       "command": {
-        "remove": 1
       },
       "ul": {},
       "progress": {
@@ -73,7 +69,6 @@
         "rename_tag": "span"
       },
       "iframe": {
-        "remove": 1
       },
       "figcaption": {
         "rename_tag": "div"
@@ -105,14 +100,12 @@
         "rename_tag": "div"
       },
       "noframes": {
-        "remove": 1
       },
       "abbr": {
         "rename_tag": "span"
       },
       "u": {},
       "bgsound": {
-        "remove": 1
       },
       "sup": {
         "rename_tag": "span"
@@ -121,7 +114,6 @@
         "rename_tag": "div"
       },
       "basefont": {
-        "remove": 1
       },
       "nav": {
         "rename_tag": "div"
@@ -132,7 +124,6 @@
         }
       },
       "head": {
-        "remove": 1
       },
       "tbody": {
         "add_class": {
@@ -156,7 +147,6 @@
         }
       },
       "object": {
-        "remove": 1
       },
       "div": {
         "add_class": {
@@ -173,10 +163,8 @@
         "rename_tag": "em"
       },
       "track": {
-        "remove": 1
       },
       "wbr": {
-        "remove": 1
       },
       "fieldset": {
         "rename_tag": "div"
@@ -189,17 +177,13 @@
         "rename_tag": "span"
       },
       "noscript": {
-        "remove": 1
       },
       "svg": {
-        "remove": 1
       },
       "input": {
-        "remove": 1
       },
       "table": {},
       "keygen": {
-        "remove": 1
       },
       "h5": {
         "add_class": {
@@ -207,13 +191,11 @@
         }
       },
       "meta": {
-        "remove": 1
       },
       "map": {
         "rename_tag": "div"
       },
       "isindex": {
-        "remove": 1
       },
       "mark": {
         "rename_tag": "span"
@@ -229,14 +211,11 @@
         }
       },
       "base": {
-        "remove": 1
       },
       "video": {
-        "remove": 1
       },
       "strong": {},
       "canvas": {
-        "remove": 1
       },
       "output": {
         "rename_tag": "span"
@@ -253,23 +232,19 @@
         }
       },
       "applet": {
-        "remove": 1
       },
       "span": {},
       "rp": {
         "rename_tag": "span"
       },
       "spacer": {
-        "remove": 1
       },
       "source": {
-        "remove": 1
       },
       "aside": {
         "rename_tag": "div"
       },
       "frame": {
-        "remove": 1
       },
       "section": {
         "rename_tag": "div"
@@ -291,7 +266,6 @@
         "rename_tag": "span"
       },
       "del": {
-        "remove": 1
       },
       "blockquote": {
         "check_attributes": {
@@ -299,10 +273,8 @@
         }
       },
       "style": {
-        "remove": 1
       },
       "device": {
-        "remove": 1
       },
       "meter": {
         "rename_tag": "span"
@@ -316,7 +288,6 @@
         "rename_tag": "span"
       },
       "embed": {
-        "remove": 1
       },
       "hgroup": {
         "rename_tag": "div"
@@ -331,7 +302,6 @@
         "rename_tag": "span"
       },
       "noembed": {
-        "remove": 1
       },
       "thead": {
         "add_class": {
@@ -345,7 +315,6 @@
         "rename_tag": "span"
       },
       "xml": {
-        "remove": 1
       },
       "h6": {
         "add_class": {
@@ -353,7 +322,6 @@
         }
       },
       "param": {
-        "remove": 1
       },
       "th": {
         "check_attributes": {
@@ -384,7 +352,6 @@
         "rename_tag": "span"
       },
       "nextid": {
-        "remove": 1
       },
       "pre": {},
       "center": {
@@ -392,7 +359,6 @@
         "set_class": "wysiwyg-text-align-center"
       },
       "audio": {
-        "remove": 1
       },
       "datalist": {
         "rename_tag": "span"
@@ -401,17 +367,14 @@
         "rename_tag": "span"
       },
       "col": {
-        "remove": 1
       },
       "article": {
         "rename_tag": "div"
       },
       "cite": {},
       "link": {
-        "remove": 1
       },
       "script": {
-        "remove": 1
       },
       "bdo": {
         "rename_tag": "span"
@@ -420,7 +383,6 @@
         "rename_tag": "ul"
       },
       "colgroup": {
-        "remove": 1
       },
       "ruby": {
         "rename_tag": "span"
@@ -442,10 +404,8 @@
         "rename_tag": "span"
       },
       "comment": {
-        "remove": 1
       },
       "frameset": {
-        "remove": 1
       },
       "optgroup": {
         "rename_tag": "span"
