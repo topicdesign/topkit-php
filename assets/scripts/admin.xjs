@@ -1,22 +1,23 @@
-// import common.js
-// import libs/bootstrap/bootstrap-alert.min.js
-// import libs/bootstrap/bootstrap-button.min.js
-// import libs/bootstrap/bootstrap-carousel.min.js
-// import libs/bootstrap/bootstrap-collapse.min.js
-// import libs/bootstrap/bootstrap-dropdown.min.js
-// import libs/bootstrap/bootstrap-modal.min.js
-// import libs/bootstrap/bootstrap-tooltip.min.js
-// import libs/bootstrap/bootstrap-popover.min.js
-// import libs/bootstrap/bootstrap-scrollspy.min.js
-// import libs/bootstrap/bootstrap-tab.min.js
-// import libs/bootstrap/bootstrap-transition.min.js
-// import libs/bootstrap/bootstrap-typeahead.min.js
-// import plugins/jquery.jnotify.js
-// import plugins/bootstrap/bootstrap-datepicker.js
-// import plugins/bootstrap/bootstrap-timepicker.js
-// import plugins/wysihtml5-0.3.0_rc2.js
-// import plugins/bootstrap/bootstrap-wysihtml5.js
-// import plugins/bootstrap/bootstrap-tagcomplete.js
+// import "common.js"
+// import "libs/bootstrap/bootstrap-alert.min.js"
+// import "libs/bootstrap/bootstrap-button.min.js"
+// import "libs/bootstrap/bootstrap-carousel.min.js"
+// import "libs/bootstrap/bootstrap-collapse.min.js"
+// import "libs/bootstrap/bootstrap-dropdown.min.js"
+// import "libs/bootstrap/bootstrap-modal.min.js"
+// import "libs/bootstrap/bootstrap-tooltip.min.js"
+// import "libs/bootstrap/bootstrap-popover.min.js"
+// import "libs/bootstrap/bootstrap-scrollspy.min.js"
+// import "libs/bootstrap/bootstrap-tab.min.js"
+// import "libs/bootstrap/bootstrap-transition.min.js"
+// import "libs/bootstrap/bootstrap-typeahead.min.js"
+// import "plugins/jquery.jnotify.js"
+// import "plugins/bootstrap/bootstrap-datepicker.js"
+// import "plugins/bootstrap/bootstrap-timepicker.js"
+// import "plugins/wysihtml5-0.3.0_rc2.js"
+// import "plugins/bootstrap/bootstrap-wysihtml5.js"
+// import "plugins/bootstrap/bootstrap-tagcomplete.js"
+// import "plugins/jquery.form.js"
 // --------------------------------------------------------------------
 $(document).ready(function() {
     datetimepickers();
@@ -53,36 +54,23 @@ function datetimepickers(){
 // --------------------------------------------------------------------
 function status_messages(){
     $('div.status').each( function() {
-		var type = $(this).data('type');
-		var sticky = false;
-		if (type == 'error' || type == 'warning') {
-			sticky = true;
-		}
-		$(this).find('ul li').each( function() {
-			$.jnotify($(this).text(), type, sticky);
-		});
-	});
+    var type = $(this).data('type');
+    var sticky = false;
+    if (type == 'error' || type == 'warning') {
+      sticky = true;
+    }
+    $(this).find('ul li').each( function() {
+      $.jnotify($(this).text(), type, sticky);
+    });
+  });
 }
 
 // --------------------------------------------------------------------
 function wysihtml5_editors(){
-  var on_focus = function(){
-    // ensure starting <p> if empty
-    if(this.textareaElement.value === '') {
-      var self = this;
-      setTimeout(function() {
-        self.composer.selection.surround(document.createElement('p'));
-        self.stopObserving('focus:composer', on_focus);
-      }, 10);
-    }
-  }
   $('textarea[data-role="editor"]')
-    .wrap($('<div class="well"/>'))
-    .wysihtml5({
-      events: {
-        'focus:composer': on_focus 
-      } 
-    })
+    .editor()
+    .parent()
+      .wrap($('<div class="well"/>'))
     ;
 }
 function tag_complete(){
