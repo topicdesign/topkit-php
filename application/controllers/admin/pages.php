@@ -61,19 +61,6 @@ class Pages extends Admin_Controller {
                 'rules' => "callback_check_uri[{$page->uri}]"
             ),
         );
-        if ( ! $page->published_at || $page->published_at > date_create())
-        {
-            $rules[] = array(
-                'field' => 'publish-time',
-                'label' => 'lang:page-field-publish_time',
-                'rules' => 'required'
-            );
-            $rules[] = array(
-                'field' => 'publish-date',
-                'label' => 'lang:page-field-published_at',
-                'rules' => 'required'
-            );
-        }
         $this->form_validation->set_rules($rules);
         if ($this->form_validation->run() == FALSE)
         {
@@ -93,14 +80,22 @@ class Pages extends Admin_Controller {
             $page->description = $this->input->post('description');
             $page->body = $this->input->post('body');
             $page->keywords = $this->input->post('keywords');
-            $page->published_at = date_create(
-                $this->input->post('publish-date') . ' ' .
-                $this->input->post('publish-time') . ' ' .
-                $this->input->post('publish-time-ampm'),
-                new DateTimeZone(config_item('site_timezone'))
-            );
-            $page->published_at->setTimezone(new DateTimeZone('GMT'));
-
+            if ($this->input->post('publish-date'))
+            {
+                // convert published datetime to GMT
+                $page->published_at = date_create(
+                    $this->input->post('publish-date') . ' ' .
+                    $this->input->post('publish-time') . ' ' .
+                    $this->input->post('publish-time-ampm'),
+                    new DateTimeZone(config_item('site_timezone'))
+                );
+                $page->published_at->setTimezone(new DateTimeZone('GMT'));
+            }
+            else if ( ! $page->is_published() && ! empty($page->published_at))
+            {
+                // clear published date if user emptied field
+                $page->published_at = NULL;
+            }
             if ( ! $page->save())
             {
                 foreach ($page->errors->full_messages() as $e)

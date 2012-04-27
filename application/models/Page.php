@@ -98,6 +98,20 @@ class Page extends ActiveRecord\Model {
     }
 
     // --------------------------------------------------------------------
+
+    /**
+     * check if published_at is in the past
+     *
+     * @access  public
+     * @param   void
+     *
+     * @return  bool
+     **/
+    public function is_published()
+    {
+       return ($this->published_at && $this->published_at <= date_create());
+    }
+    // --------------------------------------------------------------------
 }
 /**
  * SQL for table

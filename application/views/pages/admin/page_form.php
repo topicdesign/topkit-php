@@ -41,24 +41,31 @@
             <fieldset class="well">
                 <div class="control-group btn-toolbar">
                     <label for="page-form-publish" class="text"><?php echo lang('page-field-published_at'); ?></label>
-                    <?php if ( ! $page->published_at || $page->published_at > date_create()): ?>
                     <div class="controls">
                         <input id="page-form-publish" name="publish-date"
                             type="text"
+                            placeholder="Draft"
                             value="<?php echo set_value('publish-date',local_date_format($page->published_at, 'Y/m/d')); ?>"
                             class="text input-small"
+                        <?php if ( ! $page->is_published()): ?>
                             data-role="datepicker"
+                        <?php else: ?>
+                            disabled="disabled"
+                        <?php endif; ?>
                             >
                         <input id="page-form-publish-time" name="publish-time"
                             type="text"
+                            placeholder="12:00"
+                            autocomplete="off"
                             value="<?php echo set_value('publish-time',local_date_format($page->published_at, 'g:i A')); ?>"
                             class="text input-mini"
+                        <?php if ( ! $page->is_published()): ?>
                             data-role="timepicker"
+                        <?php else: ?>
+                            disabled="disabled"
+                        <?php endif; ?>
                             >
                     </div>
-                    <?php else: ?>
-                    <p>Published on <?php echo local_date_format($page->published_at, 'Y/m/d g:i A'); ?></p>
-                    <?php endif; ?>
                 </div>
                 <hr/>
                 <div class="control-group">
