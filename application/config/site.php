@@ -6,6 +6,20 @@
 */
 
 /**
+ * Title of this site
+ *
+ * @var string
+ **/
+$config['site_title'] = 'topkit';
+
+/**
+ * Plain text description of this site
+ *
+ * @var string
+ **/
+$config['site_description'] = 'Topic\'s website toolkit, a boilerplate for custom CMS development';
+
+/**
  * Google Analaytics Account ID
  *
  * @var string
@@ -34,21 +48,33 @@ $config['site_timezone'] = 'America/New_York';
 $config['developer_email'] = 'developer@topicdesign.com';
 
 /**
- * Directory containing static pages
+ * Title of site owner
  *
  * @var string
  **/
-$config['static_page_dir'] = 'pages/static/';
-
-// --------------------------------------------------------------------
-// Do not edit below this line, managed by CMS
-// --------------------------------------------------------------------
-$config['site_title'] = 'topkit';
-$config['site_description'] = '';
 $config['site_owner_title'] = 'Topic Design';
+
+/**
+ * Website of site owner
+ *
+ * @var string
+ **/
 $config['site_owner_url'] = 'http://topicdesign.com';
+
+/**
+ * Email of site owner
+ *
+ * @var string
+ **/
 $config['site_email'] = 'info@topicdesign.com';
+
+/**
+ * Copyright year of this site (YYYY)
+ *
+ * @var string
+ **/
 $config['site_copy_year'] = '2012';
 
+// --------------------------------------------------------------------
 /* End of file site.php */
 /* Location: ./config/site.php */

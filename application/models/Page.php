@@ -11,26 +11,43 @@
 
 class Page extends ActiveRecord\Model {
 
-    # explicit table name  
+    # explicit table name
     static $table_name = 'pages';
 
-    # explicit pk 
-    static $primary_key = 'uri';
+    # explicit pk
+    static $primary_key = 'id';
 
-    # explicit connection name 
+    # explicit connection name
     //static $connection = '';
 
-    # explicit database name 
+    # explicit database name
     //static $db = '';
 
     // --------------------------------------------------------------------
     // Associations
     // --------------------------------------------------------------------
-    
+
     // --------------------------------------------------------------------
     // Validations
     // --------------------------------------------------------------------
-    
+
+    /**
+     * validate before saving
+     *
+     * @access  public
+     * @param   void
+     * @return  void
+     */
+    public function validate()
+    {
+        // check to see if uri is in use
+        $other_page = Page::find(array('conditions' => array('uri = ?', $this->uri)));
+        if ($other_page && ($other_page->id !== $this->id))
+        {
+            $this->errors->add('uri', 'already in use');
+        }
+    }
+
     // --------------------------------------------------------------------
     // Public Methods
     // --------------------------------------------------------------------
@@ -39,7 +56,7 @@ class Page extends ActiveRecord\Model {
      * get all pages that live in the current URI path
      * TODO: support '(un)published'
      *
-     * @access  public 
+     * @access  public
      * @param   void
      * @return  array
      **/
@@ -77,9 +94,23 @@ class Page extends ActiveRecord\Model {
             $uri,
             date_create()
         );
-        return static::first(array('conditions'=>$conditions));  
+        return static::first(array('conditions'=>$conditions));
     }
 
+    // --------------------------------------------------------------------
+
+    /**
+     * check if published_at is in the past
+     *
+     * @access  public
+     * @param   void
+     *
+     * @return  bool
+     **/
+    public function is_published()
+    {
+       return ($this->published_at && $this->published_at <= date_create());
+    }
     // --------------------------------------------------------------------
 }
 /**

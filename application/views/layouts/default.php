@@ -27,8 +27,8 @@
         <link href="<?php echo get_asset('assets/styles/ie.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
 
-    <script src="<?php echo site_url('assets/scripts/libs/modernizr.min.js'); ?>"></script>
-    <script src="<?php echo site_url('assets/scripts/libs/respond.min.js'); ?>"></script>
+    <script src="<?php echo get_asset('assets/scripts/libs/modernizr.min.js'); ?>"></script>
+    <script src="<?php echo get_asset('assets/scripts/libs/respond.min.js'); ?>"></script>
 
     <?php echo document_metadata(); ?>
 

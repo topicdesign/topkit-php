@@ -27,8 +27,9 @@
                 <div class="control-group">
                     <label for="page-form-body" class="control-label textarea"><?php echo lang('page-field-body'); ?></label>
                     <div class="controls">
+                        <?php $this->load->view('wysihtml5/toolbar_full'); ?>
                         <textarea id="page-form-body" name="body"
-                            rows="8" cols="40"
+                            rows="16" cols="80"
                             data-role="editor"
                             style="width:100%"
                             ><?php echo set_value('body', $page->body); ?></textarea>
@@ -43,18 +44,30 @@
                     <div class="controls">
                         <input id="page-form-publish" name="publish-date"
                             type="text"
+                            placeholder="Draft"
                             value="<?php echo set_value('publish-date',local_date_format($page->published_at, 'Y/m/d')); ?>"
                             class="text input-small"
+                        <?php if ( ! $page->is_published()): ?>
                             data-role="datepicker"
+                        <?php else: ?>
+                            disabled="disabled"
+                        <?php endif; ?>
                             >
                         <input id="page-form-publish-time" name="publish-time"
                             type="text"
+                            placeholder="12:00"
+                            autocomplete="off"
                             value="<?php echo set_value('publish-time',local_date_format($page->published_at, 'g:i A')); ?>"
                             class="text input-mini"
+                        <?php if ( ! $page->is_published()): ?>
                             data-role="timepicker"
+                        <?php else: ?>
+                            disabled="disabled"
+                        <?php endif; ?>
                             >
                     </div>
                 </div>
+                <hr/>
                 <div class="control-group">
                     <label for="page-form-keywords" class="text"><?php echo lang('page-field-keywords'); ?></label>
                     <div class="controls">
@@ -62,13 +75,12 @@
                             type="text"
                             value="<?php echo set_value('keywords',$page->keywords); ?>"
                             class="text"
-                            data-items="10" 
-                            data-mode="multiple" 
-                            data-provide="typeahead" 
-                            data-source="[&quot;Catsd&quot;,&quot;Dogs&quot;,&quot;Mass Hysteria&quot;]"
+                            data-role="tagcomplete" 
+                            data-source="[&quot;Cats&quot;,&quot;Dogs&quot;,&quot;Mass Hysteria&quot;]"
                             >
                     </div>
                 </div>
+                <hr/>
                 <div class="control-group">
                     <label for="page-form-description" class="textarea"><?php echo lang('page-field-description'); ?></label>
                     <div class="controls">
