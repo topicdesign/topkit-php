@@ -1,4 +1,15 @@
 <?php if (! defined('BASEPATH')) exit('No direct script access');
+/**
+ * Topkit
+ *
+ * @package     CodeIgniter
+ * @author      Topic Design
+ * @link        http://topicdesign.com/
+ * @license     http://creativecommons.org/licenses/BSD/
+ */
+define('TOPKIT_VERSION', '0.0.1');
+
+// --------------------------------------------------------------------
 
 /**
  * MY Controller
