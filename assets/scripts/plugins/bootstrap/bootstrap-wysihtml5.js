@@ -447,31 +447,33 @@
   var tool_init = {
     format: function(el){
       var $this = $(this)
-        , data = $this.data('editor')
+        , data  = $this.data('editor')
+        , btn   = el.find('a[data-wysihtml5-command="formatBlock"]')
         ;
       // update dropdown label with selected format
-      el.find('a[data-wysihtml5-command="formatBlock"]')
-        .click(function(e){
+      btn.click(function(e){
           $('.current-font', el).text($(e.srcElement).html())
         })
         ;
-      data.editor.on('focus:composer', function(){
+      // data.editor.on('focus:composer', function(){
         // console.log('focus:composer', this);
-      });
+      // });
     }
     // --------------------------------------------------------------------
-    , html: function(el){
+    , source: function(el){
       var $this    = $(this)
         , data     = $this.data('editor')
-        , selector = "a[data-wysihtml5-action='change_view']"
+        , btn    = el.find("a[data-wysihtml5-action='change_view']")
         ;
       // toggle active state of all buttons when viewing source
-      data.toolbar.find(selector)
-        .click(function(e) {
-          data.toolbar.find('a.btn')
-            .not(selector)
-            .toggleClass('disabled')
+      btn.click(function(e) {
+          $(this).find('i')
+            .toggleClass('icon-eye-open icon-eye-close')
             ;
+          data.toolbar.find('a.btn')
+              .not(btn)
+              .toggleClass('disabled')
+              ;
         });
     }
     // --------------------------------------------------------------------
@@ -532,6 +534,7 @@
       // bind buttons
       el.find('a.wysihtml5-insertImage')
         .click(function() {
+          if($(this).hasClass('disabled')) return;
           data.editor.currentView.element.focus();
           modal.modal('show');
         })
@@ -612,6 +615,7 @@
       });
       el.find('.createLink')
         .click(function() {
+          if($(this).hasClass('disabled')) return;
           data.editor.currentView.element.focus();
           modal.modal('show');
         })
@@ -620,7 +624,7 @@
       upload_btn.click(function(e){
         e.preventDefault();
         helpers.upload_file.apply($this,['any', {
-            datai  : {}
+            data  : {}
           , events : {
               upload : fill_modal
             , cancel : function(){
@@ -632,24 +636,34 @@
       });
     }
     // --------------------------------------------------------------------
-    , insert_html: function(el){
-      var $this           = $(this)
-        , data            = $this.data('editor')
-        , insertHtmlModal = el.find('.bootstrap-wysihtml5-insert-html-modal')
-        , htmlInput       = insertHtmlModal.find('.wysihtml5-insert-html-text')
-        , insertButton    = insertHtmlModal.find('a.btn-primary')
-        , insertHtml      = function(){
-            var text = htmlInput.val();
-            htmlInput.val('');
-            data.editor.composer.commands.exec('insertHtml', text);
-          }
+    , embed: function(el){
+      var $this       = $(this)
+        , data        = $this.data('editor')
+        , modal       = el.find('.bootstrap-wysihtml5-embed-modal')
+        , input       = modal.find('#wysihtml5-embed')
+        , init_val    = input.val()
+        , submit_btn  = modal.find('div.modal-footer a.btn-primary')
         ;
-
-      insertButton.click(insertHtml);
-
-      el.find('.insertHtml')
+      modal.on({
+        'shown': function() {
+          input.focus();
+        }
+        , 'hide': function(){
+          data.editor.currentView.element.focus();
+        }
+      });
+      var insert_html = function(){
+        data.editor.composer.commands.exec('insertHtml', input.val());
+        input.val(init_val);
+        submit_btn.unbind('click', insert_html);
+      };
+      // bind buttons
+      submit_btn.click(insert_html);
+      el.find('.wysihtml5-embed')
         .click(function() {
-          insertHtmlModal.modal('show')
+          if($(this).hasClass('disabled')) return;
+          data.editor.currentView.element.focus();
+          modal.modal('show')
         })
         ;
     }
@@ -742,11 +756,16 @@
           , cancel: null
         },opts.events)
         ;
-      modal.modal('show');
+      modal
+        .on({
+          'shown': clear_alerts
+        })
+        .modal('show');
       var upload_success = function(data, textStatus, jqXHR){
         modal.modal('hide');
+        submit_btn.unbind('click', submit);
         if (typeof events.upload === 'function'){
-          events.upload(data);
+          events.upload.apply($this, [data]);
         }
       };
       var upload_complete = function(jqXHR, textStatus){
@@ -761,8 +780,12 @@
         });
         $('div.modal-body', modal).prepend(error);
       };
+      var clear_alerts = function(){
+        modal.find('div.alert').remove();
+      };
+      input.change(clear_alerts);
       var submit = function(){
-        $('div.alert', modal).alert('close');
+        clear_alerts();
         form.ajaxSubmit({
             url      : upload_url + '/' + type
           , dataType : 'json'

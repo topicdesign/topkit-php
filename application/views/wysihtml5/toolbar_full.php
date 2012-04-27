@@ -9,10 +9,10 @@
             <li><a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">Heading 2</a></li>
         </ul>
     </li>
-    <li data-wysihtml5-tool="emphasis">
+    <li data-wysihtml5-tool="text">
         <div class="btn-group">
-            <a class="btn" data-wysihtml5-command="formatInline" data-wysihtml5-command-value="strong" title="CTRL+B">Bold</a>
-            <a class="btn" data-wysihtml5-command="formatInline" data-wysihtml5-command-value="em" title="CTRL+I">Italic</a>
+            <a class="btn" data-wysihtml5-command="formatInline" data-wysihtml5-command-value="strong" title="Bold"><i class="icon-bold"></i></a>
+            <a class="btn" data-wysihtml5-command="formatInline" data-wysihtml5-command-value="em" title="Italic"><i class="icon-italic"></i></a>
         </div>
     </li>
     <li data-wysihtml5-tool="lists">
@@ -56,7 +56,7 @@
                 <a class="btn btn-primary" data-dismiss="modal">Insert link</a>
             </div>
         </div>
-        <a class="btn createLink" title="Link"><i class="icon-share"></i>Link</a>
+        <a class="btn createLink" title="Insert Link"><i class="icon-share"></i>Link</a>
     </li>
     <li data-wysihtml5-tool="image">
         <div class="wysihtml5-insert-image-modal modal hide fade">
@@ -101,25 +101,33 @@
         </div>
         <a class="btn wysihtml5-insertImage" title="Insert image"><i class="icon-picture"></i>Image</a>
     </li>
-    <li data-wysihtml5-tool="insert_html">
-        <div class="bootstrap-wysihtml5-insert-html-modal modal hide fade">
+    <li data-wysihtml5-tool="embed">
+        <div class="bootstrap-wysihtml5-embed-modal modal hide fade">
             <div class="modal-header">
                 <a class="close" data-dismiss="modal">×</a>
-                <h3>Insert embed code</h3>
+                <h3>Embed HTML</h3>
             </div>
             <div class="modal-body">
-                <textarea class="wysihtml5-insert-html-text"></textarea>
+                <div class="control-group">
+                    <label for="wysihtml5-embed" class="text">HTML Snippet</label>
+                    <div class="controls">
+                        <textarea id="wysihtml5-embed"
+                            rows="8" cols="80"
+                            style="width:100%"
+                            ></textarea>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <a class="btn" data-dismiss="modal">Cancel</a>
                 <a class="btn btn-primary" data-dismiss="modal">Insert</a>
             </div>
         </div>
-        <a class="btn insertHtml" title="Insert HTML"><i class="icon-film"></i></a>
+        <a class="btn wysihtml5-embed" title="Inject HTML"><i class="icon-pencil"></i>Embed</a>
     </li>
-    <li data-wysihtml5-tool="html" class="pull-right">
+    <li data-wysihtml5-tool="source" class="pull-right">
         <div class="btn-group">
-            <a class="btn" data-wysihtml5-action="change_view" title="Edit HTML"><i class="icon-pencil"></i></a>
+            <a class="btn" data-wysihtml5-action="change_view" title="View Source"><i class="icon-eye-open"></i></a>
         </div>
     </li>
 </ul>
