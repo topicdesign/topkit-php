@@ -34,7 +34,7 @@ if ( ! function_exists('get_user'))
             $auth_user = $CI->authentic->current_user();
             if ($auth_user)
             {
-                $app->user = User::find($auth_user->id, array('include' => array('roles', 'permissions')));
+                $app->user = User::find($auth_user->id);
             }
         }
         return $app->user;
