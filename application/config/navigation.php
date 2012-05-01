@@ -121,26 +121,15 @@ $config['anchors']['admin_sidebar'] = array(
     ),
     array(
         'href'  => '/admin/settings',
-        'label' => 'Settings',
+        'label' => '<i class="icon-list-alt"></i>Settings',
         'attr'  => array(
             'title' => 'Settings',
+            'class' => 'disabled',
         ),
         'prepend' => '',
         'append'  => '',
         'permissions' => array(
             //'setting' => 'update',
-        ),
-    ),
-    array(
-        'href'  => '/admin/events',
-        'label' => 'Events',
-        'attr'  => array(
-            'title' => 'Events',
-        ),
-        'prepend' => '',
-        'append'  => '',
-        'permissions' => array(
-            //'event' => 'update',
         ),
     ),
     array(
@@ -152,31 +141,19 @@ $config['anchors']['admin_sidebar'] = array(
         'prepend' => '',
         'append'  => '',
         'permissions' => array(
-            //'page' => 'update',
-        ),
-    ),
-    array(
-        'href'  => '/admin/members',
-        'label' => 'Members',
-        'attr'  => array(
-            'title' => 'Members',
-        ),
-        'prepend' => '',
-        'append'  => '',
-        'permissions' => array(
-            //'user' => 'manage',
+            'page' => 'read',
         ),
     ),
     array(
         'href'  => '/admin/users',
-        'label' => 'Users',
+        'label' => '<i class="icon-user"></i>Users',
         'attr'  => array(
             'title' => 'Users',
         ),
         'prepend' => '',
         'append'  => '',
         'permissions' => array(
-            //'user' => 'manage',
+            'user' => 'read',
         ),
     ),
 );
