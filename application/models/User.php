@@ -30,12 +30,10 @@ class User extends \Authentic\User {
         array('nonces', 'class_name' => 'Authentic\Nonce'),
         array('roles',
             'class_name' => 'Authority\Role',
-            'foreign_key' => 'user_id',
         ),
         array('permissions' ,
             'class_name' => 'Authority\Permission',
             'through' => 'roles',
-            'foreign_key' => 'permission_id',
         )
     );
 
