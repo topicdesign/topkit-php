@@ -4,30 +4,26 @@
  * Roles
  **/
 
-$config['roles'] = array(
-    'root' => array(
-        'all' => array(
-            'manage' => TRUE
-        ),
+$config['roles']['root'] = array(
+    'all' => array(
+        'admin' => TRUE
     ),
-    'admin' => array(
-        'page'       => array(
-            'manage' => TRUE
-        ),
-        'redirect'   => array(
-            'manage' => TRUE
-        ),
-        'user'       => array(
-            'moderate' => TRUE
-        ),
-        'role'       => array(
-            'manage' => TRUE
-        ),
-        'permission' => array(
-            'manage' => TRUE
-        ),
+);
+
+$config['roles']['admin'] = array(
+    'page'       => array(
+        'admin' => TRUE
     ),
-    'foo' => array(
-        'page' => 'manage'
+    'redirect'   => array(
+        'admin' => TRUE
+    ),
+    'user'       => array(
+        'manage' => TRUE
+    ),
+    'role'       => array(
+        'manage' => TRUE
+    ),
+    'permission' => array(
+        'manage' => TRUE
     ),
 );

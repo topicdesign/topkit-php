@@ -5,8 +5,8 @@ class Migration_Top_init extends CI_Migration {
     /**
      * create base tables/records
      *
-     * @access  public 
-     * @param   void 
+     * @access  public
+     * @param   void
      * @return  void
      **/
     public function up()
@@ -29,8 +29,8 @@ class Migration_Top_init extends CI_Migration {
     /**
      * drop all tables
      *
-     * @access  public 
-     * @param   void 
+     * @access  public
+     * @param   void
      * @return  void
      **/
     public function down()
@@ -55,7 +55,7 @@ class Migration_Top_init extends CI_Migration {
     /**
      * add sessions table
      *
-     * @access  public 
+     * @access  public
      * @param   void
      * @return  void
      **/
@@ -93,7 +93,7 @@ class Migration_Top_init extends CI_Migration {
     /**
      * add users table
      *
-     * @access  public 
+     * @access  public
      * @param   void
      * @return  void
      **/
@@ -153,7 +153,7 @@ class Migration_Top_init extends CI_Migration {
     /**
      * add roles table
      *
-     * @access  public 
+     * @access  public
      * @param   void
      * @return  void
      **/
@@ -193,7 +193,7 @@ class Migration_Top_init extends CI_Migration {
     /**
      * add permissions table
      *
-     * @access  public 
+     * @access  public
      * @param   void
      * @return  void
      **/
@@ -222,7 +222,7 @@ class Migration_Top_init extends CI_Migration {
     /**
      * add pages table
      *
-     * @access  public 
+     * @access  public
      * @param   void
      * @return  void
      **/
@@ -286,8 +286,8 @@ class Migration_Top_init extends CI_Migration {
     /**
      * add default page(s)
      *
-     * @access  public 
-     * @param   void 
+     * @access  public
+     * @param   void
      * @return  void
      **/
     public function add_default_pages()
@@ -321,7 +321,7 @@ class Migration_Top_init extends CI_Migration {
     /**
      * add nonces table
      *
-     * @access  public 
+     * @access  public
      * @param   void
      * @return  void
      **/
@@ -355,7 +355,7 @@ class Migration_Top_init extends CI_Migration {
     /**
      * create redirects table
      *
-     * @access  public 
+     * @access  public
      * @param   void
      * @return  void
      **/
@@ -380,13 +380,13 @@ class Migration_Top_init extends CI_Migration {
         $this->dbforge->add_key('request', TRUE);
         $this->dbforge->create_table('redirects');
     }
-    
+
     // --------------------------------------------------------------------
 
     /**
      * add default user(s)
      *
-     * @access  public 
+     * @access  public
      * @param   void
      * @return  void
      **/

@@ -79,8 +79,6 @@ if ( ! function_exists('admin_edit_object'))
         $CI = get_instance();
         if (is_null($id) && cannot('create', $class))
         {
-            // echo 'nope';
-            // exit;
             set_status('error', lang('not_authorized'));
             $CI->history->back();
         }
@@ -91,12 +89,8 @@ if ( ! function_exists('admin_edit_object'))
                 set_status('error', sprintf(lang('not_found'), $class));
                 $CI->history->back();
             }
-            // FIXME cannot('update', object) throws error?
-            if (cannot('update', $class))
+            if (cannot('update', $object))
             {
-                // echo '<pre>' . $class;
-                // print_r(get_user()->permissions->to_array());
-                // exit;
                 set_status('error', lang('not_authorized'));
                 $CI->history->back();
             }
