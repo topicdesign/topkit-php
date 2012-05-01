@@ -16,7 +16,7 @@
  * @param	string  $menu       which menu should we generate
  * @param	bool    $nested     should we include nested anchors
  *
- * @return  string	
+ * @return  string
  */
 if ( ! function_exists('get_nav'))
 {
@@ -41,22 +41,22 @@ if ( ! function_exists('get_nav'))
         {
             return FALSE;
         }
-        foreach ($anchors as $key => &$anchor) 
+        foreach ($anchors as $key => &$anchor)
         {
             if (isset($anchor['permissions']))
             {
-                foreach ($anchor['permissions'] as $resource => $permission) 
+                foreach ($anchor['permissions'] as $resource => $permission)
                 {
-                    if ($resource)
+                    if (is_string($resource))
                     {
-                        if (cannot($resource, $permission))
+                        if (cannot($permission, $resource))
                         {
                             unset($anchors[$key]);
                         }
                     }
-                    else 
+                    else
                     {
-                        if ( ! $permission())
+                        if ( ! function_exists($permission) || ! @$permission())
                         {
                             unset($anchors[$key]);
                         }
@@ -73,7 +73,7 @@ if ( ! function_exists('get_nav'))
         {
             $template = $templates[$custom_template];
         }
-        else 
+        else
         {
             $template = $templates['default'];
         }
@@ -82,10 +82,10 @@ if ( ! function_exists('get_nav'))
             'anchors'   => $anchors,
             'template'  => $template,
         );
-        
+
         $output =  '<' . $template['wrapper']['tag'] .' '
             . ' class="' . $template['wrapper']['class'] . '"';
-        foreach ($template['wrapper']['attributes'] as $attr => $val) 
+        foreach ($template['wrapper']['attributes'] as $attr => $val)
         {
             $output .= $attr . '="' . $val . '"';
         }
@@ -130,7 +130,7 @@ if ( ! function_exists('get_sub_nav'))
         {
             // what about a parent URI?
             $uri = substr($uri, 0, strrpos($uri, '/'));
-            return get_sub_nav($uri); 
+            return get_sub_nav($uri);
         }
         return get_nav($menu, $nested);
     }

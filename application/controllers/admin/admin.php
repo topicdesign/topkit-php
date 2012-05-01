@@ -35,7 +35,7 @@ class Admin extends Admin_Controller {
     /**
      * allow user to edit their account
      *
-     * @access  public 
+     * @access  public
      * @param   void
      *
      * @return  void
@@ -49,15 +49,15 @@ class Admin extends Admin_Controller {
 
         $rules = array(
             array(
-                 'field'   => 'email', 
-                 'label'   => 'Email', 
+                 'field'   => 'email',
+                 'label'   => 'Email',
                  'rules'   => 'valid_email'
             ),
             array(
-                 'field'   => 'password', 
-                 'label'   => 'Password', 
+                 'field'   => 'password',
+                 'label'   => 'Password',
                  'rules'   => 'matches[password-confirm]'
-            ),   
+            ),
         );
         $this->form_validation->set_rules($rules);
         if ($this->form_validation->run() == FALSE)
@@ -88,6 +88,8 @@ class Admin extends Admin_Controller {
             redirect('admin');
         }
     }
+
+    // --------------------------------------------------------------------
 
 }
 /* End of file admin.php */

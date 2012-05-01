@@ -1,7 +1,7 @@
 # Require any additional compass plugins here.
 
 # Set this to the root of your project:
-http_path = (environment == :production) ? "/" : "/top/leddfoot/"
+http_path = (environment == :production) ? "/" : "/top/topkit/"
 sass_dir = "sass"
 css_dir = "."
 
