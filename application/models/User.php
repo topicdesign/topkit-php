@@ -2,25 +2,24 @@
 /**
  * User
  *
- * @package     Authentic
+ * @package     topkit
  * @subpackage  Models
  * @category    Authentication
  * @author      Topic Deisgn
- * @link        https://github.com/topicdesign/codeigniter-authentic-authentication
  * @license     http://creativecommons.org/licenses/BSD/
  */
 class User extends \Authentic\User {
 
-    # explicit table name  
+    # explicit table name
     //static $table_name = 'users';
 
-    # explicit pk 
+    # explicit pk
     //static $primary_key = 'id';
 
-    # explicit connection name 
+    # explicit connection name
     //static $connection = 'default';
 
-    # explicit database name 
+    # explicit database name
     //static $db = '';
 
     // --------------------------------------------------------------------
@@ -29,8 +28,15 @@ class User extends \Authentic\User {
 
     static $has_many = array(
         array('nonces', 'class_name' => 'Authentic\Nonce'),
-        array('roles', 'class_name' => 'Authority\Role'),
-        array('permissions' , 'class_name' => 'Authority\Permission', 'through' => 'roles')
+        array('roles',
+            'class_name' => 'Authority\Role',
+            'foreign_key' => 'user_id',
+        ),
+        array('permissions' ,
+            'class_name' => 'Authority\Permission',
+            'through' => 'roles',
+            'foreign_key' => 'permission_id',
+        )
     );
 
     // --------------------------------------------------------------------

@@ -18,7 +18,7 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo site_url('admin/account'); ?>">Account Settings</a></li>
+                            <li><a href="<?php echo site_url('admin/users/edit/' . get_user()->id); ?>">Account Settings</a></li>
                             <li><a href="<?php echo site_url('logout'); ?>"><i class="icon-off"></i> Log Out</a></li>
                         </ul>
                     </li>

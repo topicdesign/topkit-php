@@ -13,6 +13,12 @@ class Admin extends Admin_Controller {
     public function __construct()
     {
         parent::__construct();
+        $user = get_user();
+        echo '<pre>';
+        print_r($user->roles[0]->permission);
+        echo '<hr/>';
+        print_r($user->permissions);
+        exit;
     }
 
     // --------------------------------------------------------------------
@@ -27,6 +33,7 @@ class Admin extends Admin_Controller {
      **/
     public function index()
     {
+        can('create', 'foo');
         $this->document->build('admin/admin_dashboard.php');
     }
 
