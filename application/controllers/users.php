@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login extends Admin_Controller {
+class Users extends Public_Controller {
 
     /**
      * Constructor
@@ -13,6 +13,14 @@ class Login extends Admin_Controller {
     public function __construct()
     {
         parent::__construct();
+
+        $this->document->layout = 'admin';
+        $this->document
+            ->partial('header', '_partials/admin_header')
+            ->partial('footer', '_partials/admin_footer')
+            ->partial('sidebar', '_partials/admin_sidebar')
+            ;
+        add_script('admin.min.js');
     }
 
     // --------------------------------------------------------------------
@@ -25,7 +33,7 @@ class Login extends Admin_Controller {
      *
      * @return void
      **/
-    public function index()
+    public function login()
     {
         if (logged_in())
         {
@@ -44,7 +52,7 @@ class Login extends Admin_Controller {
             }
             $data['errors'] = $this->authentic->get_errors();
         }
-        $this->document->build('login/login', $data);
+        $this->document->build('users/login', $data);
     }
 
     // --------------------------------------------------------------------
@@ -73,20 +81,42 @@ class Login extends Admin_Controller {
      *
      * @return void
      **/
-    public function forgot_password()
+    public function forgot()
     {
-        if ($this->input->post())
+        $this->load->library('form_validation');
+        $this->load->helper('form');
+        $this->form_validation->set_error_delimiters('', '');
+
+        $rules = array(
+            array(
+                'field' => 'identity',
+                'label' => 'lang:user-field-identity',
+                'rules' => 'required'
+            ),
+        );
+        $this->form_validation->set_rules($rules);
+        if ($this->form_validation->run() == FALSE)
+        {
+            if ($e = validation_errors())
+            {
+                set_status('error', $e);
+            }
+            $this->document->build('users/forgot');
+        }
+        else
         {
             $identity = $this->input->post('identity');
             $user = User::find_user($identity);
-            if ($user)
+            if ( ! $user)
             {
-                $code = $this->authentic->deactivate($user, TRUE);
-                log_message('debug', $code->to_json());
-                // email code to user?
+                // TODO: use lang
+                set_status('error', 'Unknown user');
+                redirect(current_url());
             }
+            $code = $this->authentic->deactivate($user, TRUE);
+            log_message('debug', $code->to_json());
+            // email code to user?
         }
-        $this->document->build('login/forgot_password');
     }
 
     // --------------------------------------------------------------------

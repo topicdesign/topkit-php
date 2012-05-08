@@ -1,13 +1,16 @@
 <?php
 
-/**
- * Dashboard Buttons
- */
 $lang['user-edit-title'] = 'User Editor';
 $lang['users-admin-title'] = 'Users';
 
 /**
- * Field Labels
+ * admin field labels
+ */
+
+
+
+/**
+ * admin field labels
  */
 $lang['user-field-username']      = 'Username';
 $lang['user-field-email']         = 'Email';

@@ -14,7 +14,7 @@
                 <br />
             <label for="password" class="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Shhhhh..." class="password" />
-                <p class="help-inline">Forgot your password? Request a <a href="<?php echo site_url('forgot_password'); ?>">new password via email</a>.</p>
+                <p class="help-inline">Forgot your password? Request a <a href="<?php echo site_url('login/forgot'); ?>">new password via email</a>.</p>
                 <br />
             <label for="remember" class="checkbox">
                 <input type="checkbox" id="remember" name="remember" value="TRUE" />Remember this device
