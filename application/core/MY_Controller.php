@@ -35,14 +35,14 @@ class MY_Controller extends CI_Controller
     // --------------------------------------------------------------------
 
     /**
-	 * initialize global partials
-	 *
-	 * @access	protected 
-     * @param	void
+     * initialize global partials
      *
-	 * @return	void
-	 **/
-	protected function init_partials(){}
+     * @access  protected
+     * @param   void
+     *
+     * @return  void
+     **/
+    protected function init_partials(){}
 
     // --------------------------------------------------------------------
 
@@ -79,8 +79,8 @@ class Public_Controller extends MY_Controller
     /**
      * initialize document properties
      *
-     * @access  public 
-     * @param   void 
+     * @access  public
+     * @param   void
      * @return  void
      **/
     public function init_document()
@@ -125,14 +125,14 @@ class Public_Controller extends MY_Controller
     // --------------------------------------------------------------------
 
     /**
-	 * initialize public partials
-	 *
-	 * @access	protected 
-     * @param	void
+     * initialize public partials
      *
-	 * @return	void
-	 **/
-	protected function init_partials()
+     * @access  protected
+     * @param   void
+     *
+     * @return  void
+     **/
+    protected function init_partials()
     {
         parent::init_partials();
         $this->document
@@ -201,14 +201,14 @@ class Admin_Controller extends MY_Controller
     // --------------------------------------------------------------------
 
     /**
-	 * initialize admin template settings
-	 *
-	 * @access	protected 
-     * @param	void
+     * initialize admin template settings
      *
-	 * @return	void
-	 **/
-	protected function init_partials()
+     * @access  protected
+     * @param   void
+     *
+     * @return  void
+     **/
+    protected function init_partials()
     {
         parent::init_partials();
         $this->document->layout = 'admin';
