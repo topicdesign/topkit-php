@@ -97,7 +97,7 @@ if ( ! function_exists('admin_edit_object'))
         }
         else
         {
-            $class = strtoupper($class);
+            $class = ucfirst($class);
             $object = new $class();
         }
         return $object;
