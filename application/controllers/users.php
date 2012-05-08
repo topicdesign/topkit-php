@@ -74,7 +74,7 @@ class Users extends Public_Controller {
     // --------------------------------------------------------------------
 
     /**
-     * FPO: forgot password
+     * forgot password
      *
      * @access public
      * @param  void
@@ -114,9 +114,53 @@ class Users extends Public_Controller {
                 redirect(current_url());
             }
             $code = $this->authentic->deactivate($user, TRUE);
-            log_message('debug', $code->to_json());
+            $code->generate_code();
+            $code->save();
             // email code to user?
+            $this->load->library('email');
+            $config = array(
+                'charset'	=> 'utf-8',
+                'crlf'		=> "\n",
+                'newline'	=> "\n",
+                'mailtype'	=> 'html',
+                );
+            $this->email->initialize($config);
+
+            $this->email->from(config_item('site_email'), config_item('site_title'));
+            $this->email->to($user->email);
+            $this->email->subject('Message from '.config_item('site_title'));
+            $message = $this->load->view('users/forgot_email', array('code'=>$code), TRUE);
+            $this->email->message($message);
+
+            $this->email->send();
+
+            set_status('success', 'Instructions for reseting your password have been sent to your email');
+            redirect('login');
         }
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * activate an inactive user
+     *
+     * @param $code activation code
+     *
+     * @return void
+     **/
+    function reset($code)
+    {
+        $user = $this->authentic->activate($code, TRUE);
+        error_log('user activated');
+        if ( ! $user)
+        {
+            set_status('error', 'Invalid activation code');
+            redirect('login');
+        }
+        $this->authentic->set_session($user);
+        error_log('set session');
+        set_status('success', 'Please create a new password');
+        redirect('admin/users/edit/' . $user->id);
     }
 
     // --------------------------------------------------------------------
