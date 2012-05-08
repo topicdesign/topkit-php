@@ -42,19 +42,46 @@ class Users extends Public_Controller {
             set_status('info', lang('logged_in'));
             redirect();
         }
-        $data = array();
-        if ($this->input->post())
+        $this->load->library('form_validation');
+        $this->load->helper('form');
+        $this->form_validation->set_error_delimiters('', '');
+
+        $rules = array(
+            array(
+                'field' => 'identity',
+                'label' => 'lang:user-field-identity',
+                'rules' => 'required'
+            ),
+            array(
+                'field' => 'password',
+                'label' => 'lang:user-field-password',
+                'rules' => 'required'
+            ),
+        );
+        $this->form_validation->set_rules($rules);
+        if ($this->form_validation->run() == FALSE)
+        {
+            if ($e = validation_errors())
+            {
+                set_status('error', $e);
+            }
+            $this->document->build('users/login');
+        }
+        else
         {
             $identity = $this->input->post('identity');
             $password = $this->input->post('password');
             $remember = (bool) $this->input->post('remember');
-            if ($this->authentic->login($identity, $password, $remember))
+            if ( ! $this->authentic->login($identity, $password, $remember))
             {
-                redirect('admin');
+                foreach ($this->authentic->get_errors() as $e)
+                {
+                    set_status('error', $e);
+                }
+                redirect('login');
             }
-            $data['errors'] = $this->authentic->get_errors();
+            redirect('admin');
         }
-        $this->document->build('users/login', $data);
     }
 
     // --------------------------------------------------------------------
