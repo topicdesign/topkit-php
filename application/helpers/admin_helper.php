@@ -84,7 +84,7 @@ if ( ! function_exists('admin_edit_object'))
         }
         if ( ! is_null($id))
         {
-            if ( ! $object = $class::find_by_id($id))
+            if ( ! $object = call_user_func(ucfirst($class) . "::find_by_id",$id))
             {
                 set_status('error', sprintf(lang('not_found'), $class));
                 $CI->history->back();
