@@ -150,6 +150,10 @@ class Users extends Public_Controller {
      **/
     function reset($code)
     {
+        if (logged_in())
+        {
+            $this->authentic->logout();
+        }
         $user = $this->authentic->activate($code, TRUE);
         error_log('user activated');
         if ( ! $user)
