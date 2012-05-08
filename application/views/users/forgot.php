@@ -1,6 +1,6 @@
 <section id="forgot">
     <h1><?php echo lang('user-forgot-header'); ?></h1>
-    <form action="<?php echo site_url('login/forgot'); ?>"
+    <form action="<?php echo current_url(); ?>"
         method="POST"
         class="well"
         >

@@ -1,20 +1,54 @@
 <section id="login">
-    <form action="<?php echo site_url('login'); ?>" method="POST" class="well">
+    <h1><?php echo lang('user-login-header'); ?></h1>
+    <form action="<?php echo current_url(); ?>"
+        method="POST"
+        class="well"
+        >
         <fieldset>
-            <label for="identity" class="text">Identity</label>
-                <input type="text" id="identity" name="identity" value="<?php echo set_value('identity'); ?>" placeholder="user@example.com" class="text" />
-                <p class="help-inline">Your identity can be your <strong>username</strong> or <strong>email address</strong>.</p>
-                <br />
-            <label for="password" class="password">Password</label>
-                <input type="password" id="password" name="password" value="<?php echo set_value('password'); ?>" placeholder="Shhhhh..." class="password" />
-                <p class="help-inline">Forgot your password? Request a <a href="<?php echo site_url('login/forgot'); ?>">new password via email</a>.</p>
-                <br />
-            <label for="remember" class="checkbox">
-                <input type="checkbox" id="remember" name="remember" value="TRUE" />Remember this device
-            </label>
+            <div class="control-group">
+                <label for="identity"
+                    class="control-label text"
+                    ><?php echo lang('user-field-identity'); ?></label>
+                <div class="controls">
+                    <input id="identity" name="identity"
+                        type="text"
+                        placeholder="<?php echo lang('user-field-identity-placeholder'); ?>"
+                        value="<?php echo set_value('identity'); ?>"
+                        class="text"
+                        />
+                    <p class="help-inline"><?php echo lang('user-field-identity-help'); ?></p>
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="password"
+                    class="control-label password"
+                    >Password</label>
+                <div class="controls">
+                    <input id="password" name="password"
+                        type="password"
+                        value="<?php echo set_value('password'); ?>"
+                        placeholder="<?php echo lang('user-field-password-placeholder'); ?>"
+                        class="password"
+                        />
+                        <p class="help-inline"><?php echo lang('user-field-password-help'); ?></p>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <label for="remember"
+                        class="control-label checkbox inline"
+                        ><input id="remember" name="remember"
+                            type="checkbox"
+                            value="TRUE"
+                            /><?php echo lang('user-field-remember-me'); ?></label>
+                </div>
+            </div>
         </fieldset>
         <fieldset class="form-actions">
-            <input type="submit" value="Login" class="submit btn btn-primary" />
+            <input type="submit"
+                value="<?php echo lang('user-login-submit-btn'); ?>"
+                class="submit btn btn-primary"
+                />
         </fieldset>
     </form>
 </section>

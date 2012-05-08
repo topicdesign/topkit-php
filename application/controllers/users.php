@@ -78,9 +78,10 @@ class Users extends Public_Controller {
                 {
                     set_status('error', $e);
                 }
-                redirect('login');
+                redirect(current_url());
             }
-            redirect('admin');
+            set_status('info', lang('logged_in'));
+            $this->history->back();
         }
     }
 
@@ -183,15 +184,13 @@ class Users extends Public_Controller {
             $this->authentic->logout();
         }
         $user = $this->authentic->activate($code, TRUE);
-        error_log('user activated');
         if ( ! $user)
         {
-            set_status('error', 'Invalid activation code');
+            set_status('error', lang('user-forgot-invalid-code'));
             redirect('login');
         }
         $this->authentic->set_session($user);
-        error_log('set session');
-        set_status('success', 'Please create a new password');
+        set_status('success', lang('user-forgot-prompt-pass-change'));
         redirect('admin/users/edit/' . $user->id);
     }
 
