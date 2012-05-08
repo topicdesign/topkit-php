@@ -1,9 +1,7 @@
 <?php
 
-/**
- * Dashboard Buttons
- */
 $lang['page-edit-title'] = 'Page Editor';
+$lang['pages-admin-title'] = 'Pages';
 
 /**
  * Field Labels
