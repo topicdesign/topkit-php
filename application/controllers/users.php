@@ -21,6 +21,8 @@ class Users extends Public_Controller {
             ->partial('sidebar', '_partials/admin_sidebar')
             ;
         add_script('admin.min.js');
+
+        $this->lang->load('user');
     }
 
     // --------------------------------------------------------------------
@@ -109,8 +111,7 @@ class Users extends Public_Controller {
             $user = User::find_user($identity);
             if ( ! $user)
             {
-                // TODO: use lang
-                set_status('error', 'Unknown user');
+                set_status('error', lang('user-not-found'));
                 redirect(current_url());
             }
             $code = $this->authentic->deactivate($user, TRUE);
@@ -119,10 +120,10 @@ class Users extends Public_Controller {
             // email code to user?
             $this->load->library('email');
             $config = array(
-                'charset'	=> 'utf-8',
-                'crlf'		=> "\n",
-                'newline'	=> "\n",
-                'mailtype'	=> 'html',
+                'charset'   => 'utf-8',
+                'crlf'      => "\n",
+                'newline'   => "\n",
+                'mailtype'  => 'html',
                 );
             $this->email->initialize($config);
 
@@ -134,7 +135,7 @@ class Users extends Public_Controller {
 
             $this->email->send();
 
-            set_status('success', 'Instructions for reseting your password have been sent to your email');
+            set_status('success', lang('user-reset-sent'));
             redirect('login');
         }
     }
