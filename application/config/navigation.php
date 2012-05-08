@@ -112,7 +112,7 @@ $config['anchors']['footer'] = array(
 $config['anchors']['admin_sidebar'] = array(
     array(
         'href'  => '/admin',
-        'label' => '<i class="icon-home"></i>Dashboard',
+        'label' => '<i class="icon-home"></i>&nbsp;Dashboard',
         'attr'  => array(
             'title' => 'Dashboard',
         ),
@@ -121,7 +121,7 @@ $config['anchors']['admin_sidebar'] = array(
     ),
     array(
         'href'  => '/admin/settings',
-        'label' => '<i class="icon-list-alt"></i>Settings',
+        'label' => '<i class="icon-list-alt"></i>&nbsp;Settings',
         'attr'  => array(
             'title' => 'Settings',
             'class' => 'disabled',
@@ -134,7 +134,7 @@ $config['anchors']['admin_sidebar'] = array(
     ),
     array(
         'href'  => '/admin/pages',
-        'label' => '<i class="icon-file"></i>Pages',
+        'label' => '<i class="icon-file"></i>&nbsp;Pages',
         'attr'  => array(
             'title' => 'Pages',
         ),
@@ -146,7 +146,7 @@ $config['anchors']['admin_sidebar'] = array(
     ),
     array(
         'href'  => '/admin/users',
-        'label' => '<i class="icon-user"></i>Users',
+        'label' => '<i class="icon-user"></i>&nbsp;Users',
         'attr'  => array(
             'title' => 'Users',
         ),
