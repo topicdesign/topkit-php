@@ -35,10 +35,22 @@
             </div>
             <div class="modal-body">
                 <div class="control-group">
-                    <label for="wysihtml5-insert-link-url">URL</label>
+                    <label for="wysihtml5-insert-link-url">
+                        <div class="btn-group" data-toggle="buttons-radio">
+                            <button class="btn active">URL</button>
+                            <button class="btn">Email</button>
+                        </div>
+                    </label>
                     <div class="controls">
                         <div class="input-prepend">
                             <span class="add-on">http://</span><input id="wysihtml5-insert-link-url" placeholder="example.com/file.pdf" class="input-xlarge">
+                        </div>
+                        <span>&nbsp;OR&nbsp;</span>
+                        <button class="btn wysihtml5-upload-file" data-dismiss="modal"><i class="icon-upload"></i>Upload New</button>
+                    </div>
+                    <div class="controls" style="display:none">
+                        <div class="input-prepend">
+                            <span class="add-on icon-envelope"></span><input id="wysihtml5-insert-email-url" placeholder="example@example.com" class="input-xlarge">
                         </div>
                         <span>&nbsp;OR&nbsp;</span>
                         <button class="btn wysihtml5-upload-file" data-dismiss="modal"><i class="icon-upload"></i>Upload New</button>

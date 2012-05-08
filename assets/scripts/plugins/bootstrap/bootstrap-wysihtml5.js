@@ -76,10 +76,6 @@
       "a": {
         "check_attributes": {
           "href": "url"
-        },
-        "set_attributes": {
-          "rel": "nofollow",
-          "target": "_blank"
         }
       },
       "img": {
@@ -566,7 +562,9 @@
         , upload_btn  = modal.find('.wysihtml5-upload-file')
         , inputs      = modal.find('input')
         , url_input   = modal.find('#wysihtml5-insert-link-url')
+        , email_input   = modal.find('#wysihtml5-insert-email-url')
         , text_input  = modal.find('#wysihtml5-insert-link-text')
+        , prefix_btns  = modal.find('label[for="wysihtml5-insert-link-url"] button')
         , submit_btn  = modal.find('a.btn-primary')
         , cancel_btns = modal.find('a[data-dismiss="modal"]')
         ;
@@ -579,10 +577,14 @@
         }
       });
       var insert_link = function(){
+        var prefix = 'http://',
+            link_input = url_input;
+        if (email_input.val()) {
+          prefix = 'mailto:';
+          link_input = email_input;
+        };
         data.editor.composer.commands.exec("createLink", {
-            href   : 'http://' + url_input.val()
-          , target : "_blank"
-          , rel    : "nofollow"
+            href   : prefix + link_input.val()
           , text   : text_input.val()
         });
         reset_inputs();
@@ -609,6 +611,12 @@
         modal.modal('show');
       };
       // bind buttons
+      prefix_btns.click(function(e){
+        e.preventDefault();
+        if ( ! $(this).hasClass('active')) {
+          $('label[for="wysihtml5-insert-link-url"]').siblings().toggle();
+        };
+      });
       submit_btn.click(insert_link);
       cancel_btns.click(function(){
         reset_inputs();
