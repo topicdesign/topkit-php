@@ -363,6 +363,12 @@ class Migration_Top_init extends CI_Migration {
     {
         // create roles table
         $this->dbforge->add_field(array(
+            'id'            => array(
+                'type'              => 'INT',
+                'constraint'        => '11',
+                'unsigned'          => TRUE,
+                'auto_increment'    => TRUE
+            ),
             'request'       => array(
                 'type'              => 'VARCHAR',
                 'constraint'        => '120',
@@ -377,7 +383,7 @@ class Migration_Top_init extends CI_Migration {
                 'default'           => 302,
             ),
         ));
-        $this->dbforge->add_key('request', TRUE);
+        $this->dbforge->add_key('id', TRUE);
         $this->dbforge->create_table('redirects');
     }
 
