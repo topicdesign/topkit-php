@@ -174,6 +174,7 @@ class Admin_Controller extends MY_Controller
     {
         parent::__construct();
         $this->require_login();
+        $this->check_permissions();
         $this->load->helper('admin');
         $this->lang->load('admin');
         $this->init_partials();
@@ -195,6 +196,25 @@ class Admin_Controller extends MY_Controller
         {
             set_status('warning', lang('not_authorized'));
             redirect('login');
+        }
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * make sure user has proper permissions
+     *
+     * @access  protected
+     * @param   void
+     *
+     * @return  void
+     **/
+    protected function check_permissions()
+    {
+        if ($this->uri->rsegment(1) !== 'login' && cannot('read', 'admin'))
+        {
+            set_status('warning', lang('not_authorized'));
+            $this->history->back();
         }
     }
 
