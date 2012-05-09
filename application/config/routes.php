@@ -45,7 +45,9 @@ $route['admin'] = 'admin/admin/index';
 $route['admin/(.*)/(.*)'] = 'admin/$1/$2';
 $route['admin/(.*)'] = 'admin/$1/index';
 
-$route['logout'] = 'login/logout';
+$route['login'] = 'users/login';
+$route['logout'] = 'users/logout';
+$route['login(.*)'] = 'users$1';
 
 $route['articles(.*)'] = "articles$1";
 
