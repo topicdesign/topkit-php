@@ -143,6 +143,38 @@ class Pages extends Admin_Controller {
         return $str;
     }
 
+    // --------------------------------------------------------------------
+
+    /**
+     * delete
+     *
+     * @access  public
+     * @param   $id
+     * @return  void
+     **/
+    public function delete($id)
+    {
+      if ( ! $page = Page::find_by_id($id))
+      {
+          set_status('error', sprintf(lang('not_found'), 'page'));
+      }
+      else if (cannot('delete', $page))
+      {
+          set_status('error', lang('not_authorized'));
+      }
+      else if ( ! $page->delete())
+      {
+          set_status('error', 'Unable to delete requested page.');
+      }
+      else
+      {
+          set_status('success', 'Page deleted');
+      }
+      $this->history->back();
+    }
+
+    // --------------------------------------------------------------------
+
 }
 /* End of file admin.php */
 /* Location: ./application/controllers/admin/admin.php */
