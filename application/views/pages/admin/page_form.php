@@ -12,6 +12,7 @@
                             >
                     </div>
                 </div>
+                <?php if (can('create', $page)): ?>
                 <div class="control-group">
                     <label for="page-form-uri" class="control-label text"><?php echo lang('page-field-uri'); ?></label>
                     <div class="controls">
@@ -24,6 +25,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endif; ?>
                 <div class="control-group">
                     <label for="page-form-body" class="control-label textarea"><?php echo lang('page-field-body'); ?></label>
                     <div class="controls">
