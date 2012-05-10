@@ -24,6 +24,7 @@ $(document).ready(function() {
     status_messages();
     wysihtml5_editors();
     tag_complete();
+    detect_prompt_links();
 });
 // --------------------------------------------------------------------
 function datetimepickers(){
@@ -75,5 +76,31 @@ function wysihtml5_editors(){
 }
 function tag_complete(){
     $('input[data-role="tagcomplete"]').tagcomplete();
+}
+// --------------------------------------------------------------------
+function detect_prompt_links(){
+  $('a[data-prompt]')
+    .not('[data-prompt="off"]')
+    .click(function(e){
+      e.preventDefault();
+      var url       = $(this).attr('href')
+        , title     = $(this).attr('title')
+        , modal     = $('<div class="modal"/>')
+        , modal_str = ''
+        ;
+      modal_str += '<div class="modal-header">'
+        + '<button class="close" data-dismiss="modal">×</button>'
+        + '<h3>Are you sure?</h3>'
+        + '</div>'
+        + '<div class="modal-body">'
+        + '<p>' + title + '</p>'
+        + '</div>'
+        + '<div class="modal-footer">'
+        + '<a href="#" class="btn" data-dismiss="modal">Cancel</a>'
+        + '<a href="' + url + '" class="btn btn-primary">Yes</a>'
+        + '</div>'
+        ;
+      modal.html(modal_str).modal();
+    });
 }
 // --------------------------------------------------------------------
