@@ -111,6 +111,36 @@ class Users extends Admin_Controller {
 
     // --------------------------------------------------------------------
 
+    /**
+     * delete
+     *
+     * @access  public
+     * @param   $id
+     * @return  void
+     **/
+    public function delete($id)
+    {
+      if ( ! $user = User::find_by_id($id))
+      {
+          set_status('error', sprintf(lang('not_found'), 'user'));
+      }
+      else if (cannot('delete', $user))
+      {
+          set_status('error', lang('not_authorized'));
+      }
+      else if ( ! $user->delete())
+      {
+          set_status('error', 'Unable to delete requested user.');
+      }
+      else
+      {
+          set_status('success', 'User deleted');
+      }
+      $this->history->back();
+    }
+
+    // --------------------------------------------------------------------
+
 }
 /* End of file users.php */
 /* Location: ./application/controllers/admin/users.php */

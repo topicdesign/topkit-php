@@ -18,7 +18,7 @@
                     <th>Description</th>
                     <th>Updated</th>
                 <?php if (can('update', 'page')): ?>
-                    <th>Actions</th>
+                    <th class="pull-right">Actions</th>
                 <?php endif; ?>
                 </tr>
             </thead>
@@ -36,9 +36,9 @@
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="icon-check"></i>&nbsp;Preview</a></li>
+                                <li><a href="<?php echo site_url($p->uri); ?>" target="_blank"><i class="icon-check"></i>&nbsp;Preview</a></li>
                             <?php if (can('delete', $p)): ?>
-                                <li><a href="#"><i class="icon-trash"></i>&nbsp;Delete</a></li>
+                              <li><a href="<?php echo site_url('admin/pages/delete/'.$p->id); ?>" title="Delete the '<?php echo $p->title; ?>' page." data-prompt><i class="icon-trash"></i>&nbsp;Delete</a></li>
                             <?php endif; ?>
                             </ul>
                         </div>
