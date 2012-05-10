@@ -37,7 +37,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="#"><i class="icon-repeat"></i>&nbsp;Reset Password</a></li>
                             <?php if (can('delete', $u)): ?>
-                                <li><a href="#"><i class="icon-remove"></i>&nbsp;Deactivate</a></li>
+                                <li><a href="<?php echo site_url('admin/users/delete/'.$u->id); ?>" title="Delete '<?php echo $u->email; ?>'." data-prompt><i class="icon-remove"></i>&nbsp;Delete</a></li>
                             <?php endif; ?>
                             </ul>
                         </div>
