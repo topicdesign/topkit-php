@@ -55,12 +55,15 @@ class Pages extends Admin_Controller {
                 'label' => 'lang:page-field-title',
                 'rules' => 'required'
             ),
-            array(
+        );
+        if (can('create', 'page'))
+        {
+            $rules[] = array(
                 'field' => 'uri',
                 'label' => 'lang:page-field-uri',
                 'rules' => "callback_check_uri[{$page->uri}]"
-            ),
-        );
+            );
+        }
         $this->form_validation->set_rules($rules);
         if ($this->form_validation->run() == FALSE)
         {
@@ -75,7 +78,10 @@ class Pages extends Admin_Controller {
         else
         {
             $page->title = $this->input->post('title');
-            $page->uri = $this->input->post('uri');
+            if (can('create', 'page'))
+            {
+                $page->uri = $this->input->post('uri');
+            }
             $page->slug = url_title($page->title, 'underscore', TRUE);
             $page->description = $this->input->post('description');
             $page->body = $this->input->post('body');
@@ -120,6 +126,16 @@ class Pages extends Admin_Controller {
      **/
     public function check_uri($str, $orig)
     {
+        // cannot change homepage url
+        if ($str && $orig == '/')
+        {
+            $this->form_validation->set_message('check_uri', 'Cannot change home page URI');
+            return FALSE;
+        }
+        if ($orig == '/')
+        {
+            return $orig;
+        }
         // if /, ensure it's the homepage
         if ($str == '/' && $str !== $orig)
         {
