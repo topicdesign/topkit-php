@@ -2,9 +2,9 @@
 /**
  * Navigation Helpers
  *
- * @package		Application
- * @subpackage	Helpers
- * @author		Topic Design
+ * @package     Application
+ * @subpackage  Helpers
+ * @author      Topic Design
  */
 
 // --------------------------------------------------------------------
@@ -12,15 +12,15 @@
 /**
  * get navigation view
  *
- * @access	public
- * @param	string  $menu       which menu should we generate
- * @param	bool    $nested     should we include nested anchors
+ * @access  public
+ * @param   string  $menu       which menu should we generate
+ * @param   bool    $nested     should we include nested anchors
  *
  * @return  string
  */
 if ( ! function_exists('get_nav'))
 {
-	function get_nav($menu = 'main', $nested = TRUE, $custom_template = FALSE)
+    function get_nav($menu = 'main', $nested = TRUE, $custom_template = FALSE)
     {
         $CI = get_instance();
         $CI->config->load('navigation', TRUE, TRUE);
@@ -90,11 +90,11 @@ if ( ! function_exists('get_nav'))
             $output .= $attr . '="' . $val . '"';
         }
         $output .= '>';
-        $output .= $CI->load->view('navigation/list', $data, TRUE);
+        $output .= $CI->document->view('navigation/list', $data, TRUE);
         $output .= '</' . $template['wrapper']['tag'] . '>';
 
         return $output;
-	}
+    }
 }
 
 // --------------------------------------------------------------------
@@ -104,7 +104,7 @@ if ( ! function_exists('get_nav'))
  *
  * @access  public
  * @param   string  $uri        URI to check
- * @param	bool    $nested     should we include nested anchors
+ * @param   bool    $nested     should we include nested anchors
  *
  * @return  string
  **/
