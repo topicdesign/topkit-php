@@ -1,12 +1,11 @@
 <?php 
 
 // open tag
-echo '<' . $template['list']['tag'] .' '
-    . ' class="' . $template['list']['class'] . '"';
+echo sprintf('<%s class="%s"', $template['list']['tag'], $template['list']['class']);
 
 foreach ($template['list']['attributes'] as $attr => $val) 
 {
-    echo $attr . '="' . $val . '"';
+    echo sprintf(' %s="%s"', $attr, $val);
 }
 echo '>';
 
@@ -17,5 +16,5 @@ foreach ($anchors as $a)
 }
 
 // close tag
-echo '</' . $template['list']['tag'] . '>';
+echo sprintf('</%s>', $template['list']['tag']);
 ?>
