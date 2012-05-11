@@ -29,7 +29,7 @@
                 <div class="control-group">
                     <label for="page-form-body" class="control-label textarea"><?php echo lang('page-field-body'); ?></label>
                     <div class="controls">
-                        <?php $this->load->view('wysihtml5/toolbar_full'); ?>
+                        <?php $this->document->view('wysihtml5/toolbar_full'); ?>
                         <textarea id="page-form-body" name="body"
                             rows="16" cols="80"
                             data-role="editor"

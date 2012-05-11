@@ -7,7 +7,7 @@ echo sprintf('<%s class="%s %s"',
     get_nav_class($anchor)
     );
 
-foreach ($template['list_item']['attributes'] as $attr => $val) 
+foreach ($template['list_item']['attributes'] as $attr => $val)
 {
     echo sprintf(' %s="%s"', $attr, $val);
 }
@@ -15,7 +15,7 @@ echo '>';
 
 // anchor
 if (isset($anchor['prepend'])) echo $anchor['prepend'];
-if ( ! $anchor['href']) 
+if ( ! $anchor['href'])
 {
     echo $anchor['label'];
 }
@@ -26,7 +26,7 @@ else
 if (isset($anchor['append'])) echo $anchor['append'];
 if ($nested && isset($anchor['children']) && ! empty($anchor['children']))
 {
-    $this->load->view('navigation/list', array('anchors'=>$anchor['children'], 'template'=>$template));
+    $this->document->view('navigation/list', array('anchors'=>$anchor['children'], 'template'=>$template));
 }
 
 // close tag

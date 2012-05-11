@@ -27,8 +27,8 @@
         <link href="<?php echo get_asset('assets/styles/ie.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
 
-    <script src="<?php echo site_url('assets/scripts/libs/modernizr.min.js'); ?>"></script>
-    <script src="<?php echo site_url('assets/scripts/libs/respond.min.js'); ?>"></script>
+    <script src="<?php echo get_asset('assets/scripts/libs/modernizr.min.js'); ?>"></script>
+    <script src="<?php echo get_asset('assets/scripts/libs/respond.min.js'); ?>"></script>
 
     <?php echo document_metadata(); ?>
 
@@ -63,7 +63,7 @@
     <!--/container-->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="<?php echo site_url('assets/scripts/libs/jquery.min.js'); ?>"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="<?php echo get_asset('assets/scripts/libs/jquery.min.js'); ?>"><\/script>')</script>
 
     <?php echo document_partial('footer_scripts'); ?>
 
