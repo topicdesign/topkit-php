@@ -1,12 +1,15 @@
 <?php
 
 // open tag
-echo '<' . $template['list_item']['tag']
-    . ' class="' . $template['list_item']['class'] . ' ' . get_nav_class($anchor) . '"';
+echo sprintf('<%s class="%s %s"',
+    $template['list_item']['tag'],
+    $template['list_item']['class'],
+    get_nav_class($anchor)
+    );
 
 foreach ($template['list_item']['attributes'] as $attr => $val)
 {
-    echo $attr . '="' . $val . '"';
+    echo sprintf(' %s="%s"', $attr, $val);
 }
 echo '>';
 
@@ -27,5 +30,5 @@ if ($nested && isset($anchor['children']) && ! empty($anchor['children']))
 }
 
 // close tag
-echo '</' . $template['list_item']['tag'] . '>';
+echo sprintf('</%s>', $template['list_item']['tag']);
 ?>
