@@ -103,7 +103,7 @@ function display($type = NULL) {
     {
         $data['alerts'][$type] = $msgdata[$type];
     }
-    $output .= $this->CI->load->view($this->view_file, $data, TRUE);
+    $output .= $this->CI->document->view($this->view_file, $data, TRUE);
     // Remove messages
     $this->_remove($type);
 
