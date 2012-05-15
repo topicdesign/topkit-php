@@ -11,6 +11,8 @@ $lang['dashboard_user'] = 'New Admin';
 $lang['dashboard_auth_twitter'] = 'Authenticate with Twitter';
 $lang['dashboard_auth_facebook'] = 'Authenticate with Facebook';
 
+$lang['image_cropper_title'] = 'Image Cropper';
+
 //$lang['dashboard_article'] = 'New Article';
 //$lang['dashboard_schedule'] = 'Schedule';
 
