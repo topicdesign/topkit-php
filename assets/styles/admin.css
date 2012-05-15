@@ -6211,6 +6211,212 @@ html.no-js div.status, html.no-js p.error {
   color: #c2a928 !important;
 }
 
+/* jquery.Jcrop.css v0.9.10 - MIT License */
+/*
+  The outer-most container in a typical Jcrop instance
+  If you are having difficulty with formatting related to styles
+  on a parent element, place any fixes here or in a like selector
+
+  You can also style this element if you want to add a border, etc
+  A better method for styling can be seen below with .jcrop-light
+  (Add a class to the holder and style elements for that extended class)
+*/
+/* line 12, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-holder {
+  direction: ltr;
+  text-align: left;
+}
+
+/* These styles define the border lines */
+/* line 18, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-vline, .jcrop-hline {
+  background: white url(../images/crop.gif) top left repeat;
+  font-size: 0;
+  position: absolute;
+}
+
+/* line 19, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-vline {
+  height: 100%;
+  width: 1px!important;
+}
+
+/* line 20, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-hline {
+  height: 1px!important;
+  width: 100%;
+}
+
+/* line 21, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-vline.right {
+  right: 0;
+}
+
+/* line 22, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-hline.bottom {
+  bottom: 0;
+}
+
+/* Handle style - size is set by Jcrop handleSize option (currently) */
+/* line 25, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle {
+  background-color: #333;
+  border: 1px #eee solid;
+  font-size: 1px;
+}
+
+/* This style is used for invisible click targets */
+/* line 29, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-tracker {
+  height: 100%;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* "turn off" link highlight */
+  -webkit-touch-callout: none;
+  /* disable callout, image save panel */
+  -webkit-user-select: none;
+  /* disable cut copy paste */
+}
+
+/* Positioning of handles and drag bars */
+/* line 38, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-n {
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -4px;
+  top: 0;
+}
+
+/* line 39, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-s {
+  bottom: 0;
+  left: 50%;
+  margin-bottom: -4px;
+  margin-left: -4px;
+}
+
+/* line 40, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-e {
+  margin-right: -4px;
+  margin-top: -4px;
+  right: 0;
+  top: 50%;
+}
+
+/* line 41, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-w {
+  left: 0;
+  margin-left: -4px;
+  margin-top: -4px;
+  top: 50%;
+}
+
+/* line 42, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-nw {
+  left: 0;
+  margin-left: -4px;
+  margin-top: -4px;
+  top: 0;
+}
+
+/* line 43, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-ne {
+  margin-right: -4px;
+  margin-top: -4px;
+  right: 0;
+  top: 0;
+}
+
+/* line 44, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-se {
+  bottom: 0;
+  margin-bottom: -4px;
+  margin-right: -4px;
+  right: 0;
+}
+
+/* line 45, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-sw {
+  bottom: 0;
+  left: 0;
+  margin-bottom: -4px;
+  margin-left: -4px;
+}
+
+/* line 46, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-n, .jcrop-dragbar.ord-s {
+  height: 7px;
+  width: 100%;
+}
+
+/* line 47, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-e, .jcrop-dragbar.ord-w {
+  height: 100%;
+  width: 7px;
+}
+
+/* line 48, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-n {
+  margin-top: -4px;
+}
+
+/* line 49, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-s {
+  bottom: 0;
+  margin-bottom: -4px;
+}
+
+/* line 50, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-e {
+  margin-right: -4px;
+  right: 0;
+}
+
+/* line 51, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-w {
+  margin-left: -4px;
+}
+
+/* The "jcrop-light" class/extension */
+/* line 55, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-light .jcrop-vline, .jcrop-light .jcrop-hline {
+  background: #FFF;
+  filter: Alpha(opacity=70) !important;
+  opacity: .70!important;
+}
+
+/* line 61, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-light .jcrop-handle {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #000;
+  border-color: #FFF;
+  border-radius: 3px;
+}
+
+/* The "jcrop-dark" class/extension */
+/* line 71, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dark .jcrop-vline, .jcrop-dark .jcrop-hline {
+  background: #000;
+  filter: Alpha(opacity=70) !important;
+  opacity: .7!important;
+}
+
+/* line 77, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dark .jcrop-handle {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #FFF;
+  border-color: #000;
+  border-radius: 3px;
+}
+
+/* Fix for twitter bootstrap et al. */
+/* line 86, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-holder img, img.jcrop-preview {
+  max-width: none;
+}
+
 /*
  * Datepicker for Bootstrap
  *

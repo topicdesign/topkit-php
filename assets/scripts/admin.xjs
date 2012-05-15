@@ -20,6 +20,8 @@
 // import "plugins/jquery.dataTables.min.js"
 // import "plugins/paging.js"
 // import "plugins/jquery.form.js"
+// import "plugins/jquery.color.js"
+// import "plugins/jquery.Jcrop.js"
 // --------------------------------------------------------------------
 $(document).ready(function() {
     datetimepickers();
@@ -27,6 +29,7 @@ $(document).ready(function() {
     wysihtml5_editors();
     tag_complete();
     detect_prompt_links();
+    crop_tool();
 });
 // -------------------------------------------------------------
 // custom sorting used to sort featured fields
@@ -158,3 +161,17 @@ function detect_prompt_links(){
     });
 }
 // --------------------------------------------------------------------
+function crop_tool(){
+    if ($('img.crop').length) {
+        $('img.crop').each(function(){
+            var ratio = $(this).data('ratio');
+            var input = $('input[name="'+$(this).data('name')+'"]');
+            $(this).Jcrop({
+                aspectRatio: ratio,
+                onSelect: function(c) {
+                    input.val(JSON.stringify(c));
+                }
+            });
+        });
+    }
+}
