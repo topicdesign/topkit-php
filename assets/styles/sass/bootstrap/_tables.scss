@@ -14,6 +14,105 @@ table {
   background-color: $tableBackground;
 }
 
+table .header {
+  cursor:pointer;
+}
+
+table .header:after {
+  content: "";
+  float: right;
+  margin-top: 7px;
+  border-width: 0 4px 4px;
+  border-style: solid;
+  border-color: $black transparent;
+  visibility: hidden;
+}
+table .headerSortUp, table .headerSortDown {
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color:rgba(141, 192, 219, 0.25);
+}
+
+table .header:hover:after {
+  visibility: visible;
+}
+
+table .headerSortDown:after, table .headerSortDown:hover:after {
+  visibility: visible;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+
+table .headerSortUp:after {
+  border-bottom: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #000;
+  visibility: visible;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+
+table .blue {
+  color: $blue;
+  border-bottom-color: $blue;
+}
+
+table .headerSortUp.blue,table .headerSortDown.blue {
+  background-color: darken($blue,10%);
+}
+
+table .green {
+  color: $green;
+  border-bottom-color: $green;
+}
+
+table .headerSortUp.green,table .headerSortDown.green {
+  background-color: darken($green,10%);
+}
+
+table .red {
+  color: $red;
+  border-bottom-color: $red;
+}
+
+table .headerSortUp.red,table .headerSortDown.red {
+  background-color: darken($red,10%);
+}
+
+table .yellow{
+  color: $yellow;
+  border-bottom-color: $yellow;
+}
+
+table .headerSortUp.yellow,table .headerSortDown.yellow {
+  background-color: darken($yellow,10%);
+}
+
+table .orange{
+  color: $orange;
+  border-bottom-color: $orange;
+}
+
+table .headerSortUp.orange,table .headerSortDown.orange {
+  background-color: darken($orange,10%);
+}
+
+table .purple{
+  color: $purple;
+  border-bottom-color: $purple;
+}
+
+table .headerSortUp.purple, table .headerSortDown.purple {
+  background-color: darken($purple,10%);
+}
+
 // BASELINE STYLES
 // ---------------
 
