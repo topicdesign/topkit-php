@@ -67,19 +67,24 @@ class Images extends Admin_Controller {
                 $files = get_filenames($path);
                 natsort($files);
                 $files = array_reverse($files);
-                if (isset($files[0]))
+                foreach ($files as $file)
                 {
-                    $prefix = substr($files[0], 0, strpos($files[0], '_'));
+                    $prefix = substr($file, 0, strpos($file, '_'));
                     if (is_numeric($prefix))
                     {
                         $num = ++$prefix;
+                        break;
                     }
                 }
+                if ( ! isset($num))
+                {
+                    $num = 1;
+                }
             }
+            $this->load->library('image_lib');
             foreach ($data['sizes'] as $size)
             {
                 $crop_info = json_decode($this->input->post($size['label']), TRUE);
-                if ($data['file_ext'] == 'jpeg') $data['file_ext'] = 'jpg';
 
                 $image_name = strtolower($size['label']) . $data['file_ext'];
                 if (isset($num))
@@ -87,12 +92,12 @@ class Images extends Admin_Controller {
                     $image_name = $num . '_' . $image_name;
                 }
 
-                $this->load->library('image_lib');
+                // crop
                 $config = array(
                     'source_image'  => $data['full_path'],
                     'new_image'     => $path . $image_name,
-                    'width'         => (int) $crop_info['w'],
-                    'height'        => (int) $crop_info['h'],
+                    'width'         => $crop_info['w'],
+                    'height'        => $crop_info['h'],
                     'x_axis'        => $crop_info['x'],
                     'y_axis'        => $crop_info['y'],
                 );
@@ -105,6 +110,7 @@ class Images extends Admin_Controller {
                 }
                 $this->image_lib->clear();
 
+                // resize
                 $config = array(
                     'source_image'      => $path . $image_name,
                     'width'             => $size['width'],

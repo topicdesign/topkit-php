@@ -110,6 +110,7 @@ class Pages extends Public_Controller {
                 $data['callback'] = 'pages/foo';
                 $data['resource'] = 'page';
                 $data['id'] = '2';
+                $data['multiple'] = TRUE;
                 $this->session->set_userdata(array('upload'=>$data));
                 redirect('admin/images/process');
                 echo '<pre>'; var_dump($data); die;
