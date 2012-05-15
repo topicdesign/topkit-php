@@ -58,7 +58,7 @@ class Images extends Admin_Controller {
             $path = $image_config['directory'] . $data['resource'] . '/' . $data['id'] . '/';
             if ( ! is_dir($path))
             {
-                mkdir($path);
+                mkdir($path, 0777, TRUE);
             }
 
             if (isset($data['multiple']) && $data['multiple'] == TRUE)

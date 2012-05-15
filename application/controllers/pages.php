@@ -78,45 +78,45 @@ class Pages extends Public_Controller {
 
     // --------------------------------------------------------------------
 
-    /**
-     * undocumented function
-     *
-     * @param void
-     *
-     * @return void
-     **/
-    public function test()
-    {
-        if ( ! $_FILES)
-        {
-            $this->load->view('image.php');
-        }
-        else
-        {
-            $config['upload_path'] = 'assets/uploads/';
-            $config['allowed_types'] = 'jpeg|gif|jpg|png';
-            $this->load->library('upload', $config);
-            if ( ! $this->upload->do_upload('image'))
-            {
-                echo '<pre>'; var_dump($this->upload->display_errors()); die;
-            }
-            else
-            {
-                $this->load->config('images', TRUE);
-                $image_config = config_item('images');
-                $data = $this->upload->data();
-                $sizes = $image_config['sizes'];
-                $data['sizes'] = $sizes['article_image'];
-                $data['callback'] = 'pages/foo';
-                $data['resource'] = 'page';
-                $data['id'] = '2';
-                $data['multiple'] = TRUE;
-                $this->session->set_userdata(array('upload'=>$data));
-                redirect('admin/images/process');
-                echo '<pre>'; var_dump($data); die;
-            }
-        }
-    }
+    // /**
+    //  * undocumented function
+    //  *
+    //  * @param void
+    //  *
+    //  * @return void
+    //  **/
+    // public function test()
+    // {
+    //     if ( ! $_FILES)
+    //     {
+    //         $this->load->view('image.php');
+    //     }
+    //     else
+    //     {
+    //         $config['upload_path'] = 'assets/uploads/';
+    //         $config['allowed_types'] = 'jpeg|gif|jpg|png';
+    //         $this->load->library('upload', $config);
+    //         if ( ! $this->upload->do_upload('image'))
+    //         {
+    //             echo '<pre>'; var_dump($this->upload->display_errors()); die;
+    //         }
+    //         else
+    //         {
+    //             $this->load->config('images', TRUE);
+    //             $image_config = config_item('images');
+    //             $data = $this->upload->data();
+    //             $sizes = $image_config['sizes'];
+    //             $data['sizes'] = $sizes['article_image'];
+    //             $data['callback'] = 'pages/foo';
+    //             $data['resource'] = 'page';
+    //             $data['id'] = '2';
+    //             $data['multiple'] = TRUE;
+    //             $this->session->set_userdata(array('upload'=>$data));
+    //             redirect('admin/images/process');
+    //             echo '<pre>'; var_dump($data); die;
+    //         }
+    //     }
+    // }
 }
 /* End of file pages.php */
 /* Location: ./application/controllers/pages.php */
