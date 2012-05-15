@@ -13,7 +13,6 @@ class Images extends Admin_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->config('images');
     }
 
     // --------------------------------------------------------------------
@@ -27,6 +26,9 @@ class Images extends Admin_Controller {
      **/
     public function process()
     {
+        $this->load->config('images', TRUE);
+        $image_config = config_item('images');
+
         $data = $this->session->userdata('upload');
 
         $this->load->library('form_validation');
@@ -53,7 +55,7 @@ class Images extends Admin_Controller {
         }
         else
         {
-            $path = config_item('image_directory') . $data['resource'] . '/' . $data['id'] . '/';
+            $path = $image_config['directory'] . $data['resource'] . '/' . $data['id'] . '/';
             if ( ! is_dir($path))
             {
                 mkdir($path);

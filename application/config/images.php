@@ -4,9 +4,9 @@
  * Images size presets
  **/
 
-$config['image_directory'] = 'assets/images/';
+$config['directory'] = 'assets/images/';
 
-$config['images']['article_image'] = array(
+$config['sizes']['article_image'] = array(
     array(
         'label'         => 'Preview',
         'instructions'  => 'This image will be used in the article list.',

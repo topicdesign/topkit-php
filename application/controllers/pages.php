@@ -102,9 +102,10 @@ class Pages extends Public_Controller {
             }
             else
             {
-                $this->load->config('images');
+                $this->load->config('images', TRUE);
+                $image_config = config_item('images');
                 $data = $this->upload->data();
-                $sizes = config_item('images');
+                $sizes = $image_config['sizes'];
                 $data['sizes'] = $sizes['article_image'];
                 $data['callback'] = 'pages/foo';
                 $data['resource'] = 'page';
