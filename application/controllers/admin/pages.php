@@ -73,7 +73,7 @@ class Pages extends Admin_Controller {
             }
             $page->uri = ltrim($page->uri, '/');
             $data['page'] = $page;
-            $this->document->build('pages/admin/page_edit.php', $data);
+            $this->document->build('pages/admin/page_edit', $data);
         }
         else
         {
