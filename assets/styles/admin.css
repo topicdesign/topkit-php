@@ -1374,12 +1374,130 @@ table {
   background-color: transparent;
 }
 
-/* line 20, sass/bootstrap/_tables.scss */
+/* line 17, sass/bootstrap/_tables.scss */
+table .header {
+  cursor: pointer;
+}
+
+/* line 21, sass/bootstrap/_tables.scss */
+table .header:after {
+  content: "";
+  float: right;
+  margin-top: 7px;
+  border-width: 0 4px 4px;
+  border-style: solid;
+  border-color: black transparent;
+  visibility: hidden;
+}
+
+/* line 30, sass/bootstrap/_tables.scss */
+table .headerSortUp, table .headerSortDown {
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: rgba(141, 192, 219, 0.25);
+}
+
+/* line 35, sass/bootstrap/_tables.scss */
+table .header:hover:after {
+  visibility: visible;
+}
+
+/* line 39, sass/bootstrap/_tables.scss */
+table .headerSortDown:after, table .headerSortDown:hover:after {
+  visibility: visible;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+
+/* line 47, sass/bootstrap/_tables.scss */
+table .headerSortUp:after {
+  border-bottom: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #000;
+  visibility: visible;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+
+/* line 62, sass/bootstrap/_tables.scss */
+table .blue {
+  color: #049cdb;
+  border-bottom-color: #049cdb;
+}
+
+/* line 67, sass/bootstrap/_tables.scss */
+table .headerSortUp.blue, table .headerSortDown.blue {
+  background-color: #0378a9;
+}
+
+/* line 71, sass/bootstrap/_tables.scss */
+table .green {
+  color: #46a546;
+  border-bottom-color: #46a546;
+}
+
+/* line 76, sass/bootstrap/_tables.scss */
+table .headerSortUp.green, table .headerSortDown.green {
+  background-color: #378137;
+}
+
+/* line 80, sass/bootstrap/_tables.scss */
+table .red {
+  color: #9d261d;
+  border-bottom-color: #9d261d;
+}
+
+/* line 85, sass/bootstrap/_tables.scss */
+table .headerSortUp.red, table .headerSortDown.red {
+  background-color: #721c15;
+}
+
+/* line 89, sass/bootstrap/_tables.scss */
+table .yellow {
+  color: #ffc40d;
+  border-bottom-color: #ffc40d;
+}
+
+/* line 94, sass/bootstrap/_tables.scss */
+table .headerSortUp.yellow, table .headerSortDown.yellow {
+  background-color: #d9a400;
+}
+
+/* line 98, sass/bootstrap/_tables.scss */
+table .orange {
+  color: #f89406;
+  border-bottom-color: #f89406;
+}
+
+/* line 103, sass/bootstrap/_tables.scss */
+table .headerSortUp.orange, table .headerSortDown.orange {
+  background-color: #c67605;
+}
+
+/* line 107, sass/bootstrap/_tables.scss */
+table .purple {
+  color: #7a43b6;
+  border-bottom-color: #7a43b6;
+}
+
+/* line 112, sass/bootstrap/_tables.scss */
+table .headerSortUp.purple, table .headerSortDown.purple {
+  background-color: #613591;
+}
+
+/* line 119, sass/bootstrap/_tables.scss */
 .table {
   width: 100%;
   margin-bottom: 18px;
 }
-/* line 24, sass/bootstrap/_tables.scss */
+/* line 123, sass/bootstrap/_tables.scss */
 .table th, .table td {
   padding: 8px;
   line-height: 18px;
@@ -1387,30 +1505,30 @@ table {
   vertical-align: top;
   border-top: 1px solid #dddddd;
 }
-/* line 31, sass/bootstrap/_tables.scss */
+/* line 130, sass/bootstrap/_tables.scss */
 .table th {
   font-weight: bold;
 }
-/* line 35, sass/bootstrap/_tables.scss */
+/* line 134, sass/bootstrap/_tables.scss */
 .table thead th {
   vertical-align: bottom;
 }
-/* line 40, sass/bootstrap/_tables.scss */
+/* line 139, sass/bootstrap/_tables.scss */
 .table colgroup + thead tr:first-child th, .table colgroup + thead tr:first-child td,
 .table thead:first-child tr:first-child th, .table thead:first-child tr:first-child td {
   border-top: 0;
 }
-/* line 44, sass/bootstrap/_tables.scss */
+/* line 143, sass/bootstrap/_tables.scss */
 .table tbody + tbody {
   border-top: 2px solid #dddddd;
 }
 
-/* line 55, sass/bootstrap/_tables.scss */
+/* line 154, sass/bootstrap/_tables.scss */
 .table-condensed th, .table-condensed td {
   padding: 4px 5px;
 }
 
-/* line 64, sass/bootstrap/_tables.scss */
+/* line 163, sass/bootstrap/_tables.scss */
 .table-bordered {
   border: 1px solid #dddddd;
   border-left: 0;
@@ -1420,116 +1538,116 @@ table {
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 70, sass/bootstrap/_tables.scss */
+/* line 169, sass/bootstrap/_tables.scss */
 .table-bordered th, .table-bordered td {
   border-left: 1px solid #dddddd;
 }
-/* line 74, sass/bootstrap/_tables.scss */
+/* line 173, sass/bootstrap/_tables.scss */
 .table-bordered thead:first-child tr:first-child th, .table-bordered tbody:first-child tr:first-child th, .table-bordered tbody:first-child tr:first-child td {
   border-top: 0;
 }
-/* line 78, sass/bootstrap/_tables.scss */
+/* line 177, sass/bootstrap/_tables.scss */
 .table-bordered thead:first-child tr:first-child th:first-child, .table-bordered tbody:first-child tr:first-child td:first-child {
   -webkit-border-radius: 4px 0 0 0;
   -moz-border-radius: 4px 0 0 0;
   border-radius: 4px 0 0 0;
 }
-/* line 81, sass/bootstrap/_tables.scss */
+/* line 180, sass/bootstrap/_tables.scss */
 .table-bordered thead:first-child tr:first-child th:last-child, .table-bordered tbody:first-child tr:first-child td:last-child {
   -webkit-border-radius: 0 4px 0 0;
   -moz-border-radius: 0 4px 0 0;
   border-radius: 0 4px 0 0;
 }
-/* line 85, sass/bootstrap/_tables.scss */
+/* line 184, sass/bootstrap/_tables.scss */
 .table-bordered thead:last-child tr:last-child th:first-child, .table-bordered tbody:last-child tr:last-child td:first-child {
   -webkit-border-radius: 0 0 0 4px;
   -moz-border-radius: 0 0 0 4px;
   border-radius: 0 0 0 4px;
 }
-/* line 88, sass/bootstrap/_tables.scss */
+/* line 187, sass/bootstrap/_tables.scss */
 .table-bordered thead:last-child tr:last-child th:last-child, .table-bordered tbody:last-child tr:last-child td:last-child {
   -webkit-border-radius: 0 0 4px 0;
   -moz-border-radius: 0 0 4px 0;
   border-radius: 0 0 4px 0;
 }
 
-/* line 100, sass/bootstrap/_tables.scss */
+/* line 199, sass/bootstrap/_tables.scss */
 .table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
 }
 
-/* line 111, sass/bootstrap/_tables.scss */
+/* line 210, sass/bootstrap/_tables.scss */
 .table tbody tr:hover td, .table tbody tr:hover th {
   background-color: #f5f5f5;
 }
 
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span1 {
   float: none;
   width: 44px;
   margin-left: 0;
 }
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span2 {
   float: none;
   width: 124px;
   margin-left: 0;
 }
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span3 {
   float: none;
   width: 204px;
   margin-left: 0;
 }
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span4 {
   float: none;
   width: 284px;
   margin-left: 0;
 }
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span5 {
   float: none;
   width: 364px;
   margin-left: 0;
 }
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span6 {
   float: none;
   width: 444px;
   margin-left: 0;
 }
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span7 {
   float: none;
   width: 524px;
   margin-left: 0;
 }
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span8 {
   float: none;
   width: 604px;
   margin-left: 0;
 }
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span9 {
   float: none;
   width: 684px;
   margin-left: 0;
 }
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span10 {
   float: none;
   width: 764px;
   margin-left: 0;
 }
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span11 {
   float: none;
   width: 844px;
   margin-left: 0;
 }
-/* line 120, sass/bootstrap/_tables.scss */
+/* line 219, sass/bootstrap/_tables.scss */
 table .span12 {
   float: none;
   width: 924px;
@@ -6091,6 +6209,212 @@ html.no-js div.status, html.no-js p.error {
 .jnotify-container .jnotify-notification-warning .jnotify-close,
 .jnotify-container .jnotify-notification-warning .jnotify-message {
   color: #c2a928 !important;
+}
+
+/* jquery.Jcrop.css v0.9.10 - MIT License */
+/*
+  The outer-most container in a typical Jcrop instance
+  If you are having difficulty with formatting related to styles
+  on a parent element, place any fixes here or in a like selector
+
+  You can also style this element if you want to add a border, etc
+  A better method for styling can be seen below with .jcrop-light
+  (Add a class to the holder and style elements for that extended class)
+*/
+/* line 12, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-holder {
+  direction: ltr;
+  text-align: left;
+}
+
+/* These styles define the border lines */
+/* line 18, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-vline, .jcrop-hline {
+  background: white url(../images/crop.gif) top left repeat;
+  font-size: 0;
+  position: absolute;
+}
+
+/* line 19, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-vline {
+  height: 100%;
+  width: 1px!important;
+}
+
+/* line 20, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-hline {
+  height: 1px!important;
+  width: 100%;
+}
+
+/* line 21, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-vline.right {
+  right: 0;
+}
+
+/* line 22, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-hline.bottom {
+  bottom: 0;
+}
+
+/* Handle style - size is set by Jcrop handleSize option (currently) */
+/* line 25, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle {
+  background-color: #333;
+  border: 1px #eee solid;
+  font-size: 1px;
+}
+
+/* This style is used for invisible click targets */
+/* line 29, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-tracker {
+  height: 100%;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* "turn off" link highlight */
+  -webkit-touch-callout: none;
+  /* disable callout, image save panel */
+  -webkit-user-select: none;
+  /* disable cut copy paste */
+}
+
+/* Positioning of handles and drag bars */
+/* line 38, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-n {
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -4px;
+  top: 0;
+}
+
+/* line 39, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-s {
+  bottom: 0;
+  left: 50%;
+  margin-bottom: -4px;
+  margin-left: -4px;
+}
+
+/* line 40, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-e {
+  margin-right: -4px;
+  margin-top: -4px;
+  right: 0;
+  top: 50%;
+}
+
+/* line 41, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-w {
+  left: 0;
+  margin-left: -4px;
+  margin-top: -4px;
+  top: 50%;
+}
+
+/* line 42, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-nw {
+  left: 0;
+  margin-left: -4px;
+  margin-top: -4px;
+  top: 0;
+}
+
+/* line 43, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-ne {
+  margin-right: -4px;
+  margin-top: -4px;
+  right: 0;
+  top: 0;
+}
+
+/* line 44, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-se {
+  bottom: 0;
+  margin-bottom: -4px;
+  margin-right: -4px;
+  right: 0;
+}
+
+/* line 45, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-handle.ord-sw {
+  bottom: 0;
+  left: 0;
+  margin-bottom: -4px;
+  margin-left: -4px;
+}
+
+/* line 46, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-n, .jcrop-dragbar.ord-s {
+  height: 7px;
+  width: 100%;
+}
+
+/* line 47, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-e, .jcrop-dragbar.ord-w {
+  height: 100%;
+  width: 7px;
+}
+
+/* line 48, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-n {
+  margin-top: -4px;
+}
+
+/* line 49, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-s {
+  bottom: 0;
+  margin-bottom: -4px;
+}
+
+/* line 50, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-e {
+  margin-right: -4px;
+  right: 0;
+}
+
+/* line 51, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dragbar.ord-w {
+  margin-left: -4px;
+}
+
+/* The "jcrop-light" class/extension */
+/* line 55, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-light .jcrop-vline, .jcrop-light .jcrop-hline {
+  background: #FFF;
+  filter: Alpha(opacity=70) !important;
+  opacity: .70!important;
+}
+
+/* line 61, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-light .jcrop-handle {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #000;
+  border-color: #FFF;
+  border-radius: 3px;
+}
+
+/* The "jcrop-dark" class/extension */
+/* line 71, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dark .jcrop-vline, .jcrop-dark .jcrop-hline {
+  background: #000;
+  filter: Alpha(opacity=70) !important;
+  opacity: .7!important;
+}
+
+/* line 77, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-dark .jcrop-handle {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #FFF;
+  border-color: #000;
+  border-radius: 3px;
+}
+
+/* Fix for twitter bootstrap et al. */
+/* line 86, sass/plugins/_jquery.Jcrop.scss */
+.jcrop-holder img, img.jcrop-preview {
+  max-width: none;
 }
 
 /*

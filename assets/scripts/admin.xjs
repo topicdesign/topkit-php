@@ -17,7 +17,11 @@
 // import "plugins/wysihtml5-0.3.0_rc2.js"
 // import "plugins/bootstrap/bootstrap-wysihtml5.js"
 // import "plugins/bootstrap/bootstrap-tagcomplete.js"
+// import "plugins/jquery.dataTables.min.js"
+// import "plugins/paging.js"
 // import "plugins/jquery.form.js"
+// import "plugins/jquery.color.js"
+// import "plugins/jquery.Jcrop.js"
 // --------------------------------------------------------------------
 $(document).ready(function() {
     datetimepickers();
@@ -25,6 +29,59 @@ $(document).ready(function() {
     wysihtml5_editors();
     tag_complete();
     detect_prompt_links();
+    crop_tool();
+});
+// -------------------------------------------------------------
+// custom sorting used to sort featured fields
+jQuery.fn.dataTableExt.oSort['featured-asc']  = function(x,y) {
+  //x < y
+  if ($(x).find('i').hasClass('icon-star-empty') && $(y).find('i').hasClass('icon-star')) {
+    return -1;
+  }
+  // x > y
+  else if ($(x).find('i').hasClass('icon-star') && $(y).find('i').hasClass('icon-star-empty')) {
+    return 1;
+  }
+  // x == y
+  else {
+    return 0;
+  }
+};    
+// --------------------------------------------------------------------
+jQuery.fn.dataTableExt.oSort['featured-desc']  = function(x,y) {
+  //x < y
+  if ($(x).find('i').hasClass('icon-star-empty') && $(y).find('i').hasClass('icon-star')) {
+    return 1;
+  }
+  // x > y
+  else if ($(x).find('i').hasClass('icon-star') && $(y).find('i').hasClass('icon-star-empty')) {
+    return -1;
+  }
+  // x == y
+  else {
+    return 0;
+  }
+};    
+// --------------------------------------------------------------------
+//extend classes on sorted table headers to coop with bootstrap
+$.extend( $.fn.dataTableExt.oStdClasses, {
+  "sSortAsc": "header headerSortDown",
+  "sSortDesc": "header headerSortUp",
+  "sSortable": "header"
+} );
+// --------------------------------------------------------------------
+var columnDefs = [];
+$('table thead th').each(function(i){
+  if ($(this).data('dtsort')) {
+    columnDefs.push({ "sType": $(this).data('dtsort'), "aTargets": [ i ] });
+  };
+});
+columnDefs.push({ "bSortable": false, "aTargets": [ parseInt($('table thead th').length - 1,10) ] });
+//all tables on admin pages that have an id ending with index
+$('section[id^=admin-][id$=-index] table').dataTable({
+  "sDom": "<'row'<'pull-right'l><'span8'f>r>t<'row'<'span8'i><'pagination-right'p>>",
+  "sPaginationType": "bootstrap",
+  "aoColumnDefs": columnDefs
 });
 // --------------------------------------------------------------------
 function datetimepickers(){
@@ -104,3 +161,17 @@ function detect_prompt_links(){
     });
 }
 // --------------------------------------------------------------------
+function crop_tool(){
+    if ($('img.crop').length) {
+        $('img.crop').each(function(){
+            var ratio = $(this).data('ratio');
+            var input = $('input[name="'+$(this).data('name')+'"]');
+            $(this).Jcrop({
+                aspectRatio: ratio,
+                onSelect: function(c) {
+                    input.val(JSON.stringify(c));
+                }
+            });
+        });
+    }
+}

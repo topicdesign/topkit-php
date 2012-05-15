@@ -80,7 +80,7 @@ class Users extends Admin_Controller {
             }
             $data['user'] = $user;
             $data['roles'] = Authority\Role::all();
-            $this->document->build('users/admin/user_edit.php', $data);
+            $this->document->build('users/admin/user_edit', $data);
         }
         else
         {

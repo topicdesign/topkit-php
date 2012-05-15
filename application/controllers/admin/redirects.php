@@ -69,7 +69,7 @@ class Redirects extends Admin_Controller {
                 set_status('error', $e);
             }
             $data['redirect'] = $redirect;
-            $this->document->build('redirects/admin/redirect_edit.php', $data);
+            $this->document->build('redirects/admin/redirect_edit', $data);
         }
         else
         {
