@@ -80,6 +80,7 @@ $autoload['helper'] = array(
     'app',
     'date',
     'document',
+    'file',
     'url',
     'user',
     'authority',
