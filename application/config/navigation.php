@@ -145,6 +145,18 @@ $config['anchors']['admin_sidebar'] = array(
         ),
     ),
     array(
+        'href'  => '/admin/redirects',
+        'label' => '<i class="icon-file"></i>&nbsp;Redirects',
+        'attr'  => array(
+            'title' => 'Redirects',
+        ),
+        'prepend' => '',
+        'append'  => '',
+        'permissions' => array(
+            'redirect' => 'read',
+        ),
+    ),
+    array(
         'href'  => '/admin/users',
         'label' => '<i class="icon-user"></i>&nbsp;Users',
         'attr'  => array(

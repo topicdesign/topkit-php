@@ -73,8 +73,8 @@ class Redirects extends Admin_Controller {
         }
         else
         {
-            $redirect->request = $this->input->post('request');
-            $redirect->target = $this->input->post('target');
+            $redirect->request     = $this->input->post('request');
+            $redirect->target      = $this->input->post('target');
             $redirect->status_code = $this->input->post('status_code');
 
             if ( ! $redirect->save())
@@ -83,11 +83,38 @@ class Redirects extends Admin_Controller {
                 {
                     set_status('error', $e);
                 }
-                redirect(uri_string());
+                redirect(current_url());
             }
-            set_status('success', 'Redirect Updated');
-            redirect('admin/redirects');
+            set_status('success', 'Redirect Saved');
+            $this->history->back();
         }
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * delete the redirect
+     *
+     * @access  public
+     * @param   integer     $id     Redirect.id
+     * @return  void
+     **/
+    public function delete($id)
+    {
+        $redirect = admin_edit_object('redirect', $id);
+        if (cannot('delete', $redirect))
+        {
+            set_status('error', lang('not_authorized'));
+        }
+        else if ( ! $redirect->delete())
+        {
+            set_status('error', 'Unable to delete requested redirect.');
+        }
+        else
+        {
+            set_status('success', 'Redirect deleted');
+        }
+        $this->history->back();
     }
 
     // --------------------------------------------------------------------

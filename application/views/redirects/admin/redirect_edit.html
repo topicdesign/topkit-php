@@ -5,7 +5,7 @@
                 <a href="<?php echo site_url('admin/redirects'); ?>"><?php echo lang('redirects-admin-title'); ?></a>
             </li>
         <?php if ($redirect->id): ?>
-            <li class="active"><span class="divider">/</span><?php echo $redirect->request; ?></li>
+            <li class="active"><span class="divider">/</span><?php echo substr($redirect->request, 1); ?></li>
         <?php endif; ?>
         </ul>
     </header>
