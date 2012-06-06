@@ -32,15 +32,18 @@
                 </div>
                 <div class="control-group">
                     <label for="redirect-form-status_code"
-                        class="control-label text"
+                        class="control-label select"
                         ><?php echo lang('redirect-field-status_code'); ?></label>
                     <div class="controls">
-                        <input id="redirect-form-status_code" name="status_code"
-                            type="text"
-                            value="<?php echo set_value('status_code',$redirect->status_code); ?>"
-                            class="text"
-                            placeholder="302"
-                            >
+                      <select  id="redirect-form-status_code" name="status_code"
+                        size="1">
+                        <option value="301"
+                          <?php echo ($redirect->status_code == '301') ? 'selected="selected"' : NULL; ?>
+                          ><?php echo lang('redirect-status-301'); ?></option>
+                        <option value="302"
+                          <?php echo ($redirect->status_code == '302') ? 'selected="selected"' : NULL; ?>
+                          ><?php echo lang('redirect-status-302'); ?></option>
+                      </select>
                     </div>
                 </div>
             </fieldset>

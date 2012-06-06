@@ -9,29 +9,55 @@
  */
 class Redirect extends ActiveRecord\Model {
 
-    # explicit table name  
-    //static $table_name = '';
+    # explicit table name
+    static $table_name = 'redirects';
 
-    # explicit pk 
-    //static $primary_key = '';
+    # explicit pk
+    static $primary_key = 'id';
 
-    # explicit connection name 
+    # explicit connection name
     //static $connection = '';
 
-    # explicit database name 
+    # explicit database name
     //static $db = '';
+
+    static $before_save = array('leading_slashes');
 
     // --------------------------------------------------------------------
     // Associations
     // --------------------------------------------------------------------
-    
+
     // --------------------------------------------------------------------
     // Validations
     // --------------------------------------------------------------------
-    
+
+    static $validates_presence_of = array(
+        array('request'),
+        array('target'),
+    );
+
     // --------------------------------------------------------------------
     // Public Methods
     // --------------------------------------------------------------------
+
+    /**
+     * ensure leading slashes
+     *
+     * @access  public
+     * @param   void
+     * @return  void
+     **/
+    public function leading_slashes()
+    {
+        $fields = array('request', 'target');
+        foreach ($fields as $f)
+        {
+            if (substr($this->$f, 0, 1) != '/')
+            {
+                $this->$f = '/' . $this->$f;
+            }
+        }
+    }
 
     // --------------------------------------------------------------------
 }
