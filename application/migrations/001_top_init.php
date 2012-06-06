@@ -22,6 +22,8 @@ class Migration_Top_init extends CI_Migration {
         $this->add_permissions();
         $this->add_nonces();
         $this->add_default_users();
+
+        $this->add_images();
     }
 
     // --------------------------------------------------------------------
@@ -43,6 +45,7 @@ class Migration_Top_init extends CI_Migration {
             'roles',
             'permissions',
             'nonces',
+            'images',
         );
         foreach ($tables as $table)
         {
@@ -415,6 +418,70 @@ class Migration_Top_init extends CI_Migration {
             'user_id'       => $user->id,
             'permission_id' => $permission->id,
         ));
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * add_images
+     *
+     * @access  public
+     * @param   void
+     * @return  void
+     **/
+    public function add_images()
+    {
+        $this->dbforge->add_field(array(
+            'id'            => array(
+                'type'              => 'INT',
+                'constraint'        => '11',
+                'unsigned'          => TRUE,
+                'auto_increment'    => TRUE
+            ),
+            'title'         => array(
+                'type'              => 'VARCHAR',
+                'constraint'        => '60',
+            ),
+            'hash'          => array(
+                'type'              => 'CHAR',
+                'constraint'        => '32',
+            ),
+            'file_ext'      => array(
+                'type'              => 'VARCHAR',
+                'constraint'        => '4',
+            ),
+            'resource_type' => array(
+                'type'              => 'VARCHAR',
+                'constraint'        => '60',
+            ),
+            'resource_id'   => array(
+                'type'              => 'INT',
+                'constraint'        => '11',
+                'unsigned'          => TRUE,
+            ),
+            'sort'          => array(
+                'type'              => 'INT',
+                'constraint'        => '11',
+                'unsigned'          => TRUE,
+                'default'           => 0,
+            ),
+            'featured'          => array(
+                'type'              => 'TINYINT',
+                'constraint'        => '1',
+                'unsigned'          => TRUE,
+                'default'           => 0,
+            ),
+            'created_at'    => array(
+                'type'              => 'DATETIME',
+                'null'              => TRUE,
+            ),
+            'updated_at'    => array(
+                'type'              => 'DATETIME',
+                'null'              => TRUE,
+            ),
+        ));
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->create_table('images');
     }
 
     // --------------------------------------------------------------------
