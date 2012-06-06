@@ -78,45 +78,62 @@ class Pages extends Public_Controller {
 
     // --------------------------------------------------------------------
 
-    // /**
-    //  * undocumented function
-    //  *
-    //  * @param void
-    //  *
-    //  * @return void
-    //  **/
-    // public function test()
-    // {
-    //     if ( ! $_FILES)
-    //     {
-    //         $this->load->view('image.php');
-    //     }
-    //     else
-    //     {
-    //         $config['upload_path'] = 'assets/uploads/';
-    //         $config['allowed_types'] = 'jpeg|gif|jpg|png';
-    //         $this->load->library('upload', $config);
-    //         if ( ! $this->upload->do_upload('image'))
-    //         {
-    //             echo '<pre>'; var_dump($this->upload->display_errors()); die;
-    //         }
-    //         else
-    //         {
-    //             $this->load->config('images', TRUE);
-    //             $image_config = config_item('images');
-    //             $data = $this->upload->data();
-    //             $sizes = $image_config['sizes'];
-    //             $data['sizes'] = $sizes['article_image'];
-    //             $data['callback'] = 'pages/foo';
-    //             $data['resource'] = 'page';
-    //             $data['id'] = '2';
-    //             $data['multiple'] = TRUE;
-    //             $this->session->set_userdata(array('upload'=>$data));
-    //             redirect('admin/images/process');
-    //             echo '<pre>'; var_dump($data); die;
-    //         }
-    //     }
-    // }
+    /**
+     * test image uploader
+     *
+     * @param void
+     *
+     * @return void
+     **/
+    public function test()
+    {
+        $this->config->load('images', TRUE);
+        $image_conf = config_item('images');
+        $this->config->load('files', TRUE);
+        $file_conf = config_item('files');
+        if ( ! $_FILES)
+        {
+            $this->load->view('image.php');
+        }
+        else
+        {
+            $page = Page::find_by_id(1);
+            $image = Image::for_resource($page);
+
+            $upload_config = (isset($file_conf['uploads']['image'])) ?
+                $file_conf['uploads']['image'] :
+                array();
+            $upload_config = array_merge($upload_config,
+                array(
+                    'encrypt_name'  => TRUE,
+                    'upload_path'   => $image_conf['cache_dir'],
+                )
+            );
+            $this->load->library('upload', $upload_config);
+            if ( ! $this->upload->do_upload('image'))
+            {
+                echo '<pre>';
+                print_r($this->upload->display_errors());
+                exit;
+            }
+            else
+            {
+                $data = $this->upload->data();
+
+                if ( ! $image->hash) 
+                {
+                    $image->hash = $data['raw_name'];
+                }
+                $image->file_ext = $data['file_ext'];
+                $data['image'] = $image->to_array();
+
+                $data['sizes'] = $image_conf['sizes']['page'];
+                $data['callback'] = 'testing';
+                $this->session->set_userdata(array('upload'=>$data));
+                redirect('admin/images/process');
+            }
+        }
+    }
 }
 /* End of file pages.php */
 /* Location: ./application/controllers/pages.php */
