@@ -1,0 +1,7 @@
+On <?php echo local_date_format($message->created_at); ?>, <?php echo sprintf('%s <%s>', $message->name, $message->email); ?> sent this message.
+
+------
+
+<?php echo $message->body; ?>
+
+------

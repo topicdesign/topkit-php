@@ -13,6 +13,8 @@ class Migration_Top_init extends CI_Migration {
     {
         $this->add_sessions();
 
+        $this->add_messages();
+
         $this->add_pages();
         $this->add_redirects();
         $this->add_default_pages();
@@ -39,6 +41,7 @@ class Migration_Top_init extends CI_Migration {
     {
         $tables = array(
             'sessions',
+            'messages',
             'pages',
             'redirects',
             'users',
@@ -89,6 +92,50 @@ class Migration_Top_init extends CI_Migration {
         $this->dbforge->add_key('session_id', TRUE);
         $this->dbforge->add_key('last_activity');
         $this->dbforge->create_table('sessions');
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * add_messages
+     *
+     * @access  private
+     * @param   void
+     * @return  void
+     **/
+    private function add_messages()
+    {
+        $this->dbforge->add_field(array(
+            'id'            => array(
+                'type'              => 'INT',
+                'constraint'        => '11',
+                'unsigned'          => TRUE,
+                'auto_increment'    => TRUE
+            ),
+            'subject'       => array(
+                'type'              => 'VARCHAR',
+                'constraint'        => '60',
+                'null'              => TRUE
+            ),
+            'name'          => array(
+                'type'              => 'VARCHAR',
+                'constraint'        => '60',
+                'null'              => TRUE
+            ),
+            'email'         => array(
+                'type'              => 'VARCHAR',
+                'constraint'        => '120',
+            ),
+            'body'          => array(
+                'type'              => 'TEXT',
+            ),
+            'created_at'    => array(
+                'type'              => 'DATETIME',
+                'null'              => TRUE
+            ),
+        ));
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->create_table('messages');
     }
 
     // --------------------------------------------------------------------
@@ -315,6 +362,13 @@ class Migration_Top_init extends CI_Migration {
         $page->view = 'example/html';
         $page->body = "<p>This document is for testing <abbr title=\"Hyper
         Text Markup Language\">HTML</abbr> markup and styles!</p>";
+        $page->published_at = date_create();
+        $page->save();
+        // create contact page
+        $page = new Page();
+        $page->uri = '/contact';
+        $page->title = 'Contact';
+        $page->slug = 'contact';
         $page->published_at = date_create();
         $page->save();
     }

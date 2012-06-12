@@ -1,0 +1,9 @@
+#footer {
+    nav {
+        ul {
+            li {
+                @include inline-block-list-item($blueprint-grid-margin);
+            }
+        }
+    }
+}

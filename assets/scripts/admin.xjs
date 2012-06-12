@@ -30,6 +30,7 @@ $(document).ready(function() {
     tag_complete();
     detect_prompt_links();
     crop_tool();
+    $('[rel="tooltip"]').tooltip();
 });
 // -------------------------------------------------------------
 // custom sorting used to sort featured fields
