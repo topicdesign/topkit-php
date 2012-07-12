@@ -26,6 +26,7 @@ class Migration_Top_init extends CI_Migration {
         $this->add_default_users();
 
         $this->add_images();
+        $this->add_categories();
     }
 
     // --------------------------------------------------------------------
@@ -442,6 +443,43 @@ class Migration_Top_init extends CI_Migration {
         ));
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->create_table('redirects');
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * create categories table
+     *
+     * @access  public
+     * @param   void
+     * @return  void
+     **/
+    private function add_categories()
+    {
+        // create roles table
+        $this->dbforge->add_field(array(
+            'id'                => array(
+                'type'              => 'INT',
+                'constraint'        => '11',
+                'unsigned'          => TRUE,
+                'auto_increment'    => TRUE
+            ),
+            'title'             => array(
+                'type'              => 'VARCHAR',
+                'constraint'        => '120',
+            ),
+            'slug'              => array(
+                'type'              => 'VARCHAR',
+                'constraint'        => '120',
+            ),
+            'parent_category'   => array(
+                'type'              => 'INT',
+                'constraint'        => '11',
+                'null'              => TRUE
+            ),
+        ));
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->create_table('categories');
     }
 
     // --------------------------------------------------------------------
