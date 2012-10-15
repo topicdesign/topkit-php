@@ -62,14 +62,14 @@
       var $this   = $(this)
         , data    = $this.data('tagcomplete')
         , tag_btn = $('<button/>', {
-            class : 'btn btn-mini'
+            'class' : 'btn btn-mini'
           , html  : tag
           , click : function(e){
               e.preventDefault();
           }
         })
         , close_btn = $('<button/>', {
-            class : 'btn btn-mini'
+            'class' : 'btn btn-mini'
           , html  : '<i class="icon-trash"></i>'
           , click : function(e){
               e.preventDefault();
@@ -78,7 +78,7 @@
           }
         })
         , btn_group = $('<div/>', {
-            class: "btn-group"
+            'class': "btn-group"
           }).append(tag_btn, close_btn)
         ;
       data.tag_wrapper.append(btn_group);
@@ -146,7 +146,7 @@
       var $this   = $(this)
         , data    = $this.data('tagcomplete')
         , wrapper = $('<div/>',{
-          class: 'btn-toolbar'
+          'class': 'btn-toolbar'
         })
         , tags = $this.val()
         ;
