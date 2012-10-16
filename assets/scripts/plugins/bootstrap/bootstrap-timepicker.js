@@ -1,4 +1,4 @@
-;(function($){
+(function($){
   var methods = {
     // --------------------------------------------------------------------
     // init properties
@@ -59,7 +59,7 @@
       var $this = $(this)
         , data = $this.data('timepicker')
         , wrapper = $('<div/>', {
-          class: 'input-append'
+          'class': 'input-append'
         })
         , input = $('<input type="hidden"/>')
           .attr('name',$this.attr('name')+'-ampm')
@@ -77,7 +77,7 @@
       for (var i=0,j=btns.length; i<j; i++){
         var btn = $('<button/>', {
               text: btns[i]
-            , class: 'btn ' + btns[i]
+            , 'class': 'btn ' + btns[i]
           })
             .on('click', {obj:this,val:btns[i]}, methods.set_ampm)
           ;

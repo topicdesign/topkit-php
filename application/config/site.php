@@ -66,7 +66,7 @@ $config['site_owner_url'] = 'http://topicdesign.com';
  *
  * @var string
  **/
-$config['site_email'] = 'info@topicdesign.com';
+$config['site_email'] = 'jboberg@topicdesign.com';
 
 /**
  * Copyright year of this site (YYYY)

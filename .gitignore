@@ -15,3 +15,4 @@ assets/uploads/*
 !assets/uploads/.folder
 
 *.sass-cache
+bundler_stubs/
