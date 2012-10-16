@@ -1,11 +1,9 @@
-/* line 4, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 html {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 18, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 .bp-reset-element, body, h1, h2, h3, h4, h5, h6, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, blockquote, q, th, td, caption, table,
 div, span, object, iframe, p,
 pre, a, abbr, acronym, address,
@@ -23,21 +21,17 @@ caption, tbody, tfoot, thead, tr {
   vertical-align: baseline;
 }
 
-/* line 20, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-/* line 21, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 blockquote, q {
   quotes: "" "";
 }
-/* line 67, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 blockquote:before, blockquote:after, q:before, q:after {
   content: "";
 }
 
-/* line 22, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 th, td, caption {
   float: none !important;
   text-align: left;
@@ -45,19 +39,16 @@ th, td, caption {
   vertical-align: middle;
 }
 
-/* line 23, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 table {
   border-collapse: separate;
   border-spacing: 0;
   vertical-align: middle;
 }
 
-/* line 24, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 4, /Users/seth/www/top/topkit/assets/styles/sass/partials/_page.scss */
 body {
   line-height: 1.5;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -65,242 +56,191 @@ body {
   font-size: 75%;
   margin: 2em;
 }
-/* line 51, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h1, body h2, body h3, body h4, body h5, body h6 {
   font-weight: normal;
   color: #222222;
 }
-/* line 52, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h1 img, body h2 img, body h3 img, body h4 img, body h5 img, body h6 img {
   margin: 0;
 }
-/* line 53, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h1 {
   font-size: 3em;
   line-height: 1;
   margin-bottom: 0.50em;
 }
-/* line 54, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h2 {
   font-size: 2em;
   margin-bottom: 0.75em;
 }
-/* line 55, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h3 {
   font-size: 1.5em;
   line-height: 1;
   margin-bottom: 1.00em;
 }
-/* line 56, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h4 {
   font-size: 1.2em;
   line-height: 1.25;
   margin-bottom: 1.25em;
 }
-/* line 57, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h5 {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 1.50em;
 }
-/* line 58, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body h6 {
   font-size: 1em;
   font-weight: bold;
 }
-/* line 59, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body p {
   margin: 0 0 1.5em;
 }
-/* line 60, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body p .left {
   display: inline;
   float: left;
   margin: 1.5em 1.5em 1.5em 0;
   padding: 0;
 }
-/* line 61, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body p .right {
   display: inline;
   float: right;
   margin: 1.5em 0 1.5em 1.5em;
   padding: 0;
 }
-/* line 62, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body a {
   text-decoration: underline;
   color: #0066cc;
 }
-/* line 18, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body a:visited {
   color: #004c99;
 }
-/* line 21, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body a:focus {
   color: #0099ff;
 }
-/* line 24, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body a:hover {
   color: #0099ff;
 }
-/* line 27, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 body a:active {
   color: #bf00ff;
 }
-/* line 63, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body blockquote {
   margin: 1.5em;
   color: #666666;
   font-style: italic;
 }
-/* line 64, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body strong, body dfn {
   font-weight: bold;
 }
-/* line 65, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body em, body dfn {
   font-style: italic;
 }
-/* line 66, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body sup, body sub {
   line-height: 0;
 }
-/* line 67, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body abbr, body acronym {
   border-bottom: 1px dotted #666666;
 }
-/* line 68, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body address {
   margin: 0 0 1.5em;
   font-style: italic;
 }
-/* line 69, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body del {
   color: #666666;
 }
-/* line 70, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body pre {
   margin: 1.5em 0;
   white-space: pre;
 }
-/* line 71, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body pre, body code, body tt {
   font: 1em "andale mono", "lucida console", monospace;
   line-height: 1.5;
 }
-/* line 72, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body li ul, body li ol {
   margin: 0;
 }
-/* line 73, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body ul, body ol {
   margin: 0 1.5em 1.5em 0;
   padding-left: 1.5em;
 }
-/* line 74, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body ul {
   list-style-type: disc;
 }
-/* line 75, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body ol {
   list-style-type: decimal;
 }
-/* line 76, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body dl {
   margin: 0 0 1.5em 0;
 }
-/* line 77, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body dl dt {
   font-weight: bold;
 }
-/* line 78, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body dd {
   margin-left: 1.5em;
 }
-/* line 79, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body table {
   margin-bottom: 1.4em;
   width: 100%;
 }
-/* line 80, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body th {
   font-weight: bold;
 }
-/* line 81, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body thead th {
   background: #c3d9ff;
 }
-/* line 82, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body th, body td, body caption {
   padding: 4px 10px 4px 5px;
 }
-/* line 85, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body table.striped tr:nth-child(even) td,
 body table tr.even td {
   background: #e5ecf9;
 }
-/* line 86, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body tfoot {
   font-style: italic;
 }
-/* line 87, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body caption {
   background: #eeeeee;
 }
-/* line 88, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body .quiet {
   color: #666666;
 }
-/* line 89, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_typography.scss */
 body .loud {
   color: #111111;
 }
-/* line 9, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .clear {
   clear: both;
 }
-/* line 12, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .nowrap {
   white-space: nowrap;
 }
-/* line 16, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .clearfix {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 18, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .small {
   font-size: 0.8em;
   margin-bottom: 1.875em;
   line-height: 1.875em;
 }
-/* line 22, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .large {
   font-size: 1.2em;
   line-height: 2.5em;
   margin-bottom: 1.25em;
 }
-/* line 26, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .first {
   margin-left: 0;
   padding-left: 0;
 }
-/* line 29, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .last {
   margin-right: 0;
   padding-right: 0;
 }
-/* line 32, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .top {
   margin-top: 0;
   padding-top: 0;
 }
-/* line 35, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .bottom {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 25, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_debug.scss */
 body .showgrid {
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, rgba(0, 0, 0, 0.5)), color-stop(5%, rgba(0, 0, 0, 0))), -webkit-gradient(linear, 0% 50%, 960 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(0%, rgba(100, 100, 225, 0.25)), color-stop(3.125%, rgba(100, 100, 225, 0.25)), color-stop(3.125%, rgba(0, 0, 0, 0)), color-stop(4.16667%, rgba(0, 0, 0, 0)), color-stop(4.16667%, rgba(100, 100, 225, 0.25)), color-stop(7.29167%, rgba(100, 100, 225, 0.25)), color-stop(7.29167%, rgba(0, 0, 0, 0)), color-stop(8.33333%, rgba(0, 0, 0, 0)), color-stop(8.33333%, rgba(100, 100, 225, 0.25)), color-stop(11.45833%, rgba(100, 100, 225, 0.25)), color-stop(11.45833%, rgba(0, 0, 0, 0)), color-stop(12.5%, rgba(0, 0, 0, 0)), color-stop(12.5%, rgba(100, 100, 225, 0.25)), color-stop(15.625%, rgba(100, 100, 225, 0.25)), color-stop(15.625%, rgba(0, 0, 0, 0)), color-stop(16.66667%, rgba(0, 0, 0, 0)), color-stop(16.66667%, rgba(100, 100, 225, 0.25)), color-stop(19.79167%, rgba(100, 100, 225, 0.25)), color-stop(19.79167%, rgba(0, 0, 0, 0)), color-stop(20.83333%, rgba(0, 0, 0, 0)), color-stop(20.83333%, rgba(100, 100, 225, 0.25)), color-stop(23.95833%, rgba(100, 100, 225, 0.25)), color-stop(23.95833%, rgba(0, 0, 0, 0)), color-stop(25%, rgba(0, 0, 0, 0)), color-stop(25%, rgba(100, 100, 225, 0.25)), color-stop(28.125%, rgba(100, 100, 225, 0.25)), color-stop(28.125%, rgba(0, 0, 0, 0)), color-stop(29.16667%, rgba(0, 0, 0, 0)), color-stop(29.16667%, rgba(100, 100, 225, 0.25)), color-stop(32.29167%, rgba(100, 100, 225, 0.25)), color-stop(32.29167%, rgba(0, 0, 0, 0)), color-stop(33.33333%, rgba(0, 0, 0, 0)), color-stop(33.33333%, rgba(100, 100, 225, 0.25)), color-stop(36.45833%, rgba(100, 100, 225, 0.25)), color-stop(36.45833%, rgba(0, 0, 0, 0)), color-stop(37.5%, rgba(0, 0, 0, 0)), color-stop(37.5%, rgba(100, 100, 225, 0.25)), color-stop(40.625%, rgba(100, 100, 225, 0.25)), color-stop(40.625%, rgba(0, 0, 0, 0)), color-stop(41.66667%, rgba(0, 0, 0, 0)), color-stop(41.66667%, rgba(100, 100, 225, 0.25)), color-stop(44.79167%, rgba(100, 100, 225, 0.25)), color-stop(44.79167%, rgba(0, 0, 0, 0)), color-stop(45.83333%, rgba(0, 0, 0, 0)), color-stop(45.83333%, rgba(100, 100, 225, 0.25)), color-stop(48.95833%, rgba(100, 100, 225, 0.25)), color-stop(48.95833%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(100, 100, 225, 0.25)), color-stop(53.125%, rgba(100, 100, 225, 0.25)), color-stop(53.125%, rgba(0, 0, 0, 0)), color-stop(54.16667%, rgba(0, 0, 0, 0)), color-stop(54.16667%, rgba(100, 100, 225, 0.25)), color-stop(57.29167%, rgba(100, 100, 225, 0.25)), color-stop(57.29167%, rgba(0, 0, 0, 0)), color-stop(58.33333%, rgba(0, 0, 0, 0)), color-stop(58.33333%, rgba(100, 100, 225, 0.25)), color-stop(61.45833%, rgba(100, 100, 225, 0.25)), color-stop(61.45833%, rgba(0, 0, 0, 0)), color-stop(62.5%, rgba(0, 0, 0, 0)), color-stop(62.5%, rgba(100, 100, 225, 0.25)), color-stop(65.625%, rgba(100, 100, 225, 0.25)), color-stop(65.625%, rgba(0, 0, 0, 0)), color-stop(66.66667%, rgba(0, 0, 0, 0)), color-stop(66.66667%, rgba(100, 100, 225, 0.25)), color-stop(69.79167%, rgba(100, 100, 225, 0.25)), color-stop(69.79167%, rgba(0, 0, 0, 0)), color-stop(70.83333%, rgba(0, 0, 0, 0)), color-stop(70.83333%, rgba(100, 100, 225, 0.25)), color-stop(73.95833%, rgba(100, 100, 225, 0.25)), color-stop(73.95833%, rgba(0, 0, 0, 0)), color-stop(75%, rgba(0, 0, 0, 0)), color-stop(75%, rgba(100, 100, 225, 0.25)), color-stop(78.125%, rgba(100, 100, 225, 0.25)), color-stop(78.125%, rgba(0, 0, 0, 0)), color-stop(79.16667%, rgba(0, 0, 0, 0)), color-stop(79.16667%, rgba(100, 100, 225, 0.25)), color-stop(82.29167%, rgba(100, 100, 225, 0.25)), color-stop(82.29167%, rgba(0, 0, 0, 0)), color-stop(83.33333%, rgba(0, 0, 0, 0)), color-stop(83.33333%, rgba(100, 100, 225, 0.25)), color-stop(86.45833%, rgba(100, 100, 225, 0.25)), color-stop(86.45833%, rgba(0, 0, 0, 0)), color-stop(87.5%, rgba(0, 0, 0, 0)), color-stop(87.5%, rgba(100, 100, 225, 0.25)), color-stop(90.625%, rgba(100, 100, 225, 0.25)), color-stop(90.625%, rgba(0, 0, 0, 0)), color-stop(91.66667%, rgba(0, 0, 0, 0)), color-stop(91.66667%, rgba(100, 100, 225, 0.25)), color-stop(94.79167%, rgba(100, 100, 225, 0.25)), color-stop(94.79167%, rgba(0, 0, 0, 0)), color-stop(95.83333%, rgba(0, 0, 0, 0)), color-stop(95.83333%, rgba(100, 100, 225, 0.25)), color-stop(98.95833%, rgba(100, 100, 225, 0.25)), color-stop(98.95833%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
   background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%), -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(100, 100, 225, 0.25) 0px, rgba(100, 100, 225, 0.25) 30px, rgba(0, 0, 0, 0) 30px, rgba(0, 0, 0, 0) 40px, rgba(100, 100, 225, 0.25) 40px, rgba(100, 100, 225, 0.25) 70px, rgba(0, 0, 0, 0) 70px, rgba(0, 0, 0, 0) 80px, rgba(100, 100, 225, 0.25) 80px, rgba(100, 100, 225, 0.25) 110px, rgba(0, 0, 0, 0) 110px, rgba(0, 0, 0, 0) 120px, rgba(100, 100, 225, 0.25) 120px, rgba(100, 100, 225, 0.25) 150px, rgba(0, 0, 0, 0) 150px, rgba(0, 0, 0, 0) 160px, rgba(100, 100, 225, 0.25) 160px, rgba(100, 100, 225, 0.25) 190px, rgba(0, 0, 0, 0) 190px, rgba(0, 0, 0, 0) 200px, rgba(100, 100, 225, 0.25) 200px, rgba(100, 100, 225, 0.25) 230px, rgba(0, 0, 0, 0) 230px, rgba(0, 0, 0, 0) 240px, rgba(100, 100, 225, 0.25) 240px, rgba(100, 100, 225, 0.25) 270px, rgba(0, 0, 0, 0) 270px, rgba(0, 0, 0, 0) 280px, rgba(100, 100, 225, 0.25) 280px, rgba(100, 100, 225, 0.25) 310px, rgba(0, 0, 0, 0) 310px, rgba(0, 0, 0, 0) 320px, rgba(100, 100, 225, 0.25) 320px, rgba(100, 100, 225, 0.25) 350px, rgba(0, 0, 0, 0) 350px, rgba(0, 0, 0, 0) 360px, rgba(100, 100, 225, 0.25) 360px, rgba(100, 100, 225, 0.25) 390px, rgba(0, 0, 0, 0) 390px, rgba(0, 0, 0, 0) 400px, rgba(100, 100, 225, 0.25) 400px, rgba(100, 100, 225, 0.25) 430px, rgba(0, 0, 0, 0) 430px, rgba(0, 0, 0, 0) 440px, rgba(100, 100, 225, 0.25) 440px, rgba(100, 100, 225, 0.25) 470px, rgba(0, 0, 0, 0) 470px, rgba(0, 0, 0, 0) 480px, rgba(100, 100, 225, 0.25) 480px, rgba(100, 100, 225, 0.25) 510px, rgba(0, 0, 0, 0) 510px, rgba(0, 0, 0, 0) 520px, rgba(100, 100, 225, 0.25) 520px, rgba(100, 100, 225, 0.25) 550px, rgba(0, 0, 0, 0) 550px, rgba(0, 0, 0, 0) 560px, rgba(100, 100, 225, 0.25) 560px, rgba(100, 100, 225, 0.25) 590px, rgba(0, 0, 0, 0) 590px, rgba(0, 0, 0, 0) 600px, rgba(100, 100, 225, 0.25) 600px, rgba(100, 100, 225, 0.25) 630px, rgba(0, 0, 0, 0) 630px, rgba(0, 0, 0, 0) 640px, rgba(100, 100, 225, 0.25) 640px, rgba(100, 100, 225, 0.25) 670px, rgba(0, 0, 0, 0) 670px, rgba(0, 0, 0, 0) 680px, rgba(100, 100, 225, 0.25) 680px, rgba(100, 100, 225, 0.25) 710px, rgba(0, 0, 0, 0) 710px, rgba(0, 0, 0, 0) 720px, rgba(100, 100, 225, 0.25) 720px, rgba(100, 100, 225, 0.25) 750px, rgba(0, 0, 0, 0) 750px, rgba(0, 0, 0, 0) 760px, rgba(100, 100, 225, 0.25) 760px, rgba(100, 100, 225, 0.25) 790px, rgba(0, 0, 0, 0) 790px, rgba(0, 0, 0, 0) 800px, rgba(100, 100, 225, 0.25) 800px, rgba(100, 100, 225, 0.25) 830px, rgba(0, 0, 0, 0) 830px, rgba(0, 0, 0, 0) 840px, rgba(100, 100, 225, 0.25) 840px, rgba(100, 100, 225, 0.25) 870px, rgba(0, 0, 0, 0) 870px, rgba(0, 0, 0, 0) 880px, rgba(100, 100, 225, 0.25) 880px, rgba(100, 100, 225, 0.25) 910px, rgba(0, 0, 0, 0) 910px, rgba(0, 0, 0, 0) 920px, rgba(100, 100, 225, 0.25) 920px, rgba(100, 100, 225, 0.25) 950px, rgba(0, 0, 0, 0) 950px, rgba(0, 0, 0, 0) 960px);
@@ -313,89 +253,72 @@ body .showgrid {
   background-size: 100% 18px, auto;
   background-position: left top;
 }
-/* line 4, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .feedback, body .error, body .alert, body .notice, body .success, body .info {
   padding: 0.8em;
   margin-bottom: 1em;
   border: 2px solid #dddddd;
 }
-/* line 5, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .error, body .alert {
   background: #fbe3e4;
   color: #8a1f11;
   border-color: #fbc2c4;
 }
-/* line 27, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .error a, body .alert a {
   color: #8a1f11;
 }
-/* line 7, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .notice {
   background: #fff6bf;
   color: #514721;
   border-color: #ffd324;
 }
-/* line 36, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .notice a {
   color: #514721;
 }
-/* line 8, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .success {
   background: #e6efc2;
   color: #264409;
   border-color: #c6d880;
 }
-/* line 45, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .success a {
   color: #264409;
 }
-/* line 9, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .info {
   background: #d5edf8;
   color: #205791;
   border-color: #92cae4;
 }
-/* line 54, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .info a {
   color: #205791;
 }
-/* line 10, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .hide {
   display: none;
 }
-/* line 11, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .highlight {
   background: yellow;
 }
-/* line 12, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .added {
   background: #006600;
   color: white;
 }
-/* line 13, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .removed {
   background: #990000;
   color: white;
 }
-/* line 39, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_scaffolding.scss */
 body .box {
   padding: 1.5em;
   margin-bottom: 1.5em;
   background: #e5ecf9;
 }
-/* line 42, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_scaffolding.scss */
 body .border {
   padding-right: 4px;
   margin-right: 5px;
   border-right: 1px solid #dddddd;
 }
-/* line 45, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_scaffolding.scss */
 body .colborder {
   padding-right: 24px;
   margin-right: 25px;
   border-right: 1px solid #dddddd;
 }
-/* line 47, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_scaffolding.scss */
 body hr {
   background: #dddddd;
   color: #dddddd;
@@ -406,7 +329,6 @@ body hr {
   margin: 0 0 1.45em;
   border: none;
 }
-/* line 49, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_scaffolding.scss */
 body hr.space {
   background: #dddddd;
   color: #dddddd;
@@ -420,16 +342,13 @@ body hr.space {
   color: white;
   visibility: hidden;
 }
-/* line 51, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_scaffolding.scss */
 body form.inline {
   line-height: 3;
 }
-/* line 6, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 body form.inline p {
   margin-bottom: 0;
 }
 
-/* line 4, /Users/seth/www/top/topkit/assets/styles/sass/partials/_header.scss */
 #header nav ul li {
   list-style-image: none;
   list-style-type: none;
@@ -445,7 +364,6 @@ body form.inline p {
   padding-right: 10px;
 }
 
-/* line 4, /Users/seth/www/top/topkit/assets/styles/sass/partials/_footer.scss */
 #footer nav ul li {
   list-style-image: none;
   list-style-type: none;
@@ -461,65 +379,52 @@ body form.inline p {
   padding-right: 10px;
 }
 
-/* line 18, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form label {
   font-weight: bold;
 }
-/* line 19, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form fieldset {
   padding: 1.4em;
   margin: 0 0 1.5em 0;
 }
-/* line 20, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form legend {
   font-weight: bold;
   font-size: 1.2em;
 }
-/* line 26, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form input.text, form input.title, form input[type=email], form input[type=text], form input[type=password] {
   margin: 0.5em 0;
   background-color: white;
   padding: 5px;
 }
-/* line 27, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form input.title {
   font-size: 1.5em;
 }
-/* line 29, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form textarea {
   margin: 0.5em 0;
   padding: 5px;
 }
-/* line 30, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form select {
   margin: 0.5em 0;
 }
-/* line 55, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form fieldset {
   border: 1px solid #cccccc;
 }
-/* line 58, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form input.text, form input.title, form input[type=email], form input[type=text], form input[type=password],
 form textarea {
   background-color: #fff;
   border: 1px solid #bbbbbb;
 }
-/* line 61, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form input.text:focus, form input.title:focus, form input[type=email]:focus, form input[type=text]:focus, form input[type=password]:focus,
 form textarea:focus {
   border-color: #666666;
 }
-/* line 65, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form select {
   background-color: #fff;
   border-width: 1px;
   border-style: solid;
 }
-/* line 44, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form input.text, form input.title, form input[type=email], form input[type=text], form input[type=password] {
   width: 300px;
 }
-/* line 46, /Users/seth/.rvm/gems/ruby-1.9.3-p194@topkit/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form textarea {
   width: 390px;
   height: 250px;
@@ -536,19 +441,16 @@ form textarea {
  */
 /* Layout helpers
 ----------------------------------*/
-/* line 13, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-helper-hidden {
   display: none;
 }
 
-/* line 14, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-helper-hidden-accessible {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* line 15, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-helper-reset {
   margin: 0;
   padding: 0;
@@ -560,7 +462,6 @@ form textarea {
   list-style: none;
 }
 
-/* line 16, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-helper-clearfix:after {
   content: ".";
   display: block;
@@ -569,24 +470,20 @@ form textarea {
   visibility: hidden;
 }
 
-/* line 17, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-helper-clearfix {
   display: inline-block;
 }
 
 /* required comment for clearfix to work in Opera \*/
-/* line 19, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 * html .ui-helper-clearfix {
   height: 1%;
 }
 
-/* line 20, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-helper-clearfix {
   display: block;
 }
 
 /* end clearfix */
-/* line 22, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-helper-zfix {
   width: 100%;
   height: 100%;
@@ -599,7 +496,6 @@ form textarea {
 
 /* Interaction Cues
 ----------------------------------*/
-/* line 27, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-disabled {
   cursor: default !important;
 }
@@ -607,7 +503,6 @@ form textarea {
 /* Icons
 ----------------------------------*/
 /* states and images */
-/* line 34, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon {
   display: block;
   text-indent: -99999px;
@@ -618,7 +513,6 @@ form textarea {
 /* Misc visuals
 ----------------------------------*/
 /* Overlays */
-/* line 41, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget-overlay {
   position: absolute;
   top: 0;
@@ -640,36 +534,30 @@ form textarea {
  */
 /* Component containers
 ----------------------------------*/
-/* line 59, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget {
   font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
   font-size: 1.1em;
 }
 
-/* line 60, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget .ui-widget {
   font-size: 1em;
 }
 
-/* line 61, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
   font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
   font-size: 1em;
 }
 
-/* line 62, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget-content {
   border: 1px solid #dddddd;
   background: #eeeeee url(../images/jquery-ui/ui-bg_highlight-soft_100_eeeeee_1x100.png) 50% top repeat-x;
   color: #333333;
 }
 
-/* line 63, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget-content a {
   color: #333333;
 }
 
-/* line 64, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget-header {
   border: 1px solid #e78f08;
   background: #f6a828 url(../images/jquery-ui/ui-bg_gloss-wave_35_f6a828_500x100.png) 50% 50% repeat-x;
@@ -677,14 +565,12 @@ form textarea {
   font-weight: bold;
 }
 
-/* line 65, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget-header a {
   color: #ffffff;
 }
 
 /* Interaction states
 ----------------------------------*/
-/* line 69, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
   border: 1px solid #cccccc;
   background: #f6f6f6 url(../images/jquery-ui/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
@@ -692,13 +578,11 @@ form textarea {
   color: #1c94c4;
 }
 
-/* line 70, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
   color: #1c94c4;
   text-decoration: none;
 }
 
-/* line 71, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
   border: 1px solid #fbcb09;
   background: #fdf5ce url(../images/jquery-ui/ui-bg_glass_100_fdf5ce_1x400.png) 50% 50% repeat-x;
@@ -706,13 +590,11 @@ form textarea {
   color: #c77405;
 }
 
-/* line 72, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-hover a, .ui-state-hover a:hover {
   color: #c77405;
   text-decoration: none;
 }
 
-/* line 73, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
   border: 1px solid #fbd850;
   background: white url(../images/jquery-ui/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
@@ -720,61 +602,51 @@ form textarea {
   color: #eb8f00;
 }
 
-/* line 74, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
   color: #eb8f00;
   text-decoration: none;
 }
 
-/* line 75, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget :active {
   outline: none;
 }
 
 /* Interaction Cues
 ----------------------------------*/
-/* line 79, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
   border: 1px solid #fed22f;
   background: #ffe45c url(../images/jquery-ui/ui-bg_highlight-soft_75_ffe45c_1x100.png) 50% top repeat-x;
   color: #363636;
 }
 
-/* line 80, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-highlight a, .ui-widget-content .ui-state-highlight a, .ui-widget-header .ui-state-highlight a {
   color: #363636;
 }
 
-/* line 81, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
   border: 1px solid #cd0a0a;
   background: #b81900 url(../images/jquery-ui/ui-bg_diagonals-thick_18_b81900_40x40.png) 50% 50% repeat;
   color: #ffffff;
 }
 
-/* line 82, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a {
   color: #ffffff;
 }
 
-/* line 83, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text {
   color: #ffffff;
 }
 
-/* line 84, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary {
   font-weight: bold;
 }
 
-/* line 85, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary {
   opacity: .7;
   filter: Alpha(Opacity=70);
   font-weight: normal;
 }
 
-/* line 86, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
   opacity: .35;
   filter: Alpha(Opacity=35);
@@ -784,916 +656,734 @@ form textarea {
 /* Icons
 ----------------------------------*/
 /* states and images */
-/* line 92, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon {
   width: 16px;
   height: 16px;
   background-image: url(../images/jquery-ui/ui-icons_222222_256x240.png);
 }
 
-/* line 93, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget-content .ui-icon {
   background-image: url(../images/jquery-ui/ui-icons_222222_256x240.png);
 }
 
-/* line 94, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget-header .ui-icon {
   background-image: url(../images/jquery-ui/ui-icons_ffffff_256x240.png);
 }
 
-/* line 95, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-default .ui-icon {
   background-image: url(../images/jquery-ui/ui-icons_ef8c08_256x240.png);
 }
 
-/* line 96, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon {
   background-image: url(../images/jquery-ui/ui-icons_ef8c08_256x240.png);
 }
 
-/* line 97, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-active .ui-icon {
   background-image: url(../images/jquery-ui/ui-icons_ef8c08_256x240.png);
 }
 
-/* line 98, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-highlight .ui-icon {
   background-image: url(../images/jquery-ui/ui-icons_228ef1_256x240.png);
 }
 
-/* line 99, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-state-error .ui-icon, .ui-state-error-text .ui-icon {
   background-image: url(../images/jquery-ui/ui-icons_ffd27a_256x240.png);
 }
 
 /* positioning */
-/* line 102, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-carat-1-n {
   background-position: 0 0;
 }
 
-/* line 103, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-carat-1-ne {
   background-position: -16px 0;
 }
 
-/* line 104, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-carat-1-e {
   background-position: -32px 0;
 }
 
-/* line 105, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-carat-1-se {
   background-position: -48px 0;
 }
 
-/* line 106, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-carat-1-s {
   background-position: -64px 0;
 }
 
-/* line 107, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-carat-1-sw {
   background-position: -80px 0;
 }
 
-/* line 108, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-carat-1-w {
   background-position: -96px 0;
 }
 
-/* line 109, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-carat-1-nw {
   background-position: -112px 0;
 }
 
-/* line 110, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-carat-2-n-s {
   background-position: -128px 0;
 }
 
-/* line 111, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-carat-2-e-w {
   background-position: -144px 0;
 }
 
-/* line 112, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-triangle-1-n {
   background-position: 0 -16px;
 }
 
-/* line 113, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-triangle-1-ne {
   background-position: -16px -16px;
 }
 
-/* line 114, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-triangle-1-e {
   background-position: -32px -16px;
 }
 
-/* line 115, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-triangle-1-se {
   background-position: -48px -16px;
 }
 
-/* line 116, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-triangle-1-s {
   background-position: -64px -16px;
 }
 
-/* line 117, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-triangle-1-sw {
   background-position: -80px -16px;
 }
 
-/* line 118, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-triangle-1-w {
   background-position: -96px -16px;
 }
 
-/* line 119, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-triangle-1-nw {
   background-position: -112px -16px;
 }
 
-/* line 120, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-triangle-2-n-s {
   background-position: -128px -16px;
 }
 
-/* line 121, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-triangle-2-e-w {
   background-position: -144px -16px;
 }
 
-/* line 122, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-1-n {
   background-position: 0 -32px;
 }
 
-/* line 123, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-1-ne {
   background-position: -16px -32px;
 }
 
-/* line 124, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-1-e {
   background-position: -32px -32px;
 }
 
-/* line 125, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-1-se {
   background-position: -48px -32px;
 }
 
-/* line 126, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-1-s {
   background-position: -64px -32px;
 }
 
-/* line 127, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-1-sw {
   background-position: -80px -32px;
 }
 
-/* line 128, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-1-w {
   background-position: -96px -32px;
 }
 
-/* line 129, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-1-nw {
   background-position: -112px -32px;
 }
 
-/* line 130, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-2-n-s {
   background-position: -128px -32px;
 }
 
-/* line 131, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-2-ne-sw {
   background-position: -144px -32px;
 }
 
-/* line 132, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-2-e-w {
   background-position: -160px -32px;
 }
 
-/* line 133, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-2-se-nw {
   background-position: -176px -32px;
 }
 
-/* line 134, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowstop-1-n {
   background-position: -192px -32px;
 }
 
-/* line 135, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowstop-1-e {
   background-position: -208px -32px;
 }
 
-/* line 136, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowstop-1-s {
   background-position: -224px -32px;
 }
 
-/* line 137, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowstop-1-w {
   background-position: -240px -32px;
 }
 
-/* line 138, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-1-n {
   background-position: 0 -48px;
 }
 
-/* line 139, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-1-ne {
   background-position: -16px -48px;
 }
 
-/* line 140, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-1-e {
   background-position: -32px -48px;
 }
 
-/* line 141, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-1-se {
   background-position: -48px -48px;
 }
 
-/* line 142, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-1-s {
   background-position: -64px -48px;
 }
 
-/* line 143, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-1-sw {
   background-position: -80px -48px;
 }
 
-/* line 144, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-1-w {
   background-position: -96px -48px;
 }
 
-/* line 145, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-1-nw {
   background-position: -112px -48px;
 }
 
-/* line 146, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-2-n-s {
   background-position: -128px -48px;
 }
 
-/* line 147, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-2-ne-sw {
   background-position: -144px -48px;
 }
 
-/* line 148, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-2-e-w {
   background-position: -160px -48px;
 }
 
-/* line 149, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthick-2-se-nw {
   background-position: -176px -48px;
 }
 
-/* line 150, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthickstop-1-n {
   background-position: -192px -48px;
 }
 
-/* line 151, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthickstop-1-e {
   background-position: -208px -48px;
 }
 
-/* line 152, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthickstop-1-s {
   background-position: -224px -48px;
 }
 
-/* line 153, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowthickstop-1-w {
   background-position: -240px -48px;
 }
 
-/* line 154, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowreturnthick-1-w {
   background-position: 0 -64px;
 }
 
-/* line 155, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowreturnthick-1-n {
   background-position: -16px -64px;
 }
 
-/* line 156, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowreturnthick-1-e {
   background-position: -32px -64px;
 }
 
-/* line 157, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowreturnthick-1-s {
   background-position: -48px -64px;
 }
 
-/* line 158, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowreturn-1-w {
   background-position: -64px -64px;
 }
 
-/* line 159, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowreturn-1-n {
   background-position: -80px -64px;
 }
 
-/* line 160, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowreturn-1-e {
   background-position: -96px -64px;
 }
 
-/* line 161, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowreturn-1-s {
   background-position: -112px -64px;
 }
 
-/* line 162, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowrefresh-1-w {
   background-position: -128px -64px;
 }
 
-/* line 163, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowrefresh-1-n {
   background-position: -144px -64px;
 }
 
-/* line 164, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowrefresh-1-e {
   background-position: -160px -64px;
 }
 
-/* line 165, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrowrefresh-1-s {
   background-position: -176px -64px;
 }
 
-/* line 166, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-4 {
   background-position: 0 -80px;
 }
 
-/* line 167, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-arrow-4-diag {
   background-position: -16px -80px;
 }
 
-/* line 168, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-extlink {
   background-position: -32px -80px;
 }
 
-/* line 169, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-newwin {
   background-position: -48px -80px;
 }
 
-/* line 170, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-refresh {
   background-position: -64px -80px;
 }
 
-/* line 171, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-shuffle {
   background-position: -80px -80px;
 }
 
-/* line 172, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-transfer-e-w {
   background-position: -96px -80px;
 }
 
-/* line 173, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-transferthick-e-w {
   background-position: -112px -80px;
 }
 
-/* line 174, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-folder-collapsed {
   background-position: 0 -96px;
 }
 
-/* line 175, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-folder-open {
   background-position: -16px -96px;
 }
 
-/* line 176, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-document {
   background-position: -32px -96px;
 }
 
-/* line 177, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-document-b {
   background-position: -48px -96px;
 }
 
-/* line 178, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-note {
   background-position: -64px -96px;
 }
 
-/* line 179, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-mail-closed {
   background-position: -80px -96px;
 }
 
-/* line 180, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-mail-open {
   background-position: -96px -96px;
 }
 
-/* line 181, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-suitcase {
   background-position: -112px -96px;
 }
 
-/* line 182, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-comment {
   background-position: -128px -96px;
 }
 
-/* line 183, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-person {
   background-position: -144px -96px;
 }
 
-/* line 184, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-print {
   background-position: -160px -96px;
 }
 
-/* line 185, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-trash {
   background-position: -176px -96px;
 }
 
-/* line 186, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-locked {
   background-position: -192px -96px;
 }
 
-/* line 187, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-unlocked {
   background-position: -208px -96px;
 }
 
-/* line 188, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-bookmark {
   background-position: -224px -96px;
 }
 
-/* line 189, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-tag {
   background-position: -240px -96px;
 }
 
-/* line 190, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-home {
   background-position: 0 -112px;
 }
 
-/* line 191, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-flag {
   background-position: -16px -112px;
 }
 
-/* line 192, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-calendar {
   background-position: -32px -112px;
 }
 
-/* line 193, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-cart {
   background-position: -48px -112px;
 }
 
-/* line 194, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-pencil {
   background-position: -64px -112px;
 }
 
-/* line 195, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-clock {
   background-position: -80px -112px;
 }
 
-/* line 196, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-disk {
   background-position: -96px -112px;
 }
 
-/* line 197, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-calculator {
   background-position: -112px -112px;
 }
 
-/* line 198, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-zoomin {
   background-position: -128px -112px;
 }
 
-/* line 199, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-zoomout {
   background-position: -144px -112px;
 }
 
-/* line 200, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-search {
   background-position: -160px -112px;
 }
 
-/* line 201, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-wrench {
   background-position: -176px -112px;
 }
 
-/* line 202, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-gear {
   background-position: -192px -112px;
 }
 
-/* line 203, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-heart {
   background-position: -208px -112px;
 }
 
-/* line 204, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-star {
   background-position: -224px -112px;
 }
 
-/* line 205, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-link {
   background-position: -240px -112px;
 }
 
-/* line 206, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-cancel {
   background-position: 0 -128px;
 }
 
-/* line 207, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-plus {
   background-position: -16px -128px;
 }
 
-/* line 208, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-plusthick {
   background-position: -32px -128px;
 }
 
-/* line 209, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-minus {
   background-position: -48px -128px;
 }
 
-/* line 210, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-minusthick {
   background-position: -64px -128px;
 }
 
-/* line 211, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-close {
   background-position: -80px -128px;
 }
 
-/* line 212, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-closethick {
   background-position: -96px -128px;
 }
 
-/* line 213, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-key {
   background-position: -112px -128px;
 }
 
-/* line 214, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-lightbulb {
   background-position: -128px -128px;
 }
 
-/* line 215, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-scissors {
   background-position: -144px -128px;
 }
 
-/* line 216, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-clipboard {
   background-position: -160px -128px;
 }
 
-/* line 217, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-copy {
   background-position: -176px -128px;
 }
 
-/* line 218, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-contact {
   background-position: -192px -128px;
 }
 
-/* line 219, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-image {
   background-position: -208px -128px;
 }
 
-/* line 220, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-video {
   background-position: -224px -128px;
 }
 
-/* line 221, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-script {
   background-position: -240px -128px;
 }
 
-/* line 222, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-alert {
   background-position: 0 -144px;
 }
 
-/* line 223, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-info {
   background-position: -16px -144px;
 }
 
-/* line 224, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-notice {
   background-position: -32px -144px;
 }
 
-/* line 225, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-help {
   background-position: -48px -144px;
 }
 
-/* line 226, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-check {
   background-position: -64px -144px;
 }
 
-/* line 227, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-bullet {
   background-position: -80px -144px;
 }
 
-/* line 228, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-radio-off {
   background-position: -96px -144px;
 }
 
-/* line 229, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-radio-on {
   background-position: -112px -144px;
 }
 
-/* line 230, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-pin-w {
   background-position: -128px -144px;
 }
 
-/* line 231, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-pin-s {
   background-position: -144px -144px;
 }
 
-/* line 232, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-play {
   background-position: 0 -160px;
 }
 
-/* line 233, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-pause {
   background-position: -16px -160px;
 }
 
-/* line 234, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-seek-next {
   background-position: -32px -160px;
 }
 
-/* line 235, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-seek-prev {
   background-position: -48px -160px;
 }
 
-/* line 236, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-seek-end {
   background-position: -64px -160px;
 }
 
-/* line 237, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-seek-start {
   background-position: -80px -160px;
 }
 
 /* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
-/* line 239, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-seek-first {
   background-position: -80px -160px;
 }
 
-/* line 240, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-stop {
   background-position: -96px -160px;
 }
 
-/* line 241, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-eject {
   background-position: -112px -160px;
 }
 
-/* line 242, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-volume-off {
   background-position: -128px -160px;
 }
 
-/* line 243, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-volume-on {
   background-position: -144px -160px;
 }
 
-/* line 244, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-power {
   background-position: 0 -176px;
 }
 
-/* line 245, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-signal-diag {
   background-position: -16px -176px;
 }
 
-/* line 246, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-signal {
   background-position: -32px -176px;
 }
 
-/* line 247, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-battery-0 {
   background-position: -48px -176px;
 }
 
-/* line 248, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-battery-1 {
   background-position: -64px -176px;
 }
 
-/* line 249, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-battery-2 {
   background-position: -80px -176px;
 }
 
-/* line 250, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-battery-3 {
   background-position: -96px -176px;
 }
 
-/* line 251, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-plus {
   background-position: 0 -192px;
 }
 
-/* line 252, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-minus {
   background-position: -16px -192px;
 }
 
-/* line 253, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-close {
   background-position: -32px -192px;
 }
 
-/* line 254, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-triangle-e {
   background-position: -48px -192px;
 }
 
-/* line 255, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-triangle-s {
   background-position: -64px -192px;
 }
 
-/* line 256, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-triangle-w {
   background-position: -80px -192px;
 }
 
-/* line 257, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-triangle-n {
   background-position: -96px -192px;
 }
 
-/* line 258, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-arrow-e {
   background-position: -112px -192px;
 }
 
-/* line 259, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-arrow-s {
   background-position: -128px -192px;
 }
 
-/* line 260, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-arrow-w {
   background-position: -144px -192px;
 }
 
-/* line 261, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-arrow-n {
   background-position: -160px -192px;
 }
 
-/* line 262, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-zoomin {
   background-position: -176px -192px;
 }
 
-/* line 263, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-zoomout {
   background-position: -192px -192px;
 }
 
-/* line 264, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circle-check {
   background-position: -208px -192px;
 }
 
-/* line 265, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circlesmall-plus {
   background-position: 0 -208px;
 }
 
-/* line 266, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circlesmall-minus {
   background-position: -16px -208px;
 }
 
-/* line 267, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-circlesmall-close {
   background-position: -32px -208px;
 }
 
-/* line 268, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-squaresmall-plus {
   background-position: -48px -208px;
 }
 
-/* line 269, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-squaresmall-minus {
   background-position: -64px -208px;
 }
 
-/* line 270, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-squaresmall-close {
   background-position: -80px -208px;
 }
 
-/* line 271, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-grip-dotted-vertical {
   background-position: 0 -224px;
 }
 
-/* line 272, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-grip-dotted-horizontal {
   background-position: -16px -224px;
 }
 
-/* line 273, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-grip-solid-vertical {
   background-position: -32px -224px;
 }
 
-/* line 274, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-grip-solid-horizontal {
   background-position: -48px -224px;
 }
 
-/* line 275, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-gripsmall-diagonal-se {
   background-position: -64px -224px;
 }
 
-/* line 276, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-icon-grip-diagonal-se {
   background-position: -80px -224px;
 }
@@ -1701,7 +1391,6 @@ form textarea {
 /* Misc visuals
 ----------------------------------*/
 /* Corner radius */
-/* line 283, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
@@ -1709,7 +1398,6 @@ form textarea {
   border-top-left-radius: 4px;
 }
 
-/* line 284, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -1717,7 +1405,6 @@ form textarea {
   border-top-right-radius: 4px;
 }
 
-/* line 285, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
   -moz-border-radius-bottomleft: 4px;
   -webkit-border-bottom-left-radius: 4px;
@@ -1725,7 +1412,6 @@ form textarea {
   border-bottom-left-radius: 4px;
 }
 
-/* line 286, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
@@ -1734,14 +1420,12 @@ form textarea {
 }
 
 /* Overlays */
-/* line 289, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget-overlay {
   background: #666666 url(../images/jquery-ui/ui-bg_diagonals-thick_20_666666_40x40.png) 50% 50% repeat;
   opacity: .50;
   filter: Alpha(Opacity=50);
 }
 
-/* line 290, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-widget-shadow {
   margin: -5px 0 0 -5px;
   padding: 5px;
@@ -1763,12 +1447,10 @@ form textarea {
 *
 * http://docs.jquery.com/UI/Resizable#theming
 */
-/* line 299, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-resizable {
   position: relative;
 }
 
-/* line 300, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-resizable-handle {
   position: absolute;
   font-size: 0.1px;
@@ -1776,12 +1458,10 @@ form textarea {
   display: block;
 }
 
-/* line 301, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle {
   display: none;
 }
 
-/* line 302, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-resizable-n {
   cursor: n-resize;
   height: 7px;
@@ -1790,7 +1470,6 @@ form textarea {
   left: 0;
 }
 
-/* line 303, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-resizable-s {
   cursor: s-resize;
   height: 7px;
@@ -1799,7 +1478,6 @@ form textarea {
   left: 0;
 }
 
-/* line 304, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-resizable-e {
   cursor: e-resize;
   width: 7px;
@@ -1808,7 +1486,6 @@ form textarea {
   height: 100%;
 }
 
-/* line 305, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-resizable-w {
   cursor: w-resize;
   width: 7px;
@@ -1817,7 +1494,6 @@ form textarea {
   height: 100%;
 }
 
-/* line 306, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-resizable-se {
   cursor: se-resize;
   width: 12px;
@@ -1826,7 +1502,6 @@ form textarea {
   bottom: 1px;
 }
 
-/* line 307, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-resizable-sw {
   cursor: sw-resize;
   width: 9px;
@@ -1835,7 +1510,6 @@ form textarea {
   bottom: -5px;
 }
 
-/* line 308, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-resizable-nw {
   cursor: nw-resize;
   width: 9px;
@@ -1844,7 +1518,6 @@ form textarea {
   top: -5px;
 }
 
-/* line 309, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-resizable-ne {
   cursor: ne-resize;
   width: 9px;
@@ -1862,7 +1535,6 @@ form textarea {
 *
 * http://docs.jquery.com/UI/Selectable#theming
 */
-/* line 318, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-selectable-helper {
   position: absolute;
   z-index: 100;
@@ -1879,12 +1551,10 @@ form textarea {
  * http://docs.jquery.com/UI/Accordion#theming
  */
 /* IE/Win - Fix animation bug - #4615 */
-/* line 329, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-accordion {
   width: 100%;
 }
 
-/* line 330, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-accordion .ui-accordion-header {
   cursor: pointer;
   position: relative;
@@ -1892,29 +1562,24 @@ form textarea {
   zoom: 1;
 }
 
-/* line 331, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-accordion .ui-accordion-li-fix {
   display: inline;
 }
 
-/* line 332, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-accordion .ui-accordion-header-active {
   border-bottom: 0 !important;
 }
 
-/* line 333, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-accordion .ui-accordion-header a {
   display: block;
   font-size: 1em;
   padding: .5em .5em .5em .7em;
 }
 
-/* line 334, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-accordion-icons .ui-accordion-header a {
   padding-left: 2.2em;
 }
 
-/* line 335, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-accordion .ui-accordion-header .ui-icon {
   position: absolute;
   left: .5em;
@@ -1922,7 +1587,6 @@ form textarea {
   margin-top: -8px;
 }
 
-/* line 336, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-accordion .ui-accordion-content {
   padding: 1em 2.2em;
   border-top: 0;
@@ -1935,7 +1599,6 @@ form textarea {
   zoom: 1;
 }
 
-/* line 337, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-accordion .ui-accordion-content-active {
   display: block;
 }
@@ -1949,14 +1612,12 @@ form textarea {
  *
  * http://docs.jquery.com/UI/Autocomplete#theming
  */
-/* line 347, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-autocomplete {
   position: absolute;
   cursor: default;
 }
 
 /* workarounds */
-/* line 350, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 * html .ui-autocomplete {
   width: 1px;
 }
@@ -1971,7 +1632,6 @@ form textarea {
  *
  * http://docs.jquery.com/UI/Menu#theming
  */
-/* line 361, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-menu {
   list-style: none;
   padding: 2px;
@@ -1980,12 +1640,10 @@ form textarea {
   float: left;
 }
 
-/* line 368, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-menu .ui-menu {
   margin-top: -3px;
 }
 
-/* line 371, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-menu .ui-menu-item {
   margin: 0;
   padding: 0;
@@ -1995,7 +1653,6 @@ form textarea {
   width: 100%;
 }
 
-/* line 379, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-menu .ui-menu-item a {
   text-decoration: none;
   display: block;
@@ -2004,7 +1661,6 @@ form textarea {
   zoom: 1;
 }
 
-/* line 387, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-menu .ui-menu-item a.ui-state-hover,
 .ui-menu .ui-menu-item a.ui-state-active {
   font-weight: normal;
@@ -2020,7 +1676,6 @@ form textarea {
  *
  * http://docs.jquery.com/UI/Button#theming
  */
-/* line 400, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button {
   display: inline-block;
   position: relative;
@@ -2034,111 +1689,92 @@ form textarea {
 }
 
 /* the overflow property removes extra width in IE */
-/* line 401, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-icon-only {
   width: 2.2em;
 }
 
 /* to make room for the icon, a width needs to be set here */
-/* line 402, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 button.ui-button-icon-only {
   width: 2.4em;
 }
 
 /* button elements seem to need a little more width */
-/* line 403, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-icons-only {
   width: 3.4em;
 }
 
-/* line 404, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 button.ui-button-icons-only {
   width: 3.7em;
 }
 
 /*button text element */
-/* line 407, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button .ui-button-text {
   display: block;
   line-height: 1.4;
 }
 
-/* line 408, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-text-only .ui-button-text {
   padding: .4em 1em;
 }
 
-/* line 409, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
   padding: .4em;
   text-indent: -9999999px;
 }
 
-/* line 410, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-text-icon-primary .ui-button-text, .ui-button-text-icons .ui-button-text {
   padding: .4em 1em .4em 2.1em;
 }
 
-/* line 411, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-text-icon-secondary .ui-button-text, .ui-button-text-icons .ui-button-text {
   padding: .4em 2.1em .4em 1em;
 }
 
-/* line 412, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-text-icons .ui-button-text {
   padding-left: 2.1em;
   padding-right: 2.1em;
 }
 
 /* no icon support for input elements, provide padding by default */
-/* line 414, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 input.ui-button {
   padding: .4em 1em;
 }
 
 /*button icon element(s) */
-/* line 417, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-icon-only .ui-icon, .ui-button-text-icon-primary .ui-icon, .ui-button-text-icon-secondary .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon {
   position: absolute;
   top: 50%;
   margin-top: -8px;
 }
 
-/* line 418, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-icon-only .ui-icon {
   left: 50%;
   margin-left: -8px;
 }
 
-/* line 419, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-text-icon-primary .ui-button-icon-primary, .ui-button-text-icons .ui-button-icon-primary, .ui-button-icons-only .ui-button-icon-primary {
   left: .5em;
 }
 
-/* line 420, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-text-icon-secondary .ui-button-icon-secondary, .ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary {
   right: .5em;
 }
 
-/* line 421, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary {
   right: .5em;
 }
 
 /*button sets*/
-/* line 424, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-buttonset {
   margin-right: 7px;
 }
 
-/* line 425, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-buttonset .ui-button {
   margin-left: 0;
   margin-right: -0.3em;
 }
 
 /* workarounds */
-/* line 428, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 button.ui-button::-moz-focus-inner {
   border: 0;
   padding: 0;
@@ -2154,7 +1790,6 @@ button.ui-button::-moz-focus-inner {
  *
  * http://docs.jquery.com/UI/Dialog#theming
  */
-/* line 438, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-dialog {
   position: absolute;
   padding: .2em;
@@ -2162,19 +1797,16 @@ button.ui-button::-moz-focus-inner {
   overflow: hidden;
 }
 
-/* line 439, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-dialog .ui-dialog-titlebar {
   padding: .4em 1em;
   position: relative;
 }
 
-/* line 440, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-dialog .ui-dialog-title {
   float: left;
   margin: .1em 16px .1em 0;
 }
 
-/* line 441, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-dialog .ui-dialog-titlebar-close {
   position: absolute;
   right: .3em;
@@ -2185,18 +1817,15 @@ button.ui-button::-moz-focus-inner {
   height: 18px;
 }
 
-/* line 442, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-dialog .ui-dialog-titlebar-close span {
   display: block;
   margin: 1px;
 }
 
-/* line 443, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus {
   padding: 0;
 }
 
-/* line 444, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-dialog .ui-dialog-content {
   position: relative;
   border: 0;
@@ -2206,7 +1835,6 @@ button.ui-button::-moz-focus-inner {
   zoom: 1;
 }
 
-/* line 445, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-dialog .ui-dialog-buttonpane {
   text-align: left;
   border-width: 1px 0 0 0;
@@ -2215,18 +1843,15 @@ button.ui-button::-moz-focus-inner {
   padding: .3em 1em .5em .4em;
 }
 
-/* line 446, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
   float: right;
 }
 
-/* line 447, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-dialog .ui-dialog-buttonpane button {
   margin: .5em .4em .5em 0;
   cursor: pointer;
 }
 
-/* line 448, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-dialog .ui-resizable-se {
   width: 14px;
   height: 14px;
@@ -2234,7 +1859,6 @@ button.ui-button::-moz-focus-inner {
   bottom: 3px;
 }
 
-/* line 449, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-draggable .ui-dialog-titlebar {
   cursor: move;
 }
@@ -2248,13 +1872,11 @@ button.ui-button::-moz-focus-inner {
  *
  * http://docs.jquery.com/UI/Slider#theming
  */
-/* line 459, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider {
   position: relative;
   text-align: left;
 }
 
-/* line 460, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider .ui-slider-handle {
   position: absolute;
   z-index: 2;
@@ -2263,7 +1885,6 @@ button.ui-button::-moz-focus-inner {
   cursor: default;
 }
 
-/* line 461, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider .ui-slider-range {
   position: absolute;
   z-index: 1;
@@ -2273,58 +1894,48 @@ button.ui-button::-moz-focus-inner {
   background-position: 0 0;
 }
 
-/* line 463, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider-horizontal {
   height: .8em;
 }
 
-/* line 464, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider-horizontal .ui-slider-handle {
   top: -0.3em;
   margin-left: -0.6em;
 }
 
-/* line 465, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider-horizontal .ui-slider-range {
   top: 0;
   height: 100%;
 }
 
-/* line 466, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider-horizontal .ui-slider-range-min {
   left: 0;
 }
 
-/* line 467, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider-horizontal .ui-slider-range-max {
   right: 0;
 }
 
-/* line 469, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider-vertical {
   width: .8em;
   height: 100px;
 }
 
-/* line 470, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider-vertical .ui-slider-handle {
   left: -0.3em;
   margin-left: 0;
   margin-bottom: -0.6em;
 }
 
-/* line 471, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider-vertical .ui-slider-range {
   left: 0;
   width: 100%;
 }
 
-/* line 472, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider-vertical .ui-slider-range-min {
   bottom: 0;
 }
 
-/* line 473, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-slider-vertical .ui-slider-range-max {
   top: 0;
 }
@@ -2338,7 +1949,6 @@ button.ui-button::-moz-focus-inner {
 *
 * http://docs.jquery.com/UI/Tabs#theming
 */
-/* line 482, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-tabs {
   position: relative;
   padding: .2em;
@@ -2346,13 +1956,11 @@ button.ui-button::-moz-focus-inner {
 }
 
 /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
-/* line 483, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-tabs .ui-tabs-nav {
   margin: 0;
   padding: .2em .2em 0;
 }
 
-/* line 484, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-tabs .ui-tabs-nav li {
   list-style: none;
   float: left;
@@ -2364,31 +1972,26 @@ button.ui-button::-moz-focus-inner {
   white-space: nowrap;
 }
 
-/* line 485, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-tabs .ui-tabs-nav li a {
   float: left;
   padding: .5em 1em;
   text-decoration: none;
 }
 
-/* line 486, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
   margin-bottom: 0;
   padding-bottom: 1px;
 }
 
-/* line 487, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {
   cursor: text;
 }
 
-/* line 488, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
   cursor: pointer;
 }
 
 /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
-/* line 489, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-tabs .ui-tabs-panel {
   display: block;
   border-width: 0;
@@ -2396,7 +1999,6 @@ button.ui-button::-moz-focus-inner {
   background: none;
 }
 
-/* line 490, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-tabs .ui-tabs-hide {
   display: none !important;
 }
@@ -2410,20 +2012,17 @@ button.ui-button::-moz-focus-inner {
  *
  * http://docs.jquery.com/UI/Datepicker#theming
  */
-/* line 500, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker {
   width: 17em;
   padding: .2em .2em 0;
   display: none;
 }
 
-/* line 501, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-header {
   position: relative;
   padding: .2em 0;
 }
 
-/* line 502, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
   position: absolute;
   top: 2px;
@@ -2431,32 +2030,26 @@ button.ui-button::-moz-focus-inner {
   height: 1.8em;
 }
 
-/* line 503, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover {
   top: 1px;
 }
 
-/* line 504, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-prev {
   left: 2px;
 }
 
-/* line 505, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-next {
   right: 2px;
 }
 
-/* line 506, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-prev-hover {
   left: 1px;
 }
 
-/* line 507, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-next-hover {
   right: 1px;
 }
 
-/* line 508, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
   display: block;
   position: absolute;
@@ -2466,31 +2059,26 @@ button.ui-button::-moz-focus-inner {
   margin-top: -8px;
 }
 
-/* line 509, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-title {
   margin: 0 2.3em;
   line-height: 1.8em;
   text-align: center;
 }
 
-/* line 510, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-title select {
   font-size: 1em;
   margin: 1px 0;
 }
 
-/* line 511, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker select.ui-datepicker-month-year {
   width: 100%;
 }
 
-/* line 513, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker select.ui-datepicker-month,
 .ui-datepicker select.ui-datepicker-year {
   width: 49%;
 }
 
-/* line 514, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker table {
   width: 100%;
   font-size: .9em;
@@ -2498,7 +2086,6 @@ button.ui-button::-moz-focus-inner {
   margin: 0 0 .4em;
 }
 
-/* line 515, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker th {
   padding: .7em .3em;
   text-align: center;
@@ -2506,13 +2093,11 @@ button.ui-button::-moz-focus-inner {
   border: 0;
 }
 
-/* line 516, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker td {
   border: 0;
   padding: 1px;
 }
 
-/* line 517, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker td span, .ui-datepicker td a {
   display: block;
   padding: .2em;
@@ -2520,7 +2105,6 @@ button.ui-button::-moz-focus-inner {
   text-decoration: none;
 }
 
-/* line 518, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-buttonpane {
   background-image: none;
   margin: .7em 0 0 0;
@@ -2530,7 +2114,6 @@ button.ui-button::-moz-focus-inner {
   border-bottom: 0;
 }
 
-/* line 519, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-buttonpane button {
   float: right;
   margin: .5em .2em .4em;
@@ -2540,59 +2123,48 @@ button.ui-button::-moz-focus-inner {
   overflow: visible;
 }
 
-/* line 520, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
   float: left;
 }
 
 /* with multiple calendars */
-/* line 523, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker.ui-datepicker-multi {
   width: auto;
 }
 
-/* line 524, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-multi .ui-datepicker-group {
   float: left;
 }
 
-/* line 525, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-multi .ui-datepicker-group table {
   width: 95%;
   margin: 0 auto .4em;
 }
 
-/* line 526, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-multi-2 .ui-datepicker-group {
   width: 50%;
 }
 
-/* line 527, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-multi-3 .ui-datepicker-group {
   width: 33.3%;
 }
 
-/* line 528, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-multi-4 .ui-datepicker-group {
   width: 25%;
 }
 
-/* line 529, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header {
   border-left-width: 0;
 }
 
-/* line 530, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
   border-left-width: 0;
 }
 
-/* line 531, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-multi .ui-datepicker-buttonpane {
   clear: left;
 }
 
-/* line 532, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-row-break {
   clear: both;
   width: 100%;
@@ -2600,69 +2172,57 @@ button.ui-button::-moz-focus-inner {
 }
 
 /* RTL support */
-/* line 535, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-rtl {
   direction: rtl;
 }
 
-/* line 536, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-rtl .ui-datepicker-prev {
   right: 2px;
   left: auto;
 }
 
-/* line 537, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-rtl .ui-datepicker-next {
   left: 2px;
   right: auto;
 }
 
-/* line 538, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-rtl .ui-datepicker-prev:hover {
   right: 1px;
   left: auto;
 }
 
-/* line 539, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-rtl .ui-datepicker-next:hover {
   left: 1px;
   right: auto;
 }
 
-/* line 540, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-rtl .ui-datepicker-buttonpane {
   clear: right;
 }
 
-/* line 541, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-rtl .ui-datepicker-buttonpane button {
   float: left;
 }
 
-/* line 542, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current {
   float: right;
 }
 
-/* line 543, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-rtl .ui-datepicker-group {
   float: right;
 }
 
-/* line 544, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header {
   border-right-width: 0;
   border-left-width: 1px;
 }
 
-/* line 545, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
   border-right-width: 0;
   border-left-width: 1px;
 }
 
 /* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
-/* line 548, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-datepicker-cover {
   display: none;
   /*sorry for IE5*/
@@ -2693,29 +2253,24 @@ button.ui-button::-moz-focus-inner {
 *
 * http://docs.jquery.com/UI/Progressbar#theming
 */
-/* line 567, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-progressbar {
   height: 2em;
   text-align: left;
 }
 
-/* line 568, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery-ui-1.8.16.scss */
 .ui-progressbar .ui-progressbar-value {
   margin: -1px;
   height: 100%;
 }
 
-/* line 1, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 div.status, p.error, body p.alert {
   display: none;
 }
 
-/* line 5, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 html.no-js div.status, html.no-js p.error, html.no-js body p.alert, body html.no-js p.alert {
   display: block;
 }
 
-/* line 9, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 .jnotify-container {
   position: fixed;
   top: 0;
@@ -2724,12 +2279,10 @@ html.no-js div.status, html.no-js p.error, html.no-js body p.alert, body html.no
   z-index: 100000;
 }
 
-/* line 17, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 .jnotify-container .jnotify-notification {
   position: relative;
 }
 
-/* line 21, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 .jnotify-container .jnotify-notification .jnotify-background {
   position: absolute;
   top: 0;
@@ -2743,7 +2296,6 @@ html.no-js div.status, html.no-js p.error, html.no-js body p.alert, body html.no
   z-index: 1;
 }
 
-/* line 38, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 .jnotify-container .jnotify-notification a.jnotify-close,
 .jnotify-container .jnotify-notification a.jnotify-close:link,
 .jnotify-container .jnotify-notification a.jnotify-close:visited,
@@ -2761,7 +2313,6 @@ html.no-js div.status, html.no-js p.error, html.no-js body p.alert, body html.no
   cursor: pointer;
 }
 
-/* line 51, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 .jnotify-container .jnotify-notification .jnotify-message {
   position: relative;
   z-index: 2;
@@ -2772,30 +2323,25 @@ html.no-js div.status, html.no-js p.error, html.no-js body p.alert, body html.no
   line-height: 1.2em;
 }
 
-/* line 61, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 .jnotify-container .jnotify-notification .jnotify-message * {
   font-size: 1em;
 }
 
 /* notification type == "error" */
-/* line 66, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 .jnotify-container .jnotify-notification-error .jnotify-background {
   background-color: #d79eac;
 }
 
-/* line 71, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 .jnotify-container .jnotify-notification-error .jnotify-close,
 .jnotify-container .jnotify-notification-error .jnotify-message {
   color: #a72947 !important;
 }
 
 /* notification type == "warning" */
-/* line 76, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 .jnotify-container .jnotify-notification-warning .jnotify-background {
   background-color: #fff7d1;
 }
 
-/* line 81, /Users/seth/www/top/topkit/assets/styles/sass/plugins/_jquery.jnotify.scss */
 .jnotify-container .jnotify-notification-warning .jnotify-close,
 .jnotify-container .jnotify-notification-warning .jnotify-message {
   color: #c2a928 !important;
