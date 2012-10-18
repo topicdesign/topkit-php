@@ -21,19 +21,21 @@
 	-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="<?php echo get_asset('assets/styles/screen.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
-    <link href="<?php echo get_asset('assets/styles/print.css'); ?>" media="print" rel="stylesheet" type="text/css" />
+    <link href="<?php echo get_asset('public/stylesheets/screen.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="<?php echo get_asset('public/stylesheets/print.css'); ?>" media="print" rel="stylesheet" type="text/css" />
     <!--[if lt IE 8]>
-        <link href="<?php echo get_asset('assets/styles/ie.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
+        <link href="<?php echo get_asset('public/stylesheets/ie.css'); ?>" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
 
-    <script src="<?php echo get_asset('assets/scripts/libs/modernizr.min.js'); ?>"></script>
-    <script src="<?php echo get_asset('assets/scripts/libs/respond.min.js'); ?>"></script>
+    <script src="<?php echo get_asset('public/javascripts/modernizr.js'); ?>"></script>
 
     <?php echo document_metadata(); ?>
 
 </head>
-<body>
+<body
+  data-router-class="<?php echo ucfirst($this->uri->segment(1)); ?>Controller"
+  data-router-action="<?php echo $this->uri->segment(2); ?>"
+  >
 
     <!--container-->
     <div id="container">
@@ -57,7 +59,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="<?php echo get_asset('assets/scripts/libs/jquery.min.js'); ?>"><\/script>')</script>
-    <script src="<?php echo get_asset('assets/scripts/application.js'); ?>"></script>
+    <script src="<?php echo get_asset('public/javascripts/public.js'); ?>"></script>
 
     <?php echo document_partial('footer_scripts'); ?>
     <?php echo document_partial('analytics'); ?>

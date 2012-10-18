@@ -10,7 +10,7 @@
  */
 
 // WITH trailing slash
-$config['directory'] = 'assets/uploads/';
+$config['directory'] = 'public/uploads/';
 
 $config['uploads'] = array(
     'image' => array(

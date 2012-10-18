@@ -1,7 +1,7 @@
 source "http://rubygems.org"
-group :development do
-  gem 'guard'
-  gem 'guard-coffeescript'
-  gem 'guard-compass'
-  gem 'guard-jammit'
-end
+
+gem 'sprockets'
+gem 'guard-sprockets'
+gem 'coffee-script'
+gem 'uglifier'
+gem 'guard-compass'
