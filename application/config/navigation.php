@@ -72,10 +72,10 @@ $config['anchors']['main'] = array(
 
 $config['anchors']['main'] = array(
     array(
-        'href'  => '/',
-        'label' => 'Home',
+        'href'  => '/contact',
+        'label' => 'Contact',
         'attr'  => array(
-            'title' => "Home",
+            'title' => "Contact",
         ),
     ),
     array(
@@ -92,6 +92,13 @@ $config['anchors']['footer'] = array(
         'label' => 'Home',
         'attr'  => array(
             'title' =>  "Home",
+        ),
+    ),
+    array(
+        'href'  => '/contact',
+        'label' => 'Contact',
+        'attr'  => array(
+            'title' => "Contact",
         ),
     ),
     array(

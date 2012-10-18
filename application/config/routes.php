@@ -49,7 +49,7 @@ $route['login'] = 'users/login';
 $route['logout'] = 'users/logout';
 $route['login(.*)'] = 'users$1';
 
-$route['articles(.*)'] = "articles$1";
+$route['contact(.*)'] = "contact/index$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

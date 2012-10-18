@@ -1,0 +1,9 @@
+<section id="contact-index" class="page index">
+  <header>
+    <h1><?php echo htmlentities($page->title); ?></h1>
+  </header>
+  <article class="section-content">
+    <?php echo $page->body; ?>
+    <?php $this->document->view('contact/contact_form'); ?>
+  </article>
+</section>

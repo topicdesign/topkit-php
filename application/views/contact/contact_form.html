@@ -1,0 +1,59 @@
+<form id="contact-form" action="<?php echo current_url(); ?>" method="post">
+  <fieldset>
+    <?php if (isset($subjects) && ! empty($subjects)): ?>
+    <div class="control-group">
+      <label for="contact-form-subject"
+        class="select"
+        ><?php echo lang('contact-field-subject'); ?></label>
+      <div class="controls">
+        <?php echo form_error('subject'); ?>
+        <?php echo form_dropdown('subject', $subjects, $message->subject); ?>
+      </div>
+    </div>
+    <?php endif; ?>
+    <div class="control-group">
+      <label for="contact-form-name"
+        class="text"
+        ><?php echo lang('contact-field-name'); ?></label>
+      <div class="controls">
+        <?php echo form_error('name'); ?>
+        <input id="contact-form-name" name="name"
+          type="text"
+          value="<?php echo set_value('name', $message->name); ?>"
+          />
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="contact-form-email"
+        class="email"
+        ><?php echo lang('contact-field-email'); ?></label>
+      <div class="controls">
+        <?php echo form_error('email'); ?>
+        <input id="contact-form-email" name="email"
+          type="email"
+          required
+          value="<?php echo set_value('email', $message->email); ?>"
+          />
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="contact-form-body"
+        class="textarea"
+        ><?php echo lang('contact-field-body'); ?></label>
+      <div class="controls">
+        <?php echo form_error('body'); ?>
+        <textarea id="contact-form-body" name="body"
+          rows="8" cols="40"
+          ><?php echo set_value('body', $message->body); ?></textarea>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="form-actions">
+    <input id="contact-form-save"
+      type="submit"
+      value="<?php echo lang('contact-field-submit'); ?>"
+      class="submit btn btn-primary btn-large"
+      >
+  </fieldset>
+</form>
+
