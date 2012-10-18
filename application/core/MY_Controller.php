@@ -7,7 +7,7 @@
  * @link        http://topicdesign.com/
  * @license     http://creativecommons.org/licenses/BSD/
  */
-define('TOPKIT_VERSION', '0.0.8');
+define('TOPKIT_VERSION', '0.0.9');
 
 // --------------------------------------------------------------------
 
