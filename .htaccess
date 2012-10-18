@@ -120,7 +120,7 @@ DirectoryIndex index.php
   # This may not be desirable in all cases.
   #-----------------------------------------------------------------------------
   RewriteCond %{REQUEST_FILENAME} !index.php
-  RewriteCond $1 !^(robots\.txt|humans\.txt|sitemap\.xml|favicon\.ico|assets)
+  RewriteCond $1 !^(robots\.txt|humans\.txt|sitemap\.xml|favicon\.ico|assets|public)
   #RewriteRule (.*)\.php$ index.php/$1
 
   #-----------------------------------------------------------------------------
