@@ -1,6 +1,6 @@
 guard 'compass',
-  configuration_file: './assets/styles/config.rb',
-  project_path: './assets/styles' do
+  configuration_file: 'application/config/compass.rb',
+  project_path: 'application/assets/stylesheets' do
     watch(%r{(.*)\.s[ac]ss$})
 end
 
