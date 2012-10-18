@@ -4,7 +4,7 @@ class App.ContactController
     null
 
   init: () ->
-    console.log 'contact init'
+    null
 
   ## --------------------------------------------------------------------
 

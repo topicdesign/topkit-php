@@ -4,7 +4,6 @@ class App.CommonController
     null
 
   init: () ->
-    console.log 'common init'
     setTimeout @hideUrlBar, 0
     @protectLinks()
     App.is_mobile = @checkMobile()

@@ -2658,6 +2658,26 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
     return App.UTIL.init();
   });
 
+  window.log = function() {
+    log.history = log.history || [];
+    log.history.push(arguments);
+    if (this.console) {
+      arguments.callee = arguments.callee.caller;
+      return console.log(Array.prototype.slice.call(arguments));
+    }
+  };
+
+  (function(b) {
+    var a, c, d, _results;
+    c = function() {};
+    d = "assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn".split(",");
+    _results = [];
+    while (a = d.pop()) {
+      _results.push(b[a] = b[a] || c);
+    }
+    return _results;
+  })(window.console = window.console || {});
+
 }).call(this);
 (function() {
 
@@ -2668,7 +2688,6 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
     }
 
     CommonController.prototype.init = function() {
-      console.log('common init');
       setTimeout(this.hideUrlBar, 0);
       this.protectLinks();
       return App.is_mobile = this.checkMobile();
@@ -2716,7 +2735,7 @@ b,c){var d;d=b&&b.hasOwnProperty("constructor")?b.constructor:function(){a.apply
     }
 
     ContactController.prototype.init = function() {
-      return console.log('contact init');
+      return null;
     };
 
     return ContactController;
