@@ -1,5 +1,0 @@
-topkit
-======
-ver: 0.0.9
-
-Documentation in progress...
